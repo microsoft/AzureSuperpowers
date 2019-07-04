@@ -41,7 +41,7 @@ All organizations, government and industry, are facing these pressures:
 *	Each environment is configured and validated individually, risking inconsistencies across enterprise
 
 ## Troubleshooting
-Each of the following labs has a troubleshooting section towards the end.  Please refer to it if you are having issues, and during the class please use it to write down issues you have with the labs so they can be corrected in future versions.  Thank you!
+Each lab in this workshop has a troubleshooting section towards the end.  Please refer to it if you are having issues, and during the class please use it to write down issues you have with the labs so they can be corrected in future versions.  Thank you!
 
 # Contributing
 
