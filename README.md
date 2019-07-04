@@ -14,7 +14,7 @@
 9.	Azure DevOps Build
 10.	Azure DevOps Release
  
-#### While prerequisites are pretty minimal, to get the most out of the course it will be helpful if you have already had some experience with the following
+#### While prerequisites are minimal, to get the most out of the course it will be helpful if you have already had some experience with the following
 *	How to login to an Azure subscription using Azure PowerShell
 *	Deploying resources into Azure using ARM templates
 *	Azure Resource Group planning and design
