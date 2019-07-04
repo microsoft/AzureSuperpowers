@@ -1,6 +1,7 @@
 # Azure Superpowers
 
-## Welcome to the Azure Superpowers project.  This repository focusses on the prerequisite skills and technologies needed to succeed with Azure DevOps as the preferred method for deploying applications into Azure.
+## Welcome to the Azure Superpowers project.  
+## This repository focusses on the prerequisite skills and technologies needed to succeed with Azure DevOps as the preferred method for deploying applications into Azure.
 
 #### This content is typically delivered as an in person 3 day workshop, and goes through the following:
 1.	Install and walkthrough of tools (VS Code, Git, Azure PowerShell, Azure Storage Explorer)
