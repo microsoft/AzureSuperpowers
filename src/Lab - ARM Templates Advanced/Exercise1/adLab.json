@@ -1,0 +1,372 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "VMadminUsername": {
+            "type": "string"
+        },
+        "VMadminPassword": {
+            "type": "securestring"
+        },
+        "CreateWorkerNodes": {
+            "type": "string",
+            "defaultValue": "false",
+            "allowedValues": [
+                "true",
+                "false"
+            ],
+            "metadata": {
+                "description": "Select whether the deployment should include worker nodes, Default is false"
+            }
+        },
+        "vmWorkerNamePrefix": {
+            "type": "string",
+            "defaultValue": "Server"
+        },
+        "vmWorkerSize": {
+            "type": "string",
+            "defaultValue": "Standard_DS2_v2"
+        },
+        "numberOfvmWorkerInstances": {
+            "type": "int",
+            "metadata": {
+                "description": "Number of Worker VMs to deploy, must be 0 or greater"
+            }
+        },
+        "FullPathToFile": {
+            "type": "string"
+        },
+        "FileNameAndExtension": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "string",
+            "metadata": {
+                "description": "The current datetime, as a string, to force the request to go through ARM even if all fields are the same as last ARM deployment of this template."
+            }
+        }
+    },
+    "variables": {
+        "SasToken": "?st=2019-03-27T02%3A57%3A41Z&se=2022-03-28T02%3A57%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=wTyTGJlw3oj7Z5f3sZs8v5zt536OOuY8%2FJvKQbojewY%3D",
+        "virtualNetworkName": "adLabVnet",
+        "subnetName": "Subnet1",
+        "domainfqdn": "domain.local"
+    },
+    "resources": [
+        {
+            "apiVersion": "2016-09-01",
+            "name": "createVnet",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": [
+                        {
+                            "type": "Microsoft.Network/virtualNetworks",
+                            "name": "[variables('virtualNetworkName')]",
+                            "apiVersion": "2017-06-01",
+                            "location": "[resourceGroup().location]",
+                            "properties": {
+                                "addressSpace": {
+                                    "addressPrefixes": [
+                                        "10.0.0.0/16"
+                                    ]
+                                },
+                                "dhcpOptions": {
+                                    "dnsServers": [
+                                        "10.0.0.4",
+                                        "8.8.8.8"
+                                    ]
+                                },
+                                "subnets": [
+                                    {
+                                        "name": "[variables('subnetName')]",
+                                        "properties": {
+                                            "addressPrefix": "10.0.0.0/24"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "outputs": {
+                        "vNetID": {
+                            "type": "string",
+                            "value": "[resourceId('Microsoft.Network/virtualNetworks', 'adLabVnet')]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "apiVersion": "2016-09-01",
+            "name": "createDC1",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('vm.json', variables('SasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "machineName": {
+                        "value": "DC1"
+                    },
+                    "VNetID": {
+                        "value": "[reference('createVnet').outputs.vNetID.value]"
+                    },
+                    "SubnetName": {
+                        "value": "Subnet1"
+                    },
+                    "IPAddress": {
+                        "value": "10.0.0.4"
+                    },
+                    "AdminUserName": {
+                        "value": "[parameters('VMadminUsername')]"
+                    },
+                    "AdminPassword": {
+                        "value": "[parameters('VMadminPassword')]"
+                    },
+                    "Timestamp": {
+                        "value": "[parameters('Timestamp')]"
+                    },
+                    "vmSize": {
+                        "value": "Standard_DS2_v2"
+                    },
+                    "TemplateSasToken": {
+                        "value": "?st=2018-07-20T03%3A08%3A31Z&se=2021-01-01T03%3A08%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=7EtwntigOT%2BKwmem6rOkOZYNB7aLu3gcFEDfLPpERRA%3D"
+                    },
+                    "BinSasToken": {
+                        "value": "?st=2018-07-20T03%3A09%3A35Z&se=2021-01-01T03%3A09%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=66XHhP1cGBwrG9AnmSWpBdEIWyx994F9vQ8bZHYum2Q%3D"
+                    }
+                }
+            },
+            "dependsOn": [
+                "createVnet"
+            ]
+        },
+        {
+            "apiVersion": "2016-09-01",
+            "name": "createDC1DomainController",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": [
+                        {
+                            "type": "Microsoft.Compute/virtualMachines/extensions",
+                            "name": "[concat('DC1', '/DSC')]",
+                            "apiVersion": "2017-12-01",
+                            "location": "[resourceGroup().location]",
+                            "properties": {
+                                "publisher": "Microsoft.Powershell",
+                                "type": "DSC",
+                                "typeHandlerVersion": "2.73",
+                                "autoUpgradeMinorVersion": true,
+                                "settings": {
+                                    "ModulesUrl": "https://github.com/rkyttle/AzureSuperpowers/raw/master/DSCArtifacts/ADSetup.zip",
+                                    "ConfigurationFunction": "ADSetup.ps1\\CreateADPDC",
+                                    "Properties": {
+                                        "DomainName": "[variables('domainfqdn')]",
+                                        "AdminCreds": {
+                                            "UserName": "[parameters('VMadminUsername')]",
+                                            "Password": "PrivateSettingsRef:AdminPassword"
+                                        }
+                                    }
+                                },
+                                "protectedSettings": {
+                                    "Items": {
+                                        "AdminPassword": "[parameters('VMadminPassword')]"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "createDC1"
+            ]
+        },
+        {
+            "apiVersion": "2016-09-01",
+            "name": "createMGT1",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('vm.json', variables('SasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "machineName": {
+                        "value": "MGT1"
+                    },
+                    "VNetID": {
+                        "value": "[reference('createVnet').outputs.vNetID.value]"
+                    },
+                    "SubnetName": {
+                        "value": "Subnet1"
+                    },
+                    "IPAddress": {
+                        "value": "10.0.0.5"
+                    },
+                    "CreatePublicIP": {
+                        "value": "true"
+                    },
+                    "AdminUserName": {
+                        "value": "[parameters('VMadminUsername')]"
+                    },
+                    "AdminPassword": {
+                        "value": "[parameters('VMadminPassword')]"
+                    },
+                    "Timestamp": {
+                        "value": "[parameters('Timestamp')]"
+                    },
+                    "vmSize": {
+                        "value": "Standard_DS2_v2"
+                    },
+                    "TemplateSasToken": {
+                        "value": "?st=2018-07-20T03%3A08%3A31Z&se=2021-01-01T03%3A08%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=7EtwntigOT%2BKwmem6rOkOZYNB7aLu3gcFEDfLPpERRA%3D"
+                    },
+                    "BinSasToken": {
+                        "value": "?st=2018-07-20T03%3A09%3A35Z&se=2021-01-01T03%3A09%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=66XHhP1cGBwrG9AnmSWpBdEIWyx994F9vQ8bZHYum2Q%3D"
+                    }
+                }
+            },
+            "dependsOn": [
+                "createVnet"
+            ]
+        },
+        {
+            "name": "CheckForAD",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-09-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('CustomScriptExtensionResourceTemplates/CheckForAD/CheckForAD.json', variables('SasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "VMName": {
+                        "value": "DC1"
+                    },
+                    "FullPathToFile": {
+                        "value": "[parameters('FullPathToFile')]"
+                    },
+                    "FileNameAndExtension": {
+                        "value": "[parameters('FileNameAndExtension')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "createDC1DomainController"
+            ]
+        },
+        {
+            "name": "JoinMGT1toDomainLinkedTemplate",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-09-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('resourceTemplates/JoinMGT1toDomainLinkedTemplate/JoinMGT1toDomainLinkedTemplate.json', variables('SasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "VMName": {
+                        "value": "MGT1"
+                    },
+                    "domainfqdn": {
+                        "value": "[variables('domainfqdn')]"
+                    },
+                    "VMadminUsername": {
+                        "value": "[parameters('VMadminUsername')]"
+                    },
+                    "VMadminPassword": {
+                        "value": "[parameters('VMadminPassword')]"
+                    },
+                    "Timestamp": {
+                        "value": "[parameters('Timestamp')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "CheckForAD"
+            ]
+        },
+        {
+            "name": "AddRSATToolsToMGT1",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-09-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('resourceTemplates/AddRSATTools/AddRSATTools.json', variables('SasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "VMName": {
+                        "value": "MGT1"
+                    },
+                    "SASToken": {
+                        "value": "[variables('SasToken')]"
+                    },
+                    "Timestamp": {
+                        "value": "[parameters('Timestamp')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "JoinMGT1toDomainLinkedTemplate"
+            ]
+        },
+        {
+            "condition": "[equals(parameters('CreateWorkerNodes'), 'true')]",
+            "apiVersion": "2016-09-01",
+            "name": "CreateWorkerNodes",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('multiplevms.json', variables('SasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "domainToJoin": {
+                        "value": "[variables('domainfqdn')]"
+                    },
+                    "vmAdminUsername": {
+                        "value": "[parameters('VMadminUsername')]"
+                    },
+                    "vmAdminPassword": {
+                        "value": "[parameters('VMadminPassword')]"
+                    },
+                    "vmNamePrefix": {
+                        "value": "[parameters('vmWorkerNamePrefix')]"
+                    },
+                    "vmSize": {
+                        "value": "[parameters('vmWorkerSize')]"
+                    },
+                    "numberOfInstances": {
+                        "value": "[parameters('numberOfvmWorkerInstances')]"
+                    },
+                    "vnetName": {
+                        "value": "[variables('virtualNetworkName')]"
+                    },
+                    "subnetName": {
+                        "value": "[variables('subnetName')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "JoinMGT1toDomainLinkedTemplate"
+            ]
+        }
+    ]
+}

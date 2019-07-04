@@ -1,0 +1,7 @@
+
+[ClassVersion("1.0.0.0"), FriendlyName("AuditPolicyOption")]
+class MSFT_AuditPolicyOption : OMI_BaseResource
+{
+    [Key, Description("The name of the audit policy option to set."), ValueMap{"CrashOnAuditFail","FullPrivilegeAuditing","AuditBaseObjects","AuditBaseDirectories"}, Values{"CrashOnAuditFail","FullPrivilegeAuditing","AuditBaseObjects","AuditBaseDirectories"}] String Name;
+    [Key, Description("The value to set the audit policy option to."), ValueMap{"Enabled","Disabled"}, Values{"Enabled","Disabled"}] String Value;
+};

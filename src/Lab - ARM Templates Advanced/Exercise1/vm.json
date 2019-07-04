@@ -1,0 +1,592 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "ApplySecuritySettings": {
+            "type": "string",
+            "defaultValue": "true",
+            "allowedValues": [
+                "true",
+                "false"
+            ],
+            "metadata": {
+                "description": "Select whether the VM should include the security settings, Default is true"
+            }
+        },
+        "InstallOMSAgent": {
+            "type": "string",
+            "defaultValue": "true",
+            "allowedValues": [
+                "true",
+                "false"
+            ],
+            "metadata": {
+                "description": "Select whether the VM should include the OMS Agent, Default is true"
+            }
+        },
+        "CreatePublicIP": {
+            "type": "string",
+            "defaultValue": "false",
+            "allowedValues": [
+                "true",
+                "false"
+            ],
+            "metadata": {
+                "description": "Select whether the deployment should include a public IP, Default is false"
+            }
+        },
+        "availabilitySetId": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "machineName": {
+            "type": "string"
+        },
+        "VNetID": {
+            "type": "string"
+        },
+        "SubnetName": {
+            "type": "string"
+        },
+        "IPAddress": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "AdminUserName": {
+            "type": "string"
+        },
+        "AdminPassword": {
+            "type": "securestring"
+        },
+        "vmSize": {
+            "type": "string",
+            "allowedValues": [
+                "Standard_G1",
+                "Standard_G2",
+                "Standard_G3",
+                "Standard_G4",
+                "Standard_G5",
+                "Standard_GS1",
+                "Standard_GS2",
+                "Standard_GS3",
+                "Standard_GS4",
+                "Standard_GS4-4",
+                "Standard_GS4-8",
+                "Standard_GS5",
+                "Standard_GS5-8",
+                "Standard_GS5-16",
+                "Standard_L4s",
+                "Standard_L8s",
+                "Standard_L16s",
+                "Standard_L32s",
+                "Standard_DS1_v2",
+                "Standard_DS2_v2",
+                "Standard_DS3_v2",
+                "Standard_DS4_v2",
+                "Standard_DS5_v2",
+                "Standard_DS11-1_v2",
+                "Standard_DS11_v2",
+                "Standard_DS12-1_v2",
+                "Standard_DS12-2_v2",
+                "Standard_DS12_v2",
+                "Standard_DS13-2_v2",
+                "Standard_DS13-4_v2",
+                "Standard_DS13_v2",
+                "Standard_DS14-4_v2",
+                "Standard_DS14-8_v2",
+                "Standard_DS14_v2",
+                "Standard_DS15_v2",
+                "Standard_DS2_v2_Promo",
+                "Standard_DS3_v2_Promo",
+                "Standard_DS4_v2_Promo",
+                "Standard_DS5_v2_Promo",
+                "Standard_DS11_v2_Promo",
+                "Standard_DS12_v2_Promo",
+                "Standard_DS13_v2_Promo",
+                "Standard_DS14_v2_Promo",
+                "Standard_F1s",
+                "Standard_F2s",
+                "Standard_F4s",
+                "Standard_F8s",
+                "Standard_F16s",
+                "Standard_A0",
+                "Standard_A1",
+                "Standard_A2",
+                "Standard_A3",
+                "Standard_A5",
+                "Standard_A4",
+                "Standard_A6",
+                "Standard_A7",
+                "Standard_D1_v2",
+                "Standard_D2_v2",
+                "Standard_D3_v2",
+                "Standard_D4_v2",
+                "Standard_D5_v2",
+                "Standard_D11_v2",
+                "Standard_D12_v2",
+                "Standard_D13_v2",
+                "Standard_D14_v2",
+                "Standard_D15_v2",
+                "Standard_D2_v2_Promo",
+                "Standard_D3_v2_Promo",
+                "Standard_D4_v2_Promo",
+                "Standard_D5_v2_Promo",
+                "Standard_D11_v2_Promo",
+                "Standard_D12_v2_Promo",
+                "Standard_D13_v2_Promo",
+                "Standard_D14_v2_Promo",
+                "Standard_F1",
+                "Standard_F2",
+                "Standard_F4",
+                "Standard_F8",
+                "Standard_F16",
+                "Standard_A1_v2",
+                "Standard_A2m_v2",
+                "Standard_A2_v2",
+                "Standard_A4m_v2",
+                "Standard_A4_v2",
+                "Standard_A8m_v2",
+                "Standard_A8_v2",
+                "Standard_D1",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4",
+                "Standard_D11",
+                "Standard_D12",
+                "Standard_D13",
+                "Standard_D14",
+                "Standard_DS1",
+                "Standard_DS2",
+                "Standard_DS3",
+                "Standard_DS4",
+                "Standard_DS11",
+                "Standard_DS12",
+                "Standard_DS13",
+                "Standard_DS14",
+                "Standard_B1ms",
+                "Standard_B1s",
+                "Standard_B2ms",
+                "Standard_B2s",
+                "Standard_B4ms",
+                "Standard_B8ms",
+                "Standard_D2_v3",
+                "Standard_D4_v3",
+                "Standard_D8_v3",
+                "Standard_D16_v3",
+                "Standard_D32_v3",
+                "Standard_D64_v3",
+                "Standard_D2s_v3",
+                "Standard_D4s_v3",
+                "Standard_D8s_v3",
+                "Standard_D16s_v3",
+                "Standard_D32s_v3",
+                "Standard_D64s_v3",
+                "Standard_E2_v3",
+                "Standard_E4_v3",
+                "Standard_E8_v3",
+                "Standard_E16_v3",
+                "Standard_E32_v3",
+                "Standard_E64_v3",
+                "Standard_E2s_v3",
+                "Standard_E4-2s_v3",
+                "Standard_E4s_v3",
+                "Standard_E8-2s_v3",
+                "Standard_E8-4s_v3",
+                "Standard_E8s_v3",
+                "Standard_E16-4s_v3",
+                "Standard_E16-8s_v3",
+                "Standard_E16s_v3",
+                "Standard_E32-8s_v3",
+                "Standard_E32-16s_v3",
+                "Standard_E32s_v3",
+                "Standard_E64-16s_v3",
+                "Standard_E64-32s_v3",
+                "Standard_E64is_v3",
+                "Standard_E64s_v3"
+            ],
+            "defaultValue": "Standard_DS1_v2"
+        },
+        "ImageSKU": {
+            "type": "string",
+            "allowedValues": [
+                "2016-Datacenter",
+                "Standard"
+            ],
+            "defaultValue": "2016-Datacenter"
+        },
+        "publisher": {
+            "type": "string",
+            "allowedValues": [
+                "MicrosoftWindowsServer",
+                "MicrosoftSQLServer"
+            ],
+            "defaultValue": "MicrosoftWindowsServer"
+        },
+        "offer": {
+            "type": "string",
+            "allowedValues": [
+                "WindowsServer",
+                "WindowsServerSemiAnnual",
+                "SQL2016SP1-WS2016",
+                "SQL2017-WS2016"
+            ],
+            "defaultValue": "WindowsServer"
+        },
+        "version": {
+            "type": "string",
+            "defaultValue": "latest"
+        },
+        "dataDiskSize": {
+            "type": "int",
+            "defaultValue": 1023
+        },
+        "numberOfDataDisks": {
+            "type": "int",
+            "minValue": 0,
+            "maxValue": 4,
+            "defaultValue": 0
+        },
+        "TemplateSasToken": {
+            "type": "string"
+        },
+        "BinUrl": {
+            "type": "string",
+            "defaultValue": "https://azuresuperpowers.blob.core.windows.net/bin/"
+        },
+        "BinSasToken": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "string",
+            "defaultValue": "MM/dd/yyyy H:mm:ss tt",
+            "metadata": {
+                "description": "The current datetime, as a string, to force the request to go through ARM even if all fields are the same as last ARM deployment of this template."
+            }
+        },
+        "Timezone": {
+            "type": "string",
+            "allowedValues": [
+                "Dateline Standard Time",
+                "Samoa Standard Time",
+                "Hawaiian Standard Time",
+                "Alaskan Standard Time",
+                "Pacific Standard Time",
+                "Mountain Standard Time",
+                "Mexico Standard Time 2",
+                "U.S. Mountain Standard Time",
+                "Central Standard Time",
+                "Canada Central Standard Time",
+                "Mexico Standard Time",
+                "Central America Standard Time",
+                "Eastern Standard Time",
+                "U.S. Eastern Standard Time",
+                "S.A. Pacific Standard Time",
+                "Atlantic Standard Time",
+                "S.A. Western Standard Time",
+                "Pacific S.A. Standard Time",
+                "Newfoundland and Labrador Standard Time",
+                "E. South America Standard Time",
+                "S.A. Eastern Standard Time",
+                "Greenland Standard Time",
+                "Mid-Atlantic Standard Time",
+                "Azores Standard Time",
+                "Cape Verde Standard Time",
+                "GMT Standard Time",
+                "Greenwich Standard Time",
+                "Central Europe Standard Time",
+                "Central European Standard Time",
+                "Romance Standard Time",
+                "W. Europe Standard Time",
+                "W. Central Africa Standard Time",
+                "E. Europe Standard Time",
+                "Egypt Standard Time",
+                "FLE Standard Time",
+                "GTB Standard Time",
+                "Israel Standard Time",
+                "South Africa Standard Time",
+                "Russian Standard Time",
+                "Arab Standard Time",
+                "E. Africa Standard Time",
+                "Arabic Standard Time",
+                "Iran Standard Time",
+                "Arabian Standard Time",
+                "Caucasus Standard Time",
+                "Transitional Islamic State of Afghanistan Standard Time",
+                "Ekaterinburg Standard Time",
+                "West Asia Standard Time",
+                "India Standard Time",
+                "Nepal Standard Time",
+                "Central Asia Standard Time",
+                "Sri Lanka Standard Time",
+                "N. Central Asia Standard Time",
+                "Myanmar Standard Time",
+                "S.E. Asia Standard Time",
+                "North Asia Standard Time",
+                "China Standard Time",
+                "Singapore Standard Time",
+                "Taipei Standard Time",
+                "W. Australia Standard Time",
+                "North Asia East Standard Time",
+                "Korea Standard Time",
+                "Tokyo Standard Time",
+                "Yakutsk Standard Time",
+                "A.U.S. Central Standard Time",
+                "Cen. Australia Standard Time",
+                "A.U.S. Eastern Standard Time",
+                "E. Australia Standard Time",
+                "Tasmania Standard Time",
+                "Vladivostok Standard Time",
+                "West Pacific Standard Time",
+                "Central Pacific Standard Time",
+                "Fiji Islands Standard Time",
+                "New Zealand Standard Time",
+                "Tonga Standard Time"
+            ],
+            "defaultValue": "Eastern Standard Time"
+        },
+        "OMSWorkspaceId": {
+            "type": "string",
+            "defaultValue": "11111111-2222-3333-4444-555555555555"
+        },
+        "OMSWorkspaceKey": {
+            "type": "string",
+            "defaultValue": "Aji2jsj8833s/njs832/HTNNnyuhunh7hhHBBHbnHGbFDSEDGGY12538191=="
+        }
+    },
+    "variables": {
+        "privateIPAllocationMethod": "[if(empty(parameters('IPAddress')), 'Dynamic', if(equals(parameters('IPAddress'), 'Dynamic'), 'Dynamic', 'Static'))]",
+        "privateIPAddress": "[if(empty(parameters('IPAddress')), '127.0.0.01', if(equals(parameters('IPAddress'), 'Dynamic'), '127.0.0.01', parameters('IPAddress')))]",
+        "subnetRef": "[concat(parameters('vnetId'), '/subnets/', parameters('SubnetName'))]",
+        "PvtNicName": "[concat(parameters('MachineName'), 'pvtnic1')]",
+        "PubNicName": "[concat(parameters('MachineName'), 'pubnic1')]",
+        "PvtNicNameId": "[resourceId('Microsoft.Network/networkInterfaces', variables('PvtNicName'))]",
+        "PubNicNameId": "[resourceId('Microsoft.Network/networkInterfaces', variables('PubNicName'))]",
+        "ipConfigurationName": "ipconfig1",
+        "provisionVmAgent": "true",
+        "osDiskcreateOption": "FromImage",
+        "storageAccountType": "Premium_LRS",
+        "availabilitySetId": {
+            "id": "[parameters('availabilitySetId')]"
+        },
+        "dataDisks": [
+            {
+                "diskSizeGB": "[parameters('dataDiskSize')]",
+                "lun": 0,
+                "createOption": "Empty"
+            },
+            {
+                "diskSizeGB": "[parameters('dataDiskSize')]",
+                "lun": 1,
+                "createOption": "Empty"
+            },
+            {
+                "diskSizeGB": "[parameters('dataDiskSize')]",
+                "lun": 2,
+                "createOption": "Empty"
+            },
+            {
+                "diskSizeGB": "[parameters('dataDiskSize')]",
+                "lun": 3,
+                "createOption": "Empty"
+            }
+        ]
+    },
+    "resources": [
+        {
+            "condition": "[equals(parameters('CreatePublicIP'), 'true')]",
+            "apiVersion": "2016-09-01",
+            "name": "publicmgmtIP",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Network/publicIPAddresses",
+                            "name": "publicmgmtIP",
+                            "apiVersion": "2016-03-30",
+                            "location": "[resourceGroup().location]",
+                            "properties": {
+                                "publicIPAllocationMethod": "Dynamic"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "condition": "[equals(parameters('CreatePublicIP'), 'true')]",
+            "name": "[variables('PubNicName')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2018-04-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "Project": "adLab"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "[variables('ipConfigurationName')]",
+                        "properties": {
+                            "privateIPAddress": "[variables('privateIPAddress')]",
+                            "privateIPAllocationMethod": "[variables('privateIPAllocationMethod')]",
+                            "subnet": {
+                                "id": "[variables('subnetRef')]"
+                            },
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'publicmgmtIP')]"
+                            }
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "publicmgmtIP"
+            ]
+        },
+        {
+            "condition": "[equals(parameters('CreatePublicIP'), 'false')]",
+            "name": "[variables('PvtNicName')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2018-04-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "Project": "adLab"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "[variables('ipConfigurationName')]",
+                        "properties": {
+                            "privateIPAddress": "[variables('privateIPAddress')]",
+                            "privateIPAllocationMethod": "[variables('privateIPAllocationMethod')]",
+                            "subnet": {
+                                "id": "[variables('subnetRef')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "[parameters('MachineName')]",
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2017-12-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "Project": "adLab"
+            },
+            "properties": {
+                "availabilitySet": "[if(not(empty(parameters('availabilitySetId'))), variables('availabilitySetId'), json('null'))]",
+                "osProfile": {
+                    "computerName": "[parameters('MachineName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVmAgent": "[variables('provisionVmAgent')]",
+                        "timeZone": "[parameters('Timezone')]"
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "[parameters('publisher')]",
+                        "offer": "[parameters('offer')]",
+                        "sku": "[parameters('ImageSKU')]",
+                        "version": "[parameters('version')]"
+                    },
+                    "osDisk": {
+                        "createOption": "[variables('osDiskcreateOption')]",
+                        "managedDisk": {
+                            "storageAccountType": "[variables('storageAccountType')]"
+                        }
+                    },
+                    "dataDisks": "[take(variables('dataDisks'),parameters('numberOfDataDisks'))]"
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[if(equals(parameters('CreatePublicIP'),'true'), variables('PubNicNameId'), variables('PvtNicNameId'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('MachineName'), 'pubnic1')]",
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('MachineName'), 'pvtnic1')]"
+            ]
+        },
+        {
+            "condition": "[equals(parameters('InstallOMSAgent'), 'true')]",
+            "name": "[concat('InstallOMSAgent', parameters('MachineName'))]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-09-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('resourceTemplates/InstallOMSAgent/InstallOMSAgent.json', parameters('TemplateSasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "VMName": {
+                        "value": "[parameters('machineName')]"
+                    },
+                    "TemplateSasToken": {
+                        "value": "[parameters('TemplateSasToken')]"
+                    },
+                    "BinUrl": {
+                        "value": "[parameters('BinUrl')]"
+                    },
+                    "BinSasToken": {
+                        "value": "[parameters('BinSasToken')]"
+                    },
+                    "Timestamp": {
+                        "value": "[parameters('Timestamp')]"
+                    },
+                    "OMSWorkspaceId": {
+                        "value": "[parameters('OMSWorkspaceId')]"
+                    },
+                    "OMSWorkspaceKey": {
+                        "value": "[parameters('OMSWorkspaceKey')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[parameters('machineName')]"
+            ]
+        },
+        {
+            "condition": "[equals(parameters('ApplySecuritySettings'), 'true')]",
+            "name": "[concat('SetWinSecuritySettings', parameters('MachineName'))]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2016-09-01",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, concat('resourceTemplates/SetWinSecuritySettings/SetWinSecuritySettings.json', parameters('TemplateSasToken')))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "VMName": {
+                        "value": "[parameters('machineName')]"
+                    },
+                    "SASToken": {
+                        "value": "[parameters('TemplateSasToken')]"
+                    },
+                    "Timestamp": {
+                        "value": "[parameters('Timestamp')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[concat('InstallOMSAgent', parameters('MachineName'))]"
+            ]
+        }
+    ]
+}

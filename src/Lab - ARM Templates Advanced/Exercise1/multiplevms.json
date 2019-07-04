@@ -1,0 +1,192 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "domainToJoin": {
+      "type": "string",
+      "metadata": {
+        "description": "The FQDN of the AD domain"
+      }
+    },
+    "vmAdminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Local admin account for the Virtual Machine."
+      }
+    },
+    "vmAdminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Local admin password for the Virtual Machine."
+      }
+    },
+    "vmNamePrefix": {
+      "type": "string",
+      "metadata": {
+        "description": "VM Name prefix"
+      }
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_DS2_v2",
+      "metadata": {
+        "description": "The size of the virtual machines"
+      }
+    },
+    "numberOfInstances": {
+      "type": "int",
+      "metadata": {
+        "description": "Number of VMs to deploy"
+      }
+    },
+    "vnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of existing VNET where the VMs will be deployed."
+      }
+    },
+    "subnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the subnet in the existing VNET where the VMs will be deployed."
+      }
+    },
+    "windowsOSVersion": {
+      "type": "string",
+      "allowedValues": [
+        "2012-R2-Datacenter",
+        "2016-Datacenter"
+      ],
+      "metadata": {
+        "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version. Allowed values: 2012-R2-Datacenter, 2016-Datacenter."
+      },
+      "defaultValue": "2016-Datacenter"
+    },
+    "Timezone": {
+      "type": "string",
+      "defaultValue": "Eastern Standard Time"
+    }
+  },
+  "variables": {
+    "location": "[resourceGroup().location]",
+    "imagePublisher": "MicrosoftWindowsServer",
+    "imageOffer": "WindowsServer",
+    "vnetResourceGroup": "[resourceGroup().name]",
+    "vnetID": "[resourceId(variables('vnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
+    "subnetRef": "[concat(variables('vnetID'),'/subnets/', parameters('subnetName'))]",
+    "provisionVmAgent": "true",
+    "osDiskcreateOption": "FromImage",
+    "storageAccountType": "Premium_LRS"
+  },
+  "resources": [
+    {
+      "apiVersion": "2016-03-30",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[concat(parameters('vmNamePrefix'),copyIndex(1),'-NIC')]",
+      "location": "[variables('location')]",
+      "copy": {
+        "name": "nicCopy",
+        "count": "[parameters('numberOfInstances')]"
+      },
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[variables('subnetRef')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2017-12-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[concat(parameters('vmNamePrefix'),copyIndex(1))]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "Project": "adLab"
+      },
+      "copy": {
+        "name": "vmCopy",
+        "count": "[parameters('numberOfInstances')]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Network/networkInterfaces/',parameters('vmNamePrefix'),copyIndex(1),'-NIC')]"
+      ],
+      "properties": {
+        "osProfile": {
+          "computerName": "[concat(parameters('vmNamePrefix'),copyIndex(1))]",
+          "adminUsername": "[parameters('vmAdminUsername')]",
+          "adminPassword": "[parameters('vmAdminPassword')]",
+          "windowsConfiguration": {
+            "provisionVmAgent": "[variables('provisionVmAgent')]",
+            "timeZone": "[parameters('Timezone')]"
+          }
+        },
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSize')]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('imagePublisher')]",
+            "offer": "[variables('imageOffer')]",
+            "sku": "[parameters('windowsOSVersion')]",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "[variables('osDiskcreateOption')]",
+            "managedDisk": {
+              "storageAccountType": "[variables('storageAccountType')]"
+            }
+          }
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces/',concat(parameters('vmNamePrefix'),copyIndex(1),'-NIC'))]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(parameters('vmNamePrefix'),copyIndex(1),'/DSC')]",
+      "location": "[resourceGroup().location]",
+      "copy": {
+        "name": "vmDomainJoinCopy",
+        "count": "[parameters('numberOfInstances')]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('vmNamePrefix'),copyIndex(1))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.Powershell",
+        "type": "DSC",
+        "typeHandlerVersion": "2.73",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "ModulesUrl": "https://github.com/rkyttle/AzureSuperpowers/raw/master/DSCArtifacts/ADSetup.zip",
+          "ConfigurationFunction": "ADSetup.ps1\\JoinAD",
+          "Properties": {
+            "DomainName": "[parameters('domainToJoin')]",
+            "AdminCreds": {
+              "UserName": "[parameters('VMadminUsername')]",
+              "Password": "PrivateSettingsRef:AdminPassword"
+            }
+          }
+        },
+        "protectedSettings": {
+          "Items": {
+            "AdminPassword": "[parameters('VMadminPassword')]"
+          }
+        }
+      }
+    }
+  ]
+}

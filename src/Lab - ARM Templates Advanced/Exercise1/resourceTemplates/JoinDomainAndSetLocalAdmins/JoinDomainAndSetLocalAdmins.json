@@ -1,0 +1,158 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "VMname": {
+            "type": "string"
+        },
+        "SasToken": {
+            "type": "string",
+            "metadata": {
+                "description": "The SAS Token to access the 'AddGrouptoAdministrators' DSC resource"
+            }
+        },
+        "domainToJoin": {
+            "type": "string",
+            "metadata": {
+                "description": "The NETBIOS Name of the AD domain"
+            }
+        },
+        "domainUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "Username of the account on the domain"
+            }
+        },
+        "domainPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Password of the account on the domain"
+            }
+        },
+        "ouPath": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Specifies an organizational unit (OU) for the domain account. Enter the full distinguished name of the OU in quotation marks. Example: 'OU=Computers,OU=Group,OU=Orgs,DC=domain,DC=local"
+            }
+        },
+        "DomainGroup": {
+            "type": "string",
+            "metadata": {
+                "description": "Group to be added as local admin"
+            }
+        },
+        "CreateADPDC-Uri":{
+            "type": "string",
+            "metadata": {
+                "description": "The fully-qualified (including SAS) URI for the CreateADPDC.zip file"
+            }
+        },
+        "Timestamp": {
+            "type": "string",
+            "defaultValue": "MM/dd/yyyy H:mm:ss tt",
+            "metadata": {
+                "description": "The current datetime, as a string, to force the request to go through ARM even if all fields are the same as last ARM deployment of this template."
+            }
+        }
+    },
+    "variables": {
+        "templateName": "JoinDomainAndSetLocalAdmins"
+    },
+    "resources": [
+        {
+            "apiVersion": "2016-09-01",
+            "name": "[concat('JoinDomain', parameters('VMname'))]",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Compute/virtualMachines/extensions",
+                            "name": "[concat(parameters('VMname'), '/DSC')]",
+                            "apiVersion": "2017-12-01",
+                            "location": "[resourceGroup().location]",
+                            "tags": {
+                                "Project": "SOE-C"
+                            },
+                            "properties": {
+                                "publisher": "Microsoft.Powershell",
+                                "type": "DSC",
+                                "typeHandlerVersion": "2.73",
+                                "autoUpgradeMinorVersion": true,
+                                "settings": {
+                                    "ModulesUrl": "[parameters('CreateADPDC-Uri')]",
+                                    "ConfigurationFunction": "CreateADPDC.ps1\\JoinAD",
+                                    "Properties": {
+                                        "DomainName": "[parameters('domainToJoin')]",
+                                        "JoinOU": "[parameters('ouPath')]",
+                                        "AdminCreds": {
+                                            "UserName": "[parameters('domainUsername')]",
+                                            "Password": "PrivateSettingsRef:domainPassword"
+                                        }
+                                    }
+                                },
+                                "protectedSettings": {
+                                    "Items": {
+                                        "domainPassword": "[parameters('domainPassword')]"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "outputs": {
+                    }
+                }
+            }
+        },
+        {
+            "apiVersion": "2016-09-01",
+            "name": "[concat('AddGrouptoAdministrators', parameters('VMname'))]",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Compute/virtualMachines/extensions",
+                            "name": "[concat(parameters('VMname'), '/DSC')]",
+                            "apiVersion": "2017-12-01",
+                            "location": "[resourceGroup().location]",
+                            "tags": {
+                                "Project": "SOE-C"
+                            },
+                            "properties": {
+                                "publisher": "Microsoft.Powershell",
+                                "type": "DSC",
+                                "typeHandlerVersion": "2.73",
+                                "autoUpgradeMinorVersion": true,
+                                "settings": {
+                                    "ModulesUrl": "[uri(deployment().properties.templateLink.uri, concat(variables('templateName'),'.zip', parameters('SasToken')))]",
+                                    "ConfigurationFunction": "[concat(variables('templateName'), '.ps1', '\\', variables('templateName'))]",
+                                    "Properties": {
+                                        "DomainGroup": "[parameters('DomainGroup')]",
+                                        "Timestamp": "[parameters('Timestamp')]"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "outputs": {
+                    }
+                }
+            },
+            "dependsOn": [
+                "[concat('JoinDomain', parameters('VMname'))]"
+            ]
+        }
+    ]
+}

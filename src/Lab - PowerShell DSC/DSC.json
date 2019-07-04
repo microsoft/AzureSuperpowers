@@ -1,0 +1,37 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "zipFileURI": {
+            "type": "string"
+        },
+        "FileName": {
+            "type": "string"
+        },
+        "ConfigName": {
+            "type": "string"
+        },
+        "VMname": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VMname'), '/DSC')]",
+            "apiVersion": "2015-06-15",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "publisher": "Microsoft.Powershell",
+                "type": "DSC",
+                "typeHandlerVersion": "2.19",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "ModulesUrl": "[parameters('zipFileURI')]",
+                    "ConfigurationFunction": "[concat(parameters('FileName'), '\\', parameters('ConfigName'))]"
+                }
+            }
+        }
+    ]
+}
