@@ -1,9 +1,5 @@
-Contents {#contents .TOCHeading}
+Table of Contents
 ========
-
-[Azure Superpowers Introduction 4](#_Toc536536996)
-
-[Azure Basic Labs 6](#_Toc536536997)
 
 [1. Lab - Download and Install Tools
 7](#lab---download-and-install-tools)
@@ -175,8 +171,6 @@ Azure PowerShell
 
 [11.4. Troubleshooting 113](#troubleshooting-10)
 
-[Azure Core Labs 114](#azure-core-labs)
-
 [12. Lab - Azure DevOps Prereqs 115](#lab---azure-devops-prereqs)
 
 [12.1. Exercise - Azure DevOps Organization
@@ -224,12 +218,6 @@ zip files
 
 [14.1. Exercise - Setup an Azure DevOps release
 135](#exercise---setup-an-azure-devops-release)
-
-[Azure Next-Level Labs 142](#azure-next-level-labs)
-
-[Appendix 143](#appendix)
-
-[15. Azure DevOps Visio 144](#azure-devops-visio)
 
 Lab - Download and Install Tools
 --------------------------------
@@ -4677,9 +4665,6 @@ agents at the same time.
 With Microsoft-hosted agents, maintenance and upgrades are taken care of
 for you. Each time you run a pipeline, you get a fresh virtual machine.
 The virtual machine is discarded after one use.
-
-Azure Core Labs
-===============
 
 Lab - Azure DevOps Prereqs
 --------------------------
