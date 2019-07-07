@@ -1,14 +1,11 @@
 Table of Contents
 ========
 
-[1. Lab - Download and Install Tools
-7](#lab---download-and-install-tools)
+[1. Lab - Download and Install Tools](#lab---download-and-install-tools)
 
-[1.1. Exercise - Setup Az PowerShell
-8](#exercise---setup-az-powershell-module)
+[1.1. Exercise - Setup Az PowerShell](#exercise---setup-az-powershell-module)
 
-[1.2. Exercise - Setup Git for Windows
-9](#exercise---setup-git-for-windows)
+[1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
 
 [1.3. Exercise - Setup Visual Studio Code
 10](#exercise---setup-visual-studio-code)
