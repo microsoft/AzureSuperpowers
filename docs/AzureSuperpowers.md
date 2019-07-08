@@ -4701,75 +4701,15 @@ Create an Azure DevOps build
 Lab - Azure DevOps Release Continuous Deployment
 --------------------------------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | In this lab, you will explore     |
-|                                   | Continuous Delivery in Azure      |
-|                                   | DevOps.                           |
-|                                   |                                   |
-|                                   | Continuous Delivery (CD) is the   |
-|                                   | process to build, test, configure |
-|                                   | and deploy from a build to a      |
-|                                   | production environment. Multiple  |
-|                                   | testing or staging environments   |
-|                                   | create a Release Pipeline to      |
-|                                   | automate the creation of          |
-|                                   | infrastructure and deployment of  |
-|                                   | applications. Successive          |
-|                                   | environments support              |
-|                                   | progressively longer-running      |
-|                                   | activities of integration, load,  |
-|                                   | and user acceptance testing.      |
-|                                   | Continuous Integration starts the |
-|                                   | CD process and the pipeline       |
-|                                   | stages each successive            |
-|                                   | environment to the next upon      |
-|                                   | successful completion of tests.   |
-|                                   |                                   |
-|                                   | Without Continuous Delivery,      |
-|                                   | software release cycles were      |
-|                                   | previously a bottleneck for       |
-|                                   | application and operation teams.  |
-|                                   | Manual processes led to           |
-|                                   | unreliable releases that produced |
-|                                   | delays and errors. These teams    |
-|                                   | often relied on handoffs that     |
-|                                   | resulted in issues during release |
-|                                   | cycles. The automated release     |
-|                                   | pipeline allows a "fail fast"     |
-|                                   | approach to validation, where the |
-|                                   | tests most likely to fail quickly |
-|                                   | are run first and longer-running  |
-|                                   | tests happen after the faster     |
-|                                   | ones complete successfully.       |
-+===================================+===================================+
-| Estimated Time to Complete        | 45 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Continuous Integration starts |
-|                                   |     the CD process and the        |
-|                                   |     pipeline stages each          |
-|                                   |     successive environment the    |
-|                                   |     next upon successful          |
-|                                   |     completion of tests.          |
-|                                   |                                   |
-|                                   | 2.  CD automates deployment from  |
-|                                   |     one environment to the next   |
-|                                   |     and may optionally depend on  |
-|                                   |     an approval step, in which a  |
-|                                   |     decision maker signs off on   |
-|                                   |     the changes electronically.   |
-|                                   |     CD may create an auditable    |
-|                                   |     record of the approval in     |
-|                                   |     order to satisfy regulatory   |
-|                                   |     procedures or other control   |
-|                                   |     objectives.                   |
-|                                   |                                   |
-|                                   | 3.  Modern release pipelines      |
-|                                   |     allow development teams to    |
-|                                   |     deploy new features fast and  |
-|                                   |     safely.                       |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
+| Lab Description | In this lab, you will explore Continuous Delivery in Azure DevOps. |
+| :------------ | :-------------- |
+|  | Continuous Delivery (CD) is the process to build, test, configure and deploy from a build to a production environment. Multiple testing or staging environments create a Release Pipeline to automate the creation of infrastructure and deployment of applications. Successive environments support progressively longer-running activities of integration, load, and user acceptance testing. Continuous Integration starts the CD process and the pipeline stages each successive environment to the next upon successful completion of tests. |
+|  | Without Continuous Delivery, software release cycles were previously a bottleneck for application and operation teams. Manual processes led to unreliable releases that produced delays and errors. These teams often relied on handoffs that resulted in issues during release cycles. The automated release pipeline allows a “fail fast” approach to validation, where the tests most likely to fail quickly are run first and longer-running tests happen after the faster ones complete successfully. |
+| Estimated Time to Complete | 45 minutes |
+| Key Takeaways | 1. Continuous Integration starts the CD process and the pipeline stages each successive environment the next upon successful completion of tests. |
+|  | 2. CD automates deployment from one environment to the next and may optionally depend on an approval step, in which a decision maker signs off on the changes electronically. CD may create an auditable record of the approval in order to satisfy regulatory procedures or other control objectives. |
+|  | 3. Modern release pipelines allow development teams to deploy new features fast and safely. |
+| Author | Ralph Kyttle |
 
 ### Exercise - Setup an Azure DevOps release
 
