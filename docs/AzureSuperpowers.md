@@ -2671,9 +2671,9 @@ Lab - PowerShell DSC
 
 | Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an(y) Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
 | :------------ | :-------------- |
-| Glossary of Terms | DSC configuration – DSC configurations are PowerShell scripts that define a special type of function. To define a configuration, you use the PowerShell keyword Configuration. Configurations are Declarative PowerShell scripts which define and configure instances of resources. |
-|  | DSC resource – The "make it so" part of DSC. They contain the code that put and keep the target of a configuration in the specified state. Resources reside in PowerShell modules. |
-|  | Local configuration manager (LCM) – The engine by which DSC facilitates the interaction between resources and configurations.  Installed by default on all Windows systems with Windows PowerShell version 4.0 and above. |
+| Glossary of Terms | *DSC configuration* – DSC configurations are PowerShell scripts that define a special type of function. To define a configuration, you use the PowerShell keyword Configuration. Configurations are Declarative PowerShell scripts which define and configure instances of resources. |
+|  | *DSC resource* – The "make it so" part of DSC. They contain the code that put and keep the target of a configuration in the specified state. Resources reside in PowerShell modules. |
+|  | *Local configuration manager (LCM)* – The engine by which DSC facilitates the interaction between resources and configurations.  Installed by default on all Windows systems with Windows PowerShell version 4.0 and above. |
 | Estimated Time to Complete | 60 minutes |
 | Key Takeaways | 1. How to author a DSC configuration |
 |  | 2. How to create a ZIP file that works with Azure (Containing a .ps1 file that has the ‘configuration’ keyword in it) |
