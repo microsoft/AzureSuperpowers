@@ -2684,7 +2684,7 @@ Performing a Git Push using VS Code
     experienced an error of any kind, this is the first place to go to
     troubleshoot.
 
-### Exercise -- Pull Request
+### Exercise - Pull Request
 
 Merging Changes to your master branch via Pull Request
 
