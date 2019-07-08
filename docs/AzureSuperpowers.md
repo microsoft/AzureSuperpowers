@@ -2555,36 +2555,13 @@ Merging Changes to your master branch via Pull Request
 Lab - AD Super Lab Deployment
 -----------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | This lab is a prerequisite for    |
-|                                   | completing the ARM Templates      |
-|                                   | (Advanced) lab. In this lab, you  |
-|                                   | will deploy resources into Azure  |
-|                                   | using Azure PowerShell and ARM    |
-|                                   | Templates.                        |
-+===================================+===================================+
-| Glossary of Terms                 | *ARM Template --* An ARM Template |
-|                                   | is a JavaScript Object Notation   |
-|                                   | (JSON) file that defines one or   |
-|                                   | more resources to deploy to an    |
-|                                   | Azure resource group. It also     |
-|                                   | defines the dependencies between  |
-|                                   | the deployed resources. The       |
-|                                   | template can be used to deploy    |
-|                                   | the resources consistently and    |
-|                                   | repeatedly                        |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 10 minutes (User tasks)           |
-|                                   |                                   |
-|                                   | 30 minutes (Deployment of         |
-|                                   | resources to Azure)               |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Deploying a complex solution  |
-|                                   |     can be made simple using ARM  |
-|                                   |     Templates                     |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
+| Lab Description | This lab is a prerequisite for completing the ARM Templates (Advanced) lab.  In this lab, you will deploy resources into Azure using Azure PowerShell and ARM Templates. |
+| :------------ | :-------------- |
+| Glossary of Terms | *ARM Template --* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly |
+| Estimated Time to Complete | 10 minutes (User tasks) |
+|  | 30 minutes (Deployment of resources to Azure) |
+| Key Takeaways | 1. Deploying a complex solution can be made simple using ARM Templates |
+| Author | Ralph Kyttle |
 
 This lab should only take a few minutes to complete the user initiated
 actions. Once the deployment has started, it will take approximately 30
