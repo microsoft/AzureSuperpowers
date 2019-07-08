@@ -1849,58 +1849,17 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 Lab - Azure DevOps
 ------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | In this lab you will create a new |
-|                                   | Azure DevOps organization, a new  |
-|                                   | project, and a new code           |
-|                                   | repository. You will initialize   |
-|                                   | the code repository and clone it  |
-|                                   | to your local computer, and you   |
-|                                   | will add other users to your      |
-|                                   | project so they can collaborate   |
-+===================================+===================================+
-| Glossary of Terms                 | *organization* - The highest      |
-|                                   | object in the Azure DevOps        |
-|                                   | hierarchy, which has a DNS name   |
-|                                   | https://dev.azure.com/\<organizat |
-|                                   | ionname\>                         |
-|                                   | and can have many projects under  |
-|                                   | it                                |
-|                                   |                                   |
-|                                   | *project --* a project is for     |
-|                                   | managing collaboration. Users can |
-|                                   | be invited to the project, which  |
-|                                   | may contain multiple code         |
-|                                   | repositories.                     |
-|                                   |                                   |
-|                                   | *repository --* A git repository  |
-|                                   | is all code files, all branches,  |
-|                                   | all metadata, and commit history  |
-|                                   | of changes                        |
-|                                   |                                   |
-|                                   | *clone* -- the 'git clone' is a   |
-|                                   | copy of an entire code repository |
-|                                   | from an 'origin' (such as Azure   |
-|                                   | DevOps) to a 'remote' location    |
-|                                   | (such as your local workstation). |
-|                                   | Additionally, a clone knows where |
-|                                   | the origin is, so it can also     |
-|                                   | 'sync' with the origin code       |
-|                                   | repository.                       |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 30 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  The hierarchy of Azure DevOps |
-|                                   |                                   |
-|                                   | 2.  Familiarity with Azure DevOps |
-|                                   |     projects                      |
-|                                   |                                   |
-|                                   | 3.  Able to interact with the git |
-|                                   |     repositories that live inside |
-|                                   |     Azure DevOps projects         |
-+-----------------------------------+-----------------------------------+
-| Author                            | Keith Hitchcock                   |
-+-----------------------------------+-----------------------------------+
+| Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate |
+| :------------ | :-------------- |
+| Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/<organizationname> and can have many projects under it |
+|  | *project --* a project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
+|  | *repository --* A git repository is all code files, all branches, all metadata, and commit history of changes |
+|  | *clone* -- the ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a ‘remote’ location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
+| Estimated Time to Complete | 30 minutes |
+| Key Takeaways | 1. The hierarchy of Azure DevOps |
+|  | 2. Familiarity with Azure DevOps projects |
+|  | 3. Able to interact with the git repositories that live inside Azure DevOps projects |
+| Author | Keith Hitchcock |
 
 Process Flow
 
