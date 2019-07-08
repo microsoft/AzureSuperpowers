@@ -4036,46 +4036,13 @@ group by deploying an empty template with complete mode
 Lab - Azure DevOps Service Connections
 --------------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | In this lab you will create a new |
-|                                   | Service Connection in Azure       |
-|                                   | DevOps which will connect to      |
-|                                   | Azure and allow build/release     |
-|                                   | steps in Azure DevOps to interact |
-|                                   | with and control an Azure         |
-|                                   | subscription.                     |
-+===================================+===================================+
-| Glossary of Terms                 | *Service Connection* - in Azure   |
-|                                   | DevOps a service connection holds |
-|                                   | the connection info               |
-|                                   | (subscription, etc) as well as    |
-|                                   | the authentication info (service  |
-|                                   | principal ID, tenant ID, and      |
-|                                   | password) to an external entity   |
-|                                   | (like Azure) which can be used in |
-|                                   | automated Azure DevOps build      |
-|                                   | steps to automatically perform    |
-|                                   | actions on behalf of the project. |
-|                                   | This keeps authentication out of  |
-|                                   | source controlled code.           |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 30 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  In order for Azure DevOps to  |
-|                                   |     interact with Azure you need  |
-|                                   |     to create a Service           |
-|                                   |     Connection in your project    |
-|                                   |                                   |
-|                                   | 2.  Any PowerShell scripts you    |
-|                                   |     write or use do not need to   |
-|                                   |     log in or specify their Azure |
-|                                   |     subscription target, Azure    |
-|                                   |     DevOps will handle all that   |
-|                                   |     prior to running your scripts |
-|                                   |     in Azure                      |
-+-----------------------------------+-----------------------------------+
-| Author                            | Keith Hitchcock                   |
-+-----------------------------------+-----------------------------------+
+| Lab Description | In this lab you will create a new Service Connection in Azure DevOps which will connect to Azure and allow build/release steps in Azure DevOps to interact with and control an Azure subscription. |
+| :------------ | :-------------- |
+| Glossary of Terms | *Service Connection* - An Azure DevOps a service connection holds the connection info (subscription, etc) as well as the authentication info (service principal ID, tenant ID, and password) to an external entity (like Azure) which can be used in automated Azure DevOps build steps to automatically perform actions on behalf of the project.  This keeps authentication out of source controlled code. |
+| Estimated Time to Complete | 30 minutes |
+| Key Takeaways | 1. In order for Azure DevOps to interact with Azure you need to create a Service Connection in your project |
+|  | 2. Any PowerShell scripts you write or use do not need to log in or specify their Azure subscription target, Azure DevOps will handle all that prior to running your scripts in Azure |
+| Author | Keith Hitchcock |
 
 ### Exercise - Create a Service Principal
 
