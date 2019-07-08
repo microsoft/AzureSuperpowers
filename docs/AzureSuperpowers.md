@@ -229,49 +229,13 @@ zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zi
 Lab - Download and Install Tools
 --------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | This lab covers the tools that    |
-|                                   | you will be using in the rest of  |
-|                                   | the labs                          |
-+===================================+===================================+
-| Estimated Time to Complete        | 20 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Download and install the      |
-|                                   |     required tools                |
-|                                   |                                   |
-|                                   | 2.  Know what version of the      |
-|                                   |     tools are installed           |
-|                                   |                                   |
-|                                   | By the end of this lab, you       |
-|                                   | should have Azure PowerShell,     |
-|                                   | Git,\                             |
-|                                   | Visual Studio Code, and Azure     |
-|                                   | Storage Explorer on your          |
-|                                   | workstation, and they should all  |
-|                                   | be up to date.                    |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
-
-Lab Description	This lab covers the tools that you will be using in the rest of the labs
-
-Estimated Time to Complete	20 minutes
-
-Key Takeaways	1.	Download and install the required tools
-2.	Know what version of the tools are installed
-
-By the end of this lab, you should have Azure PowerShell, Git, 
-Visual Studio Code, and Azure Storage Explorer on your workstation, and they should all be up to date.
-
-Author	Ralph Kyttle
-
-Table test
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Lab Description            | This lab covers the tools that you will be using in the rest of the labs                                                                                              |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estimated Time to Complete | 20 minutes                                                                                                                                                            |
+| Key Takeaways              | 1. Download and install the required tools                                                                                                                            |
+|                            | 2. Know what version of the tools are installed                                                                                                                       |
+|                            | By the end of this lab, you should have Azure PowerShell, Git, Visual Studio Code, and Azure Storage Explorer on your workstation, and they should all be up to date. |
+| Author                     | Ralph Kyttle                                                                                                                                                          |
 
 Purpose
 
