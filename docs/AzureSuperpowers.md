@@ -230,7 +230,7 @@ Lab - Download and Install Tools
 --------------------------------
 
 | Lab Description | This lab covers the tools that you will be using in the rest of the labs |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :------------ | :-------------- |
 | Estimated Time to Complete | 20 minutes |
 | Key Takeaways | 1. Download and install the required tools |
 |  | 2. Know what version of the tools are installed |
