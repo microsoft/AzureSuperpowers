@@ -3690,93 +3690,17 @@ Verify the File Upload in Azure Storage Explorer
 Lab - ARM Templates (Advanced)
 ------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | In this lab, you will explore     |
-|                                   | some advanced usage of Azure      |
-|                                   | Resource Manager (ARM) templates  |
-|                                   | to deploy resources into a        |
-|                                   | Resource Group.                   |
-|                                   |                                   |
-|                                   | To deploy a solution, you can use |
-|                                   | either a single template or a     |
-|                                   | main template with many related   |
-|                                   | sub-templates. The related        |
-|                                   | template can be either a separate |
-|                                   | file that is linked to from the   |
-|                                   | main template, or a template that |
-|                                   | is nested directly within the     |
-|                                   | main template.                    |
-|                                   |                                   |
-|                                   | Linked templates enable you to    |
-|                                   | break down the solution into      |
-|                                   | targeted components, and          |
-|                                   | facilitate code reuse. When using |
-|                                   | linked template, you create a     |
-|                                   | main template that receives the   |
-|                                   | all parameter values needed for   |
-|                                   | the deployment. The main template |
-|                                   | contains all the needed values    |
-|                                   | that are expected by the linked   |
-|                                   | templates and passes those values |
-|                                   | on as needed.                     |
-+===================================+===================================+
-| Glossary of Terms                 | *ARM Template --* An ARM Template |
-|                                   | is a JavaScript Object Notation   |
-|                                   | (JSON) file that defines one or   |
-|                                   | more resources to deploy to an    |
-|                                   | Azure resource group. It also     |
-|                                   | defines the dependencies between  |
-|                                   | the deployed resources. The       |
-|                                   | template can be used to deploy    |
-|                                   | the resources consistently and    |
-|                                   | repeatedly.                       |
-|                                   |                                   |
-|                                   | *PowerShell DSC extension --* The |
-|                                   | Azure PowerShell DSC extension    |
-|                                   | uses the Azure VM Agent framework |
-|                                   | to deliver, enact, and report on  |
-|                                   | DSC configurations running on     |
-|                                   | Azure VMs. The DSC extension      |
-|                                   | accepts a configuration document  |
-|                                   | and a set of parameters. The      |
-|                                   | extension requires that the DSC   |
-|                                   | configuration and any required    |
-|                                   | DSC resource modules be combined  |
-|                                   | into a ZIP file that is made      |
-|                                   | accessible to the Azure VM at the |
-|                                   | time the extension is called.     |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 60 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  ARM templates allow for a lot |
-|                                   |     of customization and          |
-|                                   |     flexibility                   |
-|                                   |                                   |
-|                                   | 2.  Linked templates should be    |
-|                                   |     designed as modular building  |
-|                                   |     blocks that can be reused     |
-|                                   |     across multiple solutions,    |
-|                                   |     and can be deployed           |
-|                                   |     independently if desired      |
-|                                   |                                   |
-|                                   | 3.  The PowerShell DSC extension  |
-|                                   |     can be called multiple times  |
-|                                   |     in a template, as long as the |
-|                                   |     same name is always used when |
-|                                   |     defining each                 |
-|                                   |     Microsoft.Compute/virtualMach |
-|                                   | ines/extensions                   |
-|                                   |     DSC resource. Following this  |
-|                                   |     strategy, along with the      |
-|                                   |     Microsoft.Resources/deploymen |
-|                                   | ts                                |
-|                                   |     resource allows you to create |
-|                                   |     modular components, executed  |
-|                                   |     in a desired order using the  |
-|                                   |     ARM dependsOn element.        |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
+| Lab Description | In this lab, you will explore some advanced usage of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group. |
+|  | To deploy a solution, you can use either a single template or a main template with many related sub-templates. The related template can be either a separate file that is linked to from the main template, or a template that is nested directly within the main template. |
+|  | Linked templates enable you to break down the solution into targeted components, and facilitate code reuse.  When using linked template, you create a main template that receives the all parameter values needed for the deployment. The main template contains all the needed values that are expected by the linked templates and passes those values on as needed. |
+| :------------ | :-------------- |
+| Glossary of Terms | *ARM Template* – An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly. |
+|  | *PowerShell DSC extension* – The Azure PowerShell DSC extension uses the Azure VM Agent framework to deliver, enact, and report on DSC configurations running on Azure VMs.  The DSC extension accepts a configuration document and a set of parameters.  The extension requires that the DSC configuration and any required DSC resource modules be combined into a ZIP file that is made accessible to the Azure VM at the time the extension is called. |
+| Estimated Time to Complete | 60 minutes |
+| Key Takeaways | 1. ARM templates allow for a lot of customization and flexibility |
+|  | 2. Linked templates should be designed as modular building blocks that can be reused across multiple solutions, and can be deployed independently if desired |
+|  | 3. The PowerShell DSC extension can be called multiple times in a template, as long as the same name is always used when defining each Microsoft.Compute/virtualMachines/extensions DSC resource.  Following this strategy, along with the Microsoft.Resources/deployments resource allows you to create modular components, executed in a desired order using the ARM dependsOn element. |
+| Author | Ralph Kyttle |
 
 Single Templates vs Linked Templates
 
