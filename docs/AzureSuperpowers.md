@@ -80,7 +80,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [5.3. Exercise - Git commit](#exercise---git-commit)
 
-[5.4. Exercise - Git Pull / Git Push](#exercise---git-pull-git-push)
+[5.4. Exercise - Git Pull and Git Push](#exercise---git-pull-and-git-push)
 
 [5.5. Exercise - Pull Request](#exercise---pull-request)
 
@@ -2636,7 +2636,7 @@ Update ARM Template and commit changes
     Code is indicating that there are two commits that are ready to be
     pushed to the Git repository stored in Azure DevOps.
 
-### Exercise -- Git Pull / Git Push
+### Exercise - Git Pull and Git Push
 
 Introduction
 
