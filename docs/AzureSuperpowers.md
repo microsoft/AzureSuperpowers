@@ -515,8 +515,7 @@ VS Code Interface Overview
     e.  Status Bar - Information about the opened project and the files
         you edit.
 
-> ![code basics hero](./media/image3.png){width="5.7189457567804025in"
-> height="3.92417104111986in"}
+> ![code basics hero](./media/image3.png)
 
 Make the VS Code Interface your own
 
@@ -563,8 +562,7 @@ Make the VS Code Interface your own
 
 7.  Click the braces { } on at the top right of your window to **Open
     Settings (JSON)**\
-    ![](./media/image4.png){width="6.473611111111111in"
-    height="1.7368055555555555in"}
+    ![](./media/image4.png)
 
 8.  This will open a settings.json file, which will list configured user
     settings that override default settings. Note that each line is
@@ -602,8 +600,7 @@ Install VS Code extensions
     b.  Install the latest available version of the PowerShell
         extension, which may be newer than the version shown below.
 
-> ![](./media/image5.png){width="4.800694444444445in"
-> height="3.0520833333333335in"}
+> ![](./media/image5.png)
 
 4.  You will not need any other VS Code extensions for this course. You
     may find extensions that attempt to connect you into Git
@@ -618,8 +615,7 @@ Install VS Code extensions
     bring up the Select Language Mode drop-down where you can select
     another language for the current file you are working on.
 
-    ![](./media/image6.png){width="6.5in"
-    height="0.37569444444444444in"}
+    ![](./media/image6.png)
 
 6.  Regarding PowerShell authoring in VS Code, you will want to have the
     PowerShell extension installed. You will also want to ensure that
@@ -628,7 +624,7 @@ Install VS Code extensions
     Integrated Console. **You will need have at least 1 PowerShell file
     open in VS Code for the PowerShell Integrated Console to appear.**
 
-    ![](./media/image7.png){width="6.5in" height="2.1381944444444443in"}
+    ![](./media/image7.png)
 
 7.  Operating in this configuration will provide you with the best
     PowerShell experience, and enable familiar options from the
@@ -652,14 +648,13 @@ Clone Azure Superpowers via the VS Code GUI
 
 2.  Click on the **Clone or download** button
 
-    ![](./media/image8.png){width="6.5in" height="3.575in"}
+    ![](./media/image8.png)
 
 3.  Click the icon as shown below to copy the repository URL to your
     clipboard so that you can paste it into VS Code in the next steps
     below
 
-    ![](./media/image9.png){width="3.609722222222222in"
-    height="1.6826388888888888in"}
+    ![](./media/image9.png)
 
 4.  Create the following directory on your local workstation:
     C:\\AzSuperClass\
@@ -810,8 +805,7 @@ Azure Storage Explorer Walkthrough
 
 3.  Click the link to Add an account
 
-    ![](./media/image10.png){width="2.7708333333333335in"
-    height="1.861431539807524in"}
+    ![](./media/image10.png)
 
 4.  The "Connect to Azure Storage" wizard will launch, select **Add an
     Azure Account** and click **Sign in... (Pay attention to the Azure
@@ -866,7 +860,7 @@ Azure Storage Explorer Walkthrough
 
     -   Refresh
 
-> ![](./media/image11.png){width="6.5in" height="1.3805555555555555in"}
+> ![](./media/image11.png)
 
 10. Microsoft Azure Storage Explorer provides a convenient GUI for
     managing storage accounts. This can be useful for easily downloading
@@ -1071,9 +1065,9 @@ for the current file.
 If it is not already set to PowerShell, click on Plain Text and change
 it to PowerShell
 
-![](./media/image6.png){width="6.5in" height="0.37569444444444444in"}
+![](./media/image6.png)
 
-![](./media/image12.png){width="6.5in" height="5.2652777777777775in"}
+![](./media/image12.png)
 
 Log into Azure via PowerShell
 
@@ -1347,8 +1341,7 @@ important
 -   You should be executing PowerShell commands using the PowerShell
     Integrated Console in VS Code
 
-    ![](./media/image13.png){width="6.490277777777778in"
-    height="1.6888888888888889in"}
+    ![](./media/image13.png)
 
 -   F8 should be used to execute PowerShell commands. You can execute
     any single line of code just by ensuring your cursor is on that
@@ -1406,12 +1399,11 @@ them to be.
 
 ARM Template Format
 
-![](./media/image14.png){width="6.5in" height="2.0729166666666665in"}
+![](./media/image14.png)
 
 ARM Templates vs Iterative PowerShell
 
-![](./media/image15.png){width="6.912136920384952in"
-height="2.727267060367454in"}
+![](./media/image15.png)
 
 Where can I see examples of ARM Templates?
 
@@ -1427,8 +1419,7 @@ Resource Manager templates)
 
 1.  Select **File** \> **Open Folder...**
 
-> ![](./media/image16.png){width="2.404323053368329in"
-> height="1.6041666666666667in"}
+> ![](./media/image16.png)
 
 2.  Open the following folder: C:\\AzSuperClass\\Azure-Superpowers
 
@@ -1459,7 +1450,7 @@ Ensure that you have selected the PowerShell Integrated Console
 **IMPORTANT: You must have a .ps1 file open inside of VS Code in order
 to utilize the PowerShell Integrated Console**
 
-![](./media/image7.png){width="6.5in" height="2.1381944444444443in"}
+![](./media/image7.png)
 
 Log into Azure via PowerShell
 
@@ -1503,8 +1494,7 @@ the Resource Group prior to this step. Execute the following PowerShell:
 
 > The following screenshot shows the expected output
 >
-> ![](./media/image17.png){width="4.072916666666667in"
-> height="3.062084426946632in"}
+> ![](./media/image17.png)
 
 Upon completion of the deployment, you can validate that your storage
 account resource now exists by viewing it in the Azure portal, or by
@@ -1566,8 +1556,7 @@ Variables and Resources sections of the ARM template.
 > The needed edits can be found in the Azure Superpowers Git repository
 > inside the edit files shown below.
 >
-> ![](./media/image18.png){width="2.0468897637795274in"
-> height="1.7864709098862641in"}
+> ![](./media/image18.png)
 >
 > Update your parameters section of **StorageAccount.json** to match
 > below, using the edit1.json for the input
@@ -1863,7 +1852,7 @@ Lab - Azure DevOps
 
 Process Flow
 
-![](./media/image19.png){width="6.5in" height="1.38125in"}
+![](./media/image19.png)
 
 ### Exercise - Create new Azure DevOps organization
 
@@ -1894,8 +1883,7 @@ Create your first project
 
 1.  Create a project to initialize your organization
 
-    ![](./media/image20.png){width="6.5in"
-    height="2.6305555555555555in"}
+    ![](./media/image20.png)
 
 2.  Project names must be unique within an organization. Name your
     project **Azure Superpowers**. Select Private visibility, then click
@@ -1906,8 +1894,7 @@ Create your first project
 
 3.  Select **Repos** on the 'Welcome to the project!' screen
 
-    ![](./media/image21.png){width="3.1573622047244094in"
-    height="3.567707786526684in"}
+    ![](./media/image21.png)
 
 Initialize the default git repository
 
@@ -2094,23 +2081,20 @@ Create a new dev branch in your new project in Azure DevOps
 3.  Once you are in the Azure Superpowers project, enter the Repos
     section of the project
 
-    ![](./media/image22.png){width="5.382235345581802in"
-    height="3.4375in"}
+    ![](./media/image22.png)
 
 4.  Under Repos, select the **Branches** button
 
 5.  Click the **New branch** button
 
-    ![](./media/image23.png){width="6.5in"
-    height="2.0993055555555555in"}
+    ![](./media/image23.png)
 
 6.  Create one new branch, and name it dev. Base the dev branch on the
     master branch.
 
     Example:
 
-    ![](./media/image24.png){width="5.692750437445319in"
-    height="4.250030621172353in"}
+    ![](./media/image24.png)
 
 Fetching new branches in VS Code
 
@@ -2133,8 +2117,7 @@ Fetching new branches in VS Code
     say **Yes** so that VS Code will automatically notice new branches
     when they are created
 
-    ![](./media/image25.png){width="4.552083333333333in"
-    height="1.0037926509186352in"}
+    ![](./media/image25.png)
 
 Switching between branches
 
@@ -2142,7 +2125,7 @@ Switching between branches
 
 2.  Type **git checkout to** and press enter
 
-    ![](./media/image26.png){width="6.5in" height="1.007638888888889in"}
+    ![](./media/image26.png)
 
 3.  Notice that all available branches are listed in the command pallet.
     Click **origin/dev** which will create a local copy of your dev
@@ -2155,10 +2138,8 @@ Switching between branches
     with the currently selected branch which should now state **dev**.
     See screenshot following below for an example.
 
-    ![](./media/image27.png){width="2.9248950131233595in"
-    height="3.8020833333333335in"}
-    ![](./media/image28.png){width="1.8020964566929134in"
-    height="0.9947987751531059in"}
+    ![](./media/image27.png)
+    ![](./media/image28.png)
 
 5.  Press F1 to activate the Command Pallet
 
@@ -2223,8 +2204,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 3.  Once you are in the Azure Superpowers project, enter the Repos
     section of the project
 
-    ![](./media/image22.png){width="5.382235345581802in"
-    height="3.4375in"}
+    ![](./media/image22.png)
 
 4.  Under Repos, select the **Branches** button
 
@@ -2236,8 +2216,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
     ellipsis (\...) icon. Select **Branch policies** from the context
     menu.
 
-    ![](./media/image29.png){width="6.497222222222222in"
-    height="2.9305555555555554in"}
+    ![](./media/image29.png)
 
 7.  For this example, you will setup a very simple branch policy to
     ensure that code cannot be pushed directly to the **master** branch.
@@ -2245,8 +2224,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 8.  Set your branch policy to match the settings shown below and save
     your changes to apply your new policy configuration.
 
-    ![](./media/image30.png){width="4.481305774278216in"
-    height="4.244792213473316in"}
+    ![](./media/image30.png)
 
 9.  Notice how **Allow users to approve their own changes** is selected.
     If **Allow users to approve their own changes** is not selected, the
@@ -2321,7 +2299,7 @@ Copy files from GitHub
 
 8.  Completing the steps above should result with the following:
 
-    ![](./media/image31.png){width="6.5in" height="3.03125in"}
+    ![](./media/image31.png)
 
 Performing a Commit using VS Code
 
@@ -2331,8 +2309,7 @@ Performing a Commit using VS Code
     below. When there are changes to commit, the Source Control icon
     will indicate how many files have either been created or modified.
 
-    ![](./media/image32.png){width="4.3875in"
-    height="3.9770833333333333in"}
+    ![](./media/image32.png)
 
 3.  Clicking on the Source Control icon will change your view to show
     the list of changes that are able to be staged and committed to the
@@ -2364,8 +2341,7 @@ Performing a Commit using VS Code
     prompted, select **Yes** to allow VS Code to stage and commit all of
     the files.
 
-    ![](./media/image33.png){width="5.313241469816273in"
-    height="1.4897911198600176in"}
+    ![](./media/image33.png)
 
 8.  In the status bar at the bottom of VS Code, notice the number 1 next
     to the up arrow. This indicates that there is one pending commit
@@ -2380,8 +2356,7 @@ Update ARM Template and commit changes
 3.  In the Explorer View (Select the File icon in the Activity Bar)
     expand out the folder structure for Azure Superpowers\\Lab -
     Git\\101-vm-simple-windows\
-    ![](./media/image34.png){width="4.390657261592301in"
-    height="4.000029527559055in"}
+    ![](./media/image34.png)
 
 4.  In this exercise you will make changes to the **azuredeploy.json**
     and **azuredeploy.parameters.json** files, and you will commit the
@@ -2411,11 +2386,9 @@ Update ARM Template and commit changes
     to many files and you would just like them all to be added as a
     single commit.
 
-    ![](./media/image33.png){width="5.313241469816273in"
-    height="1.4897911198600176in"}
+    ![](./media/image33.png)
 
-    ![](./media/image35.png){width="6.526388888888889in"
-    height="4.157638888888889in"}
+    ![](./media/image35.png)
 
 <!-- -->
 
@@ -2462,15 +2435,13 @@ Performing a Git Push using VS Code
     screenshot VS Code is not aware of any commits that need to be
     pulled down from Azure DevOps at this time, as we see a 0 next to
     the arrow for commits to be pulled down.\
-    ![](./media/image36.png){width="1.9270975503062118in"
-    height="1.536469816272966in"}
+    ![](./media/image36.png)
 
 3.  In order to push your changes up to the Azure DevOps repo via a
     **git push**, click on **Source Control**, click on the ellipsis
     icon, then click **Push**
 
-    ![](./media/image37.png){width="4.138762029746282in"
-    height="3.1988188976377954in"}
+    ![](./media/image37.png)
 
 4.  Depending on your device configuration, you may be prompted for
     credentials in order to complete the push.
@@ -2506,8 +2477,7 @@ Merging Changes to your master branch via Pull Request
 5.  Once you are in the Azure Superpowers project, enter the Repos
     section of the project
 
-    ![](./media/image22.png){width="5.382235345581802in"
-    height="3.4375in"}
+    ![](./media/image22.png)
 
 6.  Select the Pull requests button, which will bring you to the
     following page:
@@ -2523,7 +2493,7 @@ Merging Changes to your master branch via Pull Request
 9.  In this case, you will want to merge changes from the **dev** branch
     into the **master** branch.
 
-    ![](./media/image38.png){width="6.5in" height="1.113888888888889in"}
+    ![](./media/image38.png)
 
 10. You should give a clear title for the pull request that describes
     the changes in the branch. In the description field give a clear
@@ -2536,19 +2506,16 @@ Merging Changes to your master branch via Pull Request
 
 11. Click the Create button to create the pull request.
 
-    ![](./media/image39.png){width="6.491666666666666in"
-    height="4.1618055555555555in"}
+    ![](./media/image39.png)
 
 12. Approve the pull request and complete it.
 
-    ![](./media/image40.png){width="6.473611111111111in"
-    height="2.7368055555555557in"}
+    ![](./media/image40.png)
 
 13. On the **Complete pull request** window, **uncheck** the box that
     will delete your dev branch, and click **Complete merge**
 
-    ![](./media/image41.png){width="4.47248687664042in"
-    height="8.083213035870516in"}
+    ![](./media/image41.png)
 
 ### Troubleshooting
 
@@ -2575,8 +2542,7 @@ Resource Manager templates)
 
 1.  Select **File** \> **Open Folder...**
 
-> ![](./media/image16.png){width="2.404323053368329in"
-> height="1.6041666666666667in"}
+> ![](./media/image16.png)
 
 2.  Open the following **folder**: C:\\MyAzureProject\\Azure
     Superpowers\\Lab - ARM Templates Advanced
@@ -2701,22 +2667,20 @@ PowerShell DSC
 
 Local DSC Flow
 
-![](./media/image42.emf){width="6.5in" height="3.486111111111111in"}
+![](./media/image42.png)
 
 Azure DSC Flow
 
-![](./media/image43.emf){width="6.5in" height="3.4451388888888888in"}
+![](./media/image43.png)
 
 Basic PowerShell Function
 
-![](./media/image44.png){width="6.5in" height="1.7527777777777778in"}
+![](./media/image44.png)
 
 Basic DSC Configuration
 
-![](./media/image45.png){width="6.5in" height="2.8256944444444443in"}
+![](./media/image45.png)
 
-![](./media/image45.png){width="5.718698600174978in"
-height="2.4861843832020996in"}Run Configuration to output a MOF
 
 ### Exercise - Exploring DSC Custom Resources on the Web
 
@@ -2826,12 +2790,12 @@ For example, note how when you click on the parameters button, the value
 it has listed for location looks a bit different from what you selected
 in the portal.
 
-![](./media/image46.png){width="6.489583333333333in" height="0.8125in"}
+![](./media/image46.png)
 
 o.  To return back to the deployment summary, click on the X to exit out
     from the Template
 
-![](./media/image47.png){width="6.489583333333333in" height="0.6875in"}
+![](./media/image47.png)
 
 p.  Click OK to start the deployment of your VM, which will take 5-10
     minutes to complete.
@@ -3022,8 +2986,7 @@ ResourcesNotInDesiredState
 
 3.  Expected output from the commands listed above is shown below:
 
-    ![](./media/image48.png){width="5.308303805774278in"
-    height="5.708695319335083in"}
+    ![](./media/image48.png)
 
 4.  Normally, you would run Start-DscConfiguration to apply a
     configuration to a system to bring it into the desired state.
@@ -3068,8 +3031,7 @@ be using a publicly accessible URI to reduce the likelihood that
 something goes wrong.
 
 1.  Open Server Manager and turn off Internet Explorer Enhanced Security
-    Configuration![](./media/image49.png){width="6.491666666666666in"
-    height="3.786111111111111in"}
+    Configuration![](./media/image49.png)
 
 2.  Open the Azure portal from inside the DSC1 VM
 
@@ -3568,7 +3530,7 @@ Verify the File Upload in Azure Storage Explorer
 2.  **Refresh** the files within the **sasexample** storage container
     (Note the location of the Refresh button in the screenshot below)
 
-    ![](./media/image50.png){width="6.5in" height="3.2in"}
+    ![](./media/image50.png)
 
 3.  Notice **File1**.**txt** is visible from Azure Storage Explorer
 
@@ -3704,7 +3666,7 @@ Lab - ARM Templates (Advanced)
 
 Single Templates vs Linked Templates
 
-![](./media/image51.png){width="6.5in" height="2.861111111111111in"}
+![](./media/image51.png)
 
 ### Exercise - Review an existing Advanced ARM Template
 
@@ -4290,16 +4252,14 @@ View the Project repository
 
 1.  Select the **Repos** tab
 
-    ![](./media/image52.png){width="6.122463910761155in"
-    height="3.439306649168854in"}
+    ![](./media/image52.png)
 
 Initialize the Project repository
 
 1.  Click on the **Initialize** button to initialize the repository with
     a template README file
 
-    ![](./media/image53.png){width="6.497222222222222in"
-    height="3.3409722222222222in"}
+    ![](./media/image53.png)
 
 Clone git repository from Azure DevOps to your local system
 
@@ -4370,8 +4330,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 4.  Set your branch policy to match the settings shown below and save
     your chances to apply your new policy configuration.
 
-    ![](./media/image30.png){width="4.481305774278216in"
-    height="4.244792213473316in"}
+    ![](./media/image30.png)
 
 5.  Notice how **Allow users to approve their own changes** is selected.
     If **Allow users to approve their own changes** is not selected, the
@@ -4411,8 +4370,7 @@ Extract zip files and commit code to the dev branch in your repository
 5.  The dev branch of your repository needs to look **EXACTLY** as
     follows
 
-    ![](./media/image54.png){width="2.917465004374453in"
-    height="2.768786089238845in"}
+    ![](./media/image54.png)
 
 6.  Ensure that your dev branch looks **EXACTLY** like the screenshot
     above. Typical issues encountered in this step usually relate to
@@ -4452,7 +4410,7 @@ Merge changes to the master branch via Pull Request
 9.  On the **Complete pull request** window, uncheck the box which will
     delete your dev branch and click **Complete merge**
 
-> ![](./media/image55.png){width="6.5in" height="4.172916666666667in"}
+> ![](./media/image55.png)
 
 ### Exercise - Service Principal
 
@@ -4505,8 +4463,7 @@ Create a Storage Account
     may look different as the portal updates frequently, but the
     information needed to deploy should be listed below.
 
-    ![](./media/image56.png){width="4.375276684164479in"
-    height="4.430435258092738in"}
+    ![](./media/image56.png)
 
 5.  Click on the **Review + create** button
 
@@ -4516,8 +4473,7 @@ Create a Storage Account
     **(Private)** in the blob storage configuration. Name the container
     'dsc'
 
-    ![](./media/image57.png){width="5.4739884076990375in"
-    height="4.68798009623797in"}
+    ![](./media/image57.png)
 
 ### Exercise - Create two new Resource Groups for your application deployment
 
@@ -4615,8 +4571,7 @@ Create an Azure DevOps build
 
 8.  For the **Agent pool** select 'Hosted Windows 2019 with VS2019'
 
-    ![](./media/image58.png){width="6.5in"
-    height="1.6541666666666666in"}
+    ![](./media/image58.png)
 
 9.  Under 'Agent job 1' click the + sign to add a new task
 
@@ -4624,26 +4579,25 @@ Create an Azure DevOps build
     **(Please note: This is just the PowerShell task, not the Azure
     PowerShell task)**
 
-    ![](./media/image59.png){width="6.5in" height="3.129166666666667in"}
+    ![](./media/image59.png)
 
 11. Add an Azure File Copy task
 
-    ![](./media/image60.png){width="6.5in"
-    height="2.4652777777777777in"}
+    ![](./media/image60.png)
 
 12. You will need to edit the tasks to specify required settings
 
-> ![](./media/image61.png){width="6.5in"
-> height="4.010416666666667in"}**Script:** Write-Output
+> ![](./media/image61.png)
+> **Script:** Write-Output
 > \"\#\#vso\[task.setvariable
 > variable=psmodulepath;\]c:\\modules\\azurerm\_6.7.0;\$env:psmodulepath\"
 >
 > (Command above can be copied from C:\\MyAzureProject\\Azure
 > Superpowers\\Lab - Helper Files\\Helper.txt)
 >
-> ![](./media/image62.png){width="6.5in" height="3.573611111111111in"}
+> ![](./media/image62.png)
 >
-> ![](./media/image63.png){width="6.5in" height="4.311111111111111in"}
+> ![](./media/image63.png)
 
 13. In the dropdown for Azure Subscription, select the service
     connection that you recently created.
@@ -4758,7 +4712,7 @@ Create an Azure DevOps release
     project and repo. Ensure that the master branch is selected, and
     click Add.
 
-    ![](./media/image64.png){width="6.5in" height="3.640277777777778in"}
+    ![](./media/image64.png)
 
 9.  Click the link, '1 job, 0 task' to edit the tasks in the Dev stage
 
@@ -4770,11 +4724,9 @@ Create an Azure DevOps release
 12. Once the task has been added, click on it, and edit the properties.
     Sample information is shown below.
 
-    ![](./media/image65.png){width="6.5in"
-    height="3.5694444444444446in"}
+    ![](./media/image65.png)
 
-    ![](./media/image66.png){width="6.5in"
-    height="3.4402777777777778in"}
+    ![](./media/image66.png)
 
 13. You will need to provide template parameters, which can be supplied
     in the Override template parameters text box. You can provide these
@@ -4785,10 +4737,9 @@ Create an Azure DevOps release
     Create variables to be used in your release. An example of release
     variables creation is shown in the screenshot below
 
-    ![](./media/image67.png){width="6.5in"
-    height="3.7381944444444444in"}
+    ![](./media/image67.png)
 
-    ![](./media/image68.png){width="6.5in" height="4.741666666666666in"}
+    ![](./media/image68.png)
 
     **Override template parameters:** -vmName \$(vmName) -adminPassword
     \$(adminPassword)
@@ -4799,7 +4750,7 @@ Create an Azure DevOps release
 14. Return back to the pipeline view, and clone the Dev stage, to create
     a new stage for Prod
 
-    ![](./media/image69.png){width="6.5in" height="2.636111111111111in"}
+    ![](./media/image69.png)
 
 15. Name the new stage Prod, and update its values to point to proper
     values for Prod. In this step, update the resource group that the
@@ -4809,8 +4760,7 @@ Create an Azure DevOps release
     enable some level of consistency within your stages, and allow for
     updates to be managed at the variables level
 
-    ![](./media/image70.png){width="6.5in"
-    height="2.7215277777777778in"}
+    ![](./media/image70.png)
 
 17. Setup Continuous Deployment by setting the Continuous deployment
     trigger on the Artifact to Enabled (See screenshot below: trigger
@@ -4820,15 +4770,12 @@ Create an Azure DevOps release
     trigger this release whenever code has made its way into the master
     branch.
 
-    ![](./media/image71.png){width="6.480555555555555in"
-    height="2.1430555555555557in"}
+    ![](./media/image71.png)
 
 18. Enable Pre-deployment conditions on the Prod stage, and set yourself
-    as the approver![](./media/image72.png){width="6.5in"
-    height="2.6666666666666665in"}
+    as the approver![](./media/image72.png)
 
-    ![](./media/image73.png){width="6.5in"
-    height="2.9006944444444445in"}
+    ![](./media/image73.png)
 
 19. Save the release
 
@@ -4878,4 +4825,4 @@ Appendix
 Azure DevOps Visio
 ------------------
 
-![](./media/image74.png){width="6.5in" height="4.856944444444444in"}
+![](./media/image74.png)
