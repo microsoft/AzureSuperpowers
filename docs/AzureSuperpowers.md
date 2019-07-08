@@ -244,6 +244,8 @@ there are many tools that you need to familiarize yourself with. This
 lab makes sure that you have all the tools required for the labs covered
 in this class, as well as making sure they are up to date.
 
+<div style="page-break-after: always;"></div>
+
 ### Exercise - Setup Az PowerShell Module
 
 Launch PowerShell
