@@ -1849,7 +1849,7 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 Lab - Azure DevOps
 ------------------
 
-| Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate |
+| Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate. |
 | :------------ | :-------------- |
 | Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/<organizationname> and can have many projects under it |
 |  | *project --* a project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
@@ -2036,40 +2036,15 @@ members list.
 Lab - Git
 ---------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | This lab will teach you some of   |
-|                                   | the basics of the Git source      |
-|                                   | control system                    |
-+===================================+===================================+
-| Glossary of Terms                 | *commit* - a git commit is a code |
-|                                   | change as well as meta            |
-|                                   | information about that change     |
-|                                   | (who, what, when, and a           |
-|                                   | user-entered description of the   |
-|                                   | change)                           |
-|                                   |                                   |
-|                                   | *branch* -- a branch is a         |
-|                                   | pseudo-copy of the code where     |
-|                                   | commits you make do not affect    |
-|                                   | the other branches. Commits you   |
-|                                   | make to the new branch can either |
-|                                   | be merged into another branch     |
-|                                   | (pull request) or discarded       |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 45 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Learn about commits, syncing, |
-|                                   |     and branches                  |
-|                                   |                                   |
-|                                   | 2.  Make sure your changes are    |
-|                                   |     successfully stored on the    |
-|                                   |     source control server (Azure  |
-|                                   |     DevOps)                       |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-|                                   |                                   |
-|                                   | Wes Adams                         |
-+-----------------------------------+-----------------------------------+
+| Lab Description | This lab will teach you some of the basics of the Git source control system |
+| :------------ | :-------------- |
+| Glossary of Terms | *commit* - a git commit is a code change as well as meta information about that change (who, what, when, and a user-entered description of the change) |
+|  | *branch* - a branch is a pseudo-copy of the code where commits you make do not affect the other branches.  Commits you make to the new branch can either be merged into another branch (pull request) or discarded |
+| Estimated Time to Complete | 45 minutes |
+| Key Takeaways | 1. Learn about commits, syncing, and branches |
+|  | 2. Make sure your changes are successfully stored on the source control server (Azure DevOps) |
+| Author | Ralph Kyttle |
+|  | Wes Adams |
 
 -   Popular framework used for source control
 
