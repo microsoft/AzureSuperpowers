@@ -209,7 +209,7 @@ deployment](#exercise---create-two-new-resource-groups-for-your-application-depl
 
 </blockquote>
 
-[13. Lab - Azure DevOps Build (Continuous Integration -- CI)](#exercise---service-connection)
+[13. Lab - Azure DevOps Build Continuous Integration](#lab---azure-devops-build-continuous-integration)
 
 <blockquote>
 
@@ -218,7 +218,7 @@ zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zi
 
 </blockquote>
 
-[14. Lab - Azure DevOps Release (Continuous Deployment -- CD)](#lab---azure-devops-release-continuous-deployment-cd)
+[14. Lab - Azure DevOps Release Continuous Deployment](#lab---azure-devops-release-continuous-deployment)
 
 <blockquote>
 
@@ -4797,7 +4797,7 @@ Create a new Service Connection in your project
     creating a Service Connection and create a new Service Connection in
     your project using your Service Principal credentials.
 
-Lab - Azure DevOps Build (Continuous Integration -- CI)
+Lab - Azure DevOps Build Continuous Integration
 -------------------------------------------------------
 
 +-----------------------------------+-----------------------------------+
@@ -4994,7 +4994,7 @@ Create an Azure DevOps build
     contents and review SetWinSecuritySettings.ps1 to verify that line
     145 is listing ValueData =1.
 
-Lab - Azure DevOps Release (Continuous Deployment -- CD)
+Lab - Azure DevOps Release Continuous Deployment
 --------------------------------------------------------
 
 +-----------------------------------+-----------------------------------+
