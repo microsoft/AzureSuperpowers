@@ -70,35 +70,35 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[5. Lab - Git](#lab---git)
+[5. Lab - Azure DevOps](#lab---azure-devops)
 
 <blockquote>
 
-[5.1. Exercise - Git Branch](#exercise---git-branch)
+[5.1. Exercise - Create new Azure DevOps organization](#exercise---create-new-azure-devops-organization)
 
-[5.2. Exercise - Branch policies](#exercise---branch-policies)
+[5.2. Exercise - Explore Azure DevOps Local Repository](#exercise---explore-azure-devops-local-repository)
 
-[5.3. Exercise - Git commit](#exercise---git-commit)
+[5.3. Exercise - Add Contributors to your Project](#exercise---add-contributors-to-your-project)
 
-[5.4. Exercise - Git Pull and Git Push](#exercise---git-pull-and-git-push)
-
-[5.5. Exercise - Pull Request](#exercise---pull-request)
-
-[5.6. Troubleshooting](#troubleshooting-5)
+[5.4. Troubleshooting](#troubleshooting-4)
 
 </blockquote>
 
-[6. Lab - Azure DevOps](#lab---azure-devops)
+[6. Lab - Git](#lab---git)
 
 <blockquote>
 
-[6.1. Exercise - Create new Azure DevOps organization](#exercise---create-new-azure-devops-organization)
+[6.1. Exercise - Git Branch](#exercise---git-branch)
 
-[6.2. Exercise - Explore Azure DevOps Local Repository](#exercise---explore-azure-devops-local-repository)
+[6.2. Exercise - Branch policies](#exercise---branch-policies)
 
-[6.3. Exercise - Add Contributors to your Project](#exercise---add-contributors-to-your-project)
+[6.3. Exercise - Git commit](#exercise---git-commit)
 
-[6.4. Troubleshooting](#troubleshooting-4)
+[6.4. Exercise - Git Pull and Git Push](#exercise---git-pull-and-git-push)
+
+[6.5. Exercise - Pull Request](#exercise---pull-request)
+
+[6.6. Troubleshooting](#troubleshooting-5)
 
 </blockquote>
 
