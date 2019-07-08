@@ -3311,7 +3311,7 @@ ResourcesNotInDesiredState
     Instead, in the next exercise we will take the PowerShell
     configuration file and package it up for Azure to deploy.
 
-### Exercise - Create an Azure Compatible DSC package (.zip)
+### Exercise - Create an Azure Compatible DSC package
 
 Create the DSC Package
 
