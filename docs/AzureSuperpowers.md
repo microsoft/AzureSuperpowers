@@ -70,7 +70,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[5. Lab - Git](#lab---azure-devops)
+[5. Lab - Git](#lab---git)
 
 <blockquote>
 
@@ -80,7 +80,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [5.3. Exercise - Git commit](#exercise---git-commit)
 
-[5.4. Exercise - VS Code Sync](#exercise-git-pull-git-push)
+[5.4. Exercise - Git Pull / Git Push](#exercise-git-pull-git-push)
 
 [5.5. Troubleshooting](#troubleshooting-5)
 
