@@ -3,9 +3,11 @@ Table of Contents
 
 [1. Lab - Download and Install Tools](#lab---download-and-install-tools)
 
-> [1.1. Exercise - Setup Az PowerShell](#exercise---setup-az-powershell-module)
+<blockquote>
 
-> [1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
+[1.1. Exercise - Setup Az PowerShell](#exercise---setup-az-powershell-module)
+
+[1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
 
 [1.3. Exercise - Setup Visual Studio Code](#exercise---setup-visual-studio-code)
 
@@ -15,7 +17,11 @@ Table of Contents
 
 [1.6. Troubleshooting](#troubleshooting)
 
+</blockquote>
+
 [2. Lab - Tools Walkthrough](#lab---tools-walkthrough)
+
+<blockquote>
 
 [2.1. Exercise - VS Code Interface](#exercise---vs-code-interface)
 
@@ -27,7 +33,11 @@ Table of Contents
 
 [2.5. Troubleshooting](#troubleshooting-1)
 
+</blockquote>
+
 [3. Lab - Azure AD and Service Principals](#lab---azure-ad-and-service-principals)
+
+<blockquote>
 
 [3.1. Exercise - Create Resource Group using the Portal](#exercise---create-resource-group-using-the-portal)
 
@@ -45,7 +55,11 @@ Table of Contents
 
 [3.8. Troubleshooting](#troubleshooting-2)
 
+</blockquote>
+
 [4. Lab - Basic ARM Templates](#lab---basic-arm-templates)
+
+<blockquote>
 
 [4.1. Exercise - Deploy a Storage Account using an ARM template and
 Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and-azure-powershell)
@@ -54,7 +68,11 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [4.3. Troubleshooting](#troubleshooting-3)
 
+</blockquote>
+
 [5. Lab - Git](#lab---azure-devops)
+
+<blockquote>
 
 [5.1. Exercise - Git Branch](#exercise---git-branch)
 
@@ -66,7 +84,11 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [5.5. Troubleshooting](#troubleshooting-5)
 
+</blockquote>
+
 [6. Lab - Azure DevOps](#lab---azure-devops)
+
+<blockquote>
 
 [6.1. Exercise - Create new Azure DevOps organization](#exercise---create-new-azure-devops-organization)
 
@@ -76,13 +98,21 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [6.4. Troubleshooting](#troubleshooting-4)
 
+</blockquote>
+
 [7. Lab - AD Super Lab Deployment](#lab---ad-super-lab-deployment)
+
+<blockquote>
 
 [7.1. Exercise - Deploy AD Super Lab](#exercise---deploy-ad-super-lab)
 
 [7.2. Troubleshooting](#troubleshooting-6)
 
+</blockquote>
+
 [8. Lab - PowerShell DSC](#lab---powershell-dsc)
+
+<blockquote>
 
 [8.1. Exercise - Exploring DSC Custom Resources on the Web](#exercise---exploring-dsc-custom-resources-on-the-web)
 
@@ -98,7 +128,11 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [8.7. Troubleshooting](#troubleshooting-7)
 
+</blockquote>
+
 [9. Lab - Storage Accounts and SAS Tokens](#lab---storage-accounts-and-sas-tokens)
+
+<blockquote>
 
 [9.1. Exercise - Create a storage account](#exercise---create-a-storage-account)
 
@@ -114,7 +148,11 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [9.7. Troubleshooting](#troubleshooting-8)
 
+</blockquote>
+
 [10. Lab - ARM Templates (Advanced)](#lab---arm-templates-advanced)
+
+<blockquote>
 
 [10.1. Exercise - Review an existing Advanced ARM Template](#exercise---review-an-existing-advanced-arm-template)
 
@@ -122,7 +160,11 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [10.3. Troubleshooting](#troubleshooting-9)
 
+</blockquote>
+
 [11. Lab - Azure DevOps Service Connections](#lab---azure-devops-service-connections)
+
+<blockquote>
 
 [11.1. Exercise - Create a Service Principal](#exercise---create-a-service-principal)
 
@@ -132,7 +174,11 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [11.4. Troubleshooting](#troubleshooting-10)
 
+</blockquote>
+
 [12. Lab - Azure DevOps Prereqs](#lab---azure-devops-prereqs)
+
+<blockquote>
 
 [12.1. Exercise - Azure DevOps Organization](#exercise---azure-devops-organization)
 
@@ -159,14 +205,24 @@ deployment](#exercise---create-two-new-resource-groups-for-your-application-depl
 
 [12.11. Exercise - Service Connection](#exercise---service-connection)
 
+</blockquote>
+
 [13. Lab - Azure DevOps Build (Continuous Integration -- CI)](#exercise---service-connection)
+
+<blockquote>
 
 [13.1. Exercise - Setup an Azure DevOps build that uses CI to create DSC
 zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zip-files)
 
+</blockquote>
+
 [14. Lab - Azure DevOps Release (Continuous Deployment -- CD)](#lab---azure-devops-release-continuous-deployment-cd)
 
+<blockquote>
+
 [14.1. Exercise - Setup an Azure DevOps release](#exercise---setup-an-azure-devops-release)
+
+</blockquote>
 
 Lab - Download and Install Tools
 --------------------------------
