@@ -118,13 +118,13 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [8.1. Exercise - Exploring DSC Custom Resources on the Web](#exercise---exploring-dsc-custom-resources-on-the-web)
 
-[8.2. Exercise -- Build a new Azure VM and install custom DSC resources](#exercise-build-a-new-azure-vm-and-install-custom-dsc-resources)
+[8.2. Exercise - Build a new Azure VM and install custom DSC resources](#exercise---build-a-new-azure-vm-and-install-custom-dsc-resources)
 
 [8.3. Exercise - Create a DSC Configuration](#exercise---create-a-dsc-configuration)
 
 [8.4. Exercise - Test the DSC Configuration Locally](#exercise---test-the-dsc-configuration-locally)
 
-[8.5. Exercise - Create an Azure Compatible DSC package (.zip)](#exercise---create-an-azure-compatible-dsc-package-.zip)
+[8.5. Exercise - Create an Azure Compatible DSC package](#exercise---create-an-azure-compatible-dsc-package)
 
 [8.6. Exercise - Deploy an ARM resource DSC extension](#exercise---deploy-an-arm-resource-dsc-extension)
 
