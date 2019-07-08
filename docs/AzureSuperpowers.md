@@ -515,7 +515,7 @@ VS Code Interface Overview
     e.  Status Bar - Information about the opened project and the files
         you edit.
 
-> ![code basics hero](./media/image3.png)
+> ![](./media/image3.png)
 
 Make the VS Code Interface your own
 
