@@ -3278,43 +3278,15 @@ Pay attention to filenames
 Lab - Storage Accounts and SAS Tokens
 -------------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | This lab will teach you how to    |
-|                                   | upload files to Azure Storage     |
-|                                   | Accounts and secure them by       |
-|                                   | protecting the files with Secure  |
-|                                   | Access Tokens (SAS) tokens        |
-+===================================+===================================+
-| Glossary of Terms                 | *sas* - Secure Access Token. This |
-|                                   | is a string that you append to    |
-|                                   | the URL you are accessing which   |
-|                                   | is an encoded/signed string that  |
-|                                   | describes your rights. Read,      |
-|                                   | write, Starting When, Expiring    |
-|                                   | When, Can you see Containers,     |
-|                                   | etc, etc.                         |
-|                                   |                                   |
-|                                   | *uri --* Uniform Resource         |
-|                                   | Identifier.                       |
-|                                   | <https://portal.azure.com> is a   |
-|                                   | URL.                              |
-|                                   | <https://portal.azure.com/Default |
-|                                   | .html>                            |
-|                                   | is a URI. URI refers to the full  |
-|                                   | path to the resource, not just    |
-|                                   | the DNS name of the URL.          |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 30 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Upload files to Azure Storage |
-|                                   |                                   |
-|                                   | 2.  Generate SAS Token            |
-|                                   |                                   |
-|                                   | 3.  Access private Azure Storage  |
-|                                   |     files with URI + SAS Token    |
-+-----------------------------------+-----------------------------------+
-| Author                            | Wes Adams                         |
-+-----------------------------------+-----------------------------------+
+| Lab Description | This lab will teach you how to upload files to Azure Storage Accounts and secure them by protecting the files with Secure Access Tokens (SAS) tokens |
+| :------------ | :-------------- |
+| Glossary of Terms | *sas* – Secure Access Token.  This is a string that you append to the URL you are accessing which is an encoded/signed string that describes your rights.  Read, write, Starting When, Expiring When, Can you see Containers, etc, etc. |
+|  | *uri* – Uniform Resource Identifier.  https://portal.azure.com is a URL.  https://portal.azure.com/Default.html is a URI.  URI refers to the full path to the resource, not just the DNS name of the URL. |
+| Estimated Time to Complete | 30 minutes |
+| Key Takeaways | 1. Upload files to Azure Storage |
+|  | 2. Generate SAS Token |
+|  | 3. Access private Azure Storage files with URI + SAS Token |
+| Author | Wes Adams |
 
 ### Exercise - Create a storage account
 
