@@ -13,7 +13,7 @@ Table of Contents
 
 [1.4. Exercise - Setup Azure Storage Explorer](#exercise---setup-azure-storage-explorer)
 
-[1.5. Exercise - Version Check](#_FIXFIXFIXToc536537003)
+[1.5. Exercise - Version Check](#exercise---version-check)
 
 [1.6. Troubleshooting](#troubleshooting)
 
