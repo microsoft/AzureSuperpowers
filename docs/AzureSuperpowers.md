@@ -4872,17 +4872,6 @@ Create an Azure DevOps release
 
 31. Review deployment logs, and approve the release to Prod
 
-Azure Next-Level Labs
-=====================
-
-Website Deployment
-
-Containers
-
-Azure API w/ PowerShell or Azure Functions
-
-JSON RBAC Permissions
-
 Appendix
 ========
 
@@ -4890,9 +4879,3 @@ Azure DevOps Visio
 ------------------
 
 ![](./media/image74.png){width="6.5in" height="4.856944444444444in"}
-
-Appendix needed on how to setup VS Code for auto fetch, PS default file
-type
-
-Reference Style Cheat-Sheet for things like 'save-\>commit-\>sync-\>pull
-request' and 'commit to dev, pull request to master, release to prod'
