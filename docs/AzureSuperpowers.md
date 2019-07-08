@@ -2557,7 +2557,7 @@ Lab - AD Super Lab Deployment
 
 | Lab Description | This lab is a prerequisite for completing the ARM Templates (Advanced) lab.  In this lab, you will deploy resources into Azure using Azure PowerShell and ARM Templates. |
 | :------------ | :-------------- |
-| Glossary of Terms | *ARM Template --* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly |
+| Glossary of Terms | *ARM Template --* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly. |
 | Estimated Time to Complete | 10 minutes (User tasks) |
 |  | 30 minutes (Deployment of resources to Azure) |
 | Key Takeaways | 1. Deploying a complex solution can be made simple using ARM Templates |
@@ -2669,78 +2669,19 @@ well as any errors or warnings if your deployment is not successful.
 Lab - PowerShell DSC
 --------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | This lab is to familiarize        |
-|                                   | yourself with PowerShell DSC,     |
-|                                   | writing a basic DSC               |
-|                                   | configuration, creating a         |
-|                                   | localhost.mof, testing it locally |
-|                                   | on the system, and then using     |
-|                                   | Azure to deploy that              |
-|                                   | configuration to an(y) Azure      |
-|                                   | Virtual Machine. This lab         |
-|                                   | focusses on using DSC in the Push |
-|                                   | based model.                      |
-+===================================+===================================+
-| Glossary of Terms                 | *DSC configuration --* DSC        |
-|                                   | configurations are PowerShell     |
-|                                   | scripts that define a special     |
-|                                   | type of function. To define a     |
-|                                   | configuration, you use the        |
-|                                   | PowerShell keyword Configuration. |
-|                                   | Configurations are Declarative    |
-|                                   | PowerShell scripts which define   |
-|                                   | and configure instances of        |
-|                                   | resources.                        |
-|                                   |                                   |
-|                                   | *DSC resource --* The \"make it   |
-|                                   | so\" part of DSC. They contain    |
-|                                   | the code that put and keep the    |
-|                                   | target of a configuration in the  |
-|                                   | specified state. Resources reside |
-|                                   | in PowerShell modules.            |
-|                                   |                                   |
-|                                   | *Local configuration manager      |
-|                                   | (LCM) --* The engine by which DSC |
-|                                   | facilitates the interaction       |
-|                                   | between resources and             |
-|                                   | configurations. Installed by      |
-|                                   | default on all Windows systems    |
-|                                   | with Windows PowerShell version   |
-|                                   | 4.0 and above.                    |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 60 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  How to author a DSC           |
-|                                   |     configuration                 |
-|                                   |                                   |
-|                                   | 2.  How to create a ZIP file that |
-|                                   |     works with Azure (Containing  |
-|                                   |     a .ps1 file that has the      |
-|                                   |     'configuration' keyword in    |
-|                                   |     it)                           |
-|                                   |                                   |
-|                                   | 3.  Where to put the ZIP file so  |
-|                                   |     that Azure can tell an IaaS   |
-|                                   |     VM to reach out and           |
-|                                   |     download/extract/apply it     |
-|                                   |                                   |
-|                                   | 4.  Why DSC (which can be applied |
-|                                   |     many times and only ever      |
-|                                   |     produces the same result) is  |
-|                                   |     a good example of 'end state  |
-|                                   |     programming' and why end      |
-|                                   |     state is best for cloud       |
-|                                   |     technologies                  |
-|                                   |                                   |
-|                                   | 5.  DSC is integral for us to     |
-|                                   |     involve IaaS solutions in     |
-|                                   |     code based deployments and    |
-|                                   |     release pipelines             |
-+-----------------------------------+-----------------------------------+
-| Author                            | Keith Hitchcock\                  |
-|                                   | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
+| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an(y) Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
+| :------------ | :-------------- |
+| Glossary of Terms | DSC configuration – DSC configurations are PowerShell scripts that define a special type of function. To define a configuration, you use the PowerShell keyword Configuration. Configurations are Declarative PowerShell scripts which define and configure instances of resources. |
+|  | DSC resource – The "make it so" part of DSC. They contain the code that put and keep the target of a configuration in the specified state. Resources reside in PowerShell modules. |
+|  | Local configuration manager (LCM) – The engine by which DSC facilitates the interaction between resources and configurations.  Installed by default on all Windows systems with Windows PowerShell version 4.0 and above. |
+| Estimated Time to Complete | 60 minutes |
+| Key Takeaways | 1. How to author a DSC configuration |
+|  | 2. How to create a ZIP file that works with Azure (Containing a .ps1 file that has the ‘configuration’ keyword in it) |
+|  | 3. Where to put the ZIP file so that Azure can tell an IaaS VM to reach out and download/extract/apply it |
+|  | 4. Why DSC (which can be applied many times and only ever produces the same result) is a good example of ‘end state programming’ and why end state is best for cloud technologies |
+|  | 5. DSC is integral for us to involve IaaS solutions in code based deployments and release pipelines |
+| Author | Keith Hitchcock |
+|  | Ralph Kyttle |
 
 PowerShell DSC
 
