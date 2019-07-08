@@ -1375,73 +1375,15 @@ single line.
 Lab - Basic ARM Templates
 -------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | In this lab, you will explore the |
-|                                   | use of Azure Resource Manager     |
-|                                   | (ARM) templates to deploy         |
-|                                   | resources into a Resource Group.  |
-|                                   | ARM templates are JSON files that |
-|                                   | define the resources you need to  |
-|                                   | deploy for your solution. To      |
-|                                   | understand the concepts           |
-|                                   | associated with deploying and     |
-|                                   | managing your Azure solutions,    |
-|                                   | see [Azure Resource Manager       |
-|                                   | overview](https://docs.microsoft. |
-|                                   | com/en-us/azure/azure-resource-ma |
-|                                   | nager/resource-group-overview)    |
-+===================================+===================================+
-| Glossary of Terms                 | *ARM Template --* An ARM Template |
-|                                   | is a JavaScript Object Notation   |
-|                                   | (JSON) file that defines one or   |
-|                                   | more resources to deploy to an    |
-|                                   | Azure resource group. It also     |
-|                                   | defines the dependencies between  |
-|                                   | the deployed resources. The       |
-|                                   | template can be used to deploy    |
-|                                   | the resources consistently and    |
-|                                   | repeatedly                        |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 30 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Create your first Azure       |
-|                                   |     Resource Manager template     |
-|                                   |                                   |
-|                                   | 2.  Deploy a Storage Account      |
-|                                   |     using an ARM template with    |
-|                                   |     Azure PowerShell and the      |
-|                                   |     New-AzResourceGroupDeployment |
-|                                   |     cmdlet                        |
-|                                   |                                   |
-|                                   | 3.  Edit an existing ARM template |
-|                                   |     by adding parameters and      |
-|                                   |     variables to allow for        |
-|                                   |     flexible, dynamic deployments |
-|                                   |                                   |
-|                                   | 4.  Understand the impact of the  |
-|                                   |     declarative nature of ARM     |
-|                                   |     templates and how they        |
-|                                   |     interact with the Azure API.  |
-|                                   |     Once the ARM template is      |
-|                                   |     provided to the API, the      |
-|                                   |     transaction is complete as    |
-|                                   |     far as the user is concerned. |
-|                                   |     The user could lose           |
-|                                   |     connectivity, or their PC     |
-|                                   |     could lose power and          |
-|                                   |     everything would still        |
-|                                   |     continue, as the instructions |
-|                                   |     have been delivered and Azure |
-|                                   |     takes it from there. This     |
-|                                   |     differs greatly from          |
-|                                   |     traditional scripting, which  |
-|                                   |     might require lines of code   |
-|                                   |     be executed independently or  |
-|                                   |     require constant              |
-|                                   |     connectivity.                 |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
+| Lab Description | In this lab, you will explore the use of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group.  ARM templates are JSON files that define the resources you need to deploy for your solution. To understand the concepts associated with deploying and managing your Azure solutions, see [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) |
+| :------------ | :-------------- |
+| Glossary of Terms | *ARM Template --* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly |
+| Estimated Time to Complete | 30 minutes |
+| Key Takeaways | 1. Create your first Azure Resource Manager template |
+|  | 2. Deploy a Storage Account using an ARM template with Azure PowerShell and the New-AzResourceGroupDeployment cmdlet |
+|  | 3. Edit an existing ARM template by adding parameters and variables to allow for flexible, dynamic deployments |
+|  | 4. Understand the impact of the declarative nature of ARM templates and how they interact with the Azure API.  Once the ARM template is provided to the API, the transaction is complete as far as the user is concerned.  The user could lose connectivity, or their PC could lose power and everything would still continue, as the instructions have been delivered and Azure takes it from there.  This differs greatly from traditional scripting, which might require lines of code be executed independently or require constant connectivity. |
+| Author | Ralph Kyttle |
 
 In this lab you will use an Azure Resource Manager (ARM) template, which
 is a JSON (JavaScript Object Notation) file to define an Azure Storage
