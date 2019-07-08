@@ -3035,7 +3035,7 @@ Explore Github.com
     detailed use of each resource. The documentation of how to use the
     DSC resources indicates a mature DSC resource module
 
-### Exercise -- Build a new Azure VM and install custom DSC resources
+### Exercise - Build a new Azure VM and install custom DSC resources
 
 Create a new Windows Server 2016 VM using the Azure Portal
 
