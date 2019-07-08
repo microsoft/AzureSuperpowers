@@ -469,12 +469,11 @@ The Az PowerShell module requires .Net Framework Runtime 4.7.2 or higher
 Lab - Tools Walkthrough
 -----------------------
 
-| Lab Description | This lab will show some basics of the tools and familiarize you with their interfaces/use how it interfaces with the Git protocol to commit source code. |
+| Lab Description | This lab will show some basics of the tools and familiarize you with their interfaces/use |
 | :------------ | :-------------- |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. Gain basic familiarity with the tools to be used in the later labs |
-|  | 2. At the end of this lab you should have an understanding of the different sections of VS Code and |
-|  | By the end of this lab, you should have Azure PowerShell, Git, Visual Studio Code, and Azure Storage Explorer on your workstation, and they should all be up to date. |
+|  | 2. At the end of this lab you should have an understanding of the different sections of VS Code and how it interfaces with the Git protocol to commit source code.|
 | Author | Ralph Kyttle |
 |  | Wes Adams |
 
