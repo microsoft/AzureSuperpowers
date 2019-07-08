@@ -172,7 +172,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [11.2. Exercise - Create a Service Connection in Azure DevOps](#exercise---create-a-service-connection-in-azure-devops)
 
-[11.3. Exercise - Verify Service Connection](#exercise--verify-service-connection)
+[11.3. Exercise - Verify Service Connection](#exercise---verify-service-connection)
 
 [11.4. Troubleshooting](#troubleshooting-10)
 
