@@ -4581,93 +4581,16 @@ Create a new Service Connection in your project
 Lab - Azure DevOps Build Continuous Integration
 -------------------------------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | In this lab, you will explore     |
-|                                   | Continuous Integration in Azure   |
-|                                   | DevOps.                           |
-|                                   |                                   |
-|                                   | Continuous Integration (CI) is    |
-|                                   | the process of automating the     |
-|                                   | build and testing of code every   |
-|                                   | time a team member commits        |
-|                                   | changes to version control. CI    |
-|                                   | encourages developers to share    |
-|                                   | their code and unit tests by      |
-|                                   | merging their changes into a      |
-|                                   | shared version control repository |
-|                                   | after every small task            |
-|                                   | completion. Committing code       |
-|                                   | triggers an automated build       |
-|                                   | system to grab the latest code    |
-|                                   | from the shared repository and to |
-|                                   | build, test, and validate the     |
-|                                   | full master branch (also known as |
-|                                   | the trunk or main).               |
-|                                   |                                   |
-|                                   | CI emerged as a best practice     |
-|                                   | because software developers often |
-|                                   | work in isolation, and then they  |
-|                                   | need to integrate their changes   |
-|                                   | with the rest of the team's code  |
-|                                   | base. Waiting days or weeks to    |
-|                                   | integrate code creates many merge |
-|                                   | conflicts, hard to fix bugs,      |
-|                                   | diverging code strategies, and    |
-|                                   | duplicated efforts. CI requires   |
-|                                   | the development team's code be    |
-|                                   | merged to a shared version        |
-|                                   | control branch continuously to    |
-|                                   | avoid these problems.             |
-|                                   |                                   |
-|                                   | CI keeps the master branch clean. |
-|                                   | Teams can leverage modern version |
-|                                   | control systems such as Git to    |
-|                                   | create short-lived feature        |
-|                                   | branches to isolate their work. A |
-|                                   | developer submits a "pull         |
-|                                   | request" when the feature is      |
-|                                   | complete and, on approval of the  |
-|                                   | pull request, the changes get     |
-|                                   | merged into the master branch.    |
-|                                   | Then the developer can delete the |
-|                                   | previous feature branch.          |
-|                                   | Development teams repeat the      |
-|                                   | process for additional work. The  |
-|                                   | team can establish branch         |
-|                                   | policies to ensure the master     |
-|                                   | branch meets desired quality      |
-|                                   | criteria.                         |
-|                                   |                                   |
-|                                   | Teams use build definitions to    |
-|                                   | ensure that every commit to the   |
-|                                   | master branch triggers the        |
-|                                   | automated build and testing       |
-|                                   | processes. Implementing CI this   |
-|                                   | way ensures bugs are caught       |
-|                                   | earlier in the development cycle, |
-|                                   | which makes them less expensive   |
-|                                   | to fix. Automated tests can run   |
-|                                   | for every build to ensure builds  |
-|                                   | maintain a consistent quality.    |
-+===================================+===================================+
-| Estimated Time to Complete        | 60 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Continuous Integration can be |
-|                                   |     configured as a part of your  |
-|                                   |     application development       |
-|                                   |     process to ensure code is     |
-|                                   |     built and tested anytime      |
-|                                   |     changes are made to the code. |
-|                                   |                                   |
-|                                   | 2.  Continuous Integration can    |
-|                                   |     provide help meet             |
-|                                   |     infrastructure needs,         |
-|                                   |     including automating the      |
-|                                   |     build of DSC zip files for    |
-|                                   |     use in Azure                  |
-+-----------------------------------+-----------------------------------+
-| Author                            | Ralph Kyttle                      |
-+-----------------------------------+-----------------------------------+
+| Lab Description | In this lab, you will explore Continuous Integration in Azure DevOps. |
+| :------------ | :-------------- |
+|  | Continuous Integration (CI) is the process of automating the build and testing of code every time a team member commits changes to version control.  CI encourages developers to share their code and unit tests by merging their changes into a shared version control repository after every small task completion.  Committing code triggers an automated build system to grab the latest code from the shared repository and to build, test, and validate the full master branch (also known as the trunk or main). |
+|  | CI emerged as a best practice because software developers often work in isolation, and then they need to integrate their changes with the rest of the team’s code base.  Waiting days or weeks to integrate code creates many merge conflicts, hard to fix bugs, diverging code strategies, and duplicated efforts.  CI requires the development team’s code be merged to a shared version control branch continuously to avoid these problems. |
+|  | CI keeps the master branch clean. Teams can leverage modern version control systems such as Git to create short-lived feature branches to isolate their work.  A developer submits a “pull request” when the feature is complete and, on approval of the pull request, the changes get merged into the master branch.  Then the developer can delete the previous feature branch.  Development teams repeat the process for additional work.  The team can establish branch policies to ensure the master branch meets desired quality criteria. |
+|  | Teams use build definitions to ensure that every commit to the master branch triggers the automated build and testing processes. Implementing CI this way ensures bugs are caught earlier in the development cycle, which makes them less expensive to fix.  Automated tests can run for every build to ensure builds maintain a consistent quality. |
+| Estimated Time to Complete | 60 minutes |
+| Key Takeaways | 1. Continuous Integration can be configured as a part of your application development process to ensure code is built and tested anytime changes are made to the code. |
+|  | 2. Continuous Integration can provide help meet infrastructure needs, including automating the build of DSC zip files for use in Azure |
+| Author | Ralph Kyttle |
 
 ### Exercise - Setup an Azure DevOps build that uses CI to create DSC zip files
 
