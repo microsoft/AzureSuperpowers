@@ -4258,10 +4258,10 @@ The virtual machine is discarded after one use.
 Lab - Azure DevOps Prereqs
 --------------------------
 
-  Lab Description              In this lab, you will deploy and configure prerequisites that are needed to complete the subsequent labs on Azure DevOps Build and Release.
-  ---------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------
-  Estimated Time to Complete   45 minutes
-  Author                       Ralph Kyttle
+| Lab Description | In this lab, you will deploy and configure prerequisites that are needed to complete the subsequent labs on Azure DevOps Build and Release. |
+| :------------ | :-------------- |
+| Estimated Time to Complete | 45 minutes |
+| Author | Ralph Kyttle |
 
 ### Exercise - Azure DevOps Organization
 
