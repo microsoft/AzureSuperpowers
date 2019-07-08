@@ -229,7 +229,7 @@ zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zi
 Lab - Download and Install Tools
 --------------------------------
 
-| Lab Description | This lab covers the tools that you will be using in the rest of the labs |
+| Lab Description | This lab covers the installation of tools that you will be using in the rest of the labs |
 | :------------ | :-------------- |
 | Estimated Time to Complete | 20 minutes |
 | Key Takeaways | 1. Download and install the required tools |
@@ -902,62 +902,17 @@ some computer models, like Surface
 Lab - Azure AD and Service Principals
 -------------------------------------
 
-+-----------------------------------+-----------------------------------+
-| Lab Description                   | This lab will teach you how to    |
-|                                   | create Service Principals in both |
-|                                   | the Azure Portal as well as using |
-|                                   | the Azure PowerShell cmdlets      |
-+===================================+===================================+
-| Glossary of Terms                 | *Service Principal -* an object   |
-|                                   | in AzureAD that allows access to  |
-|                                   | the Azure Resource Manager API    |
-|                                   | layer. This means that a service  |
-|                                   | (like Azure DevOps) or an         |
-|                                   | application (like PowerShell's Az |
-|                                   | cmdlets) can login as a service   |
-|                                   | principal and have limited rights |
-|                                   | to perform automated work in      |
-|                                   | Azure                             |
-+-----------------------------------+-----------------------------------+
-| Estimated Time to Complete        | 60 minutes                        |
-+-----------------------------------+-----------------------------------+
-| Key Takeaways                     | 1.  Create a Service Principal    |
-|                                   |     and assign rights from the    |
-|                                   |     Azure Portal                  |
-|                                   |                                   |
-|                                   | 2.  Create a Service Principal    |
-|                                   |     and assign rights from        |
-|                                   |     PowerShell                    |
-|                                   |                                   |
-|                                   | 3.  Login to PowerShell as a      |
-|                                   |     Service Principal             |
-|                                   |                                   |
-|                                   | After this lab you should have a  |
-|                                   | good sense of how to create a     |
-|                                   | Service Principal through the     |
-|                                   | Azure Portal or PowerShell, and   |
-|                                   | you should understand how to give |
-|                                   | that Service Principal rights to  |
-|                                   | perform actions in an Azure       |
-|                                   | subscription. You should also be  |
-|                                   | able to use PowerShell to perform |
-|                                   | actions against Azure as that     |
-|                                   | Service Principal, however that   |
-|                                   | functionality is primarily for    |
-|                                   | troubleshooting. In later labs,   |
-|                                   | we will enter the Service         |
-|                                   | Principal information into        |
-|                                   | another system, which will then   |
-|                                   | use it to perform actions         |
-|                                   | (instead of a human performing    |
-|                                   | PowerShell actions on their       |
-|                                   | workstation).                     |
-+-----------------------------------+-----------------------------------+
-| Author                            | Keith Hitchcock\                  |
-|                                   | Ralph Kyttle                      |
-|                                   |                                   |
-|                                   | Cory Smith                        |
-+-----------------------------------+-----------------------------------+
+| Lab Description | This lab will teach you how to create Service Principals in both the Azure Portal as well as using the Azure PowerShell cmdlets |
+| :------------ | :-------------- |
+| Glossary of Terms | *Service Principal -* an object in AzureAD that allows access to the Azure Resource Manager API layer. This means that a service (like Azure DevOps) or an application (like PowerShell's Az cmdlets) can login as a service principal and have limited rights to perform automated work in Azure |
+| Estimated Time to Complete | 60 minutes |
+| Key Takeaways | 1. Create a Service Principal and assign rights from the Azure Portal |
+|  | 2. Create a Service Principal and assign rights from PowerShell |
+|  | 3. Login to PowerShell as a Service Principal |
+|  | After this lab you should have a good sense of how to create a Service Principal through the Azure Portal or PowerShell, and you should understand how to give that Service Principal rights to perform actions in an Azure subscription.  You should also be able to use PowerShell to perform actions against Azure as that Service Principal, however that functionality is primarily for troubleshooting.  In later labs, we will enter the Service Principal information into another system, which will then use it to perform actions (instead of a human performing PowerShell actions on their workstation). |
+| Author | Keith Hitchcock |
+|  | Ralph Kyttle  |
+|  | Cory Smith |
 
 Why AAD Service Principals?
 
