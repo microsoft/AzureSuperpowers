@@ -80,9 +80,9 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [5.3. Exercise - Git commit](#exercise---git-commit)
 
-[5.4. Exercise - Git Pull / Git Push](#exercise--git-pull-git-push)
+[5.4. Exercise - Git Pull / Git Push](#exercise---git-pull-git-push)
 
-[5.5. Exercise - Pull Request](#exercise--pull-request)
+[5.5. Exercise - Pull Request](#exercise---pull-request)
 
 [5.6. Troubleshooting](#troubleshooting-5)
 
