@@ -5,7 +5,7 @@ Table of Contents
 
 > [1.1. Exercise - Setup Az PowerShell](#exercise---setup-az-powershell-module)
 
-~ [1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
+> [1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
 
 [1.3. Exercise - Setup Visual Studio Code](#exercise---setup-visual-studio-code)
 
