@@ -202,7 +202,7 @@ in this class, as well as making sure they are up to date.
     Unrestricted:
 
 ```powershell
-   Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy Unrestricted
 ```
 
 2.  Select Yes if prompted. Execution policies determine whether you can
@@ -215,7 +215,9 @@ in this class, as well as making sure they are up to date.
 
 1.  Run the following PowerShell Command:
 
-> Install-Module -Name \'Az\'
+```powershell
+Install-Module -Name \'Az\'
+```
 
 2.  If not already installed, you may be prompted to install the NuGet
     provider. Select **Yes** if this is the case.
@@ -227,7 +229,9 @@ in this class, as well as making sure they are up to date.
 4.  Run the following PowerShell Command to verify the module has
     installed correctly:
 
-> Get-Module -Name \'\*Az\*\' -ListAvailable
+```powershell
+Get-Module -Name \'\*Az\*\' -ListAvailable
+```
 
 5.  If installed, Az should be returned
 
@@ -235,7 +239,9 @@ in this class, as well as making sure they are up to date.
     credentials\
     (some Azure PowerShell versions have this on as the default)
 
-> Disable-AzContextAutosave
+```powershell
+Disable-AzContextAutosave
+```
 
 <div style="page-break-after: always;"></div>
 
@@ -371,8 +377,10 @@ Expected return:
 
 3.  Type the following PowerShell command:
 
-> Get-Module -Name \'Az.Compute\' -ListAvailable \| Select-Object
+```powershell
+Get-Module -Name \'Az.Compute\' -ListAvailable \| Select-Object
 -Property \'Version\'
+```
 
 4.  The expected output is **2.2.0** or later
 
@@ -380,7 +388,9 @@ Expected return:
 
 1.  From within the VS Code Terminal, Type the following git command:
 
-> git \--version
+```powershell
+git \--version
+```
 
 2.  The expected output is **git version 2.21.0.windows.1** or later
 
