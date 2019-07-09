@@ -3,8 +3,6 @@ Azure Superpowers Lab Manual
 
 [1. Lab - Download and Install Tools](#lab-1---download-and-install-tools)
 
-<blockquote>
-
 [1.1. Exercise - Setup Az PowerShell](#exercise---setup-az-powershell-module)
 
 [1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
@@ -17,11 +15,7 @@ Azure Superpowers Lab Manual
 
 [1.6. Troubleshooting](#troubleshooting)
 
-</blockquote>
-
 [2. Lab - Tools Walkthrough](#lab-2---tools-walkthrough)
-
-<blockquote>
 
 [2.1. Exercise - VS Code Interface](#exercise---vs-code-interface)
 
@@ -33,11 +27,7 @@ Azure Superpowers Lab Manual
 
 [2.5. Troubleshooting](#troubleshooting-1)
 
-</blockquote>
-
 [3. Lab - Azure AD and Service Principals](#lab-3---azure-ad-and-service-principals)
-
-<blockquote>
 
 [3.1. Exercise - Create Resource Group using the Portal](#exercise---create-resource-group-using-the-portal)
 
@@ -55,11 +45,7 @@ Azure Superpowers Lab Manual
 
 [3.8. Troubleshooting](#troubleshooting-2)
 
-</blockquote>
-
 [4. Lab - Basic ARM Templates](#lab-4---basic-arm-templates)
-
-<blockquote>
 
 [4.1. Exercise - Deploy a Storage Account using an ARM template and
 Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and-azure-powershell)
@@ -68,11 +54,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [4.3. Troubleshooting](#troubleshooting-3)
 
-</blockquote>
-
 [5. Lab - Azure DevOps](#lab-5---azure-devops)
-
-<blockquote>
 
 [5.1. Exercise - Create new Azure DevOps organization](#exercise---create-new-azure-devops-organization)
 
@@ -82,11 +64,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [5.4. Troubleshooting](#troubleshooting-4)
 
-</blockquote>
-
 [6. Lab - Git](#lab-6---git)
-
-<blockquote>
 
 [6.1. Exercise - Git Branch](#exercise---git-branch)
 
@@ -100,21 +78,13 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [6.6. Troubleshooting](#troubleshooting-5)
 
-</blockquote>
-
 [7. Lab - AD Super Lab Deployment](#lab-7---ad-super-lab-deployment)
-
-<blockquote>
 
 [7.1. Exercise - Deploy AD Super Lab](#exercise---deploy-ad-super-lab)
 
 [7.2. Troubleshooting](#troubleshooting-6)
 
-</blockquote>
-
 [8. Lab - PowerShell DSC](#lab-8---powershell-dsc)
-
-<blockquote>
 
 [8.1. Exercise - Exploring DSC Custom Resources on the Web](#exercise---exploring-dsc-custom-resources-on-the-web)
 
@@ -130,11 +100,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [8.7. Troubleshooting](#troubleshooting-7)
 
-</blockquote>
-
 [9. Lab - Storage Accounts and SAS Tokens](#lab-9---storage-accounts-and-sas-tokens)
-
-<blockquote>
 
 [9.1. Exercise - Create a storage account](#exercise---create-a-storage-account)
 
@@ -150,11 +116,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [9.7. Troubleshooting](#troubleshooting-8)
 
-</blockquote>
-
 [10. Lab - ARM Templates (Advanced)](#lab-10---arm-templates-advanced)
-
-<blockquote>
 
 [10.1. Exercise - Review an existing Advanced ARM Template](#exercise---review-an-existing-advanced-arm-template)
 
@@ -162,11 +124,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [10.3. Troubleshooting](#troubleshooting-9)
 
-</blockquote>
-
 [11. Lab - Azure DevOps Service Connections](#lab-11---azure-devops-service-connections)
-
-<blockquote>
 
 [11.1. Exercise - Create a Service Principal](#exercise---create-a-service-principal)
 
@@ -176,11 +134,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 [11.4. Troubleshooting](#troubleshooting-10)
 
-</blockquote>
-
 [12. Lab - Azure DevOps Prereqs](#lab-12---azure-devops-prereqs)
-
-<blockquote>
 
 [12.1. Exercise - Azure DevOps Organization](#exercise---azure-devops-organization)
 
@@ -207,28 +161,18 @@ deployment](#exercise---create-two-new-resource-groups-for-your-application-depl
 
 [12.11. Exercise - Service Connection](#exercise---service-connection)
 
-</blockquote>
-
 [13. Lab - Azure DevOps Build Continuous Integration](#lab-13---azure-devops-build-continuous-integration)
-
-<blockquote>
 
 [13.1. Exercise - Setup an Azure DevOps build that uses CI to create DSC
 zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zip-files)
 
-</blockquote>
-
 [14. Lab - Azure DevOps Release Continuous Deployment](#lab-14---azure-devops-release-continuous-deployment)
-
-<blockquote>
 
 [14.1. Exercise - Setup an Azure DevOps release](#exercise---setup-an-azure-devops-release)
 
-</blockquote>
-
 <div style="page-break-after: always;"></div>
 
-Lab 1 - Download and Install Tools
+## Lab 1 - Download and Install Tools
 --------------------------------
 
 | Lab Description | This lab covers the installation of tools that you will be using in the rest of the labs |
@@ -239,7 +183,7 @@ Lab 1 - Download and Install Tools
 |  | By the end of this lab, you should have Azure PowerShell, Git, Visual Studio Code, and Azure Storage Explorer on your workstation, and they should all be up to date. |
 | Author | Ralph Kyttle |
 
-Purpose
+### Purpose
 
 For those new to DevOps, Infrastructure as Code, and Source Control,
 there are many tools that you need to familiarize yourself with. This
@@ -248,7 +192,7 @@ in this class, as well as making sure they are up to date.
 
 <div style="page-break-after: always;"></div>
 
-### Exercise - Setup Az PowerShell Module
+## Exercise - Setup Az PowerShell Module
 
 Launch PowerShell
 
@@ -314,7 +258,7 @@ Expected return:
 
 <div style="page-break-after: always;"></div>
 
-### Exercise - Setup Git for Windows
+## Exercise - Setup Git for Windows
 
 Download Git for Windows Installation Files
 
@@ -356,7 +300,7 @@ Install Git for Windows
 
 <div style="page-break-after: always;"></div>
 
-### Exercise - Setup Visual Studio Code
+## Exercise - Setup Visual Studio Code
 
 Download Visual Studio Code
 
@@ -389,7 +333,7 @@ Install Visual Studio Code
 
 <div style="page-break-after: always;"></div>
 
-### Exercise - Setup Azure Storage Explorer
+## Exercise - Setup Azure Storage Explorer
 
 Download Azure Storage Explorer
 
@@ -415,7 +359,7 @@ Install Azure Storage Explorer
 
 <div style="page-break-after: always;"></div>
 
-### Exercise - Version Check
+## Exercise - Version Check
 
 Check the version of Az
 
@@ -480,7 +424,7 @@ The Az PowerShell module requires .Net Framework Runtime 4.7.2 or higher
 
 [TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS]{.underline}
 
-Lab 2 - Tools Walkthrough
+## Lab 2 - Tools Walkthrough
 -----------------------
 
 | Lab Description | This lab will show some basics of the tools and familiarize you with their interfaces/use |
@@ -499,7 +443,7 @@ getting lost in the software.
 
 <div style="page-break-after: always;"></div>
 
-### Exercise - VS Code Interface
+## Exercise - VS Code Interface
 
 VS Code Interface Overview
 
@@ -655,7 +599,7 @@ Install VS Code extensions
     window also enables you to be able to select and execute multiple
     lines of PowerShell.
 
-### Exercise - Clone the Azure Superpowers Repository
+## Exercise - Clone the Azure Superpowers Repository
 
 Clone Azure Superpowers via the VS Code GUI
 
@@ -713,7 +657,7 @@ Clone Azure Superpowers via the VS Code GUI
     repository, which will exist for as long as you keep the files
     stored on your computer.
 
-### Exercise - Az Walkthrough
+## Exercise - Az Walkthrough
 
 What is a PowerShell module
 
@@ -810,7 +754,7 @@ it's defined, but by an at sign (@) when it's called as part of a
 PowerShell cmdlet. Use the appropriate location for the Azure
 environment throughout this course.
 
-### Exercise - Azure Storage Explorer Walkthrough
+## Exercise - Azure Storage Explorer Walkthrough
 
 Azure Storage Explorer Walkthrough
 
@@ -909,7 +853,7 @@ fl \* -Force
 For function keys to operate, you may need to press the **Fn** key on
 some computer models, like Surface
 
-Lab 3 - Azure AD and Service Principals
+## Lab 3 - Azure AD and Service Principals
 -------------------------------------
 
 | Lab Description | This lab will teach you how to create Service Principals in both the Azure Portal as well as using the Azure PowerShell cmdlets |
@@ -960,7 +904,7 @@ AAD User Accounts
 
 -   AAD Tenant is identified by \@UPN Suffix
 
-### Exercise - Create Resource Group using the Portal
+## Exercise - Create Resource Group using the Portal
 
 Log into Azure
 
@@ -989,7 +933,7 @@ Create a Resource Group
 
 5.  Click the **Create** button
 
-### Exercise - Create Service Principal using the Portal
+## Exercise - Create Service Principal using the Portal
 
 Navigate to Application Registrations
 
@@ -1034,7 +978,7 @@ Generate a password for the Application Registration
 4.  Once the Key value is saved and [you have a copy for your
     records]{.underline}, close the Certificates and Secrets pane.
 
-### Exercise - Grant Rights to a Resource Group using the Portal
+## Exercise - Grant Rights to a Resource Group using the Portal
 
 Assign rights to Service Principal scoped to the Resource Group
 
@@ -1067,7 +1011,7 @@ group, including changing permissions.
 **In production it is highly recommended that a limited access role be
 used or a custom role created with least privileges**
 
-### Exercise - Create Resource Group using PowerShell
+## Exercise - Create Resource Group using PowerShell
 
 Create a new PowerShell file in VS Code to store your commands
 
@@ -1145,7 +1089,7 @@ a new resource group:
 
 5.  New-AzResourceGroup \@params
 
-### Exercise - Create Service Principal using PowerShell
+## Exercise - Create Service Principal using PowerShell
 
 Log into Azure via PowerShell
 
@@ -1202,7 +1146,7 @@ PowerShell.\
 **IMPORTANT: Save the service principal's password**, you will need it
 later when logging in as the Service Principal from PowerShell.
 
-### Exercise - Grant Rights to a Resource Group using PowerShell
+## Exercise - Grant Rights to a Resource Group using PowerShell
 
 Log into Azure via PowerShell
 
@@ -1237,7 +1181,7 @@ PowerShell.
 3.  New-AzRoleAssignment -ApplicationID \$appID -ResourceGroupName
     \'PowerShellRG-\<YOURALIAS\>\' -RoleDefinitionName \'Owner\'
 
-### Exercise - Log into Azure as Service Principal
+## Exercise - Log into Azure as Service Principal
 
 Log into Azure via PowerShell
 
@@ -1381,7 +1325,7 @@ make it hard to fit an entire line of code on one line, so line numbers
 are listed to indicate when a section of code needs to be listed on a
 single line.
 
-Lab 4 - Basic ARM Templates
+## Lab 4 - Basic ARM Templates
 -------------------------
 
 | Lab Description | In this lab, you will explore the use of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group.  ARM templates are JSON files that define the resources you need to deploy for your solution. To understand the concepts associated with deploying and managing your Azure solutions, see [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) |
@@ -1425,7 +1369,7 @@ Where can I see examples of ARM Templates?
 
 <https://github.com/Azure/azure-quickstart-templates>
 
-### Exercise - Deploy a Storage Account using an ARM template and Azure PowerShell
+## Exercise - Deploy a Storage Account using an ARM template and Azure PowerShell
 
 Open and review the ARM template in the Azure Superpowers repository
 
@@ -1525,7 +1469,7 @@ Azure portal for the resource group that you are targeting to see
 real-time deployment information, as well as any errors or warnings if
 your deployment is not successful.
 
-### Exercise - Introduce template parameters and variables
+## Exercise - Introduce template parameters and variables
 
 Introduction
 
@@ -1851,7 +1795,7 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 
 ### Troubleshooting
 
-Lab 5 - Azure DevOps
+## Lab 5 - Azure DevOps
 ------------------
 
 | Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate. |
@@ -1870,7 +1814,7 @@ Process Flow
 
 ![](./media/image19.png)
 
-### Exercise - Create new Azure DevOps organization
+## Exercise - Create new Azure DevOps organization
 
 Log into visualstudio.com
 
@@ -1953,7 +1897,7 @@ Clone git repository from Azure DevOps to your local system
     README.md file that you created by the step where you initialized
     the repository in Azure DevOps.
 
-### Exercise - Explore Azure DevOps Local Repository
+## Exercise - Explore Azure DevOps Local Repository
 
 Open local git repository with VS Code
 
@@ -1982,7 +1926,7 @@ Open local git repository with File Explorer
 3.  Verify that you can see the ReadMe file within the File Explorer
     view.
 
-### Exercise - Add Contributors to your Project
+## Exercise - Add Contributors to your Project
 
 Log into visualstudio.com
 
@@ -2036,7 +1980,7 @@ added successfully to the project by simply typing in the email address
 and clicking on Save changes. Once the user is added, refresh the
 members list.
 
-Lab 6 - Git
+## Lab 6 - Git
 ---------
 
 | Lab Description | This lab will teach you some of the basics of the Git source control system |
@@ -2057,7 +2001,7 @@ Lab 6 - Git
 
 -   Clone, Pull, Push, Fork
 
-### Exercise - Git Branch
+## Exercise - Git Branch
 
 Introduction to branching
 
@@ -2186,7 +2130,7 @@ Switching between branches
     be configured to protect your important branches by preventing
     direct pushes, requiring reviewers, and ensuring clean builds.
 
-### Exercise - Branch policies 
+## Exercise - Branch policies 
 
 Introduction to branch policies
 
@@ -2252,7 +2196,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
     created will enforce the use of pull requests when updating the
     branch and will prevent branch deletion.
 
-### Exercise - Git commit
+## Exercise - Git commit
 
 Introduction to Commit
 
@@ -2426,7 +2370,7 @@ Update ARM Template and commit changes
     Code is indicating that there are two commits that are ready to be
     pushed to the Git repository stored in Azure DevOps.
 
-### Exercise - Git Pull and Git Push
+## Exercise - Git Pull and Git Push
 
 Introduction
 
@@ -2472,7 +2416,7 @@ Performing a Git Push using VS Code
     experienced an error of any kind, this is the first place to go to
     troubleshoot.
 
-### Exercise - Pull Request
+## Exercise - Pull Request
 
 Merging Changes to your master branch via Pull Request
 
@@ -2535,7 +2479,7 @@ Merging Changes to your master branch via Pull Request
 
 ### Troubleshooting
 
-Lab 7 - AD Super Lab Deployment
+## Lab 7 - AD Super Lab Deployment
 -----------------------------
 
 | Lab Description | This lab is a prerequisite for completing the ARM Templates (Advanced) lab.  In this lab, you will deploy resources into Azure using Azure PowerShell and ARM Templates. |
@@ -2550,7 +2494,7 @@ This lab should only take a few minutes to complete the user initiated
 actions. Once the deployment has started, it will take approximately 30
 minutes to complete.
 
-### Exercise - Deploy AD Super Lab
+## Exercise - Deploy AD Super Lab
 
 Launch Visual Studio Code\
 (Visual Studio Code is strongly recommended for creating and editing
@@ -2648,7 +2592,7 @@ well as any errors or warnings if your deployment is not successful.
 
 ### Troubleshooting
 
-Lab 8 - PowerShell DSC
+## Lab 8 - PowerShell DSC
 --------------------
 
 | Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an(y) Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
@@ -2698,7 +2642,7 @@ Basic DSC Configuration
 ![](./media/image45.png)
 
 
-### Exercise - Exploring DSC Custom Resources on the Web
+## Exercise - Exploring DSC Custom Resources on the Web
 
 Explore the PowerShell Gallery
 
@@ -2734,7 +2678,7 @@ Explore Github.com
     detailed use of each resource. The documentation of how to use the
     DSC resources indicates a mature DSC resource module
 
-### Exercise - Build a new Azure VM and install custom DSC resources
+## Exercise - Build a new Azure VM and install custom DSC resources
 
 Create a new Windows Server 2016 VM using the Azure Portal
 
@@ -2868,7 +2812,7 @@ Properties
     xFirewall DSC resource and look for additional configuration
     settings that the DSC resource can control.
 
-### Exercise - Create a DSC Configuration
+## Exercise - Create a DSC Configuration
 
 Log into the VM created in the previous exercise
 
@@ -2979,7 +2923,7 @@ Create a DSC Configuration
     (called DemoConfig) of your current folder. Your MOF file will be
     called localhost.mof
 
-### Exercise - Test the DSC Configuration Locally
+## Exercise - Test the DSC Configuration Locally
 
 Test the DSC Configuration Locally
 
@@ -3009,7 +2953,7 @@ ResourcesNotInDesiredState
     Instead, in the next exercise we will take the PowerShell
     configuration file and package it up for Azure to deploy.
 
-### Exercise - Create an Azure Compatible DSC package
+## Exercise - Create an Azure Compatible DSC package
 
 Create the DSC Package
 
@@ -3076,7 +3020,7 @@ something goes wrong.
     successfully have a public URL where anyone (especially Azure VMs)
     can download the .zip file and you can move to the next exercise.
 
-### Exercise - Deploy an ARM resource DSC extension
+## Exercise - Deploy an ARM resource DSC extension
 
 Log into Azure via PowerShell from your \*\***LOCAL COMPUTER\*\***
 
@@ -3253,7 +3197,7 @@ that contains your DSC.json file
 
 Pay attention to filenames
 
-Lab 9 - Storage Accounts and SAS Tokens
+## Lab 9 - Storage Accounts and SAS Tokens
 -------------------------------------
 
 | Lab Description | This lab will teach you how to upload files to Azure Storage Accounts and secure them by protecting the files with Secure Access Tokens (SAS) tokens |
@@ -3266,7 +3210,7 @@ Lab 9 - Storage Accounts and SAS Tokens
 |  | 3. Access private Azure Storage files with URI + SAS Token |
 | Author | Wes Adams |
 
-### Exercise - Create a storage account
+## Exercise - Create a storage account
 
 Prepare Azure Resource Group
 
@@ -3350,7 +3294,7 @@ Create an Azure Storage Account
     Files, and Azure Disks, review:\
     <https://docs.microsoft.com/en-us/azure/storage/common/storage-decide-blobs-files-disks?toc=%2fazure%2fstorage%2ffiles%2ftoc.json>
 
-### Exercise - Create a blob container
+## Exercise - Create a blob container
 
 Understanding Storage Account Keys
 
@@ -3504,7 +3448,7 @@ Create a Shared Access Signature (SAS) Token
 2.  The SAS Token, if correct, should be in a similar format: **\
     ?sv=2018-03-28&si=policyexample&sr=c&sig=6cVRHdm3rGFEBCa6sSNhmvDKAWZxruM4EQX8wpv2NS4%3D**
 
-### Exercise - Create Test Files
+## Exercise - Create Test Files
 
 Create Test Files
 
@@ -3516,7 +3460,7 @@ Create Test Files
 
 4.  Create a text file called "File3.txt"
 
-### Exercise - Upload one text file using the portal
+## Exercise - Upload one text file using the portal
 
 Connect to the Azure Portal
 
@@ -3550,7 +3494,7 @@ Verify the File Upload in Azure Storage Explorer
 
 3.  Notice **File1**.**txt** is visible from Azure Storage Explorer
 
-### Exercise - Upload a File Using Azure Storage Explorer
+## Exercise - Upload a File Using Azure Storage Explorer
 
 Upload File
 
@@ -3574,7 +3518,7 @@ Verify the File Upload in Azure Storage Explorer
 
 3.  Notice **File2**.**txt** is visible from Azure Storage Explorer
 
-### Exercise - Upload one file using PowerShell
+## Exercise - Upload one file using PowerShell
 
 Create a Client Context
 
@@ -3665,7 +3609,7 @@ Verify the File Upload in Azure Storage Explorer
 
 ### Troubleshooting
 
-Lab 10 - ARM Templates (Advanced)
+## Lab 10 - ARM Templates (Advanced)
 ------------------------------
 
 | Lab Description | In this lab, you will explore some advanced usage of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group. |
@@ -3684,7 +3628,7 @@ Single Templates vs Linked Templates
 
 ![](./media/image51.png)
 
-### Exercise - Review an existing Advanced ARM Template
+## Exercise - Review an existing Advanced ARM Template
 
 Task 1: Review the main ARM template
 
@@ -3964,7 +3908,7 @@ Stored in the location shown below
 
 <https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/multiplevms.json?st=2018-07-31T20%3A52%3A18Z&se=2020-12-31T20%3A52%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=OdLDqGLuFLzDoyY8PwS4Ci4LUPeFxfAfwdbkoFXCo2k%3D>
 
-### Exercise - Edit the existing Advanced ARM Template and deployment
+## Exercise - Edit the existing Advanced ARM Template and deployment
 
 Task 1: Redeploy the main ARM template with an additional worker VM
 
@@ -4011,7 +3955,7 @@ group by deploying an empty template with complete mode
 
 ### Troubleshooting
 
-Lab 11 - Azure DevOps Service Connections
+## Lab 11 - Azure DevOps Service Connections
 --------------------------------------
 
 | Lab Description | In this lab you will create a new Service Connection in Azure DevOps which will connect to Azure and allow build/release steps in Azure DevOps to interact with and control an Azure subscription. |
@@ -4022,7 +3966,7 @@ Lab 11 - Azure DevOps Service Connections
 |  | 2. Any PowerShell scripts you write or use do not need to log in or specify their Azure subscription target, Azure DevOps will handle all that prior to running your scripts in Azure |
 | Author | Keith Hitchcock |
 
-### Exercise - Create a Service Principal
+## Exercise - Create a Service Principal
 
 Complete previous lab -- Azure AD and Service Principals
 
@@ -4038,7 +3982,7 @@ Before proceeding to the next step, make sure that you have:
 
 -   the service principal has rights to that resource group (owner)
 
-### Exercise - Create a Service Connection in Azure DevOps
+## Exercise - Create a Service Connection in Azure DevOps
 
 Log into visualstudio.com
 
@@ -4142,7 +4086,7 @@ described in the Azure AD and Service Principals Lab). Please note that
 a service principal must have some rights (any) in the Azure
 subscription in order to be successfully verified.
 
-### Exercise - Verify Service Connection
+## Exercise - Verify Service Connection
 
 Create a new Azure DevOps Build
 
@@ -4233,7 +4177,7 @@ With Microsoft-hosted agents, maintenance and upgrades are taken care of
 for you. Each time you run a pipeline, you get a fresh virtual machine.
 The virtual machine is discarded after one use.
 
-Lab 12 - Azure DevOps Prereqs
+## Lab 12 - Azure DevOps Prereqs
 --------------------------
 
 | Lab Description | In this lab, you will deploy and configure prerequisites that are needed to complete the subsequent labs on Azure DevOps Build and Release. |
@@ -4241,7 +4185,7 @@ Lab 12 - Azure DevOps Prereqs
 | Estimated Time to Complete | 45 minutes |
 | Author | Ralph Kyttle |
 
-### Exercise - Azure DevOps Organization
+## Exercise - Azure DevOps Organization
 
 Verify that your Azure DevOps Organization exists and you can login
 
@@ -4253,7 +4197,7 @@ Verify that your Azure DevOps Organization exists and you can login
 
 3.  Verify that your Azure DevOps Organization exists and you can login
 
-### Exercise - Create a new Azure DevOps Project
+## Exercise - Create a new Azure DevOps Project
 
 Create a new Azure DevOps Project
 
@@ -4308,7 +4252,7 @@ Clone git repository from Azure DevOps to your local system
     README.md file that you created by the step where you initialized
     the repository in Azure DevOps.
 
-### Exercise - Branches
+## Exercise - Branches
 
 Create a new dev branch in your Azure DevOps repo
 
@@ -4326,7 +4270,7 @@ Create a new dev branch in your Azure DevOps repo
 5.  Refer to **Exercise - Git Branch** in the Git lab for a detailed
     example of creating new branches
 
-### Exercise - Branch Policies
+## Exercise - Branch Policies
 
 Create a branch policy on the master branch
 
@@ -4361,7 +4305,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 7.  Refer to **Exercise -- Branch policies** in the Git lab for a
     detailed example of creating new branch policies
 
-### Exercise - Download sample code and check files into your repository
+## Exercise - Download sample code and check files into your repository
 
 Download sample code
 
@@ -4428,14 +4372,14 @@ Merge changes to the master branch via Pull Request
 
 > ![](./media/image55.png)
 
-### Exercise - Service Principal
+## Exercise - Service Principal
 
 Create a new Service Principal
 
 1.  Refer to Lab -- Azure AD and Service Principals to create a new
     Service Principal in your Azure subscription.
 
-### Exercise - Create a new Resource Group to contain a storage account for DSC files
+## Exercise - Create a new Resource Group to contain a storage account for DSC files
 
 Log into Azure
 
@@ -4454,7 +4398,7 @@ Create a Resource Group
     'DSCFiles-\<YOURALIAS\>' and select any valid location. Click the
     'Create' button.
 
-### Exercise - Create a new storage account for DSC files
+## Exercise - Create a new storage account for DSC files
 
 Log into Azure
 
@@ -4491,7 +4435,7 @@ Create a Storage Account
 
     ![](./media/image57.png)
 
-### Exercise - Create two new Resource Groups for your application deployment
+## Exercise - Create two new Resource Groups for your application deployment
 
 Login to Azure
 
@@ -4516,7 +4460,7 @@ Create a Resource Group
     'azure-prod-\<YOURALIAS\>' and select any valid location. Click the
     'Create' button.
 
-### Exercise - Grant Service Principal with permissions
+## Exercise - Grant Service Principal with permissions
 
 Log into Azure
 
@@ -4542,7 +4486,7 @@ Edit Resource Group Permissions
 4.  For each Resource Group, edit the permissions and grant your new
     Service Principal with **Contributor** permissions
 
-### Exercise - Service Connection
+## Exercise - Service Connection
 
 Create a new Service Connection in your project
 
@@ -4550,7 +4494,7 @@ Create a new Service Connection in your project
     creating a Service Connection and create a new Service Connection in
     your project using your Service Principal credentials.
 
-Lab 13 - Azure DevOps Build Continuous Integration
+## Lab 13 - Azure DevOps Build Continuous Integration
 -------------------------------------------------------
 
 | Lab Description | In this lab, you will explore Continuous Integration in Azure DevOps. |
@@ -4564,7 +4508,7 @@ Lab 13 - Azure DevOps Build Continuous Integration
 |  | 2. Continuous Integration can provide help meet infrastructure needs, including automating the build of DSC zip files for use in Azure |
 | Author | Ralph Kyttle |
 
-### Exercise - Setup an Azure DevOps build that uses CI to create DSC zip files
+## Exercise - Setup an Azure DevOps build that uses CI to create DSC zip files
 
 Create an Azure DevOps build
 
@@ -4668,7 +4612,7 @@ Create an Azure DevOps build
     contents and review SetWinSecuritySettings.ps1 to verify that line
     145 is listing ValueData =1.
 
-Lab 14 - Azure DevOps Release Continuous Deployment
+## Lab 14 - Azure DevOps Release Continuous Deployment
 --------------------------------------------------------
 
 | Lab Description | In this lab, you will explore Continuous Delivery in Azure DevOps. |
@@ -4681,7 +4625,7 @@ Lab 14 - Azure DevOps Release Continuous Deployment
 |  | 3. Modern release pipelines allow development teams to deploy new features fast and safely. |
 | Author | Ralph Kyttle |
 
-### Exercise - Setup an Azure DevOps release
+## Exercise - Setup an Azure DevOps release
 
 **[In this lab, you will...]{.underline}**
 
