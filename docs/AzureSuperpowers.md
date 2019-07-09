@@ -3,172 +3,167 @@ Azure Superpowers Lab Manual
 
 [1. Lab - Download and Install Tools](#lab-1---download-and-install-tools)
 
-[1.1. Exercise - Setup Az PowerShell](#exercise---setup-az-powershell-module)
+- [1.1. Exercise - Setup Az PowerShell Module](#exercise---setup-az-powershell-module)
 
-[1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
+- [1.2. Exercise - Setup Git for Windows](#exercise---setup-git-for-windows)
 
-[1.3. Exercise - Setup Visual Studio Code](#exercise---setup-visual-studio-code)
+- [1.3. Exercise - Setup Visual Studio Code](#exercise---setup-visual-studio-code)
 
-[1.4. Exercise - Setup Azure Storage Explorer](#exercise---setup-azure-storage-explorer)
+- [1.4. Exercise - Setup Azure Storage Explorer](#exercise---setup-azure-storage-explorer)
 
-[1.5. Exercise - Version Check](#exercise---version-check)
+- [1.5. Exercise - Version Check](#exercise---version-check)
 
-[1.6. Troubleshooting](#troubleshooting)
+- [1.6. Troubleshooting](#troubleshooting)
 
 [2. Lab - Tools Walkthrough](#lab-2---tools-walkthrough)
 
-[2.1. Exercise - VS Code Interface](#exercise---vs-code-interface)
+- [2.1. Exercise - VS Code Interface](#exercise---vs-code-interface)
 
-[2.2. Exercise - Clone the Azure Superpowers Repository](#exercise---clone-the-azure-superpowers-repository)
+- [2.2. Exercise - Clone the Azure Superpowers Repository](#exercise---clone-the-azure-superpowers-repository)
 
-[2.3. Exercise - Az Walkthrough](#exercise---az-walkthrough)
+- [2.3. Exercise - Az Walkthrough](#exercise---az-walkthrough)
 
-[2.4. Exercise - Azure Storage Explorer Walkthrough](#exercise---azure-storage-explorer-walkthrough)
+- [2.4. Exercise - Azure Storage Explorer Walkthrough](#exercise---azure-storage-explorer-walkthrough)
 
-[2.5. Troubleshooting](#troubleshooting-1)
+- [2.5. Troubleshooting](#troubleshooting-1)
 
 [3. Lab - Azure AD and Service Principals](#lab-3---azure-ad-and-service-principals)
 
-[3.1. Exercise - Create Resource Group using the Portal](#exercise---create-resource-group-using-the-portal)
+- [3.1. Exercise - Create Resource Group using the Portal](#exercise---create-resource-group-using-the-portal)
 
-[3.2. Exercise - Create Service Principal using the Portal](#exercise---create-service-principal-using-the-portal)
+- [3.2. Exercise - Create Service Principal using the Portal](#exercise---create-service-principal-using-the-portal)
 
-[3.3. Exercise - Grant Rights to a Resource Group using the Portal](#exercise---grant-rights-to-a-resource-group-using-the-portal)
+- [3.3. Exercise - Grant Rights to a Resource Group using the Portal](#exercise---grant-rights-to-a-resource-group-using-the-portal)
 
-[3.4. Exercise - Create Resource Group using PowerShell](#exercise---create-resource-group-using-powershell)
+- [3.4. Exercise - Create Resource Group using PowerShell](#exercise---create-resource-group-using-powershell)
 
-[3.5. Exercise - Create Service Principal using PowerShell](#exercise---create-service-principal-using-powershell)
+- [3.5. Exercise - Create Service Principal using PowerShell](#exercise---create-service-principal-using-powershell)
 
-[3.6. Exercise - Grant Rights to a Resource Group using PowerShell](#exercise---grant-rights-to-a-resource-group-using-powershell)
+- [3.6. Exercise - Grant Rights to a Resource Group using PowerShell](#exercise---grant-rights-to-a-resource-group-using-powershell)
 
-[3.7. Exercise - Log into Azure as Service Principal](#exercise---log-into-azure-as-service-principal)
+- [3.7. Exercise - Log into Azure as Service Principal](#exercise---log-into-azure-as-service-principal)
 
-[3.8. Troubleshooting](#troubleshooting-2)
+- [3.8. Troubleshooting](#troubleshooting-2)
 
 [4. Lab - Basic ARM Templates](#lab-4---basic-arm-templates)
 
-[4.1. Exercise - Deploy a Storage Account using an ARM template and
-Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and-azure-powershell)
+- [4.1. Exercise - Deploy a Storage Account using an ARM template and Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and-azure-powershell)
 
-[4.2. Exercise - Introduce template parameters and variables](#exercise---introduce-template-parameters-and-variables)
+- [4.2. Exercise - Introduce template parameters and variables](#exercise---introduce-template-parameters-and-variables)
 
-[4.3. Troubleshooting](#troubleshooting-3)
+- [4.3. Troubleshooting](#troubleshooting-3)
 
 [5. Lab - Azure DevOps](#lab-5---azure-devops)
 
-[5.1. Exercise - Create new Azure DevOps organization](#exercise---create-new-azure-devops-organization)
+- [5.1. Exercise - Create new Azure DevOps organization](#exercise---create-new-azure-devops-organization)
 
-[5.2. Exercise - Explore Azure DevOps Local Repository](#exercise---explore-azure-devops-local-repository)
+- [5.2. Exercise - Explore Azure DevOps Local Repository](#exercise---explore-azure-devops-local-repository)
 
-[5.3. Exercise - Add Contributors to your Project](#exercise---add-contributors-to-your-project)
+- [5.3. Exercise - Add Contributors to your Project](#exercise---add-contributors-to-your-project)
 
-[5.4. Troubleshooting](#troubleshooting-4)
+- [5.4. Troubleshooting](#troubleshooting-4)
 
 [6. Lab - Git](#lab-6---git)
 
-[6.1. Exercise - Git Branch](#exercise---git-branch)
+- [6.1. Exercise - Git Branch](#exercise---git-branch)
 
-[6.2. Exercise - Branch policies](#exercise---branch-policies)
+- [6.2. Exercise - Branch policies](#exercise---branch-policies)
 
-[6.3. Exercise - Git commit](#exercise---git-commit)
+- [6.3. Exercise - Git commit](#exercise---git-commit)
 
-[6.4. Exercise - Git Pull and Git Push](#exercise---git-pull-and-git-push)
+- [6.4. Exercise - Git Pull and Git Push](#exercise---git-pull-and-git-push)
 
-[6.5. Exercise - Pull Request](#exercise---pull-request)
+- [6.5. Exercise - Pull Request](#exercise---pull-request)
 
-[6.6. Troubleshooting](#troubleshooting-5)
+- [6.6. Troubleshooting](#troubleshooting-5)
 
 [7. Lab - AD Super Lab Deployment](#lab-7---ad-super-lab-deployment)
 
-[7.1. Exercise - Deploy AD Super Lab](#exercise---deploy-ad-super-lab)
+- [7.1. Exercise - Deploy AD Super Lab](#exercise---deploy-ad-super-lab)
 
-[7.2. Troubleshooting](#troubleshooting-6)
+- [7.2. Troubleshooting](#troubleshooting-6)
 
 [8. Lab - PowerShell DSC](#lab-8---powershell-dsc)
 
-[8.1. Exercise - Exploring DSC Custom Resources on the Web](#exercise---exploring-dsc-custom-resources-on-the-web)
+- [8.1. Exercise - Exploring DSC Custom Resources on the Web](#exercise---exploring-dsc-custom-resources-on-the-web)
 
-[8.2. Exercise - Build a new Azure VM and install custom DSC resources](#exercise---build-a-new-azure-vm-and-install-custom-dsc-resources)
+- [8.2. Exercise - Build a new Azure VM and install custom DSC resources](#exercise---build-a-new-azure-vm-and-install-custom-dsc-resources)
 
-[8.3. Exercise - Create a DSC Configuration](#exercise---create-a-dsc-configuration)
+- [8.3. Exercise - Create a DSC Configuration](#exercise---create-a-dsc-configuration)
 
-[8.4. Exercise - Test the DSC Configuration Locally](#exercise---test-the-dsc-configuration-locally)
+- [8.4. Exercise - Test the DSC Configuration Locally](#exercise---test-the-dsc-configuration-locally)
 
-[8.5. Exercise - Create an Azure Compatible DSC package](#exercise---create-an-azure-compatible-dsc-package)
+- [8.5. Exercise - Create an Azure Compatible DSC package](#exercise---create-an-azure-compatible-dsc-package)
 
-[8.6. Exercise - Deploy an ARM resource DSC extension](#exercise---deploy-an-arm-resource-dsc-extension)
+- [8.6. Exercise - Deploy an ARM resource DSC extension](#exercise---deploy-an-arm-resource-dsc-extension)
 
-[8.7. Troubleshooting](#troubleshooting-7)
+- [8.7. Troubleshooting](#troubleshooting-7)
 
 [9. Lab - Storage Accounts and SAS Tokens](#lab-9---storage-accounts-and-sas-tokens)
 
-[9.1. Exercise - Create a storage account](#exercise---create-a-storage-account)
+- [9.1. Exercise - Create a storage account](#exercise---create-a-storage-account)
 
-[9.2. Exercise - Create a blob container](#exercise---create-a-blob-container)
+- [9.2. Exercise - Create a blob container](#exercise---create-a-blob-container)
 
-[9.3. Exercise - Create Test Files](#exercise---create-test-files)
+- [9.3. Exercise - Create Test Files](#exercise---create-test-files)
 
-[9.4. Exercise - Upload one text file using the portal](#exercise---upload-one-text-file-using-the-portal)
+- [9.4. Exercise - Upload one text file using the portal](#exercise---upload-one-text-file-using-the-portal)
 
-[9.5. Exercise - Upload a File Using Azure Storage Explorer](#exercise---upload-a-file-using-azure-storage-explorer)
+- [9.5. Exercise - Upload a File Using Azure Storage Explorer](#exercise---upload-a-file-using-azure-storage-explorer)
 
-[9.6. Exercise - Upload one file using PowerShell](#exercise---upload-one-file-using-powershell)
+- [9.6. Exercise - Upload one file using PowerShell](#exercise---upload-one-file-using-powershell)
 
-[9.7. Troubleshooting](#troubleshooting-8)
+- [9.7. Troubleshooting](#troubleshooting-8)
 
 [10. Lab - ARM Templates (Advanced)](#lab-10---arm-templates-advanced)
 
-[10.1. Exercise - Review an existing Advanced ARM Template](#exercise---review-an-existing-advanced-arm-template)
+- [10.1. Exercise - Review an existing Advanced ARM Template](#exercise---review-an-existing-advanced-arm-template)
 
-[10.2. Exercise - Edit the existing Advanced ARM Template and deployment](#exercise---edit-the-existing-advanced-arm-template-and-deployment)
+- [10.2. Exercise - Edit the existing Advanced ARM Template and deployment](#exercise---edit-the-existing-advanced-arm-template-and-deployment)
 
-[10.3. Troubleshooting](#troubleshooting-9)
+- [10.3. Troubleshooting](#troubleshooting-9)
 
 [11. Lab - Azure DevOps Service Connections](#lab-11---azure-devops-service-connections)
 
-[11.1. Exercise - Create a Service Principal](#exercise---create-a-service-principal)
+- [11.1. Exercise - Create a Service Principal](#exercise---create-a-service-principal)
 
-[11.2. Exercise - Create a Service Connection in Azure DevOps](#exercise---create-a-service-connection-in-azure-devops)
+- [11.2. Exercise - Create a Service Connection in Azure DevOps](#exercise---create-a-service-connection-in-azure-devops)
 
-[11.3. Exercise - Verify Service Connection](#exercise---verify-service-connection)
+- [11.3. Exercise - Verify Service Connection](#exercise---verify-service-connection)
 
-[11.4. Troubleshooting](#troubleshooting-10)
+- [11.4. Troubleshooting](#troubleshooting-10)
 
 [12. Lab - Azure DevOps Prereqs](#lab-12---azure-devops-prereqs)
 
-[12.1. Exercise - Azure DevOps Organization](#exercise---azure-devops-organization)
+- [12.1. Exercise - Azure DevOps Organization](#exercise---azure-devops-organization)
 
-[12.2. Exercise - Create a new Azure DevOps Project](#exercise---create-a-new-azure-devops-project)
+- [12.2. Exercise - Create a new Azure DevOps Project](#exercise---create-a-new-azure-devops-project)
 
-[12.3. Exercise - Branches](#exercise---branches)
+- [12.3. Exercise - Branches](#exercise---branches)
 
-[12.4. Exercise - Branch Policies](#exercise---branch-policies-1)
+- [12.4. Exercise - Branch Policies](#exercise---branch-policies-1)
 
-[12.5. Exercise - Download sample code and check files into your
-repository](#exercise---download-sample-code-and-check-files-into-your-repository)
+- [12.5. Exercise - Download sample code and check files into your repository](#exercise---download-sample-code-and-check-files-into-your-repository)
 
-[12.6. Exercise - Service Principal](#exercise---service-principal)
+- [12.6. Exercise - Service Principal](#exercise---service-principal)
 
-[12.7. Exercise - Create a new Resource Group to contain a storage
-account for DSC files](#exercise---create-a-new-resource-group-to-contain-a-storage-account-for-dsc-files)
+- [12.7. Exercise - Create a new Resource Group to contain a storage account for DSC files](#exercise---create-a-new-resource-group-to-contain-a-storage-account-for-dsc-files)
 
-[12.8. Exercise - Create a new storage account for DSC files](#exercise---create-a-new-storage-account-for-dsc-files)
+- [12.8. Exercise - Create a new storage account for DSC files](#exercise---create-a-new-storage-account-for-dsc-files)
 
-[12.9. Exercise - Create two new Resource Groups for your application
-deployment](#exercise---create-two-new-resource-groups-for-your-application-deployment)
+- [12.9. Exercise - Create two new Resource Groups for your application deployment](#exercise---create-two-new-resource-groups-for-your-application-deployment)
 
-[12.10. Exercise - Grant Service Principal with permissions](#exercise---grant-service-principal-with-permissions)
+- [12.10. Exercise - Grant Service Principal with permissions](#exercise---grant-service-principal-with-permissions)
 
-[12.11. Exercise - Service Connection](#exercise---service-connection)
+- [12.11. Exercise - Service Connection](#exercise---service-connection)
 
 [13. Lab - Azure DevOps Build Continuous Integration](#lab-13---azure-devops-build-continuous-integration)
 
-[13.1. Exercise - Setup an Azure DevOps build that uses CI to create DSC
-zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zip-files)
+- [13.1. Exercise - Setup an Azure DevOps build that uses CI to create DSC zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zip-files)
 
 [14. Lab - Azure DevOps Release Continuous Deployment](#lab-14---azure-devops-release-continuous-deployment)
 
-[14.1. Exercise - Setup an Azure DevOps release](#exercise---setup-an-azure-devops-release)
+- [14.1. Exercise - Setup an Azure DevOps release](#exercise---setup-an-azure-devops-release)
 
 <div style="page-break-after: always;"></div>
 
