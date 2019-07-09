@@ -216,7 +216,7 @@ Set-ExecutionPolicy Unrestricted
 1.  Run the following PowerShell Command:
 
 ```powershell
-Install-Module -Name \'Az\'
+Install-Module -Name 'Az'
 ```
 
 2.  If not already installed, you may be prompted to install the NuGet
@@ -230,7 +230,7 @@ Install-Module -Name \'Az\'
     installed correctly:
 
 ```powershell
-Get-Module -Name \'\*Az\*\' -ListAvailable
+Get-Module -Name '*Az*' -ListAvailable
 ```
 
 5.  If installed, Az should be returned
@@ -378,8 +378,7 @@ Expected return:
 3.  Type the following PowerShell command:
 
 ```powershell
-Get-Module -Name \'Az.Compute\' -ListAvailable \| Select-Object
--Property \'Version\'
+Get-Module -Name 'Az.Compute' -ListAvailable | Select-Object -Property 'Version'
 ```
 
 4.  The expected output is **2.2.0** or later
@@ -389,7 +388,7 @@ Get-Module -Name \'Az.Compute\' -ListAvailable \| Select-Object
 1.  From within the VS Code Terminal, Type the following git command:
 
 ```powershell
-git \--version
+git --version
 ```
 
 2.  The expected output is **git version 2.21.0.windows.1** or later
@@ -431,7 +430,7 @@ The Az PowerShell module requires .Net Framework Runtime 4.7.2 or higher
 
 **Azure subscriptions**
 
-__[TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS]__
+<ins>TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS</ins>
 
 <div style="page-break-after: always;"></div>
 
