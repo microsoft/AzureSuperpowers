@@ -189,7 +189,7 @@ in this class, as well as making sure they are up to date.
 
 ## Exercise - Setup Az PowerShell Module
 
-Launch PowerShell
+### Launch PowerShell
 
 1.  Right Click on **Windows PowerShell** from either the Desktop or the
     Start Menu
@@ -201,7 +201,7 @@ Set PowerShell Execution Policy
 1.  Run the following PowerShell Command to set your execution policy to
     Unrestricted:
 
-    Set-ExecutionPolicy Unrestricted
+>   Set-ExecutionPolicy Unrestricted
 
 2.  Select Yes if prompted. Execution policies determine whether you can
     load configuration files, such as your PowerShell profile, or run
@@ -234,6 +234,8 @@ Install Az Module
     (some Azure PowerShell versions have this on as the default)
 
 > Disable-AzContextAutosave
+
+<div style="page-break-after: always;"></div>
 
 Expected return:
 
