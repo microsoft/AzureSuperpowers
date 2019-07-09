@@ -196,12 +196,14 @@ in this class, as well as making sure they are up to date.
 
 2.  Select **Run as Administrator**
 
-Set PowerShell Execution Policy
+### Set PowerShell Execution Policy
 
 1.  Run the following PowerShell Command to set your execution policy to
     Unrestricted:
 
->   Set-ExecutionPolicy Unrestricted
+```powershell
+   Set-ExecutionPolicy Unrestricted
+```
 
 2.  Select Yes if prompted. Execution policies determine whether you can
     load configuration files, such as your PowerShell profile, or run
@@ -209,7 +211,7 @@ Set PowerShell Execution Policy
     run. More information on this topic can be found here:
     <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6#parameters>
 
-Install Az Module
+### Install Az Module
 
 1.  Run the following PowerShell Command:
 
@@ -257,7 +259,7 @@ Expected return:
 
 ## Exercise - Setup Git for Windows
 
-Download Git for Windows Installation Files
+### Download Git for Windows Installation Files
 
 1.  In a web browser, navigate to <https://git-scm.com/download/win>
 
@@ -266,7 +268,7 @@ Download Git for Windows Installation Files
 
 3.  Note the location of the installation files
 
-Install Git for Windows
+### Install Git for Windows
 
 1.  Run the **Git for Windows** installation file
 
@@ -299,7 +301,7 @@ Install Git for Windows
 
 ## Exercise - Setup Visual Studio Code
 
-Download Visual Studio Code
+### Download Visual Studio Code
 
 1.  In a web browser, navigate to <https://code.visualstudio.com>
 
@@ -307,7 +309,7 @@ Download Visual Studio Code
 
 3.  Note the location of the installation files
 
-Install Visual Studio Code
+### Install Visual Studio Code
 
 1.  Run the **VSCodeUserSetup** installation file
 
@@ -332,7 +334,7 @@ Install Visual Studio Code
 
 ## Exercise - Setup Azure Storage Explorer
 
-Download Azure Storage Explorer
+### Download Azure Storage Explorer
 
 1.  In a web browser, navigate to
     <https://azure.microsoft.com/en-us/features/storage-explorer/>
@@ -341,7 +343,7 @@ Download Azure Storage Explorer
 
 3.  Note the location of the installation files
 
-Install Azure Storage Explorer
+### Install Azure Storage Explorer
 
 1.  Run the Azure Storage Explorer installation file
 
@@ -358,7 +360,7 @@ Install Azure Storage Explorer
 
 ## Exercise - Version Check
 
-Check the version of Az
+### Check the version of Az
 
 1.  Launch VS Code
 
@@ -369,29 +371,29 @@ Check the version of Az
 
 3.  Type the following PowerShell command:
 
-Get-Module -Name \'Az.Compute\' -ListAvailable \| Select-Object
+> Get-Module -Name \'Az.Compute\' -ListAvailable \| Select-Object
 -Property \'Version\'
 
 4.  The expected output is **2.2.0** or later
 
-Check the version of Git for Window
+### Check the version of Git for Window
 
 1.  From within the VS Code Terminal, Type the following git command:
 
-git \--version
+> git \--version
 
 2.  The expected output is **git version 2.21.0.windows.1** or later
 
 3.  If you experience any issues with this step, restart VS Code and try
     again
 
-Check the version of Visual Studio Code
+### Check the version of Visual Studio Code
 
 1.  From the VS Code File Menu, click **Help** then **About**
 
 2.  The expected version is **1.34.0** or later
 
-Check the version of Azure Storage Explorer
+### Check the version of Azure Storage Explorer
 
 1.  Launch Azure Storage Explorer
 
@@ -401,7 +403,7 @@ Check the version of Azure Storage Explorer
 
 <div style="page-break-after: always;"></div>
 
-### Troubleshooting
+## Troubleshooting
 
 **Azure PowerShell**\
 \
@@ -419,7 +421,9 @@ The Az PowerShell module requires .Net Framework Runtime 4.7.2 or higher
 
 **Azure subscriptions**
 
-[TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS]{.underline}
+__[TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS]__
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 2 - Tools Walkthrough
 -----------------------
@@ -825,7 +829,7 @@ Azure Storage Explorer Walkthrough
     verifying configuration. Note: You will see this menu when a blob is
     selected. Blobs will be created in future labs.
 
-### Troubleshooting
+## Troubleshooting
 
 Simply clicking on a file in the Explorer view of VS Code will select
 the file, but if you click on another file it will switch to that file.
@@ -1281,7 +1285,7 @@ PowerShell:
 
 Logout-AzAccount
 
-### Troubleshooting
+## Troubleshooting
 
 The login prompt to login to Azure via PowerShell frequently appears as
 a "pop-under" and may hide behind other open windows on your desktop
@@ -1790,7 +1794,7 @@ In a PowerShell command window, use the following command:
 
 Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 
-### Troubleshooting
+## Troubleshooting
 
 ## Lab 5 - Azure DevOps
 ------------------
@@ -1969,7 +1973,7 @@ Add Members to your Project
 6.  Click the '+ Add...' button and type the member or group you wish to
     add to this security group, then click the 'Save Changes' button
 
-### Troubleshooting
+## Troubleshooting
 
 When adding members to a project, we have seen instances where the user
 did not show up in the lookup window, but they were still able to be
@@ -2474,7 +2478,7 @@ Merging Changes to your master branch via Pull Request
 
     ![](./media/image41.png)
 
-### Troubleshooting
+## Troubleshooting
 
 ## Lab 7 - AD Super Lab Deployment
 -----------------------------
@@ -2587,7 +2591,7 @@ You can review the Deployments tab in the Azure portal for the resource
 group that you are targeting to see real-time deployment information, as
 well as any errors or warnings if your deployment is not successful.
 
-### Troubleshooting
+## Troubleshooting
 
 ## Lab 8 - PowerShell DSC
 --------------------
@@ -3186,7 +3190,7 @@ PS\> Test-DscConfiguration -Detailed
 
 All resources should now be listed as being in the desired state.
 
-### Troubleshooting
+## Troubleshooting
 
 If you receive a message that states your ZipFileURI cannot be found,
 make sure you are executing commands from within the correct directory
@@ -3604,7 +3608,7 @@ Verify the File Upload in Azure Storage Explorer
 
     Properties = @{\"ContentType\" = \"text/plain\"}
 
-### Troubleshooting
+## Troubleshooting
 
 ## Lab 10 - ARM Templates (Advanced)
 ------------------------------
@@ -3950,7 +3954,7 @@ group by deploying an empty template with complete mode
     C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
     Advanced\\emptyResourceGroup.ps1
 
-### Troubleshooting
+## Troubleshooting
 
 ## Lab 11 - Azure DevOps Service Connections
 --------------------------------------
@@ -4163,7 +4167,7 @@ scripts/commands. Azure DevOps can also run the build on demand (as you
 did in this exercise by queuing it), on an automatic schedule, or
 automatically every time a change is made to the code repository.
 
-### Troubleshooting
+## Troubleshooting
 
 Your Azure DevOps build is configured to utilize a hosted build agent.
 Because this is a hosted service it may take some time before the build
