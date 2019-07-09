@@ -1,7 +1,7 @@
 Azure Superpowers Lab Manual
 ========
 
-[1. Lab - Download and Install Tools](#lab---download-and-install-tools)
+[1. Lab - Download and Install Tools](#lab-1---download-and-install-tools)
 
 <blockquote>
 
@@ -19,7 +19,7 @@ Azure Superpowers Lab Manual
 
 </blockquote>
 
-[2. Lab - Tools Walkthrough](#lab---tools-walkthrough)
+[2. Lab - Tools Walkthrough](#lab-2---tools-walkthrough)
 
 <blockquote>
 
@@ -35,7 +35,7 @@ Azure Superpowers Lab Manual
 
 </blockquote>
 
-[3. Lab - Azure AD and Service Principals](#lab---azure-ad-and-service-principals)
+[3. Lab - Azure AD and Service Principals](#lab-3---azure-ad-and-service-principals)
 
 <blockquote>
 
@@ -57,7 +57,7 @@ Azure Superpowers Lab Manual
 
 </blockquote>
 
-[4. Lab - Basic ARM Templates](#lab---basic-arm-templates)
+[4. Lab - Basic ARM Templates](#lab-4---basic-arm-templates)
 
 <blockquote>
 
@@ -70,7 +70,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[5. Lab - Azure DevOps](#lab---azure-devops)
+[5. Lab - Azure DevOps](#lab-5---azure-devops)
 
 <blockquote>
 
@@ -84,7 +84,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[6. Lab - Git](#lab---git)
+[6. Lab - Git](#lab-6---git)
 
 <blockquote>
 
@@ -102,7 +102,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[7. Lab - AD Super Lab Deployment](#lab---ad-super-lab-deployment)
+[7. Lab - AD Super Lab Deployment](#lab-7---ad-super-lab-deployment)
 
 <blockquote>
 
@@ -112,7 +112,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[8. Lab - PowerShell DSC](#lab---powershell-dsc)
+[8. Lab - PowerShell DSC](#lab-8---powershell-dsc)
 
 <blockquote>
 
@@ -132,7 +132,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[9. Lab - Storage Accounts and SAS Tokens](#lab---storage-accounts-and-sas-tokens)
+[9. Lab - Storage Accounts and SAS Tokens](#lab-9---storage-accounts-and-sas-tokens)
 
 <blockquote>
 
@@ -152,7 +152,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[10. Lab - ARM Templates (Advanced)](#lab---arm-templates-advanced)
+[10. Lab - ARM Templates (Advanced)](#lab-10---arm-templates-advanced)
 
 <blockquote>
 
@@ -164,7 +164,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[11. Lab - Azure DevOps Service Connections](#lab---azure-devops-service-connections)
+[11. Lab - Azure DevOps Service Connections](#lab-11---azure-devops-service-connections)
 
 <blockquote>
 
@@ -178,7 +178,7 @@ Azure PowerShell](#exercise---deploy-a-storage-account-using-an-arm-template-and
 
 </blockquote>
 
-[12. Lab - Azure DevOps Prereqs](#lab---azure-devops-prereqs)
+[12. Lab - Azure DevOps Prereqs](#lab-12---azure-devops-prereqs)
 
 <blockquote>
 
@@ -209,7 +209,7 @@ deployment](#exercise---create-two-new-resource-groups-for-your-application-depl
 
 </blockquote>
 
-[13. Lab - Azure DevOps Build Continuous Integration](#lab---azure-devops-build-continuous-integration)
+[13. Lab - Azure DevOps Build Continuous Integration](#lab-13---azure-devops-build-continuous-integration)
 
 <blockquote>
 
@@ -218,7 +218,7 @@ zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zi
 
 </blockquote>
 
-[14. Lab - Azure DevOps Release Continuous Deployment](#lab---azure-devops-release-continuous-deployment)
+[14. Lab - Azure DevOps Release Continuous Deployment](#lab-14---azure-devops-release-continuous-deployment)
 
 <blockquote>
 
@@ -228,7 +228,7 @@ zip files](#exercise---setup-an-azure-devops-build-that-uses-ci-to-create-dsc-zi
 
 <div style="page-break-after: always;"></div>
 
-1. Lab - Download and Install Tools
+Lab 1 - Download and Install Tools
 --------------------------------
 
 | Lab Description | This lab covers the installation of tools that you will be using in the rest of the labs |
@@ -480,7 +480,7 @@ The Az PowerShell module requires .Net Framework Runtime 4.7.2 or higher
 
 [TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS]{.underline}
 
-2. Lab - Tools Walkthrough
+Lab 2 - Tools Walkthrough
 -----------------------
 
 | Lab Description | This lab will show some basics of the tools and familiarize you with their interfaces/use |
@@ -909,7 +909,7 @@ fl \* -Force
 For function keys to operate, you may need to press the **Fn** key on
 some computer models, like Surface
 
-3. Lab - Azure AD and Service Principals
+Lab 3 - Azure AD and Service Principals
 -------------------------------------
 
 | Lab Description | This lab will teach you how to create Service Principals in both the Azure Portal as well as using the Azure PowerShell cmdlets |
@@ -1381,7 +1381,7 @@ make it hard to fit an entire line of code on one line, so line numbers
 are listed to indicate when a section of code needs to be listed on a
 single line.
 
-4. Lab - Basic ARM Templates
+Lab 4 - Basic ARM Templates
 -------------------------
 
 | Lab Description | In this lab, you will explore the use of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group.  ARM templates are JSON files that define the resources you need to deploy for your solution. To understand the concepts associated with deploying and managing your Azure solutions, see [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) |
@@ -1851,7 +1851,7 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 
 ### Troubleshooting
 
-5. Lab - Azure DevOps
+Lab 5 - Azure DevOps
 ------------------
 
 | Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate. |
@@ -2036,7 +2036,7 @@ added successfully to the project by simply typing in the email address
 and clicking on Save changes. Once the user is added, refresh the
 members list.
 
-6. Lab - Git
+Lab 6 - Git
 ---------
 
 | Lab Description | This lab will teach you some of the basics of the Git source control system |
@@ -2535,7 +2535,7 @@ Merging Changes to your master branch via Pull Request
 
 ### Troubleshooting
 
-7. Lab - AD Super Lab Deployment
+Lab 7 - AD Super Lab Deployment
 -----------------------------
 
 | Lab Description | This lab is a prerequisite for completing the ARM Templates (Advanced) lab.  In this lab, you will deploy resources into Azure using Azure PowerShell and ARM Templates. |
@@ -2648,7 +2648,7 @@ well as any errors or warnings if your deployment is not successful.
 
 ### Troubleshooting
 
-8. Lab - PowerShell DSC
+Lab 8 - PowerShell DSC
 --------------------
 
 | Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an(y) Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
@@ -3253,7 +3253,7 @@ that contains your DSC.json file
 
 Pay attention to filenames
 
-9. Lab - Storage Accounts and SAS Tokens
+Lab 9 - Storage Accounts and SAS Tokens
 -------------------------------------
 
 | Lab Description | This lab will teach you how to upload files to Azure Storage Accounts and secure them by protecting the files with Secure Access Tokens (SAS) tokens |
@@ -3665,7 +3665,7 @@ Verify the File Upload in Azure Storage Explorer
 
 ### Troubleshooting
 
-10. Lab - ARM Templates (Advanced)
+Lab 10 - ARM Templates (Advanced)
 ------------------------------
 
 | Lab Description | In this lab, you will explore some advanced usage of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group. |
@@ -4011,7 +4011,7 @@ group by deploying an empty template with complete mode
 
 ### Troubleshooting
 
-11. Lab - Azure DevOps Service Connections
+Lab 11 - Azure DevOps Service Connections
 --------------------------------------
 
 | Lab Description | In this lab you will create a new Service Connection in Azure DevOps which will connect to Azure and allow build/release steps in Azure DevOps to interact with and control an Azure subscription. |
@@ -4233,7 +4233,7 @@ With Microsoft-hosted agents, maintenance and upgrades are taken care of
 for you. Each time you run a pipeline, you get a fresh virtual machine.
 The virtual machine is discarded after one use.
 
-12. Lab - Azure DevOps Prereqs
+Lab 12 - Azure DevOps Prereqs
 --------------------------
 
 | Lab Description | In this lab, you will deploy and configure prerequisites that are needed to complete the subsequent labs on Azure DevOps Build and Release. |
@@ -4550,7 +4550,7 @@ Create a new Service Connection in your project
     creating a Service Connection and create a new Service Connection in
     your project using your Service Principal credentials.
 
-13. Lab - Azure DevOps Build Continuous Integration
+Lab 13 - Azure DevOps Build Continuous Integration
 -------------------------------------------------------
 
 | Lab Description | In this lab, you will explore Continuous Integration in Azure DevOps. |
@@ -4668,7 +4668,7 @@ Create an Azure DevOps build
     contents and review SetWinSecuritySettings.ps1 to verify that line
     145 is listing ValueData =1.
 
-14. Lab - Azure DevOps Release Continuous Deployment
+Lab 14 - Azure DevOps Release Continuous Deployment
 --------------------------------------------------------
 
 | Lab Description | In this lab, you will explore Continuous Delivery in Azure DevOps. |
