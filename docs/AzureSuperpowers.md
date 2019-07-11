@@ -1938,7 +1938,7 @@ Process Flow
 
 ## Exercise - Add Contributors to your Project
 
-Login to visualstudio.com
+### Login to visualstudio.com
 
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
@@ -1948,7 +1948,7 @@ Login to visualstudio.com
 3.  Once logged in, click the logged in user in the upper-right hand
     corner and select 'Visual Studio Profile' from the expanded menu.
 
-Access the Azure DevOps Organization that holds your project
+### Access the Azure DevOps Organization that holds your project
 
 1.  Under the header 'Azure DevOps Organizations' you will see all the
     organizations that you are involved with (marked as either Owner or
@@ -1959,7 +1959,7 @@ Access the Azure DevOps Organization that holds your project
 
 3.  Click the link of the project name you wish to launch.
 
-Add Members to your Project
+### Add Members to your Project
 
 1.  At the bottom left of the project site you will see a navigation
     pane with a gear icon on it that says **Project settings**. Click
@@ -2013,7 +2013,7 @@ members list.
 
 ## Exercise - Git Branch
 
-Introduction to branching
+### Introduction to branching
 
 Each Git repository must have at least one branch. A branch is a
 sub-container within the repository for tracking file versioning. Each
@@ -2041,7 +2041,7 @@ requests to make any changes on these branches. Developers pushing
 changes directly to any protected branches will have their pushes
 rejected.
 
-Create a new dev branch in your new project in Azure DevOps
+### Create a new dev branch in your new project in Azure DevOps
 
 1.  Open a web browser and navigate to
     https://dev.azure.com/\<YourOrganizationName\>
@@ -2066,7 +2066,7 @@ Create a new dev branch in your new project in Azure DevOps
 
     ![](./media/image24.png)
 
-Fetching new branches in VS Code
+### Fetching new branches in VS Code
 
 1.  Now that your new branch has been created in Azure DevOps, you will
     use VS Code and interact with your branches.
@@ -2089,7 +2089,7 @@ Fetching new branches in VS Code
 
     ![](./media/image25.png)
 
-Switching between branches
+### Switching between branches
 
 1.  Press F1 to activate the Command Pallet
 
@@ -2142,7 +2142,7 @@ Switching between branches
 
 ## Exercise - Branch policies 
 
-Introduction to branch policies
+### Introduction to branch policies
 
 Branch policies are an important part of the Git workflow and enable you
 to:
@@ -2161,7 +2161,7 @@ to:
 
 -   Enforce best practices with required code reviewers
 
-Create a branch policy on your master branch
+### Create a branch policy on your master branch
 
 The steps below were adapted from information found at the following
 url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
@@ -2208,7 +2208,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
 ## Exercise - Git commit
 
-Introduction to Commit
+### Introduction to Commit
 
 A commit is the act of recording changes to the repository. A repository
 contains all files of a project and stores each file's revision history.
@@ -2216,7 +2216,7 @@ When changes are made to one or more files, those can be saved to a
 branch as a commit. Each commit can contain the changes to one or
 multiple files.
 
-Configure your Git identity
+### Configure your Git identity
 
 1.  In order to be able to commit your changes to a repository, you must
     set your name and email address. This is important because every Git
@@ -2243,7 +2243,7 @@ Configure your Git identity
 > email address for specific projects, you can run the command without
 > the \--global option when you're in that project.
 
-Copy files from GitHub
+### Copy files from GitHub
 
 1.  Your repository is currently empty, except for the default README.md
     file
@@ -2271,7 +2271,7 @@ Copy files from GitHub
 
     ![](./media/image31.png)
 
-Performing a Commit using VS Code
+### Performing a Commit using VS Code
 
 1.  Return to VS Code
 
@@ -2317,7 +2317,7 @@ Performing a Commit using VS Code
     to the up arrow. This indicates that there is one pending commit
     waiting to be pushed to the Git repository stored in Azure DevOps.
 
-Update ARM Template and commit changes
+### Update ARM Template and commit changes
 
 1.  Return to VS Code
 
@@ -2382,7 +2382,7 @@ Update ARM Template and commit changes
 
 ## Exercise - Git Pull and Git Push
 
-Introduction
+### Introduction
 
 A **git pull** is the act of *pulling* in all of the changes made by
 others in the selected git repository branch and syncing them to your
@@ -2393,7 +2393,7 @@ available to others working in the repository.
 **IMPORTANT: Always pull in any changes to your local repo first before
 pushing new changes up**
 
-Performing a Git Push using VS Code
+### Performing a Git Push using VS Code
 
 1.  You should have two pending commits from the activities performed in
     Exercise - Git commit.
@@ -2428,7 +2428,7 @@ Performing a Git Push using VS Code
 
 ## Exercise - Pull Request
 
-Merging Changes to your master branch via Pull Request
+### Merging Changes to your master branch via Pull Request
 
 1.  We learned earlier in **Exercise - Branch policies** that the branch
     policies that were implemented on the **master** branch will enforce
@@ -2506,7 +2506,8 @@ minutes to complete.
 
 ## Exercise - Deploy AD Super Lab
 
-Launch Visual Studio Code\
+### Launch Visual Studio Code
+
 (Visual Studio Code is strongly recommended for creating and editing
 Resource Manager templates)
 
@@ -2522,7 +2523,7 @@ Resource Manager templates)
 
 4.  Instructions found in the ps1 file are also detailed below.
 
-Login to Azure via PowerShell
+### Login to Azure via PowerShell
 
 From a PowerShell console window, login to Azure using either:
 
@@ -2562,7 +2563,7 @@ it to login\>
 
 numberOfvmWorkerInstances: 3
 
-Execute the following PowerShell
+### Execute the following PowerShell
 
 1.  \$DeploymentParametersBuildVM = @{
 
@@ -2593,8 +2594,7 @@ executing the following PowerShell:
 
 New-AzResourceGroupDeployment \@DeploymentParametersBuildVM
 
-**Ensure that you capture the username and password used in your
-deployment, as you will need them to login.**
+## Ensure that you capture the username and password used in your deployment, as you will need them to login.
 
 You can review the Deployments tab in the Azure portal for the resource
 group that you are targeting to see real-time deployment information, as
@@ -2619,7 +2619,7 @@ well as any errors or warnings if your deployment is not successful.
 | Author | Keith Hitchcock |
 |  | Ralph Kyttle |
 
-PowerShell DSC
+### PowerShell DSC
 
 -   'End State' programming
 
@@ -2635,26 +2635,26 @@ PowerShell DSC
 
 -   Configurations can now be kept in Source Control
 
-Local DSC Flow
+### Local DSC Flow
 
 ![](./media/image42.png)
 
-Azure DSC Flow
+### Azure DSC Flow
 
 ![](./media/image43.png)
 
-Basic PowerShell Function
+### Basic PowerShell Function
 
 ![](./media/image44.png)
 
-Basic DSC Configuration
+### Basic DSC Configuration
 
 ![](./media/image45.png)
 
 
 ## Exercise - Exploring DSC Custom Resources on the Web
 
-Explore the PowerShell Gallery
+### Explore the PowerShell Gallery
 
 1.  From any web browser, navigate to <https://powershellgallery.com>
 
@@ -2674,7 +2674,7 @@ Explore the PowerShell Gallery
     module. For DSC resources, each PowerShell module has a subfolder
     called 'DSCResources' where the DSC resources are located
 
-Explore Github.com
+### Explore Github.com
 
 1.  From any web browser, navigate to <https://github.com>
 
@@ -2690,7 +2690,7 @@ Explore Github.com
 
 ## Exercise - Build a new Azure VM and install custom DSC resources
 
-Create a new Windows Server 2016 VM using the Azure Portal
+### Create a new Windows Server 2016 VM using the Azure Portal
 
 1.  Open a web browser
 
@@ -2770,14 +2770,14 @@ o.  To return back to the deployment summary, click on the X to exit out
 p.  Click OK to start the deployment of your VM, which will take 5-10
     minutes to complete.
 
-Login to the VM
+### Login to the VM
 
 1.  Open an RDP session to the DSC1 VM created in the previous step
 
 2.  Once logged into this VM, open the PowerShell ISE as an
     Administrator
 
-Get a custom DSC resource from the PowerShell Gallery
+### Get a custom DSC resource from the PowerShell Gallery
 
 1.  In the section below, you may be prompted multiple times to confirm
     downloading nuGet and SecurityPolicyDSC, click or select yes when
@@ -2793,7 +2793,7 @@ PS\> Find-Module -Name \'\*security\*\'
 
 PS\> Install-Module -Name SecurityPolicyDSC
 
-Explore the required information for the custom resource
+### Explore the required information for the custom resource
 
 1.  Execute the following PowerShell to see which DSC resources are
     contained within the SecurityPolicyDSC module that is now installed
@@ -2824,13 +2824,13 @@ Properties
 
 ## Exercise - Create a DSC Configuration
 
-Login to the VM created in the previous exercise
+### Login to the VM created in the previous exercise
 
 1.  Open an RDP session to DSC1
 
 2.  Open the PowerShell ISE as an Administrator
 
-Get a custom DSC resource from the PowerShell Gallery
+### Get a custom DSC resource from the PowerShell Gallery
 
 1.  From the PowerShell ISE console, execute:
 
@@ -2847,7 +2847,7 @@ PS\> Get-DscResource -Module NetworkingDsc
 
 PS\> Get-DscResource -Name Firewall \| Select -ExpandProperty Properties
 
-Create a DSC Configuration
+### Create a DSC Configuration
 
 1.  Copy/paste the following DSC configuration into the PowerShell ISE
     of your Azure VM named DSC1
@@ -2935,7 +2935,7 @@ Create a DSC Configuration
 
 ## Exercise - Test the DSC Configuration Locally
 
-Test the DSC Configuration Locally
+### Test the DSC Configuration Locally
 
 1.  Execute the following PowerShell to test your localhost.mof file
     against DSC1
@@ -2965,7 +2965,7 @@ ResourcesNotInDesiredState
 
 ## Exercise - Create an Azure Compatible DSC package
 
-Create the DSC Package
+### Create the DSC Package (.zip)
 
 To create an Azure compatible DSC .zip file you need 2 things. You need
 your PowerShell configuration as a .ps1 file, and you need all the
@@ -2992,7 +2992,7 @@ modules you used in the Import-DSCResource section of the configuration.
     If this is the case, delete the zip file and try again. Azure DSC
     expects the .ps1 and module folders in the root of the zip file.
 
-Place the ZIP where Azure can retrieve it
+### Place the ZIP where Azure can retrieve it
 
 In production environments, these steps can be repeated with a private
 Container and a Shared Access Signature (SAS) token to ensure the .zip
@@ -3032,7 +3032,7 @@ something goes wrong.
 
 ## Exercise - Deploy an ARM resource DSC extension
 
-Login to Azure via PowerShell from your \*\***LOCAL COMPUTER\*\***
+### Login to Azure via PowerShell from your \*\***LOCAL COMPUTER\*\***
 
 From a PowerShell console window in VS Code, login to Azure using
 either:
@@ -3052,7 +3052,7 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
-Deploy ARM DSC Resource
+### Deploy ARM DSC Resource
 
 1.  Review **C:\\MyAzureProject\\Azure Superpowers\\Lab - PowerShell
     DSC\\DSC.json**
@@ -3166,8 +3166,7 @@ Deploy ARM DSC Resource
 
 10. New-AzResourceGroupDeployment \@params
 
-Once the deployment is complete, verify that the deployment was
-successful
+### Once the deployment is complete, verify that the deployment was successful
 
 1.  RDP to DSC1 and verify the registry keys
 
@@ -3222,7 +3221,7 @@ Pay attention to filenames
 
 ## Exercise - Create a storage account
 
-Prepare Azure Resource Group
+### Prepare Azure Resource Group
 
 1.  Launch VS Code
 
@@ -3259,7 +3258,7 @@ Prepare Azure Resource Group
 > New-AzResourceGroup -Name \'StorageExample-\<YOURALIAS\>\' -Location
 > USGovVirginia
 
-Create an Azure Storage Account
+### Create an Azure Storage Account
 
 1.  Storage account names must be universally unique. In this example,
     the storage account name \[MSAlias\]blobstorage is used. When this
@@ -3306,7 +3305,7 @@ Create an Azure Storage Account
 
 ## Exercise - Create a blob container
 
-Understanding Storage Account Keys
+### Understanding Storage Account Keys
 
 1.  A Storage Account Key is like the root admin password for your
     Storage Account. This information should be guarded and not
@@ -3372,7 +3371,7 @@ Understanding Storage Account Keys
 
 6.  \$storageAccountContext = New-AzStorageContext \@params
 
-Create a Storage Container
+### Create a Storage Container
 
 1.  Use the following PowerShell to create a Container in the Blob
     Storage Account that you created previously in **Exercise - Create a
@@ -3396,7 +3395,7 @@ Create a Storage Container
     will now see the container "sasexample" listed under Blob
     Containers. Notice that it currently contains no files.
 
-Create a Storage Container Policy
+### Create a Storage Container Policy
 
 1.  Create a Policy that will define permissions that will be associated
     with the SAS Token. Use the following PowerShell to complete this
@@ -3431,7 +3430,7 @@ Create a Storage Container Policy
     on the need of the application or scripts that are accessing the
     storage.
 
-Create a Shared Access Signature (SAS) Token
+### Create a Shared Access Signature (SAS) Token
 
 1.  Create a SAS Token (to be used later) based on the Policy and
     Storage Context defined earlier in this example using the following
@@ -3460,7 +3459,7 @@ Create a Shared Access Signature (SAS) Token
 
 ## Exercise - Create Test Files
 
-Create Test Files
+### Create Test Files
 
 1.  Create a directory in the root of C: called "SASExample"
 
@@ -3472,7 +3471,7 @@ Create Test Files
 
 ## Exercise - Upload one text file using the portal
 
-Connect to the Azure Portal
+### Connect to the Azure Portal
 
 1.  Login to the Azure Portal
 
@@ -3492,7 +3491,7 @@ Connect to the Azure Portal
 
 9.  Click **Upload**
 
-Verify the File Upload in Azure Storage Explorer
+### Verify the File Upload in Azure Storage Explorer
 
 1.  From Azure Storage Explorer, select the storage container
     **sasexample**
@@ -3506,7 +3505,7 @@ Verify the File Upload in Azure Storage Explorer
 
 ## Exercise - Upload a File Using Azure Storage Explorer
 
-Upload File
+### Upload File
 
 1.  From Azure Storage Explorer, Select the storage container
     **sasexample**
@@ -3519,7 +3518,7 @@ Upload File
 
 5.  Click **Upload**
 
-Verify the File Upload in Azure Storage Explorer
+### Verify the File Upload in Azure Storage Explorer
 
 1.  From Azure Storage Explorer, select the storage container
     **sasexample**
@@ -3530,7 +3529,7 @@ Verify the File Upload in Azure Storage Explorer
 
 ## Exercise - Upload one file using PowerShell
 
-Create a Client Context
+### Create a Client Context
 
 1.  In order to upload files to our storage account via PowerShell, we
     will need to create a storage context, which describes our Storage
@@ -3552,7 +3551,7 @@ Create a Client Context
 
 6.  \$clientContext = New-AzStorageContext \@params
 
-Test the Context by listing all files in the storage container
+### Test the Context by listing all files in the storage container
 
 1.  Run the following PowerShell to list all files in the Storage
     Container:
@@ -3573,7 +3572,7 @@ Test the Context by listing all files in the storage container
 
 2.  The files we have uploaded in previous steps should be outputted.
 
-Upload one file using PowerShell
+### Upload one file using PowerShell
 
 1.  Run the following PowerShell to upload file3.txt to our Storage
     Container:
@@ -3596,7 +3595,7 @@ Upload one file using PowerShell
 
 2.  File3.txt is now uploaded to the storage container
 
-Verify the File Upload in Azure Storage Explorer
+### Verify the File Upload in Azure Storage Explorer
 
 1.  From Azure Storage Explorer, select the storage container
     **sasexample**
@@ -3634,13 +3633,13 @@ Verify the File Upload in Azure Storage Explorer
 |  | 3. The PowerShell DSC extension can be called multiple times in a template, as long as the same name is always used when defining each Microsoft.Compute/virtualMachines/extensions DSC resource.  Following this strategy, along with the Microsoft.Resources/deployments resource allows you to create modular components, executed in a desired order using the ARM dependsOn element. |
 | Author | Ralph Kyttle |
 
-Single Templates vs Linked Templates
+### Single Templates vs Linked Templates
 
 ![](./media/image51.png)
 
 ## Exercise - Review an existing Advanced ARM Template
 
-Task 1: Review the main ARM template
+### Task 1: Review the main ARM template
 
 Review the following ARM template in VS Code (Ensure that you are
 viewing the master branch)
@@ -3875,7 +3874,7 @@ This template showcases the following:
 
 -   VM Domain join
 
-Task 2: Review the linked ARM templates
+### Task 2: Review the linked ARM templates
 
 **\
 Template name: vm.json**
@@ -3920,7 +3919,7 @@ Stored in the location shown below
 
 ## Exercise - Edit the existing Advanced ARM Template and deployment
 
-Task 1: Redeploy the main ARM template with an additional worker VM
+### Task 1: Redeploy the main ARM template with an additional worker VM
 
 Execute the same PowerShell based deployment that you performed in the
 AD Super Lab Deployment, except this time specify
@@ -3929,7 +3928,7 @@ AD Super Lab Deployment, except this time specify
 View the deployment status in the PowerShell output and in the Azure
 Portal. You should see a 4^th^ node being built.
 
-Task 2: Login to MGT1 using RDP and its public IP and verify environment
+### Task 2: Login to MGT1 using RDP and its public IP and verify environment
 settings
 
 -   Login to MGT1 **(DOMAIN\\User)** using RDP and its public IP. The
@@ -3955,7 +3954,7 @@ settings
     nodes listed here as well. Depending on whether the previous task
     completed or not, you should see either 3 or 4 worker nodes.
 
-Task 3: Instructor led exercise -- empty the contents of your resource
+### Task 3: Instructor led exercise -- empty the contents of your resource
 group by deploying an empty template with complete mode
 
 -   We will review the file shown below
@@ -3978,7 +3977,7 @@ group by deploying an empty template with complete mode
 
 ## Exercise - Create a Service Principal
 
-Complete previous lab -- Azure AD and Service Principals
+### Complete previous lab -- Azure AD and Service Principals
 
 The prior Azure AD and Service Principal lab walks you through creating
 a service principal in Azure AD and giving it access to an Azure
@@ -3994,7 +3993,7 @@ Before proceeding to the next step, make sure that you have:
 
 ## Exercise - Create a Service Connection in Azure DevOps
 
-Login to visualstudio.com
+### Login to visualstudio.com
 
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
@@ -4005,7 +4004,7 @@ Login to visualstudio.com
     hand corner and select\
     'Visual Studio Profile' from the expanded menu.
 
-Access the Azure DevOps Organization that holds your project
+### Access the Azure DevOps Organization that holds your project
 
 1.  Under the header 'Azure DevOps Organizations' you will see all the
     organizations that you are involved with (marked as either Owner or
@@ -4019,7 +4018,7 @@ Access the Azure DevOps Organization that holds your project
 4.  (If you have no accounts/projects, please complete the prior lab --
     Azure DevOps)
 
-Initialize the default git repository
+### Initialize the default git repository
 
 1.  Click on Repos
 
@@ -4028,7 +4027,7 @@ Initialize the default git repository
     repository from here is because an empty repository cannot be cloned
     or used in a build.
 
-Create a new Service Connection
+### Create a new Service Connection
 
 1.  In the bottom left corner of the project click the 'Project
     Settings' button
@@ -4085,7 +4084,7 @@ Create a new Service Connection
     g.  Tenant ID -- The ID of the Azure Active Directory tenant that
         the Service Principal was created in
 
-Click the Verify Connection hyperlink
+### Click the Verify Connection hyperlink
 
 The information must successfully verify before proceeding to the next
 exercise. If it does not, doublecheck the information listed above,
@@ -4098,7 +4097,7 @@ subscription in order to be successfully verified.
 
 ## Exercise - Verify Service Connection
 
-Create a new Azure DevOps Build
+### Create a new Azure DevOps Build
 
 1.  From the Azure DevOps web site, select the 'Pipelines -\> Builds'
     button from the left of the page
@@ -4163,7 +4162,7 @@ Create a new Azure DevOps Build
     can only interact with resources that it has been granted permission
     to access.
 
-Success!
+### Success!
 
 If this worked correctly, Azure DevOps can now run any PowerShell
 command you give it (or script, or series of commands) without you
@@ -4197,7 +4196,7 @@ The virtual machine is discarded after one use.
 
 ## Exercise - Azure DevOps Organization
 
-Verify that your Azure DevOps Organization exists and you can login
+### Verify that your Azure DevOps Organization exists and you can login
 
 1.  Refer to Lab -- Azure DevOps to create a new Azure DevOps
     Organization if you have not created one yet.
@@ -4209,7 +4208,7 @@ Verify that your Azure DevOps Organization exists and you can login
 
 ## Exercise - Create a new Azure DevOps Project
 
-Create a new Azure DevOps Project
+### Create a new Azure DevOps Project
 
 1.  From the homepage of
     [https://dev.azure.com/\<organizationname](https://dev.azure.com/%3corganizationname)
@@ -4218,20 +4217,20 @@ Create a new Azure DevOps Project
 2.  Provide a name for your private project and click create. Project
     names must be unique per Azure DevOps Organization.
 
-View the Project repository
+### View the Project repository
 
 1.  Select the **Repos** tab
 
     ![](./media/image52.png)
 
-Initialize the Project repository
+### Initialize the Project repository
 
 1.  Click on the **Initialize** button to initialize the repository with
     a template README file
 
     ![](./media/image53.png)
 
-Clone git repository from Azure DevOps to your local system
+### Clone git repository from Azure DevOps to your local system
 
 1.  From the 'Repos' section of the Project, in the upper right-hand
     corner there is a 'Clone' button which will allow you to copy the
@@ -4264,7 +4263,7 @@ Clone git repository from Azure DevOps to your local system
 
 ## Exercise - Branches
 
-Create a new dev branch in your Azure DevOps repo
+### Create a new dev branch in your Azure DevOps repo
 
 1.  Select your internet browser, and head back to your Azure DevOps
     project
@@ -4282,7 +4281,7 @@ Create a new dev branch in your Azure DevOps repo
 
 ## Exercise - Branch Policies
 
-Create a branch policy on the master branch
+### Create a branch policy on the master branch
 
 The steps below were adapted from information found at the following
 url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
@@ -4317,7 +4316,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
 ## Exercise - Download sample code and check files into your repository
 
-Download sample code
+### Download sample code
 
 Download and save the following two zip files (Links to these files can
 be copied from C:\\MyAzureProject\\Azure Superpowers\\Lab - Helper
@@ -4327,7 +4326,7 @@ Files\\Helper.txt)
 
 <https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?st=2018-10-04T02%3A31%3A06Z&se=2020-10-05T02%3A31%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=SaxwRzWULbGTLN1r7C06DUgF%2FM55eRH6ZxVAusjX6b0%3D>
 
-Extract zip files and commit code to the dev branch in your repository
+### Extract zip files and commit code to the dev branch in your repository
 
 1.  Run a 'git fetch' operation in VS Code to pull down the dev branch
 
@@ -4349,7 +4348,7 @@ Extract zip files and commit code to the dev branch in your repository
 7.  Commit to your local repository dev branch and push the files to the
     dev branch of your Azure DevOps repository
 
-Merge changes to the master branch via Pull Request
+### Merge changes to the master branch via Pull Request
 
 1.  Enter the Repos section of the project in Azure DevOps
 
@@ -4384,21 +4383,21 @@ Merge changes to the master branch via Pull Request
 
 ## Exercise - Service Principal
 
-Create a new Service Principal
+### Create a new Service Principal
 
 1.  Refer to Lab -- Azure AD and Service Principals to create a new
     Service Principal in your Azure subscription.
 
 ## Exercise - Create a new Resource Group to contain a storage account for DSC files
 
-Login to Azure
+### Login to Azure
 
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
     <https://portal.azure.us> for MAG
 
-Create a Resource Group
+### Create a Resource Group
 
 1.  On the left-hand navigation pane, click 'Resource Groups'
 
@@ -4410,14 +4409,14 @@ Create a Resource Group
 
 ## Exercise - Create a new storage account for DSC files
 
-Login to Azure
+### Login to Azure
 
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
     <https://portal.azure.us> for MAG
 
-Create a Storage Account
+### Create a Storage Account
 
 1.  On the left-hand navigation pane, click 'Create a resource'
 
@@ -4447,14 +4446,14 @@ Create a Storage Account
 
 ## Exercise - Create two new Resource Groups for your application deployment
 
-Login to Azure
+### Login to Azure
 
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
     <https://portal.azure.us> for MAG
 
-Create a Resource Group
+### Create a Resource Group
 
 1.  On the left-hand navigation pane, click 'Resource Groups'
 
@@ -4472,14 +4471,14 @@ Create a Resource Group
 
 ## Exercise - Grant Service Principal with permissions
 
-Login to Azure
+### Login to Azure
 
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
     <https://portal.azure.us> for MAG
 
-Edit Resource Group Permissions
+### Edit Resource Group Permissions
 
 1.  On the left-hand navigation pane, click 'Resource Groups'
 
@@ -4498,7 +4497,7 @@ Edit Resource Group Permissions
 
 ## Exercise - Service Connection
 
-Create a new Service Connection in your project
+### Create a new Service Connection in your project
 
 1.  Refer to Lab - Azure DevOps Service Connection for instructions on
     creating a Service Connection and create a new Service Connection in
@@ -4520,7 +4519,7 @@ Create a new Service Connection in your project
 
 ## Exercise - Setup an Azure DevOps build that uses CI to create DSC zip files
 
-Create an Azure DevOps build
+### Create an Azure DevOps build
 
 1.  From within your Azure DevOps project, select the Pipelines tab
 
@@ -4658,7 +4657,7 @@ VM size. Once the deployment completes in dev, approve the release
 moving forward into prod. Review the deployment into prod via Azure
 DevOps and Azure deployment logs.
 
-Create an Azure DevOps release
+### Create an Azure DevOps release
 
 1.  From within your Azure DevOps project, select the Pipelines tab
 
