@@ -466,26 +466,26 @@ getting lost in the software.
 
 3.  The interface for Visual Studio Code is divided into 5 key parts
 
-    a.  Activity Bar - Located on the far left-hand side, this lets you
+        a.  Activity Bar - Located on the far left-hand side, this lets you
         switch between views and gives you additional context-specific
         indicators like the number of unsaved files, or the number of
         outgoing changes when Git is enabled.
 
-    b.  Side Bar - Contains views like the Explorer to assist you while
+        b.  Side Bar - Contains views like the Explorer to assist you while
         working on your project.
 
-    c.  Editor - The main area to edit your files. You can open as many
+        c.  Editor - The main area to edit your files. You can open as many
         editors as you like side by side vertically and horizontally.
 
-    d.  Panel - You can display different panels below the editor region
+        d.  Panel - You can display different panels below the editor region
         for output or debug information, errors and warnings, or an
         integrated terminal. Panel can also be moved to the right for
         more vertical space.
 
-    e.  Status Bar - Information about the opened project and the files
+        e.  Status Bar - Information about the opened project and the files
         you edit.
 
-    <img src="./media/image3.png" width="575">
+    <img src="./media/image3.png" width="600">
 
 ### Make the VS Code Interface your own
 
