@@ -470,22 +470,19 @@ getting lost in the software.
         switch between views and gives you additional context-specific
         indicators like the number of unsaved files, or the number of
         outgoing changes when Git is enabled.
-
         b.  Side Bar - Contains views like the Explorer to assist you while
         working on your project.
-
         c.  Editor - The main area to edit your files. You can open as many
         editors as you like side by side vertically and horizontally.
-
         d.  Panel - You can display different panels below the editor region
         for output or debug information, errors and warnings, or an
         integrated terminal. Panel can also be moved to the right for
         more vertical space.
-
         e.  Status Bar - Information about the opened project and the files
         you edit.
+    ![](./media/image3.png)
 
-    <img src="./media/image3.png" width="600">
+<div style="page-break-after: always;"></div>
 
 ### Make the VS Code Interface your own
 
@@ -496,16 +493,12 @@ getting lost in the software.
 
 2.  The Activity Bar consists of 5 buttons by default.
 
-    a.  Explorer -- View and select files for editing
-
-    b.  Search -- Text level search inside your files. This will search
+        a.  Explorer -- View and select files for editing
+        b.  Search -- Text level search inside your files. This will search
         across all files that are available in your current workspace.
-
-    c.  Source Control -- View any connected source code repositories
-
-    d.  Debug
-
-    e.  Extensions -- Add extensions to enable new features within VS
+        c.  Source Control -- View any connected source code repositories
+        d.  Debug
+        e.  Extensions -- Add extensions to enable new features within VS
         Code
 
 3.  From the View Menu in the Menu Bar, select Appearance, and then
@@ -517,7 +510,7 @@ getting lost in the software.
 4.  Click on the Gear Icon in the lower left-hand side of the screen and
     choose **Color Theme**. Notice the Command Pallet drops down and
     lists the available themes. Choose a theme that looks interesting to
-    you**.** Choose **Dark+ (default dark)** to restore the original
+    you. Choose **Dark+ (default dark)** to restore the original
     theme.
 
 5.  Zooming in and out within VS Code can be helpful in displaying the
