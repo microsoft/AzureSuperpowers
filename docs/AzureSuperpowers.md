@@ -41,7 +41,7 @@ Azure Superpowers Lab Manual
 
 - [3.6. Exercise - Grant Rights to a Resource Group using PowerShell](#exercise---grant-rights-to-a-resource-group-using-powershell)
 
-- [3.7. Exercise - Log into Azure as Service Principal](#exercise---log-into-azure-as-service-principal)
+- [3.7. Exercise - Login to Azure as Service Principal](#exercise---login-to-azure-as-service-principal)
 
 - [3.8. Troubleshooting](#troubleshooting-2)
 
@@ -455,7 +455,7 @@ getting lost in the software.
 
 ## Exercise - VS Code Interface
 
-VS Code Interface Overview
+### VS Code Interface Overview
 
 1.  Launch VS Code
 
@@ -487,7 +487,7 @@ VS Code Interface Overview
 
 > ![](./media/image3.png)
 
-Make the VS Code Interface your own
+### Make the VS Code Interface your own
 
 1.  Type **CTRL + B** to show the Side Bar. Type it again to hide it.
     You can always re-enable the sidebar through the View menu on the
@@ -548,7 +548,7 @@ Make the VS Code Interface your own
     that any new file that you create is automatically created as a
     PowerShell file, as opposed to the default of plain text.
 
-Install VS Code extensions
+### Install VS Code extensions
 
 1.  Visual Studio Code has a rich extensibility model for interacting
     with and adding to the tool. The features that Visual Studio Code
@@ -611,7 +611,7 @@ Install VS Code extensions
 
 ## Exercise - Clone the Azure Superpowers Repository
 
-Clone Azure Superpowers via the VS Code GUI
+### Clone Azure Superpowers via the VS Code GUI
 
 1.  Open a web browser and navigate to
     <https://github.com/microsoft/Azure-Superpowers>
@@ -669,7 +669,7 @@ Clone Azure Superpowers via the VS Code GUI
 
 ## Exercise - Az Walkthrough
 
-What is a PowerShell module
+### What is a PowerShell module
 
 A *module* is a set of related Windows PowerShell functionalities,
 grouped together as a convenient unit (usually saved in a single
@@ -680,7 +680,7 @@ share your code much easier than you would otherwise.
 For more information on PowerShell Modules, refer to
 <https://docs.microsoft.com/en-us/powershell/developer/module/understanding-a-windows-powershell-module>
 
-Az vs AzureRM
+### Az vs AzureRM
 
 This workshop uses the latest Az PowerShell module. Starting in December
 2018, the Azure PowerShell Az module is in general release and now the
@@ -701,7 +701,7 @@ the AzureRM module. However, to keep up with the latest Azure services
 and features, we recommend that you switch to the Azure PowerShell task
 version 4.\* as soon as possible.
 
-Where the commands live
+### Where the commands live
 
 To see a list of the available commands in a PowerShell module, use
 Get-Command. Run the following command to see the available commands in
@@ -709,7 +709,7 @@ the Az module:
 
 Get-Command -Module \'Az.\*\'
 
-Popular commands
+### Popular commands
 
 Commands from the Az module that are frequently used in this workshop
 are shown below
@@ -736,7 +736,7 @@ Test-AzResourceGroupDeployment
 
 New-AzResourceGroupDeployment
 
-PowerShell Splatting
+### PowerShell Splatting
 
 Splatting is a method of passing a collection of parameter values to a
 command as a unit that makes your commands shorter and easier to read.
@@ -766,7 +766,7 @@ environment throughout this course.
 
 ## Exercise - Azure Storage Explorer Walkthrough
 
-Azure Storage Explorer Walkthrough
+### Azure Storage Explorer Walkthrough
 
 1.  Launch Azure Storage Explorer
 
@@ -878,7 +878,7 @@ some computer models, like Surface
 |  | Ralph Kyttle  |
 |  | Cory Smith |
 
-Why AAD Service Principals?
+### Why AAD Service Principals?
 
 In the new cloud future, you shouldn't send a human to do a computer's
 job. This means that we need a non-person account that can perform
@@ -892,7 +892,7 @@ that everything is 'a break-fix change'. All changes need to go through
 the source control process and no administrator should have the rights
 to circumvent that process.
 
-AAD Service Principals
+### AAD Service Principals
 
 -   Used for a Service (Application)
 
@@ -904,19 +904,19 @@ AAD Service Principals
 
 -   AAD Tenant is identified by explicitly specifying it
 
-AAD User Accounts
+### AAD User Accounts
 
 -   Used for an individual user
 
 -   Password/Federation/Multi-factor
 
--   Can log into the ARM Portal
+-   Can login to the ARM Portal
 
 -   AAD Tenant is identified by \@UPN Suffix
 
 ## Exercise - Create Resource Group using the Portal
 
-Log into Azure
+### Login to Azure
 
 1.  Open a web browser
 
@@ -926,7 +926,7 @@ Log into Azure
 
     b.  Government: <https://portal.azure.us>
 
-Create a Resource Group
+### Create a Resource Group
 
 1.  On the left-hand navigation pane, click **Resource Groups**
 
@@ -945,7 +945,7 @@ Create a Resource Group
 
 ## Exercise - Create Service Principal using the Portal
 
-Navigate to Application Registrations
+### Navigate to Application Registrations
 
 1.  On the left-hand side menu in Azure, select **Azure Active
     Directory**
@@ -953,7 +953,7 @@ Navigate to Application Registrations
 2.  In the Azure Active Directory pane under manage, select **App
     registrations**
 
-Create a new Application Registration
+### Create a new Application Registration
 
 1.  Click the **+ New Registration** button at the top of the App
     registration blade
@@ -968,7 +968,7 @@ Create a new Application Registration
 
 4.  Click **Register**
 
-Generate a password for the Application Registration
+### Generate a password for the Application Registration
 
 1.  From the menu blade, click the **Certificates & Secrets** button
 
@@ -990,7 +990,7 @@ Generate a password for the Application Registration
 
 ## Exercise - Grant Rights to a Resource Group using the Portal
 
-Assign rights to Service Principal scoped to the Resource Group
+### Assign rights to Service Principal scoped to the Resource Group
 
 1.  From the Azure Portal: On the left-hand navigation pane, click
     **Resource Groups**
@@ -1023,7 +1023,7 @@ used or a custom role created with least privileges**
 
 ## Exercise - Create Resource Group using PowerShell
 
-Create a new PowerShell file in VS Code to store your commands
+### Create a new PowerShell file in VS Code to store your commands
 
 Click on **File** then **New File.**
 
@@ -1039,9 +1039,9 @@ it to PowerShell
 
 ![](./media/image12.png)
 
-Log into Azure via PowerShell
+### Login to Azure via PowerShell
 
-From a PowerShell console window, log into Azure using either:
+From a PowerShell console window, login to Azure using either:
 
 Azure Commercial:
 
@@ -1058,7 +1058,7 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 **NOTE: This will probably have popped-up [under]{.underline} the
 current Window(s)**
 
-Select the desired subscription
+### Select the desired subscription
 
 Upon logging in, you will be signed into an Azure subscription. You may
 need to change this if you are associated to multiple subscriptions.
@@ -1084,7 +1084,7 @@ xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
-Create a new Resource Group
+### Create a new Resource Group
 
 Update the name listed below, and run the following PowerShell to create
 a new resource group:
@@ -1101,9 +1101,9 @@ a new resource group:
 
 ## Exercise - Create Service Principal using PowerShell
 
-Log into Azure via PowerShell
+### Login to Azure via PowerShell
 
-From a PowerShell console window, log into Azure using [one of the
+From a PowerShell console window, login to Azure using [one of the
 following]{.underline}, as appropriate:
 
 Azure Commercial:
@@ -1121,7 +1121,7 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
-Create a new Service Principal
+### Create a new Service Principal
 
 From a PowerShell window logged into Azure, run the following
 PowerShell.\
@@ -1158,9 +1158,9 @@ later when logging in as the Service Principal from PowerShell.
 
 ## Exercise - Grant Rights to a Resource Group using PowerShell
 
-Log into Azure via PowerShell
+### Login to Azure via PowerShell
 
-From a PowerShell console window, log into Azure using [one of the
+From a PowerShell console window, login to Azure using [one of the
 following]{.underline}, as appropriate:
 
 Azure Commercial:
@@ -1178,7 +1178,7 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
-Give rights to Service Principal scoped to the Resource Group
+### Give rights to Service Principal scoped to the Resource Group
 
 From a PowerShell window logged into Azure, run the following
 PowerShell.
@@ -1191,11 +1191,11 @@ PowerShell.
 3.  New-AzRoleAssignment -ApplicationID \$appID -ResourceGroupName
     \'PowerShellRG-\<YOURALIAS\>\' -RoleDefinitionName \'Owner\'
 
-## Exercise - Log into Azure as Service Principal
+## Exercise - Login to Azure as Service Principal
 
-Log into Azure via PowerShell
+### Login to Azure via PowerShell
 
-From a PowerShell console window, log into Azure using [one of the
+From a PowerShell console window, login to Azure using [one of the
 following]{.underline}, as appropriate:
 
 Azure Commercial:
@@ -1211,7 +1211,7 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
-Gather Information about the AzureAD Tenant and the Service Principal
+### Gather Information about the AzureAD Tenant and the Service Principal
 
 From a PowerShell window logged into Azure, run the following
 PowerShell. Record the TenantID of Azure Active Directory and the
@@ -1234,14 +1234,14 @@ subscription name when running the Get-AzSubscription cmdlet**
 Get-AzSubscription -SubscriptionName \'My Subscription\' \|
 Select-Object TenantID
 
-Log out of Azure PowerShell
+### Log out of Azure PowerShell
 
 From a PowerShell window logged into Azure, run the following
 PowerShell:
 
 Logout-AzAccount
 
-Define Variables
+### Define Variables
 
 From a PowerShell window [not]{.underline} logged into Azure, run the
 following PowerShell.\
@@ -1259,7 +1259,7 @@ terminal as a warning output\
 3.  \$psCredObj = Get-Credential -UserName \$applicationID -Message \'SP
     Password\'
 
-Log in to Azure as Service Principal
+### Log in to Azure as Service Principal
 
 From a PowerShell console window [not already logged into
 Azure]{.underline}, run [one of the following]{.underline} PowerShell
@@ -1275,7 +1275,7 @@ Azure Government:
 Login-AzAccount -ServicePrincipal -TenantId \$tenantID -Credential
 \$psCredObj -Environment AzureUSGovernment
 
-Verify Ability to See Limited Resources
+### Verify Ability to See Limited Resources
 
 From the PowerShell window logged in as the Service Principal, run the
 following PowerShell:
@@ -1287,7 +1287,7 @@ the previous exercise. If you cannot see anything, start this exercise
 again and make sure you logged into the correct environment (MAG or
 Commercial)
 
-Log out of Azure PowerShell
+### Log out of Azure PowerShell
 
 From a PowerShell window logged into Azure, run the following
 PowerShell:
@@ -1367,21 +1367,21 @@ modify ARM templates allows us to make judgement calls about how
 complicated/simple they are, and how flexible/inflexible we want/need
 them to be.
 
-ARM Template Format
+### ARM Template Format
 
 ![](./media/image14.png)
 
-ARM Templates vs Iterative PowerShell
+### ARM Templates vs Iterative PowerShell
 
 ![](./media/image15.png)
 
-Where can I see examples of ARM Templates?
+### Where can I see examples of ARM Templates?
 
 <https://github.com/Azure/azure-quickstart-templates>
 
 ## Exercise - Deploy a Storage Account using an ARM template and Azure PowerShell
 
-Open and review the ARM template in the Azure Superpowers repository
+### Open and review the ARM template in the Azure Superpowers repository
 
 Launch Visual Studio Code\
 (Visual Studio Code is strongly recommended for creating and editing
@@ -1404,7 +1404,7 @@ Resource Manager templates)
     function to generate a hash value. To give this hash value more
     meaning, it adds the prefix *storage*.
 
-Deploy ARM template
+### Deploy ARM template
 
 > You are now ready to deploy this template. Next, you will deploy a
 > storage account to the PowerShellResourceGroup that you created as
@@ -1422,9 +1422,9 @@ to utilize the PowerShell Integrated Console**
 
 ![](./media/image7.png)
 
-Log into Azure via PowerShell
+### Login to Azure via PowerShell
 
-From a PowerShell console window, log into Azure using either:
+From a PowerShell console window, login to Azure using either:
 
 Azure Commercial:
 
@@ -1481,7 +1481,7 @@ your deployment is not successful.
 
 ## Exercise - Introduce template parameters and variables
 
-Introduction
+### Introduction
 
 > The template from the previous exercise works fine, but it is not
 > flexible. It always deploys a locally redundant storage account. The
@@ -1517,7 +1517,7 @@ Introduction
 > docs and GitHub may not always give you the values needed, so the
 > Azure Portal can be useful.
 
-Customize the ARM template
+### Customize the ARM template
 
 Next, you will make changes to the **StorageAccount.json** file to make
 it more dynamic. Edits to this file will make updates to the Parameters,
@@ -1759,7 +1759,7 @@ Your template now looks like:
 | }                                                                     |
 +-----------------------------------------------------------------------+
 
-Redeploy the ARM template
+### Redeploy the ARM template
 
 > Redeploy the template **with new values** specified as runtime
 > parameters as shown below.
@@ -1794,7 +1794,7 @@ running the following PowerShell command:
 
 Get-AzResource -ResourceGroupName \'PowerShellRG-\<YOURALIAS\>\'
 
-Cleanup
+### Cleanup
 
 > When no longer needed, clean up the resources you deployed by deleting
 > the entire resource group.
@@ -1826,7 +1826,7 @@ Process Flow
 
 ## Exercise - Create new Azure DevOps organization
 
-Log into visualstudio.com
+### Login to visualstudio.com
 
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
@@ -1837,7 +1837,7 @@ Log into visualstudio.com
     corner and\
     select 'Visual Studio Profile' from the expanded menu.
 
-Create a new organization: https://dev.azure.com/\<organizationname\>
+### Create a new organization: https://dev.azure.com/\<organizationname\>
 
 1.  From the *Azure DevOps O*r*ganizations* page, you can see all the
     organizations that you are either a *Member* of, or *Owner* of. In
@@ -1849,7 +1849,7 @@ Create a new organization: https://dev.azure.com/\<organizationname\>
 
 2.  Click the 'Continue' button.
 
-Create your first project
+### Create your first project
 
 1.  Create a project to initialize your organization
 
@@ -1866,7 +1866,7 @@ Create your first project
 
     ![](./media/image21.png)
 
-Initialize the default git repository
+### Initialize the default git repository
 
 1.  You should now see the initial repo page. At the bottom, you should
     see a section to 'initialize with a README or gitignore'. Click the
@@ -1875,7 +1875,7 @@ Initialize the default git repository
     README or gitignore'. The reason to initialize the repository from
     here is because an empty repository cannot be cloned.
 
-Clone git repository from Azure DevOps to your local system
+### Clone git repository from Azure DevOps to your local system
 
 1.  From the 'Files' section of the Project, in the upper right-hand
     corner there is a 'Clone' button which will allow you to copy the
@@ -1909,7 +1909,7 @@ Clone git repository from Azure DevOps to your local system
 
 ## Exercise - Explore Azure DevOps Local Repository
 
-Open local git repository with VS Code
+### Open local git repository with VS Code
 
 1.  If VS Code is not launched, launch it
 
@@ -1917,7 +1917,7 @@ Open local git repository with VS Code
     (files), open it -- File -\> Open Folder and open the local folder
     that matches the repository name
 
-Open local git repository with File Explorer
+### Open local git repository with File Explorer
 
 1.  In VS Code, with the local git repository open, on the left-hand
     file menu, right-click on a top level file and select 'Reveal in
@@ -1938,7 +1938,7 @@ Open local git repository with File Explorer
 
 ## Exercise - Add Contributors to your Project
 
-Log into visualstudio.com
+Login to visualstudio.com
 
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
@@ -2522,9 +2522,9 @@ Resource Manager templates)
 
 4.  Instructions found in the ps1 file are also detailed below.
 
-Log into Azure via PowerShell
+Login to Azure via PowerShell
 
-From a PowerShell console window, log into Azure using either:
+From a PowerShell console window, login to Azure using either:
 
 Azure Commercial:
 
@@ -2770,7 +2770,7 @@ o.  To return back to the deployment summary, click on the X to exit out
 p.  Click OK to start the deployment of your VM, which will take 5-10
     minutes to complete.
 
-Log into the VM
+Login to the VM
 
 1.  Open an RDP session to the DSC1 VM created in the previous step
 
@@ -2824,7 +2824,7 @@ Properties
 
 ## Exercise - Create a DSC Configuration
 
-Log into the VM created in the previous exercise
+Login to the VM created in the previous exercise
 
 1.  Open an RDP session to DSC1
 
@@ -3032,9 +3032,9 @@ something goes wrong.
 
 ## Exercise - Deploy an ARM resource DSC extension
 
-Log into Azure via PowerShell from your \*\***LOCAL COMPUTER\*\***
+Login to Azure via PowerShell from your \*\***LOCAL COMPUTER\*\***
 
-From a PowerShell console window in VS Code, log into Azure using
+From a PowerShell console window in VS Code, login to Azure using
 either:
 
 Azure Commercial:
@@ -3474,7 +3474,7 @@ Create Test Files
 
 Connect to the Azure Portal
 
-1.  Log into the Azure Portal
+1.  Login to the Azure Portal
 
 2.  Select **Resource Groups**
 
@@ -3994,7 +3994,7 @@ Before proceeding to the next step, make sure that you have:
 
 ## Exercise - Create a Service Connection in Azure DevOps
 
-Log into visualstudio.com
+Login to visualstudio.com
 
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
@@ -4090,7 +4090,7 @@ Click the Verify Connection hyperlink
 The information must successfully verify before proceeding to the next
 exercise. If it does not, doublecheck the information listed above,
 especially Environment. If you believe all the information above is
-correct but you still cannot verify, attempt to log into Azure via
+correct but you still cannot verify, attempt to login to Azure via
 PowerShell with the information you have provided (this procedure is
 described in the Azure AD and Service Principals Lab). Please note that
 a service principal must have some rights (any) in the Azure
@@ -4391,7 +4391,7 @@ Create a new Service Principal
 
 ## Exercise - Create a new Resource Group to contain a storage account for DSC files
 
-Log into Azure
+Login to Azure
 
 1.  Open a web browser
 
@@ -4410,7 +4410,7 @@ Create a Resource Group
 
 ## Exercise - Create a new storage account for DSC files
 
-Log into Azure
+Login to Azure
 
 1.  Open a web browser
 
@@ -4472,7 +4472,7 @@ Create a Resource Group
 
 ## Exercise - Grant Service Principal with permissions
 
-Log into Azure
+Login to Azure
 
 1.  Open a web browser
 
