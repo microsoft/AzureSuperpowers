@@ -430,7 +430,7 @@ The Az PowerShell module requires .Net Framework Runtime 4.7.2 or higher
 
 **Azure subscriptions**
 
-<ins>TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS CLASS</ins>
+<ins>TRIAL SUBSCRIPTIONS ARE NOT SUPPORTED FOR THIS WORKSHOP</ins>
 
 <div style="page-break-after: always;"></div>
 
