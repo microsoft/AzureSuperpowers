@@ -485,7 +485,7 @@ getting lost in the software.
     e.  Status Bar - Information about the opened project and the files
         you edit.
 
-> ![](./media/image3.png)
+<img src="./media/image3.png" width="575">
 
 ### Make the VS Code Interface your own
 
