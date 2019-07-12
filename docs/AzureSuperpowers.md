@@ -493,12 +493,12 @@ getting lost in the software.
 
 2.  The Activity Bar consists of 5 buttons by default.
 
-        a.  Explorer -- View and select files for editing
-        b.  Search -- Text level search inside your files. This will search
+        a.  Explorer - View and select files for editing
+        b.  Search - Text level search inside your files. This will search
         across all files that are available in your current workspace.
-        c.  Source Control -- View any connected source code repositories
+        c.  Source Control - View any connected source code repositories
         d.  Debug
-        e.  Extensions -- Add extensions to enable new features within VS
+        e.  Extensions - Add extensions to enable new features within VS
         Code
 
 3.  From the View Menu in the Menu Bar, select Appearance, and then
@@ -998,7 +998,7 @@ to circumvent that process.
 1.  From the Azure Portal: On the left-hand navigation pane, click
     **Resource Groups**
 
-2.  Click on **your new resource group name --
+2.  Click on **your new resource group name -
     '**PortalRG-\<YOURALIAS\>**'**
 
 3.  From the PortalRG pane, click the **Access Control (IAM)** section
@@ -1081,13 +1081,13 @@ available to you:
 Get-AzSubscription
 
 Run **Select-AzSubscription -Subscription \'\<guid\>\'** replacing the
-subscription guid with the ID from your desired subscription -- note
+subscription guid with the ID from your desired subscription - note
 that this value will just be listed as ID, not TenantId.
 
 The guid is alphanumeric characters in the form,
 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Create a new Resource Group
 
@@ -1126,7 +1126,7 @@ Login-AzAccount -Environment AzureUSGovernment
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Create a new Service Principal
 
@@ -1185,7 +1185,7 @@ Login-AzAccount -Environment AzureUSGovernment
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Give rights to Service Principal scoped to the Resource Group
 
@@ -1220,7 +1220,7 @@ Login-AzAccount -Environment AzureUSGovernment
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Gather Information about the AzureAD Tenant and the Service Principal
 
@@ -1355,7 +1355,7 @@ single line.
 
 | Lab Description | In this lab, you will explore the use of Azure Resource Manager (ARM) templates to deploy resources into a Resource Group.  ARM templates are JSON files that define the resources you need to deploy for your solution. To understand the concepts associated with deploying and managing your Azure solutions, see [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) |
 | :------------ | :-------------- |
-| Glossary of Terms | *ARM Template --* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly |
+| Glossary of Terms | *ARM Template -* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. Create your first Azure Resource Manager template |
 |  | 2. Deploy a Storage Account using an ARM template with Azure PowerShell and the New-AzResourceGroupDeployment cmdlet |
@@ -1456,7 +1456,7 @@ Login-AzAccount -Environment AzureUSGovernment
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 The PowerShellRG resource group should already exist from
 the earlier Azure AD and Service Principal's Lab. If it does not, create
@@ -1834,9 +1834,9 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 | Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate. |
 | :------------ | :-------------- |
 | Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/<organizationname> and can have many projects under it |
-|  | *project --* a project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
-|  | *repository --* A git repository is all code files, all branches, all metadata, and commit history of changes |
-|  | *clone* -- the ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a ‘remote’ location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
+|  | *project -* a project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
+|  | *repository -* A git repository is all code files, all branches, all metadata, and commit history of changes |
+|  | *clone* - the ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a ‘remote’ location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. The hierarchy of Azure DevOps |
 |  | 2. Familiarity with Azure DevOps projects |
@@ -1941,7 +1941,7 @@ Process Flow
 1.  If VS Code is not launched, launch it
 
 2.  If the local git repository is not in the left-hand tree view
-    (files), open it -- File -\> Open Folder and open the local folder
+    (files), open it - File -\> Open Folder and open the local folder
     that matches the repository name
 
 ### Open local git repository with File Explorer
@@ -2541,7 +2541,7 @@ pushing new changes up**
 
 | Lab Description | This lab is a prerequisite for completing the ARM Templates (Advanced) lab.  In this lab, you will deploy resources into Azure using Azure PowerShell and ARM Templates. |
 | :------------ | :-------------- |
-| Glossary of Terms | *ARM Template --* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly. |
+| Glossary of Terms | *ARM Template -* An ARM Template is a JavaScript Object Notation (JSON) file that defines one or more resources to deploy to an Azure resource group. It also defines the dependencies between the deployed resources. The template can be used to deploy the resources consistently and repeatedly. |
 | Estimated Time to Complete | 10 minutes (User tasks) |
 |  | 30 minutes (Deployment of resources to Azure) |
 | Key Takeaways | 1. Deploying a complex solution can be made simple using ARM Templates |
@@ -2589,7 +2589,7 @@ Login-AzAccount -Environment AzureUSGovernment
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 Next, create a new Resource Group called AzSuperADLAB (Examples for
 Azure Commercial and Microsoft Azure Government shown below)
@@ -3115,7 +3115,7 @@ Login-AzAccount -Environment AzureUSGovernment
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription --Subscription \'\<Id\>\'
+Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Deploy ARM DSC Resource
 
@@ -3313,7 +3313,7 @@ Pay attention to filenames
 > And then login into Azure (as yourself) using the pop-up dialogue box
 > (that may have popped-up under the current Window(s)).
 >
-> Select-AzSubscription --Subscription \'\<Id\>\'
+> Select-AzSubscription -Subscription \'\<Id\>\'
 
 4.  Enter your credential to connect to your Azure account. The
     authentication window may appear behind VS Code.
@@ -3745,24 +3745,24 @@ This template showcases the following:
 
     -   Defined in-line, directly in the main template
 
-        -   Lines 56 -- 102
+        -   Lines 56 - 102
 
-        -   Lines 150 -- 194
+        -   Lines 150 - 194
 
     -   Linked templates that are called via their URI, stored on either
         public or private storage
 
-        -   Lines 103 -- 149
+        -   Lines 103 - 149
 
-        -   Lines 195 -- 244
+        -   Lines 195 - 244
 
-        -   Lines 245 -- 270
+        -   Lines 245 - 270
 
-        -   Lines 271 -- 302
+        -   Lines 271 - 302
 
-        -   Lines 303 -- 328
+        -   Lines 303 - 328
 
-        -   Lines 329 -- 370
+        -   Lines 329 - 370
 
 -   Multiple calls of the PowerShell DSC extension
 
@@ -3781,11 +3781,11 @@ This template showcases the following:
 
 -   DSC storage locations
 
-    -   Public -- GitHub
+    -   Public - GitHub
 
         -   Line 171
 
-    -   Private -- Azure Storage Account and SAS tokens
+    -   Private - Azure Storage Account and SAS tokens
 
         -   SAS tokens provided via template variables
 
@@ -3951,7 +3951,7 @@ This template showcases the following:
             to link to another template based on the URI of the parent
             template.
 
--   PublicIP creation -- selectable per VM with conditional logic
+-   PublicIP creation - selectable per VM with conditional logic
 
 -   Domain Controller deployment
 
@@ -4043,7 +4043,7 @@ settings
     nodes listed here as well. Depending on whether the previous task
     completed or not, you should see either 3 or 4 worker nodes.
 
-### Task 3: Instructor led exercise -- empty the contents of your resource
+### Task 3: Instructor led exercise - empty the contents of your resource
 group by deploying an empty template with complete mode
 
 -   We will review the file shown below
@@ -4072,7 +4072,7 @@ group by deploying an empty template with complete mode
 
 ## Exercise - Create a Service Principal
 
-### Complete previous lab -- Azure AD and Service Principals
+### Complete previous lab - Azure AD and Service Principals
 
 The prior Azure AD and Service Principal lab walks you through creating
 a service principal in Azure AD and giving it access to an Azure
@@ -4112,7 +4112,7 @@ Before proceeding to the next step, make sure that you have:
 
 3.  Click the link of the project name you wish to launch.
 
-4.  (If you have no accounts/projects, please complete the prior lab --
+4.  (If you have no accounts/projects, please complete the prior lab -
     Azure DevOps)
 
 ### Initialize the default git repository
@@ -4147,27 +4147,27 @@ Before proceeding to the next step, make sure that you have:
     remove any values that have been auto-populated. Review each
     value**:
 
-    a.  Connection Name -- This name can be anything. A meaningful name
+    a.  Connection Name - This name can be anything. A meaningful name
         might include info about the purpose of the service principal
         (i.e. 'DEV Connection', or 'AZGOV LIMITED', or 'AIRS Demo'
 
-    b.  Environment -- select 'AzureCloud' for commercial Azure,
+    b.  Environment - select 'AzureCloud' for commercial Azure,
         'AzureUSGovernment' for MAG, or whichever environment the Azure
         subscription you want to Azure DevOps to connect to exists in.
 
-    c.  Subscription ID -- This value is the subscription ID of the
+    c.  Subscription ID - This value is the subscription ID of the
         Azure subscription you wish to connect to. This information can
         be obtained from the Get-AzSubscription cmdlet in PowerShell or
         from the Azure Portal.
 
-    d.  Subscription Name -- This value is the Name of the Azure
+    d.  Subscription Name - This value is the Name of the Azure
         subscription you wish to connect to. It matters that the name
         entered here is the name that is associated with Subscription ID
         in the last field. This information can be obtained from the\
         Get-AzSubscription cmdlet in PowerShell or through the Azure
         Portal.
 
-    e.  Service Principal Client ID -- This is also known as the
+    e.  Service Principal Client ID - This is also known as the
         '**AppID**' or '**Application ID'**. This information can be
         obtained from the:
 
@@ -4175,10 +4175,10 @@ Before proceeding to the next step, make sure that you have:
         cmdlet in PowerShell or through the Azure Portal in Azure Active
         Directory under 'App Registrations'.
 
-    f.  Service Principal Key -- This is the Service Principal's
+    f.  Service Principal Key - This is the Service Principal's
         password.
 
-    g.  Tenant ID -- The ID of the Azure Active Directory tenant that
+    g.  Tenant ID - The ID of the Azure Active Directory tenant that
         the Service Principal was created in
 
 ### Click the Verify Connection hyperlink
@@ -4303,7 +4303,7 @@ The virtual machine is discarded after one use.
 
 ### Verify that your Azure DevOps Organization exists and you can login
 
-1.  Refer to Lab -- Azure DevOps to create a new Azure DevOps
+1.  Refer to Lab - Azure DevOps to create a new Azure DevOps
     Organization if you have not created one yet.
 
 2.  Open a web browser and navigate to
@@ -4422,7 +4422,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
     created will enforce the use of pull requests when updating the
     branch and will prevent branch deletion.
 
-7.  Refer to **Exercise -- Branch policies** in the Git lab for a
+7.  Refer to **Exercise - Branch policies** in the Git lab for a
     detailed example of creating new branch policies
 
 <div style="page-break-after: always;"></div>
@@ -4500,7 +4500,7 @@ Files\\Helper.txt)
 
 ### Create a new Service Principal
 
-1.  Refer to Lab -- Azure AD and Service Principals to create a new
+1.  Refer to Lab - Azure AD and Service Principals to create a new
     Service Principal in your Azure subscription.
 
 <div style="page-break-after: always;"></div>
@@ -4665,7 +4665,7 @@ Files\\Helper.txt)
 6.  When prompted for a template, select the option to start with an
     Empty job
 
-7.  Name your build 'DSC Files -- CI'
+7.  Name your build 'DSC Files - CI'
 
 8.  For the **Agent pool** select 'Hosted Windows 2019 with VS2019'
 
@@ -4733,7 +4733,7 @@ Files\\Helper.txt)
 
 24. Under Pipelines, click Builds
 
-25. Select the 'DSC Files -- CI' build
+25. Select the 'DSC Files - CI' build
 
 26. Review the build history information, which should now indicate that
     a new build was automatically initiated based on your latest file
