@@ -515,7 +515,7 @@ getting lost in the software.
 
 5.  Zooming in and out within VS Code can be helpful in displaying the
     desired amount of information. Test this by using the commands
-    **CTRL --** to zoom out, and **CTRL +** to zoom in. To reset zoom to
+    **CTRL -** to zoom out, and **CTRL +** to zoom in. To reset zoom to
     the default level, go to the Menu bar and select View, Appearance,
     Reset Zoom.
 
@@ -586,7 +586,7 @@ getting lost in the software.
     PowerShell extension installed. You will also want to ensure that
     when you are working with PowerShell code, you have the VS Code
     language set to PowerShell, and you will want to use the PowerShell
-    Integrated Console. **You will need have at least 1 PowerShell file
+    Integrated Console. **You will need have at least one PowerShell file
     open in VS Code for the PowerShell Integrated Console to appear.**
 
     <img src="./media/image7.png" border="1">
@@ -638,13 +638,13 @@ getting lost in the software.
 8.  The command palette will prompt for a Repository URL. Enter the URL
     that is currently in your clipboard (Show below for reference)
 
-    https://github.com/microsoft/Azure-Superpowers.git
+    <https://github.com/microsoft/Azure-Superpowers.git>
 
 9.  When prompted for a destination to clone the files, use
     C:\\AzSuperClass
 
-> **[NOTE:]{.underline}** Because a repository is similar to a database,
-> **[do not]{.underline}** select a folder that is managed by
+> **NOTE:** Because a repository is similar to a database,
+> **do not** select a folder that is managed by
 > technologies like OneDrive, Dropbox, etc. This can cause issues with
 > both technologies fighting to track changes.
 
@@ -657,12 +657,14 @@ getting lost in the software.
     your local PC. This repository contains files that you will use
     throughout the remaining labs.\
     \
-    **[NOTE:]{.underline}** Questions have come up in the past on
-    cloning. You only need to clone a repository once, you don't need to
-    re-clone every time you want to work with a repository. Every time
-    you open VS Code you will be working against a local copy of the
-    repository, which will exist for as long as you keep the files
-    stored on your computer.
+> **NOTE:** Questions have come up in the past on
+> cloning. You only need to clone a repository once, you don't need to
+> re-clone every time you want to work with a repository. Every time
+> you open VS Code you will be working against a local copy of the
+> repository, which will exist for as long as you keep the files
+> stored on your computer.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Az Walkthrough
 
@@ -711,27 +713,19 @@ Get-Command -Module \'Az.\*\'
 Commands from the Az module that are frequently used in this workshop
 are shown below
 
+```powershell
 Login-AzAccount
-
 Get-AzContext
-
 Get-AzEnvironment
-
 Get-AzSubscription
-
 Select-AzSubscription
-
 Get-AzResourceGroup
-
 New-AzResourceGroup
-
 New-AzADServicePrincipal
-
 New-AzRoleAssignment
-
 Test-AzResourceGroupDeployment
-
 New-AzResourceGroupDeployment
+```
 
 ### PowerShell Splatting
 
@@ -746,20 +740,20 @@ collection of values, instead of a single value.
 
 An example of splatting is shown below
 
-1.  \$params = @{
-
-2.  Name = \'PowerShellRG\'
-
-3.  Location = \'eastUS\' \#or \'usgovvirginia\'
-
-4.  }
-
-5.  New-AzResourceGroup \@params
+```powershell
+1.	$params = @{
+2.	    Name     = 'PowerShellRG'
+3.	    Location = 'eastUS' #or 'usgovvirginia'    
+4.	}
+5.	New-AzResourceGroup @params
+```
 
 Note that the variable "params" is preceded by a dollar sign (\$) when
 it's defined, but by an at sign (@) when it's called as part of a
 PowerShell cmdlet. Use the appropriate location for the Azure
 environment throughout this course.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Azure Storage Explorer Walkthrough
 
@@ -835,6 +829,8 @@ environment throughout this course.
     verifying configuration. Note: You will see this menu when a blob is
     selected. Blobs will be created in future labs.
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
 
 Simply clicking on a file in the Explorer view of VS Code will select
@@ -859,6 +855,8 @@ fl \* -Force
 
 For function keys to operate, you may need to press the **Fn** key on
 some computer models, like Surface
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 3 - Azure AD and Service Principals
 -------------------------------------
@@ -911,6 +909,8 @@ to circumvent that process.
 
 -   AAD Tenant is identified by \@UPN Suffix
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Create Resource Group using the Portal
 
 ### Login to Azure
@@ -939,6 +939,8 @@ to circumvent that process.
 4.  Select any valid location
 
 5.  Click the **Create** button
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create Service Principal using the Portal
 
@@ -985,6 +987,8 @@ to circumvent that process.
 4.  Once the Key value is saved and [you have a copy for your
     records]{.underline}, close the Certificates and Secrets pane.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Grant Rights to a Resource Group using the Portal
 
 ### Assign rights to Service Principal scoped to the Resource Group
@@ -1017,6 +1021,8 @@ group, including changing permissions.
 
 **In production it is highly recommended that a limited access role be
 used or a custom role created with least privileges**
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create Resource Group using PowerShell
 
@@ -1096,6 +1102,8 @@ a new resource group:
 
 5.  New-AzResourceGroup \@params
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Create Service Principal using PowerShell
 
 ### Login to Azure via PowerShell
@@ -1153,6 +1161,8 @@ PowerShell.\
 **IMPORTANT: Save the service principal's password**, you will need it
 later when logging in as the Service Principal from PowerShell.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Grant Rights to a Resource Group using PowerShell
 
 ### Login to Azure via PowerShell
@@ -1187,6 +1197,8 @@ PowerShell.
 
 3.  New-AzRoleAssignment -ApplicationID \$appID -ResourceGroupName
     \'PowerShellRG-\<YOURALIAS\>\' -RoleDefinitionName \'Owner\'
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Login to Azure as Service Principal
 
@@ -1291,6 +1303,8 @@ PowerShell:
 
 Logout-AzAccount
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
 
 The login prompt to login to Azure via PowerShell frequently appears as
@@ -1331,6 +1345,8 @@ Pay attention to the line numbers in the code. Printing the labs can
 make it hard to fit an entire line of code on one line, so line numbers
 are listed to indicate when a section of code needs to be listed on a
 single line.
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 4 - Basic ARM Templates
 -------------------------
@@ -1375,6 +1391,8 @@ them to be.
 ### Where can I see examples of ARM Templates?
 
 <https://github.com/Azure/azure-quickstart-templates>
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Deploy a Storage Account using an ARM template and Azure PowerShell
 
@@ -1475,6 +1493,8 @@ status of the deployment. You can also review the Deployments tab in the
 Azure portal for the resource group that you are targeting to see
 real-time deployment information, as well as any errors or warnings if
 your deployment is not successful.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Introduce template parameters and variables
 
@@ -1800,7 +1820,11 @@ In a PowerShell command window, use the following command:
 
 Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 5 - Azure DevOps
 ------------------
@@ -1820,6 +1844,8 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 Process Flow
 
     <img src="./media/image19.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create new Azure DevOps organization
 
@@ -1904,6 +1930,8 @@ Process Flow
     README.md file that you created by the step where you initialized
     the repository in Azure DevOps.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Explore Azure DevOps Local Repository
 
 ### Open local git repository with VS Code
@@ -1932,6 +1960,8 @@ Process Flow
 
 3.  Verify that you can see the ReadMe file within the File Explorer
     view.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Add Contributors to your Project
 
@@ -1979,6 +2009,8 @@ Process Flow
 6.  Click the '+ Add...' button and type the member or group you wish to
     add to this security group, then click the 'Save Changes' button
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
 
 When adding members to a project, we have seen instances where the user
@@ -1986,6 +2018,8 @@ did not show up in the lookup window, but they were still able to be
 added successfully to the project by simply typing in the email address
 and clicking on Save changes. Once the user is added, refresh the
 members list.
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 6 - Git
 ---------
@@ -2007,6 +2041,8 @@ members list.
 -   Track and Merge changes
 
 -   Clone, Pull, Push, Fork
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Git Branch
 
@@ -2137,6 +2173,8 @@ rejected.
     be configured to protect your important branches by preventing
     direct pushes, requiring reviewers, and ensuring clean builds.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Branch policies 
 
 ### Introduction to branch policies
@@ -2202,6 +2240,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 10. Save your changes. Even a simple policy like the one you just
     created will enforce the use of pull requests when updating the
     branch and will prevent branch deletion.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Git commit
 
@@ -2377,6 +2417,8 @@ multiple files.
     Code is indicating that there are two commits that are ready to be
     pushed to the Git repository stored in Azure DevOps.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Git Pull and Git Push
 
 ### Introduction
@@ -2422,6 +2464,8 @@ pushing new changes up**
 7.  This will show the git activities that have occurred. If you
     experienced an error of any kind, this is the first place to go to
     troubleshoot.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Pull Request
 
@@ -2484,7 +2528,11 @@ pushing new changes up**
 
     <img src="./media/image41.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 7 - AD Super Lab Deployment
 -----------------------------
@@ -2500,6 +2548,8 @@ pushing new changes up**
 This lab should only take a few minutes to complete the user initiated
 actions. Once the deployment has started, it will take approximately 30
 minutes to complete.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Deploy AD Super Lab
 
@@ -2597,7 +2647,11 @@ You can review the Deployments tab in the Azure portal for the resource
 group that you are targeting to see real-time deployment information, as
 well as any errors or warnings if your deployment is not successful.
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 8 - PowerShell DSC
 --------------------
@@ -2648,6 +2702,7 @@ well as any errors or warnings if your deployment is not successful.
 
     <img src="./media/image45.png" border="1">
 
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Exploring DSC Custom Resources on the Web
 
@@ -2684,6 +2739,8 @@ well as any errors or warnings if your deployment is not successful.
 4.  Scroll down the page and note the list of 'Resources' and the
     detailed use of each resource. The documentation of how to use the
     DSC resources indicates a mature DSC resource module
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Build a new Azure VM and install custom DSC resources
 
@@ -2819,6 +2876,8 @@ Properties
     xFirewall DSC resource and look for additional configuration
     settings that the DSC resource can control.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Create a DSC Configuration
 
 ### Login to the VM created in the previous exercise
@@ -2930,6 +2989,8 @@ PS\> Get-DscResource -Name Firewall \| Select -ExpandProperty Properties
     (called DemoConfig) of your current folder. Your MOF file will be
     called localhost.mof
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Test the DSC Configuration Locally
 
 ### Test the DSC Configuration Locally
@@ -2959,6 +3020,8 @@ ResourcesNotInDesiredState
     configuration to a system to bring it into the desired state.
     Instead, in the next exercise we will take the PowerShell
     configuration file and package it up for Azure to deploy.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create an Azure Compatible DSC package
 
@@ -3027,6 +3090,8 @@ something goes wrong.
     workstation**. If the browser prompts you to download the file, you
     successfully have a public URL where anyone (especially Azure VMs)
     can download the .zip file and you can move to the next exercise.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Deploy an ARM resource DSC extension
 
@@ -3196,6 +3261,8 @@ PS\> Test-DscConfiguration -Detailed
 
 All resources should now be listed as being in the desired state.
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
 
 If you receive a message that states your ZipFileURI cannot be found,
@@ -3203,6 +3270,8 @@ make sure you are executing commands from within the correct directory
 that contains your DSC.json file
 
 Pay attention to filenames
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 9 - Storage Accounts and SAS Tokens
 -------------------------------------
@@ -3216,6 +3285,8 @@ Pay attention to filenames
 |  | 2. Generate SAS Token |
 |  | 3. Access private Azure Storage files with URI + SAS Token |
 | Author | Wes Adams |
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a storage account
 
@@ -3300,6 +3371,8 @@ Pay attention to filenames
 5.  To better understand the differences between Azure Blobs, Azure
     Files, and Azure Disks, review:\
     <https://docs.microsoft.com/en-us/azure/storage/common/storage-decide-blobs-files-disks?toc=%2fazure%2fstorage%2ffiles%2ftoc.json>
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a blob container
 
@@ -3455,6 +3528,8 @@ Pay attention to filenames
 2.  The SAS Token, if correct, should be in a similar format: **\
     ?sv=2018-03-28&si=policyexample&sr=c&sig=6cVRHdm3rGFEBCa6sSNhmvDKAWZxruM4EQX8wpv2NS4%3D**
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Create Test Files
 
 ### Create Test Files
@@ -3466,6 +3541,8 @@ Pay attention to filenames
 3.  Create a text file called "File2.txt"
 
 4.  Create a text file called "File3.txt"
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Upload one text file using the portal
 
@@ -3501,6 +3578,8 @@ Pay attention to filenames
 
 3.  Notice **File1**.**txt** is visible from Azure Storage Explorer
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Upload a File Using Azure Storage Explorer
 
 ### Upload File
@@ -3524,6 +3603,8 @@ Pay attention to filenames
 2.  **Refresh** the files within the **sasexample** storage container
 
 3.  Notice **File2**.**txt** is visible from Azure Storage Explorer
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Upload one file using PowerShell
 
@@ -3614,7 +3695,11 @@ Pay attention to filenames
 
     Properties = @{\"ContentType\" = \"text/plain\"}
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 10 - ARM Templates (Advanced)
 ------------------------------
@@ -3634,6 +3719,8 @@ Pay attention to filenames
 ### Single Templates vs Linked Templates
 
     <img src="./media/image51.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Review an existing Advanced ARM Template
 
@@ -3915,6 +4002,8 @@ Stored in the location shown below
 
 <https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/multiplevms.json?st=2018-07-31T20%3A52%3A18Z&se=2020-12-31T20%3A52%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=OdLDqGLuFLzDoyY8PwS4Ci4LUPeFxfAfwdbkoFXCo2k%3D>
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Edit the existing Advanced ARM Template and deployment
 
 ### Task 1: Redeploy the main ARM template with an additional worker VM
@@ -3960,7 +4049,11 @@ group by deploying an empty template with complete mode
     C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
     Advanced\\emptyResourceGroup.ps1
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 11 - Azure DevOps Service Connections
 --------------------------------------
@@ -3972,6 +4065,8 @@ group by deploying an empty template with complete mode
 | Key Takeaways | 1. In order for Azure DevOps to interact with Azure you need to create a Service Connection in your project |
 |  | 2. Any PowerShell scripts you write or use do not need to log in or specify their Azure subscription target, Azure DevOps will handle all that prior to running your scripts in Azure |
 | Author | Keith Hitchcock |
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a Service Principal
 
@@ -3988,6 +4083,8 @@ Before proceeding to the next step, make sure that you have:
 -   a resource group created
 
 -   the service principal has rights to that resource group (owner)
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a Service Connection in Azure DevOps
 
@@ -4093,6 +4190,8 @@ described in the Azure AD and Service Principals Lab). Please note that
 a service principal must have some rights (any) in the Azure
 subscription in order to be successfully verified.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Verify Service Connection
 
 ### Create a new Azure DevOps Build
@@ -4173,6 +4272,8 @@ scripts/commands. Azure DevOps can also run the build on demand (as you
 did in this exercise by queuing it), on an automatic schedule, or
 automatically every time a change is made to the code repository.
 
+<div style="page-break-after: always;"></div>
+
 ## Troubleshooting
 
 Your Azure DevOps build is configured to utilize a hosted build agent.
@@ -4184,6 +4285,8 @@ With Microsoft-hosted agents, maintenance and upgrades are taken care of
 for you. Each time you run a pipeline, you get a fresh virtual machine.
 The virtual machine is discarded after one use.
 
+<div style="page-break-after: always;"></div>
+
 ## Lab 12 - Azure DevOps Prereqs
 --------------------------
 
@@ -4191,6 +4294,8 @@ The virtual machine is discarded after one use.
 | :------------ | :-------------- |
 | Estimated Time to Complete | 45 minutes |
 | Author | Ralph Kyttle |
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Azure DevOps Organization
 
@@ -4203,6 +4308,8 @@ The virtual machine is discarded after one use.
     [https://dev.azure.com/\<organizationname](https://dev.azure.com/%3corganizationname)
 
 3.  Verify that your Azure DevOps Organization exists and you can login
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a new Azure DevOps Project
 
@@ -4259,6 +4366,8 @@ The virtual machine is discarded after one use.
     README.md file that you created by the step where you initialized
     the repository in Azure DevOps.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Branches
 
 ### Create a new dev branch in your Azure DevOps repo
@@ -4276,6 +4385,8 @@ The virtual machine is discarded after one use.
 
 5.  Refer to **Exercise - Git Branch** in the Git lab for a detailed
     example of creating new branches
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Branch Policies
 
@@ -4311,6 +4422,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
 7.  Refer to **Exercise -- Branch policies** in the Git lab for a
     detailed example of creating new branch policies
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Download sample code and check files into your repository
 
@@ -4379,12 +4492,16 @@ Files\\Helper.txt)
 
     <img src="./media/image55.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Service Principal
 
 ### Create a new Service Principal
 
 1.  Refer to Lab -- Azure AD and Service Principals to create a new
     Service Principal in your Azure subscription.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a new Resource Group to contain a storage account for DSC files
 
@@ -4404,6 +4521,8 @@ Files\\Helper.txt)
 3.  On the 'Resource Group' pane, enter the resource group name
     'DSCFiles-\<YOURALIAS\>' and select any valid location. Click the
     'Create' button.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Create a new storage account for DSC files
 
@@ -4442,6 +4561,8 @@ Files\\Helper.txt)
 
     <img src="./media/image57.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Create two new Resource Groups for your application deployment
 
 ### Login to Azure
@@ -4466,6 +4587,8 @@ Files\\Helper.txt)
 5.  On the 'Resource Group' pane, enter the resource group name
     'azure-prod-\<YOURALIAS\>' and select any valid location. Click the
     'Create' button.
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Grant Service Principal with permissions
 
@@ -4493,6 +4616,8 @@ Files\\Helper.txt)
 4.  For each Resource Group, edit the permissions and grant your new
     Service Principal with **Contributor** permissions
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Service Connection
 
 ### Create a new Service Connection in your project
@@ -4500,6 +4625,8 @@ Files\\Helper.txt)
 1.  Refer to Lab - Azure DevOps Service Connection for instructions on
     creating a Service Connection and create a new Service Connection in
     your project using your Service Principal credentials.
+
+<div style="page-break-after: always;"></div>
 
 ## Lab 13 - Azure DevOps Build Continuous Integration
 -------------------------------------------------------
@@ -4514,6 +4641,8 @@ Files\\Helper.txt)
 | Key Takeaways | 1. Continuous Integration can be configured as a part of your application development process to ensure code is built and tested anytime changes are made to the code. |
 |  | 2. Continuous Integration can provide help meet infrastructure needs, including automating the build of DSC zip files for use in Azure |
 | Author | Ralph Kyttle |
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Setup an Azure DevOps build that uses CI to create DSC zip files
 
@@ -4619,6 +4748,8 @@ Files\\Helper.txt)
     contents and review SetWinSecuritySettings.ps1 to verify that line
     145 is listing ValueData =1.
 
+<div style="page-break-after: always;"></div>
+
 ## Lab 14 - Azure DevOps Release Continuous Deployment
 --------------------------------------------------------
 
@@ -4631,6 +4762,8 @@ Files\\Helper.txt)
 |  | 2. CD automates deployment from one environment to the next and may optionally depend on an approval step, in which a decision maker signs off on the changes electronically. CD may create an auditable record of the approval in order to satisfy regulatory procedures or other control objectives. |
 |  | 3. Modern release pipelines allow development teams to deploy new features fast and safely. |
 | Author | Ralph Kyttle |
+
+<div style="page-break-after: always;"></div>
 
 ## Exercise - Setup an Azure DevOps release
 
