@@ -535,7 +535,10 @@ getting lost in the software.
 9.  An example of a user setting change the you may wish to make is
     setting a default file type in\
     VS Code, which can be accomplished by adding in the following
-    configuration: \"files.defaultLanguage\": \"powershell\"
+    configuration:
+    ```json
+    "files.defaultLanguage": "powershell"
+    ```
 
 10. Adding the files.defaultLanguage setting listed above will ensure
     that any new file that you create is automatically created as a
@@ -556,11 +559,10 @@ getting lost in the software.
 3.  Search for and install the following extension, published by
     Microsoft. Once the extension is installed, reload VS Code.
 
-    a.  PowerShell (In addition to enhancements to PowerShell, this
+        a.  PowerShell (In addition to enhancements to PowerShell, this
         extension includes a PowerShell ISE color theme that can found
         by selecting File, Preferences, Color Theme)
-
-    b.  Install the latest available version of the PowerShell
+        b.  Install the latest available version of the PowerShell
         extension, which may be newer than the version shown below.
 
 > ![](./media/image5.png)
@@ -602,6 +604,8 @@ getting lost in the software.
     window also enables you to be able to select and execute multiple
     lines of PowerShell.
 
+<div style="page-break-after: always;"></div>
+
 ## Exercise - Clone the Azure Superpowers Repository
 
 ### Clone Azure Superpowers via the VS Code GUI
@@ -611,7 +615,7 @@ getting lost in the software.
 
 2.  Click on the **Clone or download** button
 
-    ![](./media/image8.png)
+<img src="./media/image8.png" border="1">
 
 3.  Click the icon as shown below to copy the repository URL to your
     clipboard so that you can paste it into VS Code in the next steps
