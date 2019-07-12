@@ -655,8 +655,8 @@ getting lost in the software.
     select "Open Repository" in the lower right-hand corner. You have
     now cloned the Azure Superpowers Git repository from GitHub down to
     your local PC. This repository contains files that you will use
-    throughout the remaining labs.\
-    \
+    throughout the remaining labs.
+
 > **NOTE:** Questions have come up in the past on
 > cloning. You only need to clone a repository once, you don't need to
 > re-clone every time you want to work with a repository. Every time
@@ -887,6 +887,8 @@ that everything is 'a break-fix change'. All changes need to go through
 the source control process and no administrator should have the rights
 to circumvent that process.
 
+<div style="page-break-after: always;"></div>
+
 ### AAD Service Principals
 
 -   Used for a Service (Application)
@@ -985,7 +987,7 @@ to circumvent that process.
         the service principal's password.**
 
 4.  Once the Key value is saved and [you have a copy for your
-    records]{.underline}, close the Certificates and Secrets pane.
+    records], close the Certificates and Secrets pane.
 
 <div style="page-break-after: always;"></div>
 
@@ -1058,7 +1060,7 @@ Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 
-**NOTE: This will probably have popped-up [under]{.underline} the
+**NOTE: This will probably have popped-up under the
 current Window(s)**
 
 ### Select the desired subscription
@@ -1109,7 +1111,7 @@ a new resource group:
 ### Login to Azure via PowerShell
 
 From a PowerShell console window, login to Azure using [one of the
-following]{.underline}, as appropriate:
+following], as appropriate:
 
 Azure Commercial:
 
@@ -1122,7 +1124,7 @@ Azure Government:
 Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
-(that may have popped-up [under]{.underline} the current Window(s)).
+(that may have popped-up under the current Window(s)).
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
@@ -1168,7 +1170,7 @@ later when logging in as the Service Principal from PowerShell.
 ### Login to Azure via PowerShell
 
 From a PowerShell console window, login to Azure using [one of the
-following]{.underline}, as appropriate:
+following], as appropriate:
 
 Azure Commercial:
 
@@ -1181,7 +1183,7 @@ Azure Government:
 Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
-(that may have popped-up [under]{.underline} the current Window(s)).
+(that may have popped-up under the current Window(s)).
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
@@ -1205,7 +1207,7 @@ PowerShell.
 ### Login to Azure via PowerShell
 
 From a PowerShell console window, login to Azure using [one of the
-following]{.underline}, as appropriate:
+following], as appropriate:
 
 Azure Commercial:
 
@@ -1216,7 +1218,7 @@ Azure Government:
 Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
-(that may have popped-up [under]{.underline} the current Window(s)).
+(that may have popped-up under the current Window(s)).
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
@@ -1226,7 +1228,7 @@ From a PowerShell window logged into Azure, run the following
 PowerShell. Record the TenantID of Azure Active Directory and the
 ApplicationID of the ServicePrincipal for the next step.
 
-[Execute the following lines of code one line at a time]{.underline}
+Execute the following lines of code one line at a time
 
 1.  \$spDisplayName = \'PowerShell-\<YOURALIAS\>\'
 
@@ -1252,7 +1254,7 @@ Logout-AzAccount
 
 ### Define Variables
 
-From a PowerShell window [not]{.underline} logged into Azure, run the
+From a PowerShell window not logged into Azure, run the
 following PowerShell.\
 When prompted (line 3), enter the password for the Service Principal you
 created using PowerShell
@@ -1271,7 +1273,7 @@ terminal as a warning output\
 ### Log in to Azure as Service Principal
 
 From a PowerShell console window [not already logged into
-Azure]{.underline}, run [one of the following]{.underline} PowerShell
+Azure], run [one of the following] PowerShell
 commands, as appropriate:
 
 Azure Commercial:
@@ -1452,11 +1454,11 @@ Azure Government:
 Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
-(that may have popped-up [under]{.underline} the current Window(s)).
+(that may have popped-up under the current Window(s)).
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
-The [PowerShellRG]{.underline} resource group should already exist from
+The PowerShellRG resource group should already exist from
 the earlier Azure AD and Service Principal's Lab. If it does not, create
 the Resource Group prior to this step. Execute the following PowerShell:
 
@@ -1917,8 +1919,8 @@ Process Flow
 6.  Select a folder to store the new repository locally **(Ex.
     C:\\MyAzureProject)**. Note that you are selecting the top level
     folder. A subfolder will be created with the repository name
-    automatically. Because a repository is similar to a database, **[do
-    not]{.underline}** select a folder that is managed by technologies
+    automatically. Because a repository is similar to a database, **do
+    not** select a folder that is managed by technologies
     like OneDrive, Dropbox, etc. This can cause issues with both
     technologies fighting to track changes.
 
@@ -1951,8 +1953,8 @@ Process Flow
 2.  Now that you have the local git repository open in file explorer,
     you can move (or delete) files to it the way you would normally
     (e.g. Copied from local drive, USB, Right-click-\>New-\>File). The
-    files that you move into file explorer will be added to the [current
-    branch]{.underline} of the git repository. The current branch can be
+    files that you move into file explorer will be added to the current
+    branch of the git repository. The current branch can be
     viewed in the bottom left-hand corner of VS Code. It will likely say
     'master' right now, but whichever branch it indicates is where any
     file modifications are taking place (regardless of if you use VS
@@ -2112,7 +2114,7 @@ rejected.
 
 4.  In the command palette, type **git fetch** and press enter
 
-5.  [Git fetch will not return any status back to VS Code,]{.underline}
+5.  Git fetch will not return any status back to VS Code,
     but if it completes successfully your new branch will be available
     for selection in the next section of this exercise
 
@@ -2585,7 +2587,7 @@ Azure Government:
 Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
-(that may have popped-up [under]{.underline} the current Window(s)).
+(that may have popped-up under the current Window(s)).
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
@@ -2800,7 +2802,7 @@ well as any errors or warnings if your deployment is not successful.
 
 9.  Summary tab
 
-    l.  **[DO NOT IMMEDIATELY CLICK OK]{.underline}**
+    l.  **DO NOT IMMEDIATELY CLICK OK**
 
     m.  Instead, click on the link Download template and parameters
 
@@ -3111,7 +3113,7 @@ Azure Government:
 Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
-(that may have popped-up [under]{.underline} the current Window(s)).
+(that may have popped-up under the current Window(s)).
 
 Select-AzSubscription --Subscription \'\<Id\>\'
 
@@ -3309,7 +3311,7 @@ Pay attention to filenames
 > Login-AzAccount -Environment AzureUSGovernment
 >
 > And then login into Azure (as yourself) using the pop-up dialogue box
-> (that may have popped-up [under]{.underline} the current Window(s)).
+> (that may have popped-up under the current Window(s)).
 >
 > Select-AzSubscription --Subscription \'\<Id\>\'
 
@@ -3685,7 +3687,7 @@ Pay attention to filenames
 
 4.  Notice that the **File3.txt** has a different ContentType from
     **File1.txt** and **File2.txt.**\
-    **[Note:]{.underline}** ContentType relates to how a web browser
+    **Note:** ContentType relates to how a web browser
     will interact with the file (Download, Open, Display) and can be
     changed if desired.
 
@@ -4354,7 +4356,7 @@ The virtual machine is discarded after one use.
 6.  Select a folder to store the new repository locally. Note that you
     are selecting the top level folder. A subfolder will be created with
     the repository name automatically. Because a repository is similar
-    to a database, **[do not]{.underline}** select a folder that is
+    to a database, **do not** select a folder that is
     managed by technologies like OneDrive, Dropbox, etc. This can cause
     issues with both technologies fighting to track changes.
 
@@ -4767,7 +4769,7 @@ Files\\Helper.txt)
 
 ## Exercise - Setup an Azure DevOps release
 
-**[In this lab, you will...]{.underline}**
+**In this lab, you will...**
 
 Login to your Azure DevOps account and setup a release definition that
 uses your Azure DevOps service endpoint to connect into Azure and deploy
