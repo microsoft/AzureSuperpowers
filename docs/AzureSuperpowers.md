@@ -1037,12 +1037,13 @@ VS Code window on the right hand of the Status Bar. This will bring up
 the Select Language Mode drop-down where you can select another language
 for the current file.
 
-If it is not already set to PowerShell, click on Plain Text and change
-it to PowerShell
+If it is not already set to PowerShell, click on Plain Text and change it to PowerShell
 
-    <img src="./media/image6.png" border="1">
+   <img src="./media/image6.png" border="1">
 
-    <img src="./media/image12.png" border="1">
+   <img src="./media/image12.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 ### Login to Azure via PowerShell
 
@@ -1050,13 +1051,17 @@ From a PowerShell console window, login to Azure using either:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
 
 **-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 
@@ -1078,7 +1083,9 @@ need to change this if you are associated to multiple subscriptions.
 Run **Get-AzSubscription** to list out the subscriptions that are
 available to you:
 
+```powershell
 Get-AzSubscription
+```
 
 Run **Select-AzSubscription -Subscription \'\<guid\>\'** replacing the
 subscription guid with the ID from your desired subscription - note
@@ -1087,22 +1094,24 @@ that this value will just be listed as ID, not TenantId.
 The guid is alphanumeric characters in the form,
 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .
 
-Select-AzSubscription -Subscription \'\<Id\>\'
+```powershell
+Select-AzSubscription –Subscription '<Id>'
+```
+
+<div style="page-break-after: always;"></div>
 
 ### Create a new Resource Group
 
 Update the name listed below, and run the following PowerShell to create
 a new resource group:
 
-1.  \$params = @{
-
-2.  Name = \'PowerShellRG-\<YOURALIAS\>\'
-
-3.  Location = \'eastUS\' \#or \'usgovvirginia\'
-
-4.  }
-
-5.  New-AzResourceGroup \@params
+```powershell
+1.	$params = @{
+2.	    Name     = 'PowerShellRG-<YOURALIAS>'
+3.	    Location = 'eastUS' #or 'usgovvirginia'    
+4.	}
+5.	New-AzResourceGroup @params
+```
 
 <div style="page-break-after: always;"></div>
 
@@ -1115,18 +1124,20 @@ following, as appropriate:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
 
 **-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
-
-Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Create a new Service Principal
 
@@ -1135,30 +1146,23 @@ PowerShell.\
 \$spDisplayName should have the \<YOURALIAS\> replaced with your alias.
 (e.g. \'PowerShell-josmith\')
 
-1.  \$spDisplayName = \'PowerShell-\<YOURALIAS\>\'
-
-2.  3.  \$startDate = Get-Date
-
-4.  \$KeyId = (New-GUID).GUID
-
-5.  \$KeyValue = (New-GUID).GUID
-
-6.  7.  \$psadCredential = New-Object
-    Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential
-
-8.  \$psadCredential.StartDate = \$startDate
-
-9.  \$psadCredential.EndDate = \$startDate.AddYears(1)
-
-10. \$psadCredential.KeyId = \$KeyId
-
-11. \$psadCredential.Password = \$KeyValue
-
-12. 13. New-AzADServicePrincipal -DisplayName \$spDisplayName
-    -PasswordCredential \$psadCredential
-
-14. 15. Write-Output \"The password you\'ve set is \$KeyValue (WRITE
-    THIS DOWN)\"
+```powershell
+1.	$spDisplayName  = 'PowerShell-<YOURALIAS>'
+2.	
+3.	$startDate = Get-Date
+4.	$KeyId = (New-GUID).GUID
+5.	$KeyValue = (New-GUID).GUID
+6.	
+7.	$psadCredential = New-Object Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential
+8.	$psadCredential.StartDate = $startDate
+9.	$psadCredential.EndDate = $startDate.AddYears(1)
+10.	$psadCredential.KeyId = $KeyId
+11.	$psadCredential.Password = $KeyValue
+12.	
+13.	New-AzADServicePrincipal -DisplayName $spDisplayName -PasswordCredential $psadCredential
+14.	
+15.	Write-Output "The password you've set is $KeyValue (WRITE THIS DOWN)"
+```
 
 **IMPORTANT: Save the service principal's password**, you will need it
 later when logging in as the Service Principal from PowerShell.
@@ -1174,31 +1178,35 @@ following, as appropriate:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
 
 **-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription -Subscription \'\<Id\>\'
+```powershell
+Select-AzSubscription –Subscription '<Id>'
+```
 
 ### Give rights to Service Principal scoped to the Resource Group
 
 From a PowerShell window logged into Azure, run the following
 PowerShell.
 
-1.  \$spDisplayName = \'PowerShell-\<YOURALIAS\>\'
-
-2.  \$appID = (Get-AzADServicePrincipal -DisplayName
-    \$spDisplayName).ApplicationID
-
-3.  New-AzRoleAssignment -ApplicationID \$appID -ResourceGroupName
-    \'PowerShellRG-\<YOURALIAS\>\' -RoleDefinitionName \'Owner\'
+```powershell
+1.	$spDisplayName = 'PowerShell-<YOURALIAS>'
+2.	$appID         = (Get-AzADServicePrincipal -DisplayName $spDisplayName).ApplicationID
+3.	New-AzRoleAssignment -ApplicationID $appID -ResourceGroupName 'PowerShellRG-<YOURALIAS>' -RoleDefinitionName 'Owner'
+```
 
 <div style="page-break-after: always;"></div>
 
@@ -1211,16 +1219,20 @@ following, as appropriate:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
+
+**-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
-
-Select-AzSubscription -Subscription \'\<Id\>\'
 
 ### Gather Information about the AzureAD Tenant and the Service Principal
 
@@ -1228,29 +1240,31 @@ From a PowerShell window logged into Azure, run the following
 PowerShell. Record the TenantID of Azure Active Directory and the
 ApplicationID of the ServicePrincipal for the next step.
 
-Execute the following lines of code one line at a time
+# Execute the following lines of code one line at a time
 
-1.  \$spDisplayName = \'PowerShell-\<YOURALIAS\>\'
-
-2.  Get-AzSubscription \| Select-Object TenantID
-
-3.  Get-AzADServicePrincipal -DisplayName \$spDisplayName \|
-    Select-Object ApplicationID
+```powershell
+1.	$spDisplayName = 'PowerShell-<YOURALIAS>'
+2.	Get-AzSubscription | Select-Object TenantID
+3.	Get-AzADServicePrincipal -DisplayName $spDisplayName | Select-Object ApplicationID
+```
 
 **IMPORTANT: Record the TenantID and the ApplicationID as these will be
 used in future steps.\
 If you receive multiple different TenantID's, you will need to include a
 subscription name when running the Get-AzSubscription cmdlet**
 
-Get-AzSubscription -SubscriptionName \'My Subscription\' \|
-Select-Object TenantID
+```powershell
+Get-AzSubscription -SubscriptionName 'My Subscription' | Select-Object TenantID
+```
 
 ### Log out of Azure PowerShell
 
 From a PowerShell window logged into Azure, run the following
 PowerShell:
 
+```powershell
 Logout-AzAccount
+```
 
 ### Define Variables
 
@@ -1263,12 +1277,11 @@ created using PowerShell
 terminal as a warning output\
 \"The password is: \$password (WRITE THIS DOWN)\"
 
-1.  \$tenantID = \'\<AAD TENANT ID\>\'
-
-2.  \$applicationID = \'\<SERVICE PRINCIPAL APPID\>\'
-
-3.  \$psCredObj = Get-Credential -UserName \$applicationID -Message \'SP
-    Password\'
+```powershell
+1.	$tenantID      = '<AAD TENANT ID>'
+2.	$applicationID = '<SERVICE PRINCIPAL APPID>'
+3.	$psCredObj     = Get-Credential -UserName $applicationID -Message 'SP Password'
+```
 
 ### Log in to Azure as Service Principal
 
@@ -1278,20 +1291,24 @@ commands, as appropriate:
 
 Azure Commercial:
 
-Login-AzAccount -ServicePrincipal -TenantId \$tenantID -Credential
-\$psCredObj
+```powershell
+Login-AzAccount -ServicePrincipal -TenantId $tenantID -Credential $psCredObj
+```
 
 Azure Government:
 
-Login-AzAccount -ServicePrincipal -TenantId \$tenantID -Credential
-\$psCredObj -Environment AzureUSGovernment
+```powershell
+Login-AzAccount -ServicePrincipal -TenantId $tenantID -Credential $psCredObj -Environment AzureUSGovernment
+```
 
 ### Verify Ability to See Limited Resources
 
 From the PowerShell window logged in as the Service Principal, run the
 following PowerShell:
 
+```powershell
 Get-AzResourceGroup
+```
 
 You should only see the Resource Groups that you assigned a role to in
 the previous exercise. If you cannot see anything, start this exercise
@@ -1303,7 +1320,9 @@ Commercial)
 From a PowerShell window logged into Azure, run the following
 PowerShell:
 
+```powershell
 Logout-AzAccount
+```
 
 <div style="page-break-after: always;"></div>
 
@@ -1445,18 +1464,24 @@ From a PowerShell console window, login to Azure using either:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
 
 **-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription -Subscription \'\<Id\>\'
+```powershell
+Select-AzSubscription –Subscription '<Id>'
+```
 
 The PowerShellRG resource group should already exist from
 the earlier Azure AD and Service Principal's Lab. If it does not, create
@@ -2578,18 +2603,24 @@ From a PowerShell console window, login to Azure using either:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
 
 **-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription -Subscription \'\<Id\>\'
+```powershell
+Select-AzSubscription –Subscription '<Id>'
+```
 
 Next, create a new Resource Group called AzSuperADLAB (Examples for
 Azure Commercial and Microsoft Azure Government shown below)
@@ -3104,18 +3135,24 @@ either:
 
 Azure Commercial:
 
+```powershell
 Login-AzAccount
+```
 
 **-or-**
 
 Azure Government:
 
+```powershell
 Login-AzAccount -Environment AzureUSGovernment
+```
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
 
-Select-AzSubscription -Subscription \'\<Id\>\'
+```powershell
+Select-AzSubscription –Subscription '<Id>'
+```
 
 ### Deploy ARM DSC Resource
 
@@ -3300,20 +3337,26 @@ Pay attention to filenames
 
 3.  Use the following commands to connect to Azure
 
-> Azure Commercial:
->
-> Login-AzAccount
->
-> **-or-**
->
-> Azure Government:
->
-> Login-AzAccount -Environment AzureUSGovernment
->
-> And then login into Azure (as yourself) using the pop-up dialogue box
-> (that may have popped-up under the current Window(s)).
->
-> Select-AzSubscription -Subscription \'\<Id\>\'
+Azure Commercial:
+
+```powershell
+Login-AzAccount
+```
+
+**-or-**
+
+Azure Government:
+
+```powershell
+Login-AzAccount -Environment AzureUSGovernment
+```
+
+And then login into Azure (as yourself) using the pop-up dialogue box
+(that may have popped-up under the current Window(s)).
+
+```powershell
+Select-AzSubscription –Subscription '<Id>'
+```
 
 4.  Enter your credential to connect to your Azure account. The
     authentication window may appear behind VS Code.
