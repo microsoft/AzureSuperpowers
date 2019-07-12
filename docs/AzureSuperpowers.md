@@ -986,8 +986,8 @@ to circumvent that process.
     d.  Value is now automatically populated. **Save this value; it is
         the service principal's password.**
 
-4.  Once the Key value is saved and [you have a copy for your
-    records], close the Certificates and Secrets pane.
+4.  Once the Key value is saved and you have a copy for your
+    records, close the Certificates and Secrets pane.
 
 <div style="page-break-after: always;"></div>
 
@@ -1110,8 +1110,8 @@ a new resource group:
 
 ### Login to Azure via PowerShell
 
-From a PowerShell console window, login to Azure using [one of the
-following], as appropriate:
+From a PowerShell console window, login to Azure using one of the
+following, as appropriate:
 
 Azure Commercial:
 
@@ -1169,8 +1169,8 @@ later when logging in as the Service Principal from PowerShell.
 
 ### Login to Azure via PowerShell
 
-From a PowerShell console window, login to Azure using [one of the
-following], as appropriate:
+From a PowerShell console window, login to Azure using one of the
+following, as appropriate:
 
 Azure Commercial:
 
@@ -1206,8 +1206,8 @@ PowerShell.
 
 ### Login to Azure via PowerShell
 
-From a PowerShell console window, login to Azure using [one of the
-following], as appropriate:
+From a PowerShell console window, login to Azure using one of the
+following, as appropriate:
 
 Azure Commercial:
 
@@ -1272,8 +1272,8 @@ terminal as a warning output\
 
 ### Log in to Azure as Service Principal
 
-From a PowerShell console window [not already logged into
-Azure], run [one of the following] PowerShell
+From a PowerShell console window not already logged into
+Azure, run one of the following PowerShell
 commands, as appropriate:
 
 Azure Commercial:
@@ -2341,7 +2341,7 @@ multiple files.
     a message similar to the screenshot below.
 
 6.  In the **Message** field, enter a short description of the change
-    being made. For example \[Initial Commit\].
+    being made. For example, Initial Commit.
 
 7.  Click the checkmark at the top of the sidebar, located right above
     the Message field. This action commits the change to the repository
@@ -2402,7 +2402,7 @@ multiple files.
 <!-- -->
 
 9.  In the **Message** field, enter a short description of the change
-    being made. F or example \[Initial Commit\].
+    being made. For example, Initial Commit.
 
 <!-- -->
 
@@ -3332,8 +3332,8 @@ Pay attention to filenames
 ### Create an Azure Storage Account
 
 1.  Storage account names must be universally unique. In this example,
-    the storage account name \[MSAlias\]blobstorage is used. When this
-    is listed, replace \[MSAlias\] with your alias, for example if your
+    the storage account name MSAliasblobstorage is used. When this
+    is listed, replace MSAlias with your alias, for example if your
     alias was bsmith, your storage account would be bsmithblobstorage.
 
 2.  Create a BlobStorage account using the following command:
