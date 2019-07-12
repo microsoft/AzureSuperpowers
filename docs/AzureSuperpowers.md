@@ -1406,11 +1406,11 @@ them to be.
 
 ### ARM Template Format
 
-    <img src="./media/image14.png" border="1">
+   <img src="./media/image14.png" border="1">
 
 ### ARM Templates vs Iterative PowerShell
 
-    <img src="./media/image15.png" border="1">
+   <img src="./media/image15.png" border="1">
 
 ### Where can I see examples of ARM Templates?
 
@@ -1443,13 +1443,15 @@ Resource Manager templates)
     function to generate a hash value. To give this hash value more
     meaning, it adds the prefix *storage*.
 
+<div style="page-break-after: always;"></div>
+
 ### Deploy ARM template
 
-> You are now ready to deploy this template. Next, you will deploy a
-> storage account to the PowerShellResourceGroup that you created as
-> part of the Azure AD and Service Principals lab.\
-> The storage account deployment should take just about 1 minute to
-> complete.
+You are now ready to deploy this template. Next, you will deploy a
+storage account to the PowerShellResourceGroup that you created as
+part of the Azure AD and Service Principals lab.\
+The storage account deployment should take just about 1 minute to
+complete.
 
 In the PowerShell terminal of VS Code, Set your working directory to
 **C:\\AzSuperClass\\Azure-Superpowers\\src\\Lab - ARM Templates**
@@ -1459,7 +1461,7 @@ Ensure that you have selected the PowerShell Integrated Console
 **IMPORTANT: You must have a .ps1 file open inside of VS Code in order
 to utilize the PowerShell Integrated Console**
 
-    <img src="./media/image7.png" border="1">
+   <img src="./media/image7.png" border="1">
 
 ### Login to Azure via PowerShell
 
@@ -1509,7 +1511,7 @@ the Resource Group prior to this step. Execute the following PowerShell:
 
 > The following screenshot shows the expected output
 >
-    <img src="./media/image17.png" border="1">
+   <img src="./media/image17.png" border="1">
 
 Upon completion of the deployment, you can validate that your storage
 account resource now exists by viewing it in the Azure portal, or by
@@ -1573,7 +1575,7 @@ Variables and Resources sections of the ARM template.
 > The needed edits can be found in the Azure Superpowers Git repository
 > inside the edit files shown below.
 >
-    <img src="./media/image18.png" border="1">
+   <img src="./media/image18.png" border="1">
 >
 > Update your parameters section of **StorageAccount.json** to match
 > below, using the edit1.json for the input
@@ -1873,7 +1875,7 @@ Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
 
 Process Flow
 
-    <img src="./media/image19.png" border="1">
+   <img src="./media/image19.png" border="1">
 
 <div style="page-break-after: always;"></div>
 
@@ -2724,19 +2726,19 @@ well as any errors or warnings if your deployment is not successful.
 
 ### Local DSC Flow
 
-    <img src="./media/image42.png" border="1">
+   <img src="./media/image42.png" border="1">
 
 ### Azure DSC Flow
 
-    <img src="./media/image43.png" border="1">
+   <img src="./media/image43.png" border="1">
 
 ### Basic PowerShell Function
 
-    <img src="./media/image44.png" border="1">
+   <img src="./media/image44.png" border="1">
 
 ### Basic DSC Configuration
 
-    <img src="./media/image45.png" border="1">
+   <img src="./media/image45.png" border="1">
 
 <div style="page-break-after: always;"></div>
 
@@ -2850,12 +2852,12 @@ For example, note how when you click on the parameters button, the value
 it has listed for location looks a bit different from what you selected
 in the portal.
 
-    <img src="./media/image46.png" border="1">
+   <img src="./media/image46.png" border="1">
 
 o.  To return back to the deployment summary, click on the X to exit out
     from the Template
 
-    <img src="./media/image47.png" border="1">
+   <img src="./media/image47.png" border="1">
 
 p.  Click OK to start the deployment of your VM, which will take 5-10
     minutes to complete.
@@ -3766,7 +3768,7 @@ Select-AzSubscription –Subscription '<Id>'
 
 ### Single Templates vs Linked Templates
 
-    <img src="./media/image51.png" border="1">
+   <img src="./media/image51.png" border="1">
 
 <div style="page-break-after: always;"></div>
 
@@ -4739,9 +4741,9 @@ Files\\Helper.txt)
 > (Command above can be copied from C:\\MyAzureProject\\Azure
 > Superpowers\\Lab - Helper Files\\Helper.txt)
 >
-    <img src="./media/image62.png" border="1">
+   <img src="./media/image62.png" border="1">
 >
-    <img src="./media/image63.png" border="1">
+   <img src="./media/image63.png" border="1">
 
 13. In the dropdown for Azure Subscription, select the service
     connection that you recently created.
