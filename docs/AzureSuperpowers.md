@@ -1480,6 +1480,7 @@ Azure Government:
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
 ```
+<div style="page-break-after: always;"></div>
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 (that may have popped-up under the current Window(s)).
@@ -1495,29 +1496,30 @@ the Resource Group prior to this step. Execute the following PowerShell:
 **Run lines 1-6 first. If your template comes back as valid, run line
 8.**
 
-1.  \$params = @{
+```powershell
+1.	$params = @{
+2.	    ResourceGroupName = 'PowerShellRG-<YOURALIAS>'
+3.	    TemplateFile      = 'StorageAccount.json'
+4.	    Verbose           = $true
+5.	}
+6.	Test-AzResourceGroupDeployment @params
+7.	
+8.	New-AzResourceGroupDeployment @params
+```
 
-2.  ResourceGroupName = \'PowerShellRG-\<YOURALIAS\>\'
+<div style="page-break-after: always;"></div>
 
-3.  TemplateFile = \'StorageAccount.json\'
+The following screenshot shows the expected output
 
-4.  Verbose = \$true
-
-5.  }
-
-6.  Test-AzResourceGroupDeployment \@params
-
-7.  8.  New-AzResourceGroupDeployment \@params
-
-> The following screenshot shows the expected output
->
    <img src="./media/image17.png" border="1">
 
 Upon completion of the deployment, you can validate that your storage
 account resource now exists by viewing it in the Azure portal, or by
 running the following PowerShell command:
 
-Get-AzResource -ResourceGroupName \'PowerShellRG-\<YOURALIAS\>\'
+```powershell
+Get-AzResource -ResourceGroupName 'PowerShellRG-<YOURALIAS>'
+```
 
 The screenshot above showcases a PowerShell based deployment with
 verbose mode enabled, which enables a text-based output regarding the
@@ -1532,39 +1534,41 @@ your deployment is not successful.
 
 ### Introduction
 
-> The template from the previous exercise works fine, but it is not
-> flexible. It always deploys a locally redundant storage account. The
-> name is always storage followed by a hash value. To enable using the
-> template for different scenarios, we will add parameters to the
-> template.
->
-> The next example shows the parameters section with two parameters. The
-> first parameter storageSKU enables you to specify the type of
-> redundancy. It limits the values that you can pass in to the values
-> that are valid for a storage account. It specifies a default value.
-> The second parameter storageNamePrefix is set to allow a maximum of 11
-> characters. It also specifies a default value.
->
-> The list of allowedValues is worth a close look. These values do not
-> match what you see when creating a storage account in the Azure
-> Portal, so how did we come up with these values? Values in the Azure
-> Portal will look more like the following: **Locally-redundant storage
-> (LRS)**
->
-> The following articles can help us find the correct values needed for
-> this ARM template
->
-> <https://docs.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts>
->
-> <https://github.com/Azure/azure-resource-manager-schemas/tree/master/schemas>
->
-> <https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-01-01/Microsoft.Storage.json>
->
-> You can also find values via the Azure Portal by attempting a
-> deployment, which will generate an ARM template as part of the
-> process, which can be reviewed to determine the proper values. The
-> docs and GitHub may not always give you the values needed, so the
-> Azure Portal can be useful.
+The template from the previous exercise works fine, but it is not
+flexible. It always deploys a locally redundant storage account. The
+name is always storage followed by a hash value. To enable using the
+template for different scenarios, we will add parameters to the
+template.
+
+The next example shows the parameters section with two parameters. The
+first parameter storageSKU enables you to specify the type of
+redundancy. It limits the values that you can pass in to the values
+that are valid for a storage account. It specifies a default value.
+The second parameter storageNamePrefix is set to allow a maximum of 11
+characters. It also specifies a default value.
+
+The list of allowedValues is worth a close look. These values do not
+match what you see when creating a storage account in the Azure
+Portal, so how did we come up with these values? Values in the Azure
+Portal will look more like the following: **Locally-redundant storage
+(LRS)**
+
+The following articles can help us find the correct values needed for
+this ARM template
+
+<https://docs.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts>
+
+<https://github.com/Azure/azure-resource-manager-schemas/tree/master/schemas>
+
+<https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-01-01/Microsoft.Storage.json>
+
+You can also find values via the Azure Portal by attempting a
+deployment, which will generate an ARM template as part of the
+process, which can be reviewed to determine the proper values. The
+docs and GitHub may not always give you the values needed, so the
+Azure Portal can be useful.
+
+<div style="page-break-after: always;"></div>
 
 ### Customize the ARM template
 
@@ -1572,71 +1576,42 @@ Next, you will make changes to the **StorageAccount.json** file to make
 it more dynamic. Edits to this file will make updates to the Parameters,
 Variables and Resources sections of the ARM template.
 
-> The needed edits can be found in the Azure Superpowers Git repository
-> inside the edit files shown below.
->
-   <img src="./media/image18.png" border="1">
->
-> Update your parameters section of **StorageAccount.json** to match
-> below, using the edit1.json for the input
+The needed edits can be found in the Azure Superpowers Git repository
+inside the edit files shown below.
 
-+-----------------------------------------------------------------------+
-| ...                                                                   |
-|                                                                       |
-| \"parameters\": {                                                     |
-|                                                                       |
-| \"storageSKU\": {                                                     |
-|                                                                       |
-| \"type\": \"string\",                                                 |
-|                                                                       |
-| \"allowedValues\": \[                                                 |
-|                                                                       |
-| \"Standard\_LRS\",                                                    |
-|                                                                       |
-| \"Standard\_ZRS\",                                                    |
-|                                                                       |
-| \"Standard\_GRS\",                                                    |
-|                                                                       |
-| \"Standard\_RAGRS\",                                                  |
-|                                                                       |
-| \"Premium\_LRS\"                                                      |
-|                                                                       |
-| \],                                                                   |
-|                                                                       |
-| \"defaultValue\": \"Standard\_LRS\",                                  |
-|                                                                       |
-| \"metadata\": {                                                       |
-|                                                                       |
-| \"description\": \"The type of replication to use for the storage     |
-| account.\"                                                            |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| \"storageNamePrefix\": {                                              |
-|                                                                       |
-| \"type\": \"string\",                                                 |
-|                                                                       |
-| \"maxLength\": 11,                                                    |
-|                                                                       |
-| \"defaultValue\": \"error\",                                          |
-|                                                                       |
-| \"metadata\": {                                                       |
-|                                                                       |
-| \"description\": \"The value to use for starting the storage account  |
-| name. Use only lowercase letters and numbers. For this example, the   |
-| word error was chosen in case you do not follow the lab instructions  |
-| to supply a new storage account prefix.\"                             |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| ...                                                                   |
-+-----------------------------------------------------------------------+
+   <img src="./media/image18.png" border="1">
+
+Update your parameters section of **StorageAccount.json** to match
+below, using the edit1.json for the input
+
+```json
+…
+"parameters": {
+    "storageSKU": {
+        "type": "string",
+        "allowedValues": [
+            "Standard_LRS",
+            "Standard_ZRS",
+            "Standard_GRS",
+            "Standard_RAGRS",
+            "Premium_LRS"
+        ],
+        "defaultValue": "Standard_LRS",
+        "metadata": {
+            "description": "The type of replication to use for the storage account."
+        }
+    },
+    "storageNamePrefix": {
+        "type": "string",
+        "maxLength": 11,
+        "defaultValue": "error",
+        "metadata": {
+            "description": "The value to use for starting the storage account name. Use only lowercase letters and numbers.  For this example, the word error was chosen in case you do not follow the lab instructions to supply a new storage account prefix."
+        }
+    }
+},
+…
+```
 
 In the variables section, add a variable named storageName. It combines
 the prefix value from the parameters and a hash value from the
