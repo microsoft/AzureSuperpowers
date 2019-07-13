@@ -1622,56 +1622,36 @@ function to convert all characters to lowercase. Storage account names
 must be between 3 and 24 characters in length, use only numbers and
 lowercase letters, and be unique. This data can be found in edit2.json
 
-+-----------------------------------------------------------------------+
-| ...                                                                   |
-|                                                                       |
-| \"variables\": {                                                      |
-|                                                                       |
-| \"storageName\":                                                      |
-| \"\[concat(toLower(parameters(\'storageNamePrefix\')),                |
-| uniqueString(resourceGroup().id))\]\"                                 |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| ...                                                                   |
-+-----------------------------------------------------------------------+
+```json
+…
+"variables": {
+    "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
+},
+…
+```
+
 
 To use these new values for your storage account, change the resource
 definition, using the data found in edit3.json:
 
-+--------------------------------------------------+
-| ...                                              |
-|                                                  |
-| \"resources\": \[                                |
-|                                                  |
-| {                                                |
-|                                                  |
-| \"name\": \"\[variables(\'storageName\')\]\",    |
-|                                                  |
-| \"type\": \"Microsoft.Storage/storageAccounts\", |
-|                                                  |
-| \"apiVersion\": \"2016-01-01\",                  |
-|                                                  |
-| \"sku\": {                                       |
-|                                                  |
-| \"name\": \"\[parameters(\'storageSKU\')\]\"     |
-|                                                  |
-| },                                               |
-|                                                  |
-| \"kind\": \"Storage\",                           |
-|                                                  |
-| \"location\": \"\[resourceGroup().location\]\",  |
-|                                                  |
-| \"tags\": {},                                    |
-|                                                  |
-| \"properties\": {}                               |
-|                                                  |
-| }                                                |
-|                                                  |
-| \],                                              |
-|                                                  |
-| ...                                              |
-+--------------------------------------------------+
+```json
+…
+"resources": [
+    {
+        "name": "[variables('storageName')]",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2016-01-01",
+        "sku": {
+            "name": "[parameters('storageSKU')]"
+        },
+        "kind": "Storage",
+        "location": "[resourceGroup().location]",
+        "tags": {},
+        "properties": {}
+    }
+],
+…
+```
 
 Notice that the name of the storage account is now set to the variable
 that you added. The SKU name is set to the value of the parameter. The
@@ -1681,133 +1661,76 @@ Save your file.
 
 Your template now looks like:
 
-+-----------------------------------------------------------------------+
-| {                                                                     |
-|                                                                       |
-| \"\$schema\":                                                         |
-| \"http://schema.management.azure.com/schemas/2015-01-01/deploymentTem |
-| plate.json\#\",                                                       |
-|                                                                       |
-| \"contentVersion\": \"1.0.0.0\",                                      |
-|                                                                       |
-| \"parameters\": {                                                     |
-|                                                                       |
-| \"storageSKU\": {                                                     |
-|                                                                       |
-| \"type\": \"string\",                                                 |
-|                                                                       |
-| \"allowedValues\": \[                                                 |
-|                                                                       |
-| \"Standard\_LRS\",                                                    |
-|                                                                       |
-| \"Standard\_ZRS\",                                                    |
-|                                                                       |
-| \"Standard\_GRS\",                                                    |
-|                                                                       |
-| \"Standard\_RAGRS\",                                                  |
-|                                                                       |
-| \"Premium\_LRS\"                                                      |
-|                                                                       |
-| \],                                                                   |
-|                                                                       |
-| \"defaultValue\": \"Standard\_LRS\",                                  |
-|                                                                       |
-| \"metadata\": {                                                       |
-|                                                                       |
-| \"description\": \"The type of replication to use for the storage     |
-| account.\"                                                            |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| \"storageNamePrefix\": {                                              |
-|                                                                       |
-| \"type\": \"string\",                                                 |
-|                                                                       |
-| \"maxLength\": 11,                                                    |
-|                                                                       |
-| \"defaultValue\": \"error\",                                          |
-|                                                                       |
-| \"metadata\": {                                                       |
-|                                                                       |
-| \"description\": \"The value to use for starting the storage account  |
-| name. Use only lowercase letters and numbers. For this example, the   |
-| word error was chosen in case you do not follow the lab instructions  |
-| to supply a new storage account prefix.\"                             |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| \"variables\": {                                                      |
-|                                                                       |
-| \"storageName\":                                                      |
-| \"\[concat(toLower(parameters(\'storageNamePrefix\')),                |
-| uniqueString(resourceGroup().id))\]\"                                 |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| \"resources\": \[                                                     |
-|                                                                       |
-| {                                                                     |
-|                                                                       |
-| \"name\": \"\[variables(\'storageName\')\]\",                         |
-|                                                                       |
-| \"type\": \"Microsoft.Storage/storageAccounts\",                      |
-|                                                                       |
-| \"apiVersion\": \"2016-01-01\",                                       |
-|                                                                       |
-| \"sku\": {                                                            |
-|                                                                       |
-| \"name\": \"\[parameters(\'storageSKU\')\]\"                          |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| \"kind\": \"Storage\",                                                |
-|                                                                       |
-| \"location\": \"\[resourceGroup().location\]\",                       |
-|                                                                       |
-| \"tags\": {},                                                         |
-|                                                                       |
-| \"properties\": {}                                                    |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| \],                                                                   |
-|                                                                       |
-| \"outputs\": {}                                                       |
-|                                                                       |
-| }                                                                     |
-+-----------------------------------------------------------------------+
+```json
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageSKU": {
+            "type": "string",
+            "allowedValues": [
+                "Standard_LRS",
+                "Standard_ZRS",
+                "Standard_GRS",
+                "Standard_RAGRS",
+                "Premium_LRS"
+            ],
+            "defaultValue": "Standard_LRS",
+            "metadata": {
+                "description": "The type of replication to use for the storage account."
+            }
+        },
+        "storageNamePrefix": {
+            "type": "string",
+            "maxLength": 11,
+            "defaultValue": "error",
+            "metadata": {
+                "description": "The value to use for starting the storage account name. Use only lowercase letters and numbers.  For this example, the word error was chosen in case you do not follow the lab instructions to supply a new storage account prefix."
+            }
+        }
+    },
+    "variables": {
+        "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
+    },
+    "resources": [
+        {
+            "name": "[variables('storageName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2016-01-01",
+            "sku": {
+                "name": "[parameters('storageSKU')]"
+            },
+            "kind": "Storage",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {}
+        }
+    ],
+    "outputs": {}
+}
+```
+
+<div style="page-break-after: always;"></div>
 
 ### Redeploy the ARM template
 
-> Redeploy the template **with new values** specified as runtime
-> parameters as shown below.
+Redeploy the template **with new values** specified as runtime parameters as shown below.
 
 In a PowerShell command window, ensure your working directory is set to
 the folder containing your template and run the following commands:
 
-1.  \$params = @{
-
-2.  ResourceGroupName = \'PowerShellRG-\<YOURALIAS\>\'
-
-3.  TemplateFile = \'storageaccount.json\'
-
-4.  storageNamePrefix = \'newstore\'
-
-5.  storageSKU = \'Standard\_GRS\'
-
-6.  Verbose = \$true
-
-7.  }
-
-8.  Test-AzResourceGroupDeployment \@params
-
-9.  10. New-AzResourceGroupDeployment \@params
+```powershell
+1.	$params = @{
+2.	    ResourceGroupName = 'PowerShellRG-<YOURALIAS>'
+3.	    TemplateFile      = 'storageaccount.json'
+4.	    storageNamePrefix = 'newstore'
+5.	    storageSKU        = 'Standard_GRS'
+6.	    Verbose           = $true
+7.	}
+8.	Test-AzResourceGroupDeployment @params
+9.	
+10.	New-AzResourceGroupDeployment @params
+```
 
 Through this task, you have now deployed a new storage account using
 dynamic values for the storage account name and storage SKU.
@@ -1816,7 +1739,9 @@ Upon completion of the deployment, you can validate that your storage
 account resource now exists by viewing it in the Azure portal, or by
 running the following PowerShell command:
 
-Get-AzResource -ResourceGroupName \'PowerShellRG-\<YOURALIAS\>\'
+```powershell
+Get-AzResource -ResourceGroupName 'PowerShellRG-<YOURALIAS>'
+```
 
 ### Cleanup
 
@@ -1825,7 +1750,9 @@ Get-AzResource -ResourceGroupName \'PowerShellRG-\<YOURALIAS\>\'
 
 In a PowerShell command window, use the following command:
 
-Remove-AzResourceGroup -Name \'PowerShellRG-\<YOURALIAS\>\'
+```powershell
+Remove-AzResourceGroup -Name 'PowerShellRG-<YOURALIAS>'
+```
 
 <div style="page-break-after: always;"></div>
 
