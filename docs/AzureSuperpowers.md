@@ -1765,7 +1765,7 @@ Remove-AzResourceGroup -Name 'PowerShellRG-<YOURALIAS>'
 
 | Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate. |
 | :------------ | :-------------- |
-| Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/<organizationname> and can have many projects under it |
+| Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/\<organizationname\> and can have many projects under it |
 |  | *project -* a project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
 |  | *repository -* A git repository is all code files, all branches, all metadata, and commit history of changes |
 |  | *clone* - the ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a ‘remote’ location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
@@ -1816,8 +1816,7 @@ Process Flow
     project **Azure Superpowers**. Select Private visibility, then click
     **Create project**
 
-**\
-**
+<div style="page-break-after: always;"></div>
 
 3.  Select **Repos** on the 'Welcome to the project!' screen
 
@@ -1885,8 +1884,8 @@ Process Flow
 2.  Now that you have the local git repository open in file explorer,
     you can move (or delete) files to it the way you would normally
     (e.g. Copied from local drive, USB, Right-click-\>New-\>File). The
-    files that you move into file explorer will be added to the current
-    branch of the git repository. The current branch can be
+    files that you move into file explorer will be added to the <ins>current
+    branch</ins> of the git repository. The current branch can be
     viewed in the bottom left-hand corner of VS Code. It will likely say
     'master' right now, but whichever branch it indicates is where any
     file modifications are taking place (regardless of if you use VS
@@ -1931,10 +1930,12 @@ Process Flow
 3.  This will expand the security groups for the project. There are many
     groups that do a few different things, but the three basic ones are:
 
-  \<ProjectName\> Team     This role has basic rights to add code, run releases, etc
-  ------------------------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Readers                  This role has read-only rights. They can view code on the Azure DevOps site and can see builds/releases but cannot clone, commit code or run builds/releases
-  Project Administrators   This role is the administrator role. Members added to this group can do anything in the project, including modifying security/group membership of other users
+| | |
+| :------------ | :-------------- |
+| **\<ProjectName\> Team** | This role has basic rights to add code, run releases, etc |
+| **Readers** | This role has read-only rights.  They can view code on the Azure DevOps site and can see builds/releases but cannot clone, commit code or run builds/releases |
+| **Project Administrators** | This role is the administrator role.  Members added to this group can do anything in the project, including modifying security/group membership of other users |
+| | |
 
 4.  Click the group you wish to add a user to
 
@@ -2011,7 +2012,7 @@ rejected.
 ### Create a new dev branch in your new project in Azure DevOps
 
 1.  Open a web browser and navigate to
-    https://dev.azure.com/\<YourOrganizationName\>
+    <https://dev.azure.com/YourOrganizationName>
 
 2.  Open the Azure Superpowers project
 
@@ -2025,6 +2026,8 @@ rejected.
 5.  Click the **New branch** button
 
     <img src="./media/image23.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 6.  Create one new branch, and name it dev. Base the dev branch on the
     master branch.
@@ -2056,6 +2059,8 @@ rejected.
 
     <img src="./media/image25.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 ### Switching between branches
 
 1.  Press F1 to activate the Command Pallet
@@ -2083,6 +2088,8 @@ rejected.
 6.  Type **git checkout to** and press enter
 
 7.  Click **master** to switch to your master branch.
+
+<div style="page-break-after: always;"></div>
 
 8.  Notice that VS Code will update at the bottom left of the screen
     with the currently selected branch, which should now state
@@ -2136,7 +2143,7 @@ The steps below were adapted from information found at the following
 url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
 1.  Open a web browser and navigate to
-    https://dev.azure.com/\<YourOrganizationName\>
+    <https://dev.azure.com/YourOrganizationName>
 
 2.  Open the Azure Superpowers project
 
@@ -2159,6 +2166,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
 7.  For this example, you will setup a very simple branch policy to
     ensure that code cannot be pushed directly to the **master** branch.
+
+<div style="page-break-after: always;"></div>
 
 8.  Set your branch policy to match the settings shown below and save
     your changes to apply your new policy configuration.
@@ -2200,19 +2209,19 @@ multiple files.
 
 4.  Enter the following commands, **filling in your own values for your
     name and email address**
+```powershell
+git config --global user.name "Your Name"
 
-> git config \--global user.name \"Your Name\"
->
-> git config \--global user.email \"you\@example.com\"
->
-> These configuration settings will be saved to your user profile at
-> following file path: C:\\Users\\username\\.gitconfig
->
-> You need to do this only once if you pass the \--global option,
-> because Git will always use that information for anything you do on
-> that system. If you want to override this with a different name or
-> email address for specific projects, you can run the command without
-> the \--global option when you're in that project.
+git config --global user.email "you@example.com"
+```
+These configuration settings will be saved to your user profile at
+following file path: C:\\Users\\username\\.gitconfig
+
+You need to do this only once if you pass the \--global option,
+because Git will always use that information for anything you do on
+that system. If you want to override this with a different name or
+email address for specific projects, you can run the command without
+the \--global option when you're in that project.
 
 ### Copy files from GitHub
 
@@ -2242,6 +2251,8 @@ multiple files.
 
     <img src="./media/image31.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 ### Performing a Commit using VS Code
 
 1.  Return to VS Code
@@ -2260,6 +2271,8 @@ multiple files.
     In real world use cases, you can select one or multiple files to
     stage to be part of a commit in order to group a set of like changes
     together.
+
+<div style="page-break-after: always;"></div>
 
 4.  You can also perform a commit in VS Code without staging any files
     first, and VS Code will ask if you would like to stage all the
@@ -2287,6 +2300,8 @@ multiple files.
 8.  In the status bar at the bottom of VS Code, notice the number 1 next
     to the up arrow. This indicates that there is one pending commit
     waiting to be pushed to the Git repository stored in Azure DevOps.
+
+<div style="page-break-after: always;"></div>
 
 ### Update ARM Template and commit changes
 
@@ -2338,12 +2353,12 @@ multiple files.
 
 <!-- -->
 
-9.  Click the checkmark at the top of the sidebar. This action commits
+10.  Click the checkmark at the top of the sidebar. This action commits
     the change to the repository hosted on your **local file system.**
     Note that the change has not yet been updated to the hosted Git
     repository in Azure DevOps.
 
-10. In the status bar at the bottom of VS Code, notice the number next
+11. In the status bar at the bottom of VS Code, notice the number next
     to the up arrow is updated to 2. This indicates that there are now
     two pending commits waiting to be pushed to the Git repository
     stored in Azure DevOps. Throughout this exercise you committed over
@@ -2380,6 +2395,8 @@ pushing new changes up**
     the arrow for commits to be pulled down.\
     <img src="./media/image36.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 3.  In order to push your changes up to the Azure DevOps repo via a
     **git push**, click on **Source Control**, click on the ellipsis
     icon, then click **Push**
@@ -2415,7 +2432,7 @@ pushing new changes up**
     from the **dev** branch to the **master** branch.
 
 3.  Open a web browser and navigate to
-    https://dev.azure.com/\<YourOrganizationName\>
+    <https://dev.azure.com/YourOrganizationName>
 
 4.  Open the Azure Superpowers project
 
@@ -2435,6 +2452,8 @@ pushing new changes up**
     want to have involved in the request, as Azure DevOps may default to
     other branches than what you are currently working with.
 
+<div style="page-break-after: always;"></div>
+
 9.  In this case, you will want to merge changes from the **dev** branch
     into the **master** branch.
 
@@ -2452,6 +2471,8 @@ pushing new changes up**
 11. Click the Create button to create the pull request.
 
     <img src="./media/image39.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 12. Approve the pull request and complete it.
 
@@ -2502,7 +2523,9 @@ Resource Manager templates)
 3.  Select **C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
     Advanced\\Exercise1\\adLabDeployment.ps1** and review its contents.
 
-4.  Instructions found in the ps1 file are also detailed below.
+4.  Instructions found in the ps1 file are also detailed in the next steps.
+
+<div style="page-break-after: always;"></div>
 
 ### Login to Azure via PowerShell
 
@@ -2529,14 +2552,15 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 Select-AzSubscription –Subscription '<Id>'
 ```
 
-Next, create a new Resource Group called AzSuperADLAB (Examples for
-Azure Commercial and Microsoft Azure Government shown below)
+Next, create a new Resource Group called AzSuperADLAB-\<YOURALIAS\> 
 
-New-AzResourceGroup -Name \'AzSuperADLAB\' -Location \'eastus\'
+(Examples for Azure Commercial and Microsoft Azure Government shown below)
 
-\#OR
-
-New-AzResourceGroup -Name \'AzSuperADLAB\' -Location \'usgovvirginia\'
+```powershell
+New-AzResourceGroup -Name 'AzSuperADLAB-<YOURALIAS>' -Location 'eastus'
+#OR
+New-AzResourceGroup -Name 'AzSuperADLAB-<YOURALIAS>' -Location 'usgovvirginia'
+```
 
 The template will take approximately 30 minutes to deploy
 
@@ -2550,36 +2574,29 @@ it to login\>
 
 numberOfvmWorkerInstances: 3
 
+<div style="page-break-after: always;"></div>
+
 ### Execute the following PowerShell
 
-1.  \$DeploymentParametersBuildVM = @{
-
-2.  ResourceGroupName = \'AzSuperADLAB\'
-
-3.  TemplateUri =
-    \'https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/adLab.json?st=2018-07-21T18%3A49%3A48Z&se=2020-12-31T18%3A49%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=X8HpZw2HeteWtf3F9WSfry3WizXJsejv%2Brv%2BcUrmeTM%3D\'
-
-4.  Timestamp = \[system.DateTime\]::Now.ToString(\"MM/dd/yyyy H:mm:ss
-    tt\")
-
-5.  CreateWorkerNodes = \'true\'
-
-6.  FullPathToFile =
-    \'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?st=2019-03-27T01%3A55%3A14Z&se=2021-03-28T01%3A55%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=ku9y0cpYebgB7fmfVMTT4kpOCjKEjzaEqoZOs3xDKpg%3D\'
-
-7.  FileNameAndExtension =
-    \'.\\Exercise1\\CustomScriptExtensionFiles\\CheckForAD\\CheckForAD.ps1\'
-
-8.  Verbose = \$true
-
-9.  }
-
-10. Test-AzResourceGroupDeployment \@DeploymentParametersBuildVM
+```powershell
+1.	$DeploymentParametersBuildVM = @{
+2.	ResourceGroupName = 'AzSuperADLAB-<YOURALIAS>'
+3.	TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/adLab.json?st=2018-07-21T18%3A49%3A48Z&se=2020-12-31T18%3A49%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=X8HpZw2HeteWtf3F9WSfry3WizXJsejv%2Brv%2BcUrmeTM%3D'
+4.	Timestamp         = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
+5.	CreateWorkerNodes = 'true'
+6.	FullPathToFile = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?st=2019-03-27T01%3A55%3A14Z&se=2021-03-28T01%3A55%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=ku9y0cpYebgB7fmfVMTT4kpOCjKEjzaEqoZOs3xDKpg%3D'
+7.	FileNameAndExtension = '.\Exercise1\CustomScriptExtensionFiles\CheckForAD\CheckForAD.ps1'
+8.	Verbose           = $true
+9.	}
+10.	Test-AzResourceGroupDeployment @DeploymentParametersBuildVM
+```
 
 If the test completes successfully, move forward with the deployment by
 executing the following PowerShell:
 
-New-AzResourceGroupDeployment \@DeploymentParametersBuildVM
+```powershell
+New-AzResourceGroupDeployment @DeploymentParametersBuildVM
+```
 
 ## Ensure that you capture the username and password used in your deployment, as you will need them to login.
 
@@ -2610,6 +2627,8 @@ well as any errors or warnings if your deployment is not successful.
 | Author | Keith Hitchcock |
 |  | Ralph Kyttle |
 
+<div style="page-break-after: always;"></div>
+
 ### PowerShell DSC
 
 -   'End State' programming
@@ -2633,6 +2652,8 @@ well as any errors or warnings if your deployment is not successful.
 ### Azure DSC Flow
 
    <img src="./media/image43.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 ### Basic PowerShell Function
 
@@ -2716,7 +2737,7 @@ well as any errors or warnings if your deployment is not successful.
 
     d.  Enter a name for the resourcegroup: portaldscrg-\<YOURALIAS\>
 
-        i.  Example: portaldscrg-josmith
+            Example: portaldscrg-josmith
 
     e.  Choose East US or USGov Virginia for your Location
 
@@ -2724,27 +2745,27 @@ well as any errors or warnings if your deployment is not successful.
 
 7.  Size tab
 
-    g.  Choose D2s\_v3 (Or a similar size if this size is not in your
+    a.  Choose D2s\_v3 (Or a similar size if this size is not in your
         region)
 
-    h.  Click Select
+    b.  Click Select
 
 8.  Settings tab
 
-    i.  Under public inbound ports, select RDP so you can login to this
+    a.  Under public inbound ports, select RDP so you can login to this
         lab machine via its public IP
 
-    j.  Set Boot diagnostics to Disabled
+    b.  Set Boot diagnostics to Disabled to simplify this deployment
 
-    k.  Click OK
+    c.  Click OK
 
 9.  Summary tab
 
-    l.  **DO NOT IMMEDIATELY CLICK OK**
+    a.  **DO NOT IMMEDIATELY CLICK OK**
 
-    m.  Instead, click on the link Download template and parameters
+    b.  Instead, click on the link Download template and parameters
 
-    n.  This will present you with an ARM template that matches your
+    c.  This will present you with an ARM template that matches your
         deployment as you defined in the portal. This can be very
         helpful when you first start learning how to work with ARM
         templates, or with finding the values and parameters an ARM
@@ -2756,12 +2777,12 @@ in the portal.
 
    <img src="./media/image46.png" border="1">
 
-o.  To return back to the deployment summary, click on the X to exit out
+    d.  To return back to the deployment summary, click on the X to exit out
     from the Template
 
    <img src="./media/image47.png" border="1">
 
-p.  Click OK to start the deployment of your VM, which will take 5-10
+    e.  Click OK to start the deployment of your VM, which will take 5-10
     minutes to complete.
 
 ### Login to the VM
@@ -2779,13 +2800,19 @@ p.  Click OK to start the deployment of your VM, which will take 5-10
 
 2.  From the PowerShell ISE console of the VM, execute:
 
-PS\> Find-Module -Name \'\*security\*\'
+```powershell
+Find-Module -Name '*security*' 
+```
 
 3.  You will see multiple answers since this is searching against the
     PowerShell gallery, you want the 'SecurityPolicyDSC' module, which
     you can download via:
 
-PS\> Install-Module -Name SecurityPolicyDSC
+```powershell
+Install-Module -Name SecurityPolicyDSC 
+```
+
+<div style="page-break-after: always;"></div>
 
 ### Explore the required information for the custom resource
 
@@ -2793,20 +2820,25 @@ PS\> Install-Module -Name SecurityPolicyDSC
     contained within the SecurityPolicyDSC module that is now installed
     locally:
 
-PS\> Get-DSCResource -Module SecurityPolicyDSC
+```powershell
+Get-DSCResource -Module SecurityPolicyDSC 
+```
 
 2.  Based on the output from the command above, explore the
     'AccountPolicy' DSC resource of the 'SecurityPolicyDSC' module
 
-PS\> Get-DSCResource -Name AccountPolicy
+```powershell
+Get-DSCResource -Name AccountPolicy 
+```
 
 3.  Although the above command just gets us the one 'AccountPolicy' DSC
     resource, PowerShell is hiding the important information. Use the
     following command to get the important part of the PowerShell
     object:
 
-PS\> Get-DSCResource -Name AccountPolicy \| Select -ExpandProperty
-Properties
+```powershell
+Get-DSCResource -Name AccountPolicy | Select -ExpandProperty Properties
+```
 
 4.  The above command tells us about what the DSC resource needs
     (Mandatory) and what datatype needs to be provided (strings,
@@ -2830,7 +2862,9 @@ Properties
 
 1.  From the PowerShell ISE console, execute:
 
-PS\> Install-Module -Name NetworkingDSC
+```powershell
+Install-Module -Name NetworkingDSC
+```
 
 2.  You will be prompted to confirm downloading NetworkingDSC with a
     message, "You are installing the modules from an untrusted
@@ -2839,9 +2873,10 @@ PS\> Install-Module -Name NetworkingDSC
 3.  Verify what new DSC Resources we have access to now that the module
     is installed
 
-PS\> Get-DscResource -Module NetworkingDsc
-
-PS\> Get-DscResource -Name Firewall \| Select -ExpandProperty Properties
+```powershell
+Get-DscResource -Module NetworkingDsc
+Get-DscResource -Name Firewall | Select -ExpandProperty Properties
+```
 
 ### Create a DSC Configuration
 
@@ -2851,69 +2886,41 @@ PS\> Get-DscResource -Name Firewall \| Select -ExpandProperty Properties
     From: C:\\MyAzureProject\\Azure Superpowers\\Lab - PowerShell
     DSC\\DemoConfig.ps1
 
-+-----------------------------------------------------------------------+
-| configuration DemoConfig {                                            |
-|                                                                       |
-| Import-DscResource -ModuleName NetworkingDSC                          |
-|                                                                       |
-| Import-DscResource -ModuleName PSDesiredStateConfiguration            |
-|                                                                       |
-| node \'localhost\' {                                                  |
-|                                                                       |
-| Firewall \'FirewallSettingOne\' {                                     |
-|                                                                       |
-| Name = \'Demo Block Rule\'                                            |
-|                                                                       |
-| Action = \'Block\'                                                    |
-|                                                                       |
-| LocalPort = '5000'                                                    |
-|                                                                       |
-| Enabled = \'True\'                                                    |
-|                                                                       |
-| Direction = \'Inbound\'                                               |
-|                                                                       |
-| Profile = \'Any\'                                                     |
-|                                                                       |
-| Protocol = \'TCP\'                                                    |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| Registry \'ConsentPromptBehaviorAdmin\' {                             |
-|                                                                       |
-| Ensure = \'Present\'                                                  |
-|                                                                       |
-| Key =                                                                 |
-| \'HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\ |
-| \Policies\\System\'                                                   |
-|                                                                       |
-| ValueName = \'ConsentPromptBehaviorAdmin\'                            |
-|                                                                       |
-| ValueType = \'Dword\'                                                 |
-|                                                                       |
-| ValueData = \'2\'                                                     |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| Registry \'PromptOnSecureDesktop\' {                                  |
-|                                                                       |
-| Ensure = \'Present\'                                                  |
-|                                                                       |
-| Key =                                                                 |
-| \'HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\ |
-| \Policies\\System\'                                                   |
-|                                                                       |
-| ValueName = \'PromptOnSecureDesktop\'                                 |
-|                                                                       |
-| ValueType = \'Dword\'                                                 |
-|                                                                       |
-| ValueData = \'1\'                                                     |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| }                                                                     |
-+-----------------------------------------------------------------------+
+```powershell
+configuration DemoConfig {
+
+    Import-DscResource -ModuleName NetworkingDSC
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    node 'localhost' {
+        
+        Firewall 'FirewallSettingOne' {
+            Name      = 'Demo Block Rule'
+            Action    = 'Block'
+            LocalPort = ‘5000’
+            Enabled   = 'True'
+            Direction = 'Inbound'
+            Profile   = 'Any'
+            Protocol  = 'TCP'
+        }
+
+        Registry 'ConsentPromptBehaviorAdmin' {
+            Ensure    = 'Present'
+            Key       = 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System'
+            ValueName = 'ConsentPromptBehaviorAdmin'
+            ValueType = 'Dword'
+            ValueData = '2'
+        }  
+        Registry 'PromptOnSecureDesktop' {
+            Ensure    = 'Present'
+            Key       = 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System'
+            ValueName = 'PromptOnSecureDesktop'
+            ValueType = 'Dword'
+            ValueData = '1'
+        }
+    }
+} 
+```
 
 2.  Execute the above code. This will not perform any immediate action,
     but will create the DSC 'configuration' inside the memory of the
@@ -2922,7 +2929,9 @@ PS\> Get-DscResource -Name Firewall \| Select -ExpandProperty Properties
 3.  In order to create a DSC MOF file, execute the following command on
     the ISE command prompt:
 
-> PS\> DemoConfig
+```powershell
+DemoConfig
+```
 
 4.  If everything was successful, you will now have a DSC MOF file
     created based on the configuration above located in a subfolder
@@ -2938,7 +2947,9 @@ PS\> Get-DscResource -Name Firewall \| Select -ExpandProperty Properties
 1.  Execute the following PowerShell to test your localhost.mof file
     against DSC1
 
-PS\> Test-DscConfiguration -Path .\\DemoConfig
+```powershell
+Test-DscConfiguration -Path .\DemoConfig
+```
 
 2.  Based on the output of the above command, we can see that some
     resources are in desired state and some resources are not in desired
@@ -2951,6 +2962,11 @@ ResourcesInDesiredState
 
 PS\> Test-DscConfiguration -path .\\DemoConfig \| Select -ExpandProperty
 ResourcesNotInDesiredState
+
+```powershell
+Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesInDesiredState
+Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesNotInDesiredState
+```
 
 3.  Expected output from the commands listed above is shown below:
 
@@ -3066,85 +3082,45 @@ Select-AzSubscription –Subscription '<Id>'
 1.  Review **C:\\MyAzureProject\\Azure Superpowers\\Lab - PowerShell
     DSC\\DSC.json**
 
-<!-- -->
-
-1.  {
-
-2.  \"\$schema\":
-    \"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json\#\",
-
-3.  \"contentVersion\": \"1.0.0.0\",
-
-4.  \"parameters\": {
-
-5.  \"zipFileURI\": {
-
-6.  \"type\": \"string\"
-
-7.  },
-
-8.  \"FileName\": {
-
-9.  \"type\": \"string\"
-
-10. },
-
-11. \"ConfigName\": {
-
-12. \"type\": \"string\"
-
-13. },
-
-14. \"VMname\": {
-
-15. \"type\": \"string\"
-
-16. }
-
-17. },
-
-18. \"variables\": {},
-
-19. \"resources\": \[
-
-20. {
-
-21. \"type\": \"Microsoft.Compute/virtualMachines/extensions\",
-
-22. \"name\": \"\[concat(parameters(\'VMname\'), \'/DSC\')\]\",
-
-23. \"apiVersion\": \"2015-06-15\",
-
-24. \"location\": \"\[resourceGroup().location\]\",
-
-25. \"properties\": {
-
-26. \"publisher\": \"Microsoft.Powershell\",
-
-27. \"type\": \"DSC\",
-
-28. \"typeHandlerVersion\": \"2.19\",
-
-29. \"autoUpgradeMinorVersion\": true,
-
-30. \"settings\": {
-
-31. \"ModulesUrl\": \"\[parameters(\'zipFileURI\')\]\",
-
-32. \"ConfigurationFunction\": \"\[concat(parameters(\'FileName\'),
-    \'\\\\\', parameters(\'ConfigName\'))\]\"
-
-33. }
-
-34. }
-
-35. }
-
-36. \]
-
-37. }
-
-<!-- -->
+```json
+1.	{
+2.	    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+3.	    "contentVersion": "1.0.0.0",
+4.	    "parameters": {
+5.	        "zipFileURI": {
+6.	            "type": "string"
+7.	        },
+8.	        "FileName": {
+9.	            "type": "string"
+10.	        },
+11.	        "ConfigName": {
+12.	            "type": "string"
+13.	        },
+14.	        "VMname": {
+15.	            "type": "string"
+16.	        }
+17.	    },
+18.	    "variables": {},
+19.	    "resources": [
+20.	        {
+21.	            "type": "Microsoft.Compute/virtualMachines/extensions",
+22.	            "name": "[concat(parameters('VMname'), '/DSC')]",
+23.	            "apiVersion": "2015-06-15",
+24.	            "location": "[resourceGroup().location]",
+25.	            "properties": {
+26.	                "publisher": "Microsoft.Powershell",
+27.	                "type": "DSC",
+28.	                "typeHandlerVersion": "2.19",
+29.	                "autoUpgradeMinorVersion": true,
+30.	                "settings": {
+31.	                    "ModulesUrl": "[parameters('zipFileURI')]",
+32.	                    "ConfigurationFunction": "[concat(parameters('FileName'), '\\', parameters('ConfigName'))]"
+33.	                }
+34.	            }
+35.	        }
+36.	    ]
+37.	}
+```
 
 2.  Change directory over to C:\\MyAzureProject\\Azure
     Superpowers\\Lab - PowerShell DSC\\
@@ -3152,28 +3128,18 @@ Select-AzSubscription –Subscription '<Id>'
 3.  In PowerShell, execute the following PowerShell to deploy the DSC
     resource, substituting the \<VALUES\> for your own environment.
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  VMName = \'DSC1\'
-
-3.  ResourceGroupName = \'\<RESOURCEGROUPNAME\>\'
-
-4.  ZipFileURI =
-    \'https://\<ACCT\>.blob.core.windows.net/\<CONTAINER\>/DemoConfigZip.zip\'
-
-5.  FileName = \'DemoConfig.ps1\'
-
-6.  TemplateFile = \'DSC.json\'
-
-7.  ConfigName = \'DemoConfig\'
-
-8.  Verbose = \$true
-
-9.      }
-
-10. New-AzResourceGroupDeployment \@params
+```powershell
+1.	$params = @{
+2.	    VMName            = 'DSC1'
+3.	    ResourceGroupName = '<RESOURCEGROUPNAME>'
+4.	    ZipFileURI        = 'https://<ACCT>.blob.core.windows.net/<CONTAINER>/DemoConfigZip.zip'
+5.	    FileName          = 'DemoConfig.ps1'
+6.	    TemplateFile      = 'DSC.json'
+7.	    ConfigName        = 'DemoConfig'
+8.	    Verbose           = $true
+9.	    }
+10.	New-AzResourceGroupDeployment @params
+```
 
 ### Once the deployment is complete, verify that the deployment was successful
 
@@ -3203,7 +3169,9 @@ Select-AzSubscription –Subscription '<Id>'
 
 3.  Run the following PowerShell on DSC1:
 
-PS\> Test-DscConfiguration -Detailed
+```powershell
+Test-DscConfiguration -Detailed
+```
 
 All resources should now be listed as being in the desired state.
 
