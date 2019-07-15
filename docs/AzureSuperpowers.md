@@ -2679,7 +2679,7 @@ well as any errors or warnings if your deployment is not successful.
 4.  Note the PowerShell command (5.0 or higher) to Install the Module
     (from an Internet connected system)
 
-5.  Note the 'Owner'/'Author' of the module (Microsoft or PowerShell
+5.  Note the Owner/Author of the module (Microsoft or PowerShell
     team is recommended)
 
 6.  On the left-hand side click the 'Project Site' link. This generally
@@ -2761,36 +2761,30 @@ well as any errors or warnings if your deployment is not successful.
 
 9.  Summary tab
 
-    a.  **DO NOT IMMEDIATELY CLICK OK**
+    a.  **DO NOT IMMEDIATELY CLICK OK.**  Instead, click on the link Download template and parameters
 
-    b.  Instead, click on the link Download template and parameters
-
-    c.  This will present you with an ARM template that matches your
+    b.  This will present you with an ARM template that matches your
         deployment as you defined in the portal. This can be very
         helpful when you first start learning how to work with ARM
         templates, or with finding the values and parameters an ARM
         template is expecting.
 
-For example, note how when you click on the parameters button, the value
+    For example, note how when you click on the parameters button, the value
 it has listed for location looks a bit different from what you selected
 in the portal.
 
    <img src="./media/image46.png" border="1">
 
-    d.  To return back to the deployment summary, click on the X to exit out
-    from the Template
+To return back to the deployment summary, click on the X to exit out from the Template
 
    <img src="./media/image47.png" border="1">
 
-    e.  Click OK to start the deployment of your VM, which will take 5-10
+Click OK to start the deployment of your VM, which will take 5-10
     minutes to complete.
 
 ### Login to the VM
 
-1.  Open an RDP session to the DSC1 VM created in the previous step
-
-2.  Once logged into this VM, open the PowerShell ISE as an
-    Administrator
+1.  Open an RDP session to the DSC1 VM created in the previous step. Once logged into this VM, open the PowerShell ISE as an Administrator
 
 ### Get a custom DSC resource from the PowerShell Gallery
 
@@ -2957,14 +2951,11 @@ Test-DscConfiguration -Path .\DemoConfig
     display well on the screen. Run the following PowerShell commands to
     see the full answers:
 
-PS\> Test-DscConfiguration -path .\\DemoConfig \| Select -ExpandProperty
-ResourcesInDesiredState
-
-PS\> Test-DscConfiguration -path .\\DemoConfig \| Select -ExpandProperty
-ResourcesNotInDesiredState
-
 ```powershell
 Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesInDesiredState
+```
+
+```powershell
 Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesNotInDesiredState
 ```
 
@@ -3141,6 +3132,8 @@ Select-AzSubscription –Subscription '<Id>'
 10.	New-AzResourceGroupDeployment @params
 ```
 
+<div style="page-break-after: always;"></div>
+
 ### Once the deployment is complete, verify that the deployment was successful
 
 1.  RDP to DSC1 and verify the registry keys
@@ -3153,19 +3146,19 @@ Select-AzSubscription –Subscription '<Id>'
 
 2.  Verify the firewall (Start-\>Run-\>wf.msc)
 
-    b.  You should see a new rule has been created, "Demo Block Rule"
+    a.  You should see a new rule has been created, "Demo Block Rule"
 
-        iii. Action = \'Block\'
+        i. Action = \'Block\'
 
-        iv. LocalPort = '5000'
+        ii. LocalPort = '5000'
 
-        v.  Enabled = \'True\'
+        iii.  Enabled = \'True\'
 
-        vi. Direction = \'Inbound\'
+        iv. Direction = \'Inbound\'
 
-        vii. Profile = \'Any\'
+        v. Profile = \'Any\'
 
-        viii. Protocol = \'TCP\'
+        vi. Protocol = \'TCP\'
 
 3.  Run the following PowerShell on DSC1:
 
