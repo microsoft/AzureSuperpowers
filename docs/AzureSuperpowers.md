@@ -3226,46 +3226,36 @@ And then login into Azure (as yourself) using the pop-up dialogue box
 Select-AzSubscription –Subscription '<Id>'
 ```
 
-4.  Enter your credential to connect to your Azure account. The
-    authentication window may appear behind VS Code.
+4.  Create a resource group that will contain the storage account used in this lab by running the following:
 
-5.  Create a resource group that will contain this labs storage account
-    by running the following:
+```powershell
+New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location EastUS
 
-> New-AzResourceGroup -Name \'StorageExample-\<YOURALIAS\>\' -Location
-> EastUS
->
-> **-or-**
->
-> New-AzResourceGroup -Name \'StorageExample-\<YOURALIAS\>\' -Location
-> USGovVirginia
+#OR
+
+New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
+```
+
+<div style="page-break-after: always;"></div>
 
 ### Create an Azure Storage Account
 
 1.  Storage account names must be universally unique. In this example,
-    the storage account name MSAliasblobstorage is used. When this
-    is listed, replace MSAlias with your alias, for example if your
+    the storage account name Aliasblobstorage is used. When this
+    is listed, replace Alias with your alias, for example if your
     alias was bsmith, your storage account would be bsmithblobstorage.
 
 2.  Create a BlobStorage account using the following command:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  ResourceGroupName = \'StorageExample-\<YOURALIAS\>\'
-
-3.  AccountName = \'\<ALIAS\>blobstorage\'
-
-4.  Location = \'eastus\' \#OR \'usgovvirginia\'
-
-5.  SkuName = \'Standard\_LRS\'
-
-6.  }
-
-7.  New-AzStorageAccount \@params
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    ResourceGroupName = 'StorageExample-<YOURALIAS>'
+3.	    AccountName       = '<ALIAS>blobstorage'
+4.	    Location          = 'eastus' #OR 'usgovvirginia'
+5.	    SkuName           = 'Standard_LRS'
+6.	}
+7.	New-AzStorageAccount @params
+```
 
 3.  Open Microsoft Azure Storage Explorer and connect using your Azure
     Credentials
