@@ -3287,19 +3287,13 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     keys. The following PowerShell will display the account keys for the
     storage account we just created:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  ResourceGroupName = \'StorageExample-\<YOURALIAS\>\'
-
-3.  Name = \'\<ALIAS\>blobstorage\'
-
-4.  }
-
-5.  Get-AzStorageAccountKey \@params
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    ResourceGroupName = 'StorageExample-<YOURALIAS>'
+3.	    Name              = '<ALIAS>blobstorage'
+4.	}
+5.	Get-AzStorageAccountKey @params
+```
 
 2.  We will need the account key to create a SAS Token. A SAS Token
     (shared access signature) provides delegated access to resources in
@@ -3308,22 +3302,13 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     easily be revoked than a Storage Account Key. Use the following
     PowerShell to capture an account key into a PowerShell variable:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  ResourceGroupName = \'StorageExample-\<YOURALIAS\>\'
-
-3.  Name = \'\<ALIAS\>blobstorage\'
-
-4.  }
-
-5.  \$storageAccountKey = (Get-AzStorageAccountKey \@params).Value\[0\]
-
-    You can type \$storageAccountKey in the console to see the results
-    of the command.
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    ResourceGroupName = 'StorageExample-<YOURALIAS>'
+3.	    Name              = '<ALIAS>blobstorage'
+4.	}
+5.	$storageAccountKey = (Get-AzStorageAccountKey @params).Value[0]
+```
 
 3.  We will need to create an Azure Storage Context. The context
     describes the Azure Storage Account and is needed to create a
@@ -3331,39 +3316,28 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     parameter if you are working with something other than Azure
     Commercial, such as Microsoft Azure Government.
 
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    StorageAccountName = '<ALIAS>blobstorage'
+3.	    StorageAccountKey  = $storageAccountKey
+4.	    #Environment = 'AzureUSGovernment'
+5.	}
+6.	$storageAccountContext = New-AzStorageContext @params
+```
 
-1.  \$params = @{
-
-2.  StorageAccountName = \'\<ALIAS\>blobstorage\'
-
-3.  StorageAccountKey = \$storageAccountKey
-
-4.  \#Environment = \'AzureUSGovernment\'
-
-5.  }
-
-6.  \$storageAccountContext = New-AzStorageContext \@params
+<div style="page-break-after: always;"></div>
 
 ### Create a Storage Container
 
-1.  Use the following PowerShell to create a Container in the Blob
-    Storage Account that you created previously in **Exercise - Create a
-    storage account**.
+1.  Use the following PowerShell to create a Container in the Storage Account that you created previously in **Exercise- Create a storage account**.
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  Name = \'sasexample\'
-
-3.  Context = \$storageAccountContext
-
-4.  }
-
-5.  New-AzStorageContainer \@params
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    Name    = 'sasexample'
+3.	    Context = $storageAccountContext
+4.	}
+5.	New-AzStorageContainer @params
+```
 
 2.  If you refresh the storage account in Azure Storage Explorer, you
     will now see the container "sasexample" listed under Blob
@@ -3375,25 +3349,16 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     with the SAS Token. Use the following PowerShell to complete this
     task with Permission defined for Read, Write, Delete, List
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  Container = \'sasexample\'
-
-3.  Policy = \'policyexample\'
-
-4.  Permission = \'rwdl\'
-
-5.  ExpiryTime = (Get-Date).AddDays(2)
-
-6.  Context = \$storageAccountContext
-
-7.  }
-
-8.  New-AzStorageContainerStoredAccessPolicy \@params
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    Container  = 'sasexample'
+3.	    Policy     = 'policyexample'
+4.	    Permission = 'rwdl'
+5.	    ExpiryTime = (Get-Date).AddDays(2)
+6.	    Context    = $storageAccountContext
+7.	}
+8.	New-AzStorageContainerStoredAccessPolicy @params
+```
 
 2.  If you refresh the Blob Container sasexample in Azure Storage
     Explorer, you can view the created Storage Container Policy by right
@@ -3404,29 +3369,23 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     on the need of the application or scripts that are accessing the
     storage.
 
+<div style="page-break-after: always;"></div>
+
 ### Create a Shared Access Signature (SAS) Token
 
 1.  Create a SAS Token (to be used later) based on the Policy and
     Storage Context defined earlier in this example using the following
     PowerShell:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  Name = \'sasexample\'
-
-3.  Policy = \'policyexample\'
-
-4.  Context = \$storageAccountContext
-
-5.  }
-
-6.  \$sasToken = New-AzStorageContainerSASToken \@params
-
-7.  Write-Host \"SAS Token: \$sasToken\"
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    Name    = 'sasexample'
+3.	    Policy  = 'policyexample'
+4.	    Context = $storageAccountContext
+5.	}
+6.	$sasToken = New-AzStorageContainerSASToken @params
+7.	Write-Host "SAS Token: $sasToken"
+```
 
 2.  The SAS Token, if correct, should be in a similar format: **\
     ?sv=2018-03-28&si=policyexample&sr=c&sig=6cVRHdm3rGFEBCa6sSNhmvDKAWZxruM4EQX8wpv2NS4%3D**
@@ -3519,38 +3478,27 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 
 2.  Use the following PowerShell to create the client context:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  sasToken = \$sasToken
-
-3.  storageAccountName = \'\<ALIAS\>blobstorage\'
-
-4.  \#Environment = \'AzureUSGovernment\'
-
-5.  }
-
-6.  \$clientContext = New-AzStorageContext \@params
+```powershell
+1.	$params = @{
+2.	    sasToken           = $sasToken
+3.	    storageAccountName = '<ALIAS>blobstorage'
+4.	    #Environment = 'AzureUSGovernment'
+5.	}
+6.	$clientContext = New-AzStorageContext @params
+```
 
 ### Test the Context by listing all files in the storage container
 
 1.  Run the following PowerShell to list all files in the Storage
     Container:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  Container = \'sasexample\'
-
-3.  Context = \$clientContext
-
-4.  }
-
-5.  Get-AzStorageBlob \@params
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    Container = 'sasexample'
+3.	    Context   = $clientContext
+4.	}
+5.	Get-AzStorageBlob @params
+```
 
 2.  The files we have uploaded in previous steps should be outputted.
 
@@ -3559,23 +3507,18 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 1.  Run the following PowerShell to upload file3.txt to our Storage
     Container:
 
-<!-- -->
-
-1.  \$params = @{
-
-2.  Container = \'sasexample\'
-
-3.  File = \'c:\\sasexample\\File3.txt\'
-
-4.  Context = \$clientContext
-
-5.  }
-
-6.  Set-AzStorageBlobContent \@params
-
-<!-- -->
+```powershell
+1.	$params = @{
+2.	    Container = 'sasexample'
+3.	    File      = 'c:\sasexample\File3.txt'
+4.	    Context   = $clientContext
+5.	}
+6.	Set-AzStorageBlobContent @params
+```
 
 2.  File3.txt is now uploaded to the storage container
+
+<div style="page-break-after: always;"></div>
 
 ### Verify the File Upload in Azure Storage Explorer
 
@@ -3596,7 +3539,9 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     certain ContentType by including the following in your splatted
     parameters
 
-    Properties = @{\"ContentType\" = \"text/plain\"}
+```powershell
+Properties = @{"ContentType" = "text/plain"}
+```
 
 <div style="page-break-after: always;"></div>
 
