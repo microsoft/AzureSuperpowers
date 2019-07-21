@@ -4241,7 +4241,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
     ensure that code cannot be pushed directly to the **master** branch.
 
 4.  Set your branch policy to match the settings shown below and save
-    your chances to apply your new policy configuration.
+    your changes to apply your new policy configuration.
 
     <img src="./media/image30.png" border="1">
 
@@ -4251,12 +4251,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
 
-6.  Save your changes. Even a simple policy like the one you just
-    created will enforce the use of pull requests when updating the
-    branch and will prevent branch deletion.
-
-7.  Refer to **Exercise - Branch policies** in the Git lab for a
-    detailed example of creating new branch policies
+6.  Save your changes. Even a simple policy like the one you just created will enforce the use of pull requests when updating the branch and will prevent branch deletion.  Refer to **Exercise - Branch policies** in the Git lab for a detailed example of creating new branch policies
 
 <div style="page-break-after: always;"></div>
 
@@ -4271,6 +4266,8 @@ Files\\Helper.txt)
 <https://azuresuperpowers.blob.core.windows.net/azuredevops/DSCBuild.zip?st=2018-10-04T02%3A30%3A28Z&se=2020-10-05T02%3A30%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=m2twlkmm0Pg17NId4TjnAjFFs7sLFucANFrDo4Y72Xw%3D>
 
 <https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?st=2018-10-04T02%3A31%3A06Z&se=2020-10-05T02%3A31%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=SaxwRzWULbGTLN1r7C06DUgF%2FM55eRH6ZxVAusjX6b0%3D>
+
+<div style="page-break-after: always;"></div>
 
 ### Extract zip files and commit code to the dev branch in your repository
 
@@ -4293,6 +4290,8 @@ Files\\Helper.txt)
 
 7.  Commit to your local repository dev branch and push the files to the
     dev branch of your Azure DevOps repository
+
+<div style="page-break-after: always;"></div>
 
 ### Merge changes to the master branch via Pull Request
 
@@ -4324,8 +4323,6 @@ Files\\Helper.txt)
 
 9.  On the **Complete pull request** window, uncheck the box which will
     delete your dev branch and click **Complete merge**
-
-    <img src="./media/image55.png" border="1">
 
 <div style="page-break-after: always;"></div>
 
@@ -4390,6 +4387,8 @@ Files\\Helper.txt)
 
 6.  Click the **Create** button to create the storage account.
 
+<div style="page-break-after: always;"></div>
+
 7.  Once your storage account is created, create a new container
     **(Private)** in the blob storage configuration. Name the container
     'dsc'
@@ -4441,9 +4440,9 @@ Files\\Helper.txt)
 2.  As a reminder, you should have created 3 new resource groups as a
     part of this lab that will need to have permissions edited
 
-    a.  1 Resource Group to contain a storage account for DSC files
+    1 Resource Group to contain a storage account for DSC files
 
-    b.  2 Resource Groups for your application deployment
+    2 Resource Groups for your application deployment
 
 3.  One at a time, select each Resource Group that you created in this
     lab, and edit the Access Control (IAM) settings
