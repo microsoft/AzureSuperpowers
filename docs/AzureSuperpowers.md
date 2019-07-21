@@ -4473,7 +4473,7 @@ Files\\Helper.txt)
 |  | Teams use build definitions to ensure that every commit to the master branch triggers the automated build and testing processes. Implementing CI this way ensures bugs are caught earlier in the development cycle, which makes them less expensive to fix.  Automated tests can run for every build to ensure builds maintain a consistent quality. |
 | Estimated Time to Complete | 60 minutes |
 | Key Takeaways | 1. Continuous Integration can be configured as a part of your application development process to ensure code is built and tested anytime changes are made to the code. |
-|  | 2. Continuous Integration can provide help meet infrastructure needs, including automating the build of DSC zip files for use in Azure |
+|  | 2. Continuous Integration can provide help meet infrastructure needs, including automating the build of DSC zip files for use in Azure. |
 | Author | Ralph Kyttle |
 
 <div style="page-break-after: always;"></div>
@@ -4505,6 +4505,8 @@ Files\\Helper.txt)
 
 9.  Under 'Agent job 1' click the + sign to add a new task
 
+<div style="page-break-after: always;"></div>
+
 10. Add two PowerShell tasks\
     **(Please note: This is just the PowerShell task, not the Azure
     PowerShell task)**
@@ -4515,19 +4517,21 @@ Files\\Helper.txt)
 
     <img src="./media/image60.png" border="1">
 
+<div style="page-break-after: always;"></div>
+
 12. You will need to edit the tasks to specify required settings
 
     <img src="./media/image61.png" border="1">
-> **Script:** Write-Output
-> \"\#\#vso\[task.setvariable
-> variable=psmodulepath;\]c:\\modules\\azurerm\_6.7.0;\$env:psmodulepath\"
->
-> (Command above can be copied from C:\\MyAzureProject\\Azure
-> Superpowers\\Lab - Helper Files\\Helper.txt)
->
+
+**Script:** Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
+
+(Command above can be copied from C:\MyAzureProject\Azure Superpowers\Lab - Helper Files\Helper.txt)
+
    <img src="./media/image62.png" border="1">
->
+
    <img src="./media/image63.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 13. In the dropdown for Azure Subscription, select the service
     connection that you recently created.
@@ -4675,11 +4679,12 @@ DevOps and Azure deployment logs.
 
     <img src="./media/image68.png" border="1">
 
+    <div style="page-break-after: always;"></div>
+
     **Override template parameters:** -vmName \$(vmName) -adminPassword
     \$(adminPassword)
 
-> (Command above can be copied from C:\\MyAzureProject\\Azure
-> Superpowers\\Lab - Helper Files\\Helper.txt)
+    (Command above can be copied from C:\\MyAzureProject\\Azure Superpowers\\Lab - Helper Files\\Helper.txt)
 
 14. Return back to the pipeline view, and clone the Dev stage, to create
     a new stage for Prod
@@ -4753,6 +4758,8 @@ DevOps and Azure deployment logs.
     and again waits for your approval for release to Prod
 
 31. Review deployment logs, and approve the release to Prod
+
+<div style="page-break-after: always;"></div>
 
 Appendix
 ========
