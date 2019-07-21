@@ -648,10 +648,7 @@ getting lost in the software.
 > technologies like OneDrive, Dropbox, etc. This can cause issues with
 > both technologies fighting to track changes.
 
-10. If you are prompted for credentials, login with your GitHub user
-    account
-
-11. The cloning process will begin. Once the cloning process completes,
+10. The cloning process will begin. Once the cloning process completes,
     select "Open Repository" in the lower right-hand corner. You have
     now cloned the Azure Superpowers Git repository from GitHub down to
     your local PC. This repository contains files that you will use
@@ -2679,8 +2676,7 @@ well as any errors or warnings if your deployment is not successful.
 4.  Note the PowerShell command (5.0 or higher) to Install the Module
     (from an Internet connected system)
 
-5.  Note the Owner/Author of the module (Microsoft or PowerShell
-    team is recommended)
+5.  Note the Owner/Author of the module (Modules from well-known trusted authors are recommended)
 
 6.  On the left-hand side click the 'Project Site' link. This generally
     links to GitHub, and you can explore the code that makes up the
@@ -2952,11 +2948,11 @@ Test-DscConfiguration -Path .\DemoConfig
     see the full answers:
 
 ```powershell
-Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesInDesiredState
+1.	Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesInDesiredState
 ```
 
 ```powershell
-Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesNotInDesiredState
+1.	Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesNotInDesiredState
 ```
 
 3.  Expected output from the commands listed above is shown below:
