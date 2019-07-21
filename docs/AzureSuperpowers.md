@@ -1284,7 +1284,7 @@ terminal as a warning output\
 3.	$psCredObj     = Get-Credential -UserName $applicationID -Message 'SP Password'
 ```
 
-### Log in to Azure as Service Principal
+### Login to Azure as Service Principal
 
 From a PowerShell console window not already logged into
 Azure, run one of the following PowerShell
@@ -1788,7 +1788,7 @@ Process Flow
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
 2.  In the upper-right hand corner, you might be automatically logged in
-    with your Microsoft Account. If not, please log in.
+    with your Microsoft Account. If not, please login.
 
 3.  Once logged in, click the logged in user in the upper-right hand
     corner and\
@@ -1903,7 +1903,7 @@ Process Flow
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
 2.  In the upper-right hand corner, you might be automatically logged in
-    with your Microsoft Account. If not, please log in.
+    with your Microsoft Account. If not, please login.
 
 3.  Once logged in, click the logged in user in the upper-right hand
     corner and select 'Visual Studio Profile' from the expanded menu.
@@ -3185,7 +3185,7 @@ Pay attention to filenames
 
 | Lab Description | This lab will teach you how to upload files to Azure Storage Accounts and secure them by protecting the files with Secure Access Tokens (SAS) tokens |
 | :------------ | :-------------- |
-| Glossary of Terms | *sas* – Secure Access Token.  This is a string that you append to the URL you are accessing which is an encoded/signed string that describes your rights.  Read, write, Starting When, Expiring When, Can you see Containers, etc, etc. |
+| Glossary of Terms | *sas* – Secure Access Token.  This is a string that you append to the URL you are accessing which is an encoded/signed string that describes your rights.  Read, write, Starting When, Expiring When, Can you see Containers, etc. |
 |  | *uri* – Uniform Resource Identifier.  https://portal.azure.com is a URL.  https://portal.azure.com/Default.html is a URI.  URI refers to the full path to the resource, not just the DNS name of the URL. |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. Upload files to Azure Storage |
@@ -3564,6 +3564,8 @@ Properties = @{"ContentType" = "text/plain"}
 |  | 3. The PowerShell DSC extension can be called multiple times in a template, as long as the same name is always used when defining each Microsoft.Compute/virtualMachines/extensions DSC resource.  Following this strategy, along with the Microsoft.Resources/deployments resource allows you to create modular components, executed in a desired order using the ARM dependsOn element. |
 | Author | Ralph Kyttle |
 
+<div style="page-break-after: always;"></div>
+
 ### Single Templates vs Linked Templates
 
    <img src="./media/image51.png" border="1">
@@ -3809,8 +3811,7 @@ This template showcases the following:
 
 ### Task 2: Review the linked ARM templates
 
-**\
-Template name: vm.json**
+**Template name: vm.json**
 
 C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
 Advanced\\Exercise 1\\vm.json
@@ -3861,10 +3862,9 @@ AD Super Lab Deployment, except this time specify
 **numberOfvmWorkerInstances: 4** when you are prompted
 
 View the deployment status in the PowerShell output and in the Azure
-Portal. You should see a 4^th^ node being built.
+Portal. You should see a 4th node being built.
 
-### Task 2: Login to MGT1 using RDP and its public IP and verify environment
-settings
+### Task 2: Login to MGT1 using RDP and its public IP and verify environment settings
 
 -   Login to MGT1 **(DOMAIN\\User)** using RDP and its public IP. The
     name of the domain that was created is domain.local, so you will
@@ -3889,8 +3889,7 @@ settings
     nodes listed here as well. Depending on whether the previous task
     completed or not, you should see either 3 or 4 worker nodes.
 
-### Task 3: Instructor led exercise - empty the contents of your resource
-group by deploying an empty template with complete mode
+### Task 3: Instructor led exercise - empty the contents of your resource group by deploying an empty template with complete mode
 
 -   We will review the file shown below
 
@@ -3911,7 +3910,7 @@ group by deploying an empty template with complete mode
 | Glossary of Terms | *Service Connection* - An Azure DevOps a service connection holds the connection info (subscription, etc) as well as the authentication info (service principal ID, tenant ID, and password) to an external entity (like Azure) which can be used in automated Azure DevOps build steps to automatically perform actions on behalf of the project.  This keeps authentication out of source controlled code. |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. In order for Azure DevOps to interact with Azure you need to create a Service Connection in your project |
-|  | 2. Any PowerShell scripts you write or use do not need to log in or specify their Azure subscription target, Azure DevOps will handle all that prior to running your scripts in Azure |
+|  | 2. Any PowerShell scripts you write or use do not need to login or specify their Azure subscription target, Azure DevOps will handle all that prior to running your scripts in Azure |
 | Author | Keith Hitchcock |
 
 <div style="page-break-after: always;"></div>
@@ -3941,7 +3940,7 @@ Before proceeding to the next step, make sure that you have:
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
 2.  In the upper-right hand corner, you should be automatically logged
-    in with your Microsoft Account If not, please log in.
+    in with your Microsoft Account.  If not, please login.
 
 3.  Once logged in, please click the logged in user in the upper-right
     hand corner and select\
@@ -3988,44 +3987,26 @@ Before proceeding to the next step, make sure that you have:
     credentials to create a new Service Principal and give it rights to
     the subscription, instead of associating an existing one.
 
+<div style="page-break-after: always;"></div>
+
 5.  From the expanded 'Add Azure Resource Manager Service Connection'
     dialog window please enter the requested information. **Please
     remove any values that have been auto-populated. Review each
     value**:
 
-    a.  Connection Name - This name can be anything. A meaningful name
-        might include info about the purpose of the service principal
-        (i.e. 'DEV Connection', or 'AZGOV LIMITED', or 'AIRS Demo'
+        a.  Connection Name - This name can be anything. A meaningful name might include info about the purpose of the service principal (i.e. 'DEV Connection' or 'AZGOV LIMITED', or 'AIRS Demo'
 
-    b.  Environment - select 'AzureCloud' for commercial Azure,
-        'AzureUSGovernment' for MAG, or whichever environment the Azure
-        subscription you want to Azure DevOps to connect to exists in.
+        b.  Environment - select 'AzureCloud' for commercial Azure, 'AzureUSGovernment' for MAG, or whichever environment the Azure subscription you want Azure DevOps to connect to exists in.
 
-    c.  Subscription ID - This value is the subscription ID of the
-        Azure subscription you wish to connect to. This information can
-        be obtained from the Get-AzSubscription cmdlet in PowerShell or
-        from the Azure Portal.
+        c.  Subscription ID - This value is the subscription ID of the Azure subscription you wish to connect to. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or from the Azure Portal.
 
-    d.  Subscription Name - This value is the Name of the Azure
-        subscription you wish to connect to. It matters that the name
-        entered here is the name that is associated with Subscription ID
-        in the last field. This information can be obtained from the\
-        Get-AzSubscription cmdlet in PowerShell or through the Azure
-        Portal.
+        d.  Subscription Name - This value is the Name of the Azure subscription you wish to connect to. It matters that the name entered here is the name that is associated with Subscription ID in the last field. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or through the Azure Portal.
 
-    e.  Service Principal Client ID - This is also known as the
-        '**AppID**' or '**Application ID'**. This information can be
-        obtained from the:
+        e.  Service Principal Client ID – This is also known as the ‘AppID’ or ‘Application ID’.  This information can be obtained from the Get-AzADServicePrincipal -DisplayName <SPNAME> cmdlet in PowerShell or through the Azure Portal in Azure Active Directory under ‘App Registrations’.
 
-        Get-AzADServicePrincipal -DisplayName \<SPNAME\>\
-        cmdlet in PowerShell or through the Azure Portal in Azure Active
-        Directory under 'App Registrations'.
+        f.  Service Principal Key - This is the Service Principal's password.
 
-    f.  Service Principal Key - This is the Service Principal's
-        password.
-
-    g.  Tenant ID - The ID of the Azure Active Directory tenant that
-        the Service Principal was created in
+        g.  Tenant ID - The ID of the Azure Active Directory tenant that the Service Principal was created in
 
 ### Click the Verify Connection hyperlink
 
@@ -4081,7 +4062,9 @@ subscription in order to be successfully verified.
 14. At the bottom of the 'In-line Script' field, add the PowerShell
     cmdlet:
 
-> Get-AzResourceGroup
+```powershell
+Get-AzResourceGroup
+```
 
 15. Under 'Preferred Azure PowerShell Version' set the value to 1.0.0
 
@@ -4095,6 +4078,8 @@ subscription in order to be successfully verified.
 
 19. Wait for the build to find an available agent and connect to Azure,
     you can watch the output window scroll by.
+
+<div style="page-break-after: always;"></div>
 
 20. Once the build completes and you receive your green check marks (may
     take a few minutes because of this free service tier) you can select
@@ -4111,7 +4096,7 @@ subscription in order to be successfully verified.
 
 If this worked correctly, Azure DevOps can now run any PowerShell
 command you give it (or script, or series of commands) without you
-having to provide credentials and log in yourself. Azure DevOps will run
+having to provide credentials and login yourself. Azure DevOps will run
 any commands you want in any order you want using the Service Principal
 defined in the Service Connection. This now allows you to store
 PowerShell and JSON configs in a git database (and gain all those
@@ -4153,7 +4138,7 @@ The virtual machine is discarded after one use.
     Organization if you have not created one yet.
 
 2.  Open a web browser and navigate to
-    [https://dev.azure.com/\<organizationname](https://dev.azure.com/%3corganizationname)
+    [https://dev.azure.com/organizationname](https://dev.azure.com/organizationname)
 
 3.  Verify that your Azure DevOps Organization exists and you can login
 
@@ -4164,7 +4149,7 @@ The virtual machine is discarded after one use.
 ### Create a new Azure DevOps Project
 
 1.  From the homepage of
-    [https://dev.azure.com/\<organizationname](https://dev.azure.com/%3corganizationname)
+    [https://dev.azure.com/organizationname](https://dev.azure.com/organizationname)
     click on **Create project**
 
 2.  Provide a name for your private project and click create. Project
@@ -4175,6 +4160,8 @@ The virtual machine is discarded after one use.
 1.  Select the **Repos** tab
 
     <img src="./media/image52.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 ### Initialize the Project repository
 
