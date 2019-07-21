@@ -1,0 +1,3 @@
+"variables": {
+    "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
+},

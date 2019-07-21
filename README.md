@@ -1,3 +1,47 @@
+# Azure Superpowers
+ 
+## This repository focusses on the prerequisite skills and technologies needed to succeed with Azure DevOps as the preferred method for deploying applications into Azure.
+
+#### This content is typically delivered as an in person 3 day workshop, and goes through the following:
+1.	Install and walkthrough of tools (VS Code, Git, Azure PowerShell, Azure Storage Explorer)
+2.	Azure AD and Service Principals
+3.	Basic ARM Templates
+4.	Git
+5.	PowerShell DSC
+6.	Storage Accounts and SAS Tokens
+7.	Advanced ARM Templates
+8.	Azure DevOps Organizations and Projects
+9.	Azure DevOps Build
+10.	Azure DevOps Release
+ 
+#### While prerequisites are minimal, to get the most out of the course it will be helpful if you have already had some experience with the following
+*	How to login to an Azure subscription using Azure PowerShell
+*	Deploying resources into Azure using ARM templates
+*	Azure Resource Group planning and design
+*	Azure AD and RBAC - Controlling which Azure resources accounts have access to
+*	PowerShell DSC - How to author a DSC configuration
+*	Git source control framework - Basics of source control and collaborating with others
+
+## Scope
+This class/lab manual is the distilled and simplified experience of multiple engineers working on transforming enterprise customers to the cloud.
+
+## What is DevOps?
+“DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.” – Donovan Brown
+
+## What are the current business challenges?
+All organizations, government and industry, are facing these pressures: 
+*	Deliver products faster
+*	Increase organizational productivity
+*	Reduce errors
+*	Mounting product complexity
+
+## What are the current technical challenges?
+*	Historical reliance on manual procedures for managing hosting environments has increased costs and risks, while hurting management efficiency.
+*	Each environment is built differently, lowering efficiency and risking operational errors
+*	Each environment is configured and validated individually, risking inconsistencies across enterprise
+
+## Troubleshooting
+Each lab in this workshop has a troubleshooting section towards the end.  Please refer to it if you are having issues, and during the class please use it to write down issues you have with the labs so they can be corrected in future versions.  Thank you!
 
 # Contributing
 

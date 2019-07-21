@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "VMname": {
+            "type": "string"
+        },
+        "TemplateSasToken": {
+            "type": "string"
+        },
+        "BinUrl": {
+            "type": "string"
+        },
+        "BinSasToken": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "string",
+            "defaultValue": "MM/dd/yyyy H:mm:ss tt",
+            "metadata": {
+                "description": "The current datetime, as a string, to force the request to go through ARM even if all fields are the same as last ARM deployment of this template."
+            }
+        },
+        "OMSWorkspaceId":{
+            "type": "string"
+        },
+        "OMSWorkspaceKey":{
+            "type": "string"
+        }
+    },
+    "variables": {
+        "templateName": "InstallOMSAgent",
+        "agentName": "OMSAgent-80110810.zip"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VMname'), '/DSC')]",
+            "apiVersion": "2017-12-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "Project": "SOE-C"
+            },
+            "properties": {
+                "publisher": "Microsoft.Powershell",
+                "type": "DSC",
+                "typeHandlerVersion": "2.73",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "ModulesUrl": "[uri(deployment().properties.templateLink.uri, concat(variables('templateName'),'.zip', parameters('TemplateSasToken')))]",
+                    "ConfigurationFunction": "[concat(variables('templateName'), '.ps1', '\\', variables('templateName'))]",
+                    "Properties": {
+                        "OMSAgentZipUri": "[concat(parameters('BinUrl'), variables('agentName'), parameters('BinSasToken'))]",
+                        "Timestamp": "[parameters('Timestamp')]",
+                        "OMSWorkspaceId":"[parameters('OMSWorkspaceId')]",
+                        "OMSWorkspaceKey": "[parameters('OMSWorkspaceKey')]"
+                    }
+                }
+            }
+        }
+    ]
+}

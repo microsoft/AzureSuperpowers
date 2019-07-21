@@ -1,0 +1,24 @@
+"parameters": {
+    "storageSKU": {
+        "type": "string",
+        "allowedValues": [
+            "Standard_LRS",
+            "Standard_ZRS",
+            "Standard_GRS",
+            "Standard_RAGRS",
+            "Premium_LRS"
+        ],
+        "defaultValue": "Standard_LRS",
+        "metadata": {
+            "description": "The type of replication to use for the storage account."
+        }
+    },
+    "storageNamePrefix": {
+        "type": "string",
+        "maxLength": 11,
+        "defaultValue": "error",
+        "metadata": {
+            "description": "The value to use for starting the storage account name. Use only lowercase letters and numbers.  For this example, the word error was chosen in case you do not follow the lab instructions to supply a new storage account prefix."
+        }
+    }
+},

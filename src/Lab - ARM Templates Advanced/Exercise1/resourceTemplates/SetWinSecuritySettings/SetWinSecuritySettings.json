@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "VMname": {
+            "type": "string"
+        },
+        "SasToken": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "string",
+            "defaultValue": "MM/dd/yyyy H:mm:ss tt",
+            "metadata": {
+                "description": "The current datetime, as a string, to force the request to go through ARM even if all fields are the same as last ARM deployment of this template."
+            }
+        }
+    },
+    "variables": {
+        "templateName": "SetWinSecuritySettings"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VMname'), '/DSC')]",
+            "apiVersion": "2017-12-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "Project": "SOE-C"
+            },
+            "properties": {
+                "publisher": "Microsoft.Powershell",
+                "type": "DSC",
+                "typeHandlerVersion": "2.73",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "ModulesUrl": "[uri(deployment().properties.templateLink.uri, concat(variables('templateName'),'.zip', parameters('SasToken')))]",
+                    "ConfigurationFunction": "[concat(variables('templateName'), '.ps1', '\\', variables('templateName'))]",
+                    "Properties": {
+                        "Timestamp": "[parameters('Timestamp')]"
+                    }
+                }
+            }
+        }
+    ]
+}

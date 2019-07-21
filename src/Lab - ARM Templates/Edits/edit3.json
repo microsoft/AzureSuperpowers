@@ -1,0 +1,14 @@
+"resources": [
+    {
+        "name": "[variables('storageName')]",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2016-01-01",
+        "sku": {
+            "name": "[parameters('storageSKU')]"
+        },
+        "kind": "Storage",
+        "location": "[resourceGroup().location]",
+        "tags": {},
+        "properties": {}
+    }
+],
