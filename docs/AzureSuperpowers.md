@@ -1445,7 +1445,7 @@ Resource Manager templates)
 ### Deploy ARM template
 
 You are now ready to deploy this template. Next, you will deploy a
-storage account to the PowerShellResourceGroup that you created as
+storage account to the PowerShellRG that you created as
 part of the Azure AD and Service Principals lab.\
 The storage account deployment should take just about 1 minute to
 complete.
