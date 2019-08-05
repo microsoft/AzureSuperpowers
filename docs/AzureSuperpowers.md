@@ -615,7 +615,7 @@ getting lost in the software.
 ### Clone Azure Superpowers via the VS Code GUI
 
 1.  Open a web browser and navigate to
-    <https://github.com/microsoft/Azure-Superpowers>
+    <https://github.com/microsoft/AzureSuperpowers>
 
 2.  Click on the **Clone or download** button
 
@@ -642,7 +642,7 @@ getting lost in the software.
 8.  The command palette will prompt for a Repository URL. Enter the URL
     that is currently in your clipboard (Show below for reference)
 
-    <https://github.com/microsoft/Azure-Superpowers.git>
+    <https://github.com/microsoft/AzureSuperpowers.git>
 
 9.  When prompted for a destination to clone the files, use
     C:\\AzSuperClass
@@ -1431,7 +1431,7 @@ Resource Manager templates)
 
     <img src="./media/image16.png" border="1">
 
-2.  Open the following folder: C:\\AzSuperClass\\Azure-Superpowers
+2.  Open the following folder: C:\\AzSuperClass\\AzureSuperpowers
 
 3.  Expand src\\Lab - ARM Templates, select the **StorageAccount.json**
     ARM template file and review its contents.
@@ -1455,7 +1455,7 @@ The storage account deployment should take just about 1 minute to
 complete.
 
 In the PowerShell terminal of VS Code, Set your working directory to
-**C:\\AzSuperClass\\Azure-Superpowers\\src\\Lab - ARM Templates**
+**C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates**
 
 Ensure that you have selected the PowerShell Integrated Console
 
@@ -2245,7 +2245,7 @@ the \--global option when you're in that project.
     directory
 
 7.  Copy all folders located within
-    **C:\\AzSuperClass\\Azure-Superpowers\\src** over to
+    **C:\\AzSuperClass\\AzureSuperpowers\\src** over to
     **C:\\MyAzureProject\\Azure Superpowers**
 
 8.  Completing the steps above should result with the following:
