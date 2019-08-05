@@ -3231,7 +3231,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 
 ### Create an Azure Storage Account
 
-1.  Storage account names must be universally unique. In this example,
+1.  Storage account names must be universally unique, **lower case** and alphanumeric(3-24 characters). In this example,
     the storage account name Aliasblobstorage is used. When this
     is listed, replace Alias with your alias, for example if your
     alias was bsmith, your storage account would be bsmithblobstorage.
