@@ -580,6 +580,8 @@ getting lost in the software.
     bring up the Select Language Mode drop-down where you can select
     another language for the current file you are working on.
 
+    <img src="./media/image0001.png" border="1">
+
     <img src="./media/image6.png" border="1">
 
 6.  Regarding PowerShell authoring in VS Code, you will want to have the
@@ -604,6 +606,8 @@ getting lost in the software.
     window also enables you to be able to select and execute multiple
     lines of PowerShell.
 
+    <img src="./media/image0002.png" border="1">
+
 <div style="page-break-after: always;"></div>
 
 ## Exercise - Clone the Azure Superpowers Repository
@@ -611,11 +615,11 @@ getting lost in the software.
 ### Clone Azure Superpowers via the VS Code GUI
 
 1.  Open a web browser and navigate to
-    <https://github.com/microsoft/Azure-Superpowers>
+    <https://github.com/microsoft/AzureSuperpowers>
 
 2.  Click on the **Clone or download** button
 
-    <img src="./media/image8.png" border="1">
+    <img src="./media/image0003.jpg" border="1">
 
 3.  Click the icon as shown below to copy the repository URL to your
     clipboard so that you can paste it into VS Code in the next steps
@@ -638,7 +642,7 @@ getting lost in the software.
 8.  The command palette will prompt for a Repository URL. Enter the URL
     that is currently in your clipboard (Show below for reference)
 
-    <https://github.com/microsoft/Azure-Superpowers.git>
+    <https://github.com/microsoft/AzureSuperpowers.git>
 
 9.  When prompted for a destination to clone the files, use
     C:\\AzSuperClass
@@ -852,6 +856,9 @@ fl \* -Force
 
 For function keys to operate, you may need to press the **Fn** key on
 some computer models, like Surface
+
+We have seen some systems experience issues with the clone button in GitHub where the URI was not copying properly to the clipboard.
+In this case, simply copy the URL to the clipboard by manually selecting it and copying it.
 
 <div style="page-break-after: always;"></div>
 
@@ -1427,7 +1434,7 @@ Resource Manager templates)
 
     <img src="./media/image16.png" border="1">
 
-2.  Open the following folder: C:\\AzSuperClass\\Azure-Superpowers
+2.  Open the following folder: C:\\AzSuperClass\\AzureSuperpowers
 
 3.  Expand src\\Lab - ARM Templates, select the **StorageAccount.json**
     ARM template file and review its contents.
@@ -1451,7 +1458,7 @@ The storage account deployment should take just about 1 minute to
 complete.
 
 In the PowerShell terminal of VS Code, Set your working directory to
-**C:\\AzSuperClass\\Azure-Superpowers\\src\\Lab - ARM Templates**
+**C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates**
 
 Ensure that you have selected the PowerShell Integrated Console
 
@@ -2241,7 +2248,7 @@ the \--global option when you're in that project.
     directory
 
 7.  Copy all folders located within
-    **C:\\AzSuperClass\\Azure-Superpowers\\src** over to
+    **C:\\AzSuperClass\\AzureSuperpowers\\src** over to
     **C:\\MyAzureProject\\Azure Superpowers**
 
 8.  Completing the steps above should result with the following:
@@ -2610,7 +2617,7 @@ well as any errors or warnings if your deployment is not successful.
 ## Lab 8 - PowerShell DSC
 --------------------
 
-| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an(y) Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
+| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
 | :------------ | :-------------- |
 | Glossary of Terms | *DSC configuration* – DSC configurations are PowerShell scripts that define a special type of function. To define a configuration, you use the PowerShell keyword Configuration. Configurations are Declarative PowerShell scripts which define and configure instances of resources. |
 |  | *DSC resource* – The "make it so" part of DSC. They contain the code that put and keep the target of a configuration in the specified state. Resources reside in PowerShell modules. |
@@ -2711,9 +2718,7 @@ well as any errors or warnings if your deployment is not successful.
 3.  Choose **Create a resource** in the upper left-hand corner of the
     Azure portal.
 
-4.  In the search box above the list of Azure Marketplace resources,
-    search for and select\
-    **Windows Server 2016 Datacenter**, then choose **Create**.
+4.  Under **Popular** Click on Windows Server 2016 Datacenter
 
 5.  Responses to the portal wizard are listed below. Your portal
     experience may look different as the portal updates frequently, but
@@ -2721,43 +2726,33 @@ well as any errors or warnings if your deployment is not successful.
 
 6.  Basics tab
 
-    a.  Type DSC1 for the virtual machine name
+    a.  Make sure the correct subscription is selected and then choose
+        to **Create new** resource group
 
-    b.  Provide a username, such as azureuser and a password. The
+    b.  Enter a name for the resourcegroup: portaldscrg-\<YOURALIAS\>
+
+            Example: portaldscrg-josmith
+
+    c.  Type DSC1 for the virtual machine name
+
+    d.  Choose East US or USGov Virginia for your Location
+    
+    e.  Choose D2s\_v3 (Or a similar size if this size is not in your
+        region)
+
+    f.  Provide a username, such as azureuser and a password. The
         password must be at least 12 characters long and meet complexity
         requirements. **Make sure to remember the password as you will
         use it to login**.
 
-    c.  Make sure the correct subscription is selected and then choose
-        to **Create new** resource group
-
-    d.  Enter a name for the resourcegroup: portaldscrg-\<YOURALIAS\>
-
-            Example: portaldscrg-josmith
-
-    e.  Choose East US or USGov Virginia for your Location
-
-    f.  Click OK
-
-7.  Size tab
-
-    a.  Choose D2s\_v3 (Or a similar size if this size is not in your
-        region)
-
-    b.  Click Select
-
-8.  Settings tab
-
-    a.  Under public inbound ports, select RDP so you can login to this
+    g.  Under public inbound ports, click **Allow selected ports** and select RDP so you can login to this
         lab machine via its public IP
 
-    b.  Set Boot diagnostics to Disabled to simplify this deployment
+    h.  At the bottom of the screen, Click **Review + create**
 
-    c.  Click OK
+7.  Review + create tab
 
-9.  Summary tab
-
-    a.  **DO NOT IMMEDIATELY CLICK OK.**  Instead, click on the link Download template and parameters
+    a.  **DO NOT IMMEDIATELY CLICK OK.**  Instead, look to the bottom of the page and click on the link **Download a template for automation**
 
     b.  This will present you with an ARM template that matches your
         deployment as you defined in the portal. This can be very
@@ -2864,7 +2859,7 @@ Install-Module -Name NetworkingDSC
     is installed
 
 ```powershell
-Get-DscResource -Module NetworkingDsc
+Get-DscResource -Module NetworkingDSC
 Get-DscResource -Name Firewall | Select -ExpandProperty Properties
 ```
 
@@ -3142,19 +3137,19 @@ Select-AzSubscription –Subscription '<Id>'
 
 2.  Verify the firewall (Start-\>Run-\>wf.msc)
 
-    a.  You should see a new rule has been created, "Demo Block Rule"
+    a.  Click on Inbound Rules.  You should see a new rule has been created, "Demo Block Rule"
 
-        i. Action = \'Block\'
+        i. Action = Block
 
-        ii. LocalPort = '5000'
+        ii. LocalPort = 5000
 
-        iii.  Enabled = \'True\'
+        iii. Enabled = Yes
 
-        iv. Direction = \'Inbound\'
+        iv. Direction = Inbound
 
-        v. Profile = \'Any\'
+        v. Profile = All
 
-        vi. Protocol = \'TCP\'
+        vi. Protocol = TCP
 
 3.  Run the following PowerShell on DSC1:
 
@@ -3542,6 +3537,8 @@ Properties = @{"ContentType" = "text/plain"}
 <div style="page-break-after: always;"></div>
 
 ## Troubleshooting
+
+If you use the search option within Azure Storage Explorer, you may not see the expected items below, such as Blob Containers, File Shares, Queues, and Tables.  The search option will only pull up instances that are a direct match, such as the storage account name itself.
 
 <div style="page-break-after: always;"></div>
 
@@ -4064,10 +4061,10 @@ Get-AzResourceGroup
 
 15. Under 'Preferred Azure PowerShell Version' set the value to 1.0.0
 
-16. Click 'Save & Queue' at the top of the screen
+16. Click 'Save & Queue' at the top of the screen, and click 'Save & Queue'
 
-17. In the 'Save build pipeline and queue' dialog window you can leave
-    all options default and click the 'Save & Queue' button.
+17. In the 'Run pipeline' dialog window you can leave
+    all options default and click the 'Save and run' button.
 
 18. At the top of the window you will now see 'Build \#x has been
     queued' with the \#x being a hyperlink. Click it.
