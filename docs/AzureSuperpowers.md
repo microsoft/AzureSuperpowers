@@ -857,6 +857,9 @@ fl \* -Force
 For function keys to operate, you may need to press the **Fn** key on
 some computer models, like Surface
 
+We have seen some systems experience issues with the clone button in GitHub where the URI was not copying properly to the clipboard.
+In this case, simply copy the URL to the clipboard by manually selecting it and copying it.
+
 <div style="page-break-after: always;"></div>
 
 ## Lab 3 - Azure AD and Service Principals
