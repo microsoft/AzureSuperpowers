@@ -4,6 +4,6 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/DSCBuild.zip?st=2018-
 
 https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?st=2018-10-04T02%3A31%3A06Z&se=2020-10-05T02%3A31%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=SaxwRzWULbGTLN1r7C06DUgF%2FM55eRH6ZxVAusjX6b0%3D
 
-Script: Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
+Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
 
-Override template parameters: -vmName $(vmName) -adminPassword $(adminPassword)
+-vmName $(vmName) -adminPassword $(adminPassword)
