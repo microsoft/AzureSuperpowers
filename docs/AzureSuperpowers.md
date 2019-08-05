@@ -3538,6 +3538,8 @@ Properties = @{"ContentType" = "text/plain"}
 
 ## Troubleshooting
 
+If you use the search option within Azure Storage Explorer, you may not see the expected items below, such as Blob Containers, File Shares, Queues, and Tables.  The search option will only pull up instances that are a direct match, such as the storage account name itself.
+
 <div style="page-break-after: always;"></div>
 
 ## Lab 10 - ARM Templates (Advanced)
@@ -4059,10 +4061,10 @@ Get-AzResourceGroup
 
 15. Under 'Preferred Azure PowerShell Version' set the value to 1.0.0
 
-16. Click 'Save & Queue' at the top of the screen
+16. Click 'Save & Queue' at the top of the screen, and click 'Save & Queue'
 
-17. In the 'Save build pipeline and queue' dialog window you can leave
-    all options default and click the 'Save & Queue' button.
+17. In the 'Run pipeline' dialog window you can leave
+    all options default and click the 'Save and run' button.
 
 18. At the top of the window you will now see 'Build \#x has been
     queued' with the \#x being a hyperlink. Click it.
