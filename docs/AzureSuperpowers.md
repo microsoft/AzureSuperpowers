@@ -2617,7 +2617,7 @@ well as any errors or warnings if your deployment is not successful.
 ## Lab 8 - PowerShell DSC
 --------------------
 
-| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an(y) Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
+| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
 | :------------ | :-------------- |
 | Glossary of Terms | *DSC configuration* – DSC configurations are PowerShell scripts that define a special type of function. To define a configuration, you use the PowerShell keyword Configuration. Configurations are Declarative PowerShell scripts which define and configure instances of resources. |
 |  | *DSC resource* – The "make it so" part of DSC. They contain the code that put and keep the target of a configuration in the specified state. Resources reside in PowerShell modules. |
@@ -2718,9 +2718,7 @@ well as any errors or warnings if your deployment is not successful.
 3.  Choose **Create a resource** in the upper left-hand corner of the
     Azure portal.
 
-4.  In the search box above the list of Azure Marketplace resources,
-    search for and select\
-    **Windows Server 2016 Datacenter**, then choose **Create**.
+4.  Under **Popular** Click on Windows Server 2016 Datacenter
 
 5.  Responses to the portal wizard are listed below. Your portal
     experience may look different as the portal updates frequently, but
@@ -2728,43 +2726,33 @@ well as any errors or warnings if your deployment is not successful.
 
 6.  Basics tab
 
-    a.  Type DSC1 for the virtual machine name
+    a.  Make sure the correct subscription is selected and then choose
+        to **Create new** resource group
 
-    b.  Provide a username, such as azureuser and a password. The
+    b.  Enter a name for the resourcegroup: portaldscrg-\<YOURALIAS\>
+
+            Example: portaldscrg-josmith
+
+    c.  Type DSC1 for the virtual machine name
+
+    d.  Choose East US or USGov Virginia for your Location
+    
+    e.  Choose D2s\_v3 (Or a similar size if this size is not in your
+        region)
+
+    f.  Provide a username, such as azureuser and a password. The
         password must be at least 12 characters long and meet complexity
         requirements. **Make sure to remember the password as you will
         use it to login**.
 
-    c.  Make sure the correct subscription is selected and then choose
-        to **Create new** resource group
-
-    d.  Enter a name for the resourcegroup: portaldscrg-\<YOURALIAS\>
-
-            Example: portaldscrg-josmith
-
-    e.  Choose East US or USGov Virginia for your Location
-
-    f.  Click OK
-
-7.  Size tab
-
-    a.  Choose D2s\_v3 (Or a similar size if this size is not in your
-        region)
-
-    b.  Click Select
-
-8.  Settings tab
-
-    a.  Under public inbound ports, select RDP so you can login to this
+    g.  Under public inbound ports, click **Allow selected ports** and select RDP so you can login to this
         lab machine via its public IP
 
-    b.  Set Boot diagnostics to Disabled to simplify this deployment
+    h.  At the bottom of the screen, Click **Review + create**
 
-    c.  Click OK
+7.  Review + create tab
 
-9.  Summary tab
-
-    a.  **DO NOT IMMEDIATELY CLICK OK.**  Instead, click on the link Download template and parameters
+    a.  **DO NOT IMMEDIATELY CLICK OK.**  Instead, look to the bottom of the page and click on the link **Download a template for automation**
 
     b.  This will present you with an ARM template that matches your
         deployment as you defined in the portal. This can be very
@@ -2871,7 +2859,7 @@ Install-Module -Name NetworkingDSC
     is installed
 
 ```powershell
-Get-DscResource -Module NetworkingDsc
+Get-DscResource -Module NetworkingDSC
 Get-DscResource -Name Firewall | Select -ExpandProperty Properties
 ```
 
@@ -3149,19 +3137,19 @@ Select-AzSubscription –Subscription '<Id>'
 
 2.  Verify the firewall (Start-\>Run-\>wf.msc)
 
-    a.  You should see a new rule has been created, "Demo Block Rule"
+    a.  Click on Inbound Rules.  You should see a new rule has been created, "Demo Block Rule"
 
-        i. Action = \'Block\'
+        i. Action = Block
 
-        ii. LocalPort = '5000'
+        ii. LocalPort = 5000
 
-        iii.  Enabled = \'True\'
+        iii. Enabled = Yes
 
-        iv. Direction = \'Inbound\'
+        iv. Direction = Inbound
 
-        v. Profile = \'Any\'
+        v. Profile = All
 
-        vi. Protocol = \'TCP\'
+        vi. Protocol = TCP
 
 3.  Run the following PowerShell on DSC1:
 
