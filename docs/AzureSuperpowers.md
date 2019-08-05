@@ -580,6 +580,8 @@ getting lost in the software.
     bring up the Select Language Mode drop-down where you can select
     another language for the current file you are working on.
 
+    <img src="./media/image0001.png" border="1">
+
     <img src="./media/image6.png" border="1">
 
 6.  Regarding PowerShell authoring in VS Code, you will want to have the
@@ -604,6 +606,8 @@ getting lost in the software.
     window also enables you to be able to select and execute multiple
     lines of PowerShell.
 
+    <img src="./media/image0002.png" border="1">
+
 <div style="page-break-after: always;"></div>
 
 ## Exercise - Clone the Azure Superpowers Repository
@@ -615,7 +619,7 @@ getting lost in the software.
 
 2.  Click on the **Clone or download** button
 
-    <img src="./media/image8.png" border="1">
+    <img src="./media/image0003.jpg" border="1">
 
 3.  Click the icon as shown below to copy the repository URL to your
     clipboard so that you can paste it into VS Code in the next steps
