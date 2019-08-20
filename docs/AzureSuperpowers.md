@@ -299,9 +299,11 @@ Expected return:
 
 10. Accept the default **MinTTY** terminal emulator and click **Next**
 
-11. Accept the default Configuring extra options and click **Install**
+11. Accept the default Configuring extra options and click **Next**
 
-12. Uncheck "View Release Notes" and click **Finish**
+12. Click **Install**
+
+13. Uncheck "View Release Notes" and click **Finish**
 
 <div style="page-break-after: always;"></div>
 
@@ -322,19 +324,17 @@ Expected return:
 2.  If you are prompted with a message \"This User Installer is not
     meant to be run as an Administrator\" Click **OK**
 
-3.  Click **Next** on the Welcome portion of the setup
+3.  Accept the EULA and click **Next**
 
-4.  Accept the EULA and click **Next**
+4.  Accept the default installation location and click **Next**
 
-5.  Accept the default installation location and click **Next**
+5.  Accept the default Start Menu Folder and click **Next**
 
-6.  Accept the default Start Menu Folder and click **Next**
+6.  Select all additional tasks and click **Next** (Optional)
 
-7.  Select all additional tasks and click **Next** (Optional)
+7.  Click **Install**
 
-8.  Click **Install**
-
-9.  Uncheck "Launch Visual Studio Code" and click **Finish**
+8.  Uncheck "Launch Visual Studio Code" and click **Finish**
 
 <div style="page-break-after: always;"></div>
 
@@ -381,7 +381,7 @@ Expected return:
 Get-Module -Name 'Az.Compute' -ListAvailable | Select-Object -Property 'Version'
 ```
 
-4.  The expected output is **2.2.0** or later
+4.  The expected output is **2.4.1** or later
 
 ### Check the version of Git for Window
 
@@ -391,7 +391,7 @@ Get-Module -Name 'Az.Compute' -ListAvailable | Select-Object -Property 'Version'
 git --version
 ```
 
-2.  The expected output is **git version 2.21.0.windows.1** or later
+2.  The expected output is **git version 2.23.0.windows.1** or later
 
 3.  If you experience any issues with this step, restart VS Code and try
     again
@@ -400,7 +400,7 @@ git --version
 
 1.  From the VS Code File Menu, click **Help** then **About**
 
-2.  The expected version is **1.34.0** or later
+2.  The expected version is **1.37.1** or later
 
 ### Check the version of Azure Storage Explorer
 
@@ -408,7 +408,7 @@ git --version
 
 2.  From the File Menu, click **Help** then **About**
 
-3.  The expected version is **1.8.1** or later
+3.  The expected version is **1.9.0** or later
 
 <div style="page-break-after: always;"></div>
 
