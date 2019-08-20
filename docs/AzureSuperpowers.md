@@ -523,7 +523,7 @@ getting lost in the software.
     Pallet. Type **User** and select **Preferences: Open User
     Settings.**
 
-7.  Click the braces { } on at the top right of your window to **Open
+7.  Click the icon on at the top right of your window that is highlighted in the screenshot below to **Open
     Settings (JSON)**\
     <img src="./media/image4.png" border="1">
 
