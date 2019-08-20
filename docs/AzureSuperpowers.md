@@ -1154,18 +1154,18 @@ PowerShell.\
 1.	$spDisplayName  = 'PowerShell-<YOURALIAS>'
 2.	
 3.	$startDate = Get-Date
-4.	$KeyId = (New-GUID).GUID
-5.	$KeyValue = (New-GUID).GUID
+4.	$KeyId = (New-Guid).Guid
+5.	$KeyPassword = (New-Guid).Guid
 6.	
 7.	$psadCredential = New-Object Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential
 8.	$psadCredential.StartDate = $startDate
 9.	$psadCredential.EndDate = $startDate.AddYears(1)
 10.	$psadCredential.KeyId = $KeyId
-11.	$psadCredential.Password = $KeyValue
+11.	$psadCredential.Password = $KeyPassword
 12.	
 13.	New-AzADServicePrincipal -DisplayName $spDisplayName -PasswordCredential $psadCredential
 14.	
-15.	Write-Output "The password you've set is $KeyValue (WRITE THIS DOWN)"
+15.	Write-Output "The password you've set is $KeyPassword (WRITE THIS DOWN)"
 ```
 
 **IMPORTANT: Save the service principal's password**, you will need it
