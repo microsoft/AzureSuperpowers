@@ -1412,7 +1412,7 @@ them to be.
 
    <img src="./media/image14.png" border="1">
 
-### ARM Templates vs Iterative PowerShell
+### ARM Templates vs Imperative PowerShell
 
    <img src="./media/image15.png" border="1">
 
