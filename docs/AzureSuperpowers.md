@@ -299,9 +299,11 @@ Expected return:
 
 10. Accept the default **MinTTY** terminal emulator and click **Next**
 
-11. Accept the default Configuring extra options and click **Install**
+11. Accept the default Configuring extra options and click **Next**
 
-12. Uncheck "View Release Notes" and click **Finish**
+12. Click **Install**
+
+13. Uncheck "View Release Notes" and click **Finish**
 
 <div style="page-break-after: always;"></div>
 
@@ -322,19 +324,17 @@ Expected return:
 2.  If you are prompted with a message \"This User Installer is not
     meant to be run as an Administrator\" Click **OK**
 
-3.  Click **Next** on the Welcome portion of the setup
+3.  Accept the EULA and click **Next**
 
-4.  Accept the EULA and click **Next**
+4.  Accept the default installation location and click **Next**
 
-5.  Accept the default installation location and click **Next**
+5.  Accept the default Start Menu Folder and click **Next**
 
-6.  Accept the default Start Menu Folder and click **Next**
+6.  Select all additional tasks and click **Next** (Optional)
 
-7.  Select all additional tasks and click **Next** (Optional)
+7.  Click **Install**
 
-8.  Click **Install**
-
-9.  Uncheck "Launch Visual Studio Code" and click **Finish**
+8.  Uncheck "Launch Visual Studio Code" and click **Finish**
 
 <div style="page-break-after: always;"></div>
 
@@ -381,7 +381,7 @@ Expected return:
 Get-Module -Name 'Az.Compute' -ListAvailable | Select-Object -Property 'Version'
 ```
 
-4.  The expected output is **2.2.0** or later
+4.  The expected output is **2.4.1** or later
 
 ### Check the version of Git for Window
 
@@ -391,7 +391,7 @@ Get-Module -Name 'Az.Compute' -ListAvailable | Select-Object -Property 'Version'
 git --version
 ```
 
-2.  The expected output is **git version 2.21.0.windows.1** or later
+2.  The expected output is **git version 2.23.0.windows.1** or later
 
 3.  If you experience any issues with this step, restart VS Code and try
     again
@@ -400,7 +400,7 @@ git --version
 
 1.  From the VS Code File Menu, click **Help** then **About**
 
-2.  The expected version is **1.34.0** or later
+2.  The expected version is **1.37.1** or later
 
 ### Check the version of Azure Storage Explorer
 
@@ -408,7 +408,7 @@ git --version
 
 2.  From the File Menu, click **Help** then **About**
 
-3.  The expected version is **1.8.1** or later
+3.  The expected version is **1.9.0** or later
 
 <div style="page-break-after: always;"></div>
 
@@ -523,7 +523,7 @@ getting lost in the software.
     Pallet. Type **User** and select **Preferences: Open User
     Settings.**
 
-7.  Click the braces { } on at the top right of your window to **Open
+7.  Click the icon on at the top right of your window that is highlighted in the screenshot below to **Open
     Settings (JSON)**\
     <img src="./media/image4.png" border="1">
 
@@ -1154,18 +1154,18 @@ PowerShell.\
 1.	$spDisplayName  = 'PowerShell-<YOURALIAS>'
 2.	
 3.	$startDate = Get-Date
-4.	$KeyId = (New-GUID).GUID
-5.	$KeyValue = (New-GUID).GUID
+4.	$KeyId = (New-Guid).Guid
+5.	$KeyPassword = (New-Guid).Guid
 6.	
 7.	$psadCredential = New-Object Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential
 8.	$psadCredential.StartDate = $startDate
 9.	$psadCredential.EndDate = $startDate.AddYears(1)
 10.	$psadCredential.KeyId = $KeyId
-11.	$psadCredential.Password = $KeyValue
+11.	$psadCredential.Password = $KeyPassword
 12.	
 13.	New-AzADServicePrincipal -DisplayName $spDisplayName -PasswordCredential $psadCredential
 14.	
-15.	Write-Output "The password you've set is $KeyValue (WRITE THIS DOWN)"
+15.	Write-Output "The password you've set is $KeyPassword (WRITE THIS DOWN)"
 ```
 
 **IMPORTANT: Save the service principal's password**, you will need it
@@ -1412,7 +1412,7 @@ them to be.
 
    <img src="./media/image14.png" border="1">
 
-### ARM Templates vs Iterative PowerShell
+### ARM Templates vs Imperative PowerShell
 
    <img src="./media/image15.png" border="1">
 
@@ -2178,8 +2178,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
     <img src="./media/image30.png" border="1">
 
-9.  Notice how **Allow users to approve their own changes** is selected.
-    If **Allow users to approve their own changes** is not selected, the
+9.  Notice how **Requestors can approve their own changes** is selected.
+    If **Requestors can approve their own changes** is not selected, the
     creator of the pull request can still vote Approve on their pull
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
@@ -2522,10 +2522,9 @@ Resource Manager templates)
     <img src="./media/image16.png" border="1">
 
 2.  Open the following **folder**: C:\\MyAzureProject\\Azure
-    Superpowers\\Lab - ARM Templates Advanced
+    Superpowers
 
-3.  Select **C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
-    Advanced\\Exercise1\\adLabDeployment.ps1** and review its contents.
+3.  Select **C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates Advanced\\Exercise1\\adLabDeployment.ps1** and review its contents.
 
 4.  Instructions found in the ps1 file are also detailed in the next steps.
 
@@ -2770,7 +2769,7 @@ To return back to the deployment summary, click on the X to exit out from the Te
 
    <img src="./media/image47.png" border="1">
 
-Click OK to start the deployment of your VM, which will take 5-10
+Click Create to start the deployment of your VM, which will take 5-10
     minutes to complete.
 
 ### Login to the VM
@@ -4238,8 +4237,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
     <img src="./media/image30.png" border="1">
 
-5.  Notice how **Allow users to approve their own changes** is selected.
-    If **Allow users to approve their own changes** is not selected, the
+5.  Notice how **Requestors can approve their own changes** is selected.
+    If **Requestors can approve their own changes** is not selected, the
     creator of the pull request can still vote Approve on their pull
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
@@ -4492,7 +4491,7 @@ Files\\Helper.txt)
 
 7.  Name your build 'DSC Files - CI'
 
-8.  For the **Agent pool** select 'Hosted Windows 2019 with VS2019'
+8.  For the **Agent pool** select 'Azure Pipelines' and for the **Agent Specification** select 'windows-2019'
 
     <img src="./media/image58.png" border="1">
 
