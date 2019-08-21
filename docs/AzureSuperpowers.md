@@ -4491,7 +4491,7 @@ Files\\Helper.txt)
 
 7.  Name your build 'DSC Files - CI'
 
-8.  For the **Agent pool** select 'Hosted Windows 2019 with VS2019'
+8.  For the **Agent pool** select 'Azure Pipelines' and for the **Agent Specification** select 'windows-2019'
 
     <img src="./media/image58.png" border="1">
 
