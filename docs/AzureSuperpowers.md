@@ -2769,7 +2769,7 @@ To return back to the deployment summary, click on the X to exit out from the Te
 
    <img src="./media/image47.png" border="1">
 
-Click OK to start the deployment of your VM, which will take 5-10
+Click Create to start the deployment of your VM, which will take 5-10
     minutes to complete.
 
 ### Login to the VM
