@@ -2522,10 +2522,9 @@ Resource Manager templates)
     <img src="./media/image16.png" border="1">
 
 2.  Open the following **folder**: C:\\MyAzureProject\\Azure
-    Superpowers\\Lab - ARM Templates Advanced
+    Superpowers
 
-3.  Select **C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
-    Advanced\\Exercise1\\adLabDeployment.ps1** and review its contents.
+3.  Select **C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates Advanced\\Exercise1\\adLabDeployment.ps1** and review its contents.
 
 4.  Instructions found in the ps1 file are also detailed in the next steps.
 
