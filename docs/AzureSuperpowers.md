@@ -2178,8 +2178,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
     <img src="./media/image30.png" border="1">
 
-9.  Notice how **Allow users to approve their own changes** is selected.
-    If **Allow users to approve their own changes** is not selected, the
+9.  Notice how **Requestors can approve their own changes** is selected.
+    If **Requestors can approve their own changes** is not selected, the
     creator of the pull request can still vote Approve on their pull
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
@@ -4237,8 +4237,8 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
     <img src="./media/image30.png" border="1">
 
-5.  Notice how **Allow users to approve their own changes** is selected.
-    If **Allow users to approve their own changes** is not selected, the
+5.  Notice how **Requestors can approve their own changes** is selected.
+    If **Requestors can approve their own changes** is not selected, the
     creator of the pull request can still vote Approve on their pull
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
