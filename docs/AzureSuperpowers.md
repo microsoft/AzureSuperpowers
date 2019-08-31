@@ -4654,40 +4654,38 @@ DevOps and Azure deployment logs.
 
 9.  Click the link, '1 job, 0 task' to edit the tasks in the Dev stage
 
-10. Next, add tasks to the release to define the steps to execute
+10. Next, click the plus sign to add tasks to the release to define the steps to execute
     whenever the release is triggered
 
 11. Add an 'Azure Resource Group Deployment' task
 
 12. Once the task has been added, click on it, and edit the properties.
-    Sample information is shown below.
+    Sample information is provided below with screenshots as examples only.
+
+        Display name: Deploy VM
+
+        Azure Subscription: Name of service connection
+
+        Resource Group: azure-dev-alias (Example is based on using naming convention in Lab 12)
+
+        Location: Use the location specified when creating your resource group used above
+
+        Override template parameters: -vmName $(vmName) -adminPassword $(adminPassword)
 
     <img src="./media/image65.png" border="1">
 
-    <img src="./media/image66.png" border="1">
-
-13. You will need to provide template parameters, which can be supplied
-    in the Override template parameters text box. You can provide these
-    values directly, or you can reference variables that you can define
-    as a part of your release definition. To reference a variable, you
-    will use the following syntax: \$(variablename)
-
-    Create variables to be used in your release. An example of release
-    variables creation is shown in the screenshot below
-
     <img src="./media/image67.png" border="1">
-
-    <img src="./media/image68.png" border="1">
-
-    <div style="page-break-after: always;"></div>
 
     **Override template parameters:** -vmName \$(vmName) -adminPassword
     \$(adminPassword)
 
     (Command above can be copied from C:\\MyAzureProject\\Azure Superpowers\\Lab - Helper Files\\Helper.txt)
 
+13. Click save to save the pipeline before proceeding to further edits.
+
 14. Return back to the pipeline view, and clone the Dev stage, to create
-    a new stage for Prod
+    a new stage for Prod (We do this before creating the variable so the Prod scope will
+    be avaialbe in the variables setting)
 
     <img src="./media/image69.png" border="1">
 
@@ -4695,19 +4693,28 @@ DevOps and Azure deployment logs.
     values for Prod. In this step, update the resource group that the
     Prod stage deploys into.
 
-16. Using variables can be helpful in a release definition, as they can
-    enable some level of consistency within your stages, and allow for
-    updates to be managed at the variables level
+16. Since we provided the template parameters using the builtin varibles feature in Azure DevOps
+    we will now need to update the variables section of this pipeline definition.  **Alternatively,
+    we could have simply provided the parameter in the format: -parametername parametervalue.  
+    However, items such as the adminPassword would then be passed to azure in an non-secure way.**
+    Using variables can be helpful in a release definition, as they can enable some level of 
+    consistency within your stages, and allow for updates to be managed at the variables level
+
+17. Create the variables to be used in your release. Sample information is provided below and includes
+    example screenshots:
+
+        Variable Name: vmName           Variable Value: DevVM       Variable Scope: Dev
+        Variable Name: vmName           Variable Value: ProdVM      Variable Scope: Prod
+        Variable Name: adminPassword    Varialbe Value: P@ssW0rd!   Variable Scope: Release
 
     <img src="./media/image70.png" border="1">
 
-17. Setup Continuous Deployment by setting the Continuous deployment
-    trigger on the Artifact to Enabled (See screenshot below: trigger
-    icon is marked with red box), set a Branch filter for the master
-    branch, and Save the release. Setting a Branch filter on the master
-    branch ensures that continuous deployment will only automatically
-    trigger this release whenever code has made its way into the master
-    branch.
+17. Click back to the Pipeline view to setup Continuous Deployment by setting
+    the Continuous Deployment trigger on the Artifact to Enabled (See screenshot
+    below: trigger icon is marked with red box), set a Branch filter for the master
+    branch, and Save the release. Setting a Branch filter on the master branch
+    ensures that continuous deployment will only automatically trigger this release
+    whenever code has made its way into the master branch.
 
     <img src="./media/image71.png" border="1">
 
