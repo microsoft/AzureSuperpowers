@@ -4521,60 +4521,64 @@ Files\\Helper.txt)
 
 (Command above can be copied from C:\MyAzureProject\Azure Superpowers\Lab - Helper Files\Helper.txt)
 
+<div style="page-break-after: always;"></div>
+
 14. PowerShell Task 2 **(Use the "..." button to browse to the file location in your project repo and select the CreateDSCZipFiles.ps1 file)**
    <img src="./media/image62.png" border="1">
+
+<div style="page-break-after: always;"></div>
 
 15. Azure File Copy Task **(Use your Service Connection for Azure Subscription, Use your Storage Account created in Lab 13, Use your container that was created in the storage account)**
    <img src="./media/image63.png" border="1">
 
 <div style="page-break-after: always;"></div>
 
-13. In the dropdown for Azure Subscription, select the service
+16. In the dropdown for Azure Subscription, select the service
     connection that you recently created.
 
-14. Once you have made all edits to the tasks, save your build.
+17. Once you have made all edits to the tasks, save your build.
 
-15. Queue the build to execute it and have it run the tasks that you
+18. Queue the build to execute it and have it run the tasks that you
     defined.
 
-16. Upon successful build completion, you should be able to confirm that
+19. Upon successful build completion, you should be able to confirm that
     the file upload was successful by reviewing the storage account
     using Azure Storage Explorer
 
-17. Once you have seen a successful build, return to the Build
+20. Once you have seen a successful build, return to the Build
     Definition and edit your build **Triggers**
 
-18. Enable Continuous Integration and save
+21. Enable Continuous Integration and save
 
-19. Switch over to your repository in VS Code, and make sure you have
+22. Switch over to your repository in VS Code, and make sure you have
     the **dev** branch selected
 
-20. As a test to view Continuous Integration in action, edit line 145
+23. As a test to view Continuous Integration in action, edit line 145
     within SetWinSecuritySettings.ps1 in your local repo within VS Code,
     changing ValueData from 0 to 1
 
     This file can be found at:
     *DSCBuild\\DSCSourceFilesForBuild\\SetWinSecuritySettings*
 
-21. Save, commit, sync
+24. Save, commit, sync
 
-22. Perform a pull request to merge your code from your dev branch into
+25. Perform a pull request to merge your code from your dev branch into
     your master branch
 
-23. From within your Azure DevOps project, select the Pipelines tab
+26. From within your Azure DevOps project, select the Pipelines tab
 
-24. Under Pipelines, click Builds
+27. Under Pipelines, click Builds
 
-25. Select the 'DSC Files - CI' build
+28. Select the 'DSC Files - CI' build
 
-26. Review the build history information, which should now indicate that
+29. Review the build history information, which should now indicate that
     a new build was automatically initiated based on your latest file
     update. This new build should differ from your first build, as this
     new build will be listed as a CI build.
 
-27. Click into the Build to view its Summary and Logs
+30. Click into the Build to view its Summary and Logs
 
-28. Review your storage account upon completion of your build. You
+31. Review your storage account upon completion of your build. You
     should see a new zip file has been created within the
     SetWinSecuritySettings folder inside of resourceTemplates. You can
     validate that this file has been updated by reviewing the 'Last
