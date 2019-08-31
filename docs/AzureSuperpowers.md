@@ -4674,7 +4674,7 @@ DevOps and Azure deployment logs.
 
     <img src="./media/image65.png" border="1">
 
-    <img src="./media/image67.png" border="1">
+    <img src="./media/image68.png" border="1">
 
     **Override template parameters:** -vmName \$(vmName) -adminPassword
     \$(adminPassword)
@@ -4709,7 +4709,7 @@ DevOps and Azure deployment logs.
 
     <img src="./media/image70.png" border="1">
 
-17. Click back to the Pipeline view to setup Continuous Deployment by setting
+18. Click back to the Pipeline view to setup Continuous Deployment by setting
     the Continuous Deployment trigger on the Artifact to Enabled (See screenshot
     below: trigger icon is marked with red box), set a Branch filter for the master
     branch, and Save the release. Setting a Branch filter on the master branch
@@ -4718,53 +4718,53 @@ DevOps and Azure deployment logs.
 
     <img src="./media/image71.png" border="1">
 
-18. Enable Pre-deployment conditions on the Prod stage, and set yourself
+19. Enable Pre-deployment conditions on the Prod stage, and set yourself
     as the approver
     <img src="./media/image72.png" border="1">
 
     <img src="./media/image73.png" border="1">
 
-19. Save the release
+20. Save the release
 
-20. Create a Release to kick off your deployment. Keep any default
+21. Create a Release to kick off your deployment. Keep any default
     values that are already selected and click Create.
 
-21. The deployment should kick off in Dev, but it will wait for your
+22. The deployment should kick off in Dev, but it will wait for your
     approval to deploy into Prod. Allow the deployment to complete in
     Dev, but reject the deployment when you are asked if it should
     proceed to Prod. You should receive email notification once the
     release is complete in Dev and is pending deployment into Prod.
 
-22. Head over to VS Code, and edit virtualmachine.json
+23. Head over to VS Code, and edit virtualmachine.json
     *(simple-windows-vm\\virtualmachine.json)*
 
-23. Edit line 10, and update the default value to Standard\_D1\_v2
+24. Edit line 10, and update the default value to Standard\_D1\_v2
 
-24. Save, commit and push, then perform a Pull Request to merge code
+25. Save, commit and push, then perform a Pull Request to merge code
     from the dev branch into the master branch
 
-25. Thanks to continuous deployment, this change will make its way
+26. Thanks to continuous deployment, this change will make its way
     directly into Dev, but will be pending release into Prod until you
     approve.
 
-26. View your release status in Azure DevOps to see that continuous
+27. View your release status in Azure DevOps to see that continuous
     delivery has already kicked off a new deployment into Dev. You can
     also view status in the Azure portal, by taking a look at the
     Deployments tab on your Dev resource group.
 
-27. Review the deployment logs, and once the release to Dev is complete,
+28. Review the deployment logs, and once the release to Dev is complete,
     approve the release into Prod. We should see in both Dev and Prod
     that the VM size deployed should be Standard\_D1\_v2
 
-28. Edit the code in your repo, changing the VM size back to
+29. Edit the code in your repo, changing the VM size back to
     Standard\_D2\_v2
 
-29. Save, commit, push
+30. Save, commit, push
 
-30. Watch as continuous delivery makes changes to the VM size in Dev,
+31. Watch as continuous delivery makes changes to the VM size in Dev,
     and again waits for your approval for release to Prod
 
-31. Review deployment logs, and approve the release to Prod
+32. Review deployment logs, and approve the release to Prod
 
 <div style="page-break-after: always;"></div>
 
