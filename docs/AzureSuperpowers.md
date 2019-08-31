@@ -4065,9 +4065,9 @@ Get-AzResourceGroup
 17. In the 'Run pipeline' dialog window you can leave
     all options default and click the 'Save and run' button.
 
-18. [comment]: <> At the top of the window you will now see 'Build \#x has been
-    [comment]: <> queued' with the \#x being a hyperlink. Click it.
-    [comment]: <> This link no longer appears.  The build summary page appears automaically
+18. [comment]: <> (At the top of the window you will now see 'Build \#x has been)
+    [comment]: <> (queued' with the \#x being a hyperlink. Click it.)
+    [comment]: <> (This link no longer appears.  The build summary page appears automaically)
 
 19. Wait for the build to find an available agent and connect to Azure,
     you can watch the output window scroll by.
