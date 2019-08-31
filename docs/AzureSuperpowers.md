@@ -4066,8 +4066,8 @@ Get-AzResourceGroup
     all options default and click the 'Save and run' button.
 
 [comment]: <> (18. At the top of the window you will now see 'Build \#x has been)
-    [comment]: <> (queued' with the \#x being a hyperlink. Click it.)
-    [comment]: <> (This link no longer appears.  The build summary page appears automaically)
+[comment]: <> (queued' with the \#x being a hyperlink. Click it.)
+[comment]: <> (This link no longer appears.  The build summary page appears automaically)
 
 18. Wait for the build to find an available agent and connect to Azure,
     you can watch the output window scroll by.
@@ -4513,15 +4513,16 @@ Files\\Helper.txt)
 <div style="page-break-after: always;"></div>
 
 12. You will need to edit the tasks to specify required settings
-
+**Powershell Task 1**
     <img src="./media/image61.png" border="1">
 
 **Script:** Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
 
 (Command above can be copied from C:\MyAzureProject\Azure Superpowers\Lab - Helper Files\Helper.txt)
 
+**Powershell Task 2**  **(Use the ... button to browse to the file location in your project repo)**
    <img src="./media/image62.png" border="1">
-
+**Azure File Copy Task** **(Use your Service Connection for Azure Subscription, Use your Storage Account created in Lab 13, Use your container that was created in the storage account)**
    <img src="./media/image63.png" border="1">
 
 <div style="page-break-after: always;"></div>
