@@ -4531,8 +4531,6 @@ Files\\Helper.txt)
 15. Azure File Copy Task **(Use your Service Connection for Azure Subscription, Use your Storage Account created in Lab 13, Use your container that was created in the storage account)**
    <img src="./media/image63.png" border="1">
 
-<div style="page-break-after: always;"></div>
-
 16. In the dropdown for Azure Subscription, select the service
     connection that you recently created.
 
@@ -4705,7 +4703,7 @@ DevOps and Azure deployment logs.
 
         Variable Name: vmName           Variable Value: DevVM       Variable Scope: Dev
         Variable Name: vmName           Variable Value: ProdVM      Variable Scope: Prod
-        Variable Name: adminPassword    Varialbe Value: P@ssW0rd!   Variable Scope: Release
+        Variable Name: adminPassword    Varialbe Value: *********   Variable Scope: Release
 
     <img src="./media/image70.png" border="1">
 
