@@ -4065,21 +4065,19 @@ Get-AzResourceGroup
 17. In the 'Run pipeline' dialog window you can leave
     all options default and click the 'Save and run' button.
 
-[comment]: <> (18. At the top of the window you will now see 'Build \#x has been)
-[comment]: <> (queued' with the \#x being a hyperlink. Click it.)
-[comment]: <> (This link no longer appears.  The build summary page appears automaically)
+18. The build progress summary will begin automatically.
 
-18. Wait for the build to find an available agent and connect to Azure,
+19. Wait for the build to find an available agent and connect to Azure,
     you can watch the output window scroll by.
 
 <div style="page-break-after: always;"></div>
 
-19. Once the build completes and you receive your green check marks (may
+20. Once the build completes and you receive your green check marks (may
     take a few minutes because of this free service tier) you can select
     the 'Run Azure PowerShell' section of the log that is currently
     displayed and it will display the output of the PowerShell cmdlet.
 
-20. The output should include only the resource groups that your service
+21. The output should include only the resource groups that your service
     principal has access to. You may have other resource groups in your
     subscription, but in this exercise we see that a service principal
     can only interact with resources that it has been granted permission
@@ -4523,7 +4521,7 @@ Files\\Helper.txt)
 
 <div style="page-break-after: always;"></div>
 
-14. PowerShell Task 2 **(Use the "..." button to browse to the file location in your project repo and select the CreateDSCZipFiles.ps1 file)**
+14. PowerShell Task 2 **(Use the ellipsis button to browse to the file location in your project repo and select the CreateDSCZipFiles.ps1 file)**
    <img src="./media/image62.png" border="1">
 
 <div style="page-break-after: always;"></div>
@@ -4683,7 +4681,7 @@ DevOps and Azure deployment logs.
 
 14. Return back to the pipeline view, and clone the Dev stage, to create
     a new stage for Prod (We do this before creating the variable so the Prod scope will
-    be avaialbe in the variables setting)
+    be available in the variables setting)
 
     <img src="./media/image69.png" border="1">
 
@@ -4691,10 +4689,10 @@ DevOps and Azure deployment logs.
     values for Prod. In this step, update the resource group that the
     Prod stage deploys into.
 
-16. Since we provided the template parameters using the builtin varibles feature in Azure DevOps
+16. Since we provided the template parameters using the builtin variables feature in Azure DevOps
     we will now need to update the variables section of this pipeline definition.  **Alternatively,
     we could have simply provided the parameter in the format: -parametername parametervalue.
-    However, items such as the adminPassword would then be passed to azure in an non-secure way.**
+    However, items such as the adminPassword would then be passed to Azure in an non-secure way.**
     Using variables can be helpful in a release definition, as they can enable some level of
     consistency within your stages, and allow for updates to be managed at the variables level
 
@@ -4703,7 +4701,7 @@ DevOps and Azure deployment logs.
 
         Variable Name: vmName           Variable Value: DevVM       Variable Scope: Dev
         Variable Name: vmName           Variable Value: ProdVM      Variable Scope: Prod
-        Variable Name: adminPassword    Varialbe Value: *********   Variable Scope: Release
+        Variable Name: adminPassword    Variable Value: *********   Variable Scope: Release
 
     <img src="./media/image70.png" border="1">
 
