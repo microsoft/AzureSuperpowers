@@ -15,12 +15,13 @@
 10.	Azure DevOps Release
  
 #### While prerequisites are minimal, to get the most out of the course it will be helpful if you have already had some experience with the following
-*	How to login to an Azure subscription using Azure PowerShell
-*	Deploying resources into Azure using ARM templates
-*	Azure Resource Group planning and design
-*	Azure AD and RBAC - Controlling which Azure resources accounts have access to
-*	PowerShell DSC - How to author a DSC configuration
-*	Git source control framework - Basics of source control and collaborating with others
+*   [How to login to an Azure subscription using Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps)
+*   [Deploying resources into Azure using ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy)
+*   [Azure Resource Group planning and design](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
+*   [Azure AD and RBAC - Controlling which Azure resources accounts have access to](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal)
+*   [PowerShell DSC - How to author a DSC configuration](https://docs.microsoft.com/en-us/powershell/dsc/configurations/configurations
+)
+*   [Git source control framework - Basics of source control and collaborating with others](https://docs.microsoft.com/en-us/azure/devops/learn/git/what-is-git)
 
 ## Scope
 This class/lab manual is the distilled and simplified experience of multiple engineers working on transforming enterprise customers to the cloud.
