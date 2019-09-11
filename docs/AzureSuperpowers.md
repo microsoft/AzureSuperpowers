@@ -4065,8 +4065,7 @@ Get-AzResourceGroup
 17. In the 'Run pipeline' dialog window you can leave
     all options default and click the 'Save and run' button.
 
-18. At the top of the window you will now see 'Build \#x has been
-    queued' with the \#x being a hyperlink. Click it.
+18. The build progress summary will begin automatically.
 
 19. Wait for the build to find an available agent and connect to Azure,
     you can watch the output window scroll by.
@@ -4511,66 +4510,71 @@ Files\\Helper.txt)
 
 <div style="page-break-after: always;"></div>
 
-12. You will need to edit the tasks to specify required settings
+12. You will need to edit each task to specify required settings
 
+13. PowerShell Task 1
     <img src="./media/image61.png" border="1">
 
 **Script:** Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
 
 (Command above can be copied from C:\MyAzureProject\Azure Superpowers\Lab - Helper Files\Helper.txt)
 
-   <img src="./media/image62.png" border="1">
+<div style="page-break-after: always;"></div>
 
-   <img src="./media/image63.png" border="1">
+14. PowerShell Task 2 **(Use the ellipsis button to browse to the file location in your project repo and select the CreateDSCZipFiles.ps1 file)**
+   <img src="./media/image62.png" border="1">
 
 <div style="page-break-after: always;"></div>
 
-13. In the dropdown for Azure Subscription, select the service
+15. Azure File Copy Task **(Use your Service Connection for Azure Subscription, Use your Storage Account created in Lab 13, Use your container that was created in the storage account)**
+   <img src="./media/image63.png" border="1">
+
+16. In the dropdown for Azure Subscription, select the service
     connection that you recently created.
 
-14. Once you have made all edits to the tasks, save your build.
+17. Once you have made all edits to the tasks, save your build.
 
-15. Queue the build to execute it and have it run the tasks that you
+18. Queue the build to execute it and have it run the tasks that you
     defined.
 
-16. Upon successful build completion, you should be able to confirm that
+19. Upon successful build completion, you should be able to confirm that
     the file upload was successful by reviewing the storage account
     using Azure Storage Explorer
 
-17. Once you have seen a successful build, return to the Build
+20. Once you have seen a successful build, return to the Build
     Definition and edit your build **Triggers**
 
-18. Enable Continuous Integration and save
+21. Enable Continuous Integration and save
 
-19. Switch over to your repository in VS Code, and make sure you have
+22. Switch over to your repository in VS Code, and make sure you have
     the **dev** branch selected
 
-20. As a test to view Continuous Integration in action, edit line 145
+23. As a test to view Continuous Integration in action, edit line 145
     within SetWinSecuritySettings.ps1 in your local repo within VS Code,
     changing ValueData from 0 to 1
 
     This file can be found at:
     *DSCBuild\\DSCSourceFilesForBuild\\SetWinSecuritySettings*
 
-21. Save, commit, sync
+24. Save, commit, sync
 
-22. Perform a pull request to merge your code from your dev branch into
+25. Perform a pull request to merge your code from your dev branch into
     your master branch
 
-23. From within your Azure DevOps project, select the Pipelines tab
+26. From within your Azure DevOps project, select the Pipelines tab
 
-24. Under Pipelines, click Builds
+27. Under Pipelines, click Builds
 
-25. Select the 'DSC Files - CI' build
+28. Select the 'DSC Files - CI' build
 
-26. Review the build history information, which should now indicate that
+29. Review the build history information, which should now indicate that
     a new build was automatically initiated based on your latest file
     update. This new build should differ from your first build, as this
     new build will be listed as a CI build.
 
-27. Click into the Build to view its Summary and Logs
+30. Click into the Build to view its Summary and Logs
 
-28. Review your storage account upon completion of your build. You
+31. Review your storage account upon completion of your build. You
     should see a new zip file has been created within the
     SetWinSecuritySettings folder inside of resourceTemplates. You can
     validate that this file has been updated by reviewing the 'Last
@@ -4646,40 +4650,38 @@ DevOps and Azure deployment logs.
 
 9.  Click the link, '1 job, 0 task' to edit the tasks in the Dev stage
 
-10. Next, add tasks to the release to define the steps to execute
+10. Next, click the plus sign to add tasks to the release to define the steps to execute
     whenever the release is triggered
 
 11. Add an 'Azure Resource Group Deployment' task
 
 12. Once the task has been added, click on it, and edit the properties.
-    Sample information is shown below.
+    Sample information is provided below with screenshots as examples only.
+
+        Display name: Deploy VM
+
+        Azure Subscription: Name of service connection
+
+        Resource Group: azure-dev-alias (Example is based on using naming convention in Lab 12)
+
+        Location: Use the location specified when creating your resource group used above
+
+        Override template parameters: -vmName $(vmName) -adminPassword $(adminPassword)
 
     <img src="./media/image65.png" border="1">
 
-    <img src="./media/image66.png" border="1">
-
-13. You will need to provide template parameters, which can be supplied
-    in the Override template parameters text box. You can provide these
-    values directly, or you can reference variables that you can define
-    as a part of your release definition. To reference a variable, you
-    will use the following syntax: \$(variablename)
-
-    Create variables to be used in your release. An example of release
-    variables creation is shown in the screenshot below
-
-    <img src="./media/image67.png" border="1">
-
     <img src="./media/image68.png" border="1">
-
-    <div style="page-break-after: always;"></div>
 
     **Override template parameters:** -vmName \$(vmName) -adminPassword
     \$(adminPassword)
 
     (Command above can be copied from C:\\MyAzureProject\\Azure Superpowers\\Lab - Helper Files\\Helper.txt)
 
+13. Click save to save the pipeline before proceeding to further edits.
+
 14. Return back to the pipeline view, and clone the Dev stage, to create
-    a new stage for Prod
+    a new stage for Prod (We do this before creating the variable so the Prod scope will
+    be available in the variables setting)
 
     <img src="./media/image69.png" border="1">
 
@@ -4687,69 +4689,78 @@ DevOps and Azure deployment logs.
     values for Prod. In this step, update the resource group that the
     Prod stage deploys into.
 
-16. Using variables can be helpful in a release definition, as they can
-    enable some level of consistency within your stages, and allow for
-    updates to be managed at the variables level
+16. Since we provided the template parameters using the builtin variables feature in Azure DevOps
+    we will now need to update the variables section of this pipeline definition.  **Alternatively,
+    we could have simply provided the parameter in the format: -parametername parametervalue.
+    However, items such as the adminPassword would then be passed to Azure in an non-secure way.**
+    Using variables can be helpful in a release definition, as they can enable some level of
+    consistency within your stages, and allow for updates to be managed at the variables level
+
+17. Create the variables to be used in your release. Sample information is provided below and includes
+    example screenshots:
+
+        Variable Name: vmName           Variable Value: DevVM       Variable Scope: Dev
+        Variable Name: vmName           Variable Value: ProdVM      Variable Scope: Prod
+        Variable Name: adminPassword    Variable Value: *********   Variable Scope: Release
 
     <img src="./media/image70.png" border="1">
 
-17. Setup Continuous Deployment by setting the Continuous deployment
-    trigger on the Artifact to Enabled (See screenshot below: trigger
-    icon is marked with red box), set a Branch filter for the master
-    branch, and Save the release. Setting a Branch filter on the master
-    branch ensures that continuous deployment will only automatically
-    trigger this release whenever code has made its way into the master
-    branch.
+18. Click back to the Pipeline view to setup Continuous Deployment by setting
+    the Continuous Deployment trigger on the Artifact to Enabled (See screenshot
+    below: trigger icon is marked with red box), set a Branch filter for the master
+    branch, and Save the release. Setting a Branch filter on the master branch
+    ensures that continuous deployment will only automatically trigger this release
+    whenever code has made its way into the master branch.
 
     <img src="./media/image71.png" border="1">
 
-18. Enable Pre-deployment conditions on the Prod stage, and set yourself
+19. Enable Pre-deployment conditions on the Prod stage, and set yourself
     as the approver
     <img src="./media/image72.png" border="1">
 
     <img src="./media/image73.png" border="1">
 
-19. Save the release
+20. Save the release
 
-20. Create a Release to kick off your deployment. Keep any default
+21. Create a Release to kick off your deployment. Keep any default
     values that are already selected and click Create.
 
-21. The deployment should kick off in Dev, but it will wait for your
+22. The deployment should kick off in Dev, but it will wait for your
     approval to deploy into Prod. Allow the deployment to complete in
     Dev, but reject the deployment when you are asked if it should
     proceed to Prod. You should receive email notification once the
     release is complete in Dev and is pending deployment into Prod.
 
-22. Head over to VS Code, and edit virtualmachine.json
+23. Head over to VS Code, and edit virtualmachine.json
     *(simple-windows-vm\\virtualmachine.json)*
 
-23. Edit line 10, and update the default value to Standard\_D1\_v2
+24. Edit line 10, and update the default value to Standard\_D1\_v2
 
-24. Save, commit and push, then perform a Pull Request to merge code
+25. Save, commit and push, then perform a Pull Request to merge code
     from the dev branch into the master branch
 
-25. Thanks to continuous deployment, this change will make its way
+26. Thanks to continuous deployment, this change will make its way
     directly into Dev, but will be pending release into Prod until you
     approve.
 
-26. View your release status in Azure DevOps to see that continuous
+27. View your release status in Azure DevOps to see that continuous
     delivery has already kicked off a new deployment into Dev. You can
     also view status in the Azure portal, by taking a look at the
     Deployments tab on your Dev resource group.
 
-27. Review the deployment logs, and once the release to Dev is complete,
+28. Review the deployment logs, and once the release to Dev is complete,
     approve the release into Prod. We should see in both Dev and Prod
     that the VM size deployed should be Standard\_D1\_v2
 
-28. Edit the code in your repo, changing the VM size back to
+29. Edit the code in your repo, changing the VM size back to
     Standard\_D2\_v2
 
-29. Save, commit, push
+30. Save, commit, push
 
-30. Watch as continuous delivery makes changes to the VM size in Dev,
+31. Watch as continuous delivery makes changes to the VM size in Dev,
     and again waits for your approval for release to Prod
 
-31. Review deployment logs, and approve the release to Prod
+32. Review deployment logs, and approve the release to Prod
 
 <div style="page-break-after: always;"></div>
 
