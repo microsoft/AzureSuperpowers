@@ -1893,7 +1893,7 @@ Process Flow
     viewed in the bottom left-hand corner of VS Code. It will likely say
     'master' right now, but whichever branch it indicates is where any
     file modifications are taking place (regardless of if you use VS
-    Code, file explorer, notepad, etc to add or modify fles)
+    Code, file explorer, notepad, etc to add or modify files)
 
 3.  Verify that you can see the ReadMe file within the File Explorer
     view.
@@ -4466,6 +4466,7 @@ Files\\Helper.txt)
 | Key Takeaways | 1. Continuous Integration can be configured as a part of your application development process to ensure code is built and tested anytime changes are made to the code. |
 |  | 2. Continuous Integration can provide help meet infrastructure needs, including automating the build of DSC zip files for use in Azure. |
 | Author | Ralph Kyttle |
+|  | Mark Duda |
 
 <div style="page-break-after: always;"></div>
 
@@ -4521,7 +4522,7 @@ Files\\Helper.txt)
 
 <div style="page-break-after: always;"></div>
 
-14. PowerShell Task 2 **(Use the ellipsis button to browse to the file location in your project repo and select the CreateDSCZipFiles.ps1 file)**
+14. PowerShell Task 2 **(Use the ellipsis button "..." to browse to the file location in your project repo and select the CreateDSCZipFiles.ps1 file)**
    <img src="./media/image62.png" border="1">
 
 <div style="page-break-after: always;"></div>
@@ -4596,6 +4597,7 @@ Files\\Helper.txt)
 |  | 2. CD automates deployment from one environment to the next and may optionally depend on an approval step, in which a decision maker signs off on the changes electronically. CD may create an auditable record of the approval in order to satisfy regulatory procedures or other control objectives. |
 |  | 3. Modern release pipelines allow development teams to deploy new features fast and safely. |
 | Author | Ralph Kyttle |
+|  | Mark Duda |
 
 <div style="page-break-after: always;"></div>
 
