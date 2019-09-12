@@ -210,9 +210,10 @@
             "type": "string",
             "allowedValues": [
                 "2016-Datacenter",
+                "2019-Datacenter",
                 "Standard"
             ],
-            "defaultValue": "2016-Datacenter"
+            "defaultValue": "2019-Datacenter"
         },
         "publisher": {
             "type": "string",
