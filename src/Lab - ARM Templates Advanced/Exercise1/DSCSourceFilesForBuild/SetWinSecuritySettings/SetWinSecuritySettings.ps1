@@ -488,6 +488,7 @@
 
          }
 
+		 <#
          Registry 'Registry(POL): HKLM:\Software\Policies\Microsoft Services\AdmPwd\AdmPwdEnabled'
          {
               ValueName = 'AdmPwdEnabled'
@@ -495,7 +496,8 @@
               Key = 'HKLM:\Software\Policies\Microsoft Services\AdmPwd'
               ValueData = 1
 
-         }
+		 }
+		 #>
 
          Registry 'Registry(POL): HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest\UseLogonCredential'
          {
@@ -962,13 +964,15 @@
 
          }
 
+		<#
          UserRightsAssignment 'UserRightsAssignment(INF): Deny_log_on_through_Remote_Desktop_Services'
          {
               Policy = 'Deny_log_on_through_Remote_Desktop_Services'
               Force = $True
               Identity = @('*S-1-5-113')
 
-         }
+		 }
+		 #>
 
          UserRightsAssignment 'UserRightsAssignment(INF): Lock_pages_in_memory'
          {
@@ -1042,13 +1046,15 @@
 
          }
 
+		<#
          UserRightsAssignment 'UserRightsAssignment(INF): Deny_access_to_this_computer_from_the_network'
          {
               Policy = 'Deny_access_to_this_computer_from_the_network'
               Force = $True
               Identity = @('*S-1-5-114')
 
-         }
+		 }
+		 #>
 
          UserRightsAssignment 'UserRightsAssignment(INF): Profile_single_process'
          {
