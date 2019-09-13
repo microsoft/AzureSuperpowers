@@ -1,0 +1,7 @@
+[ClassVersion("1.0.0.0"), FriendlyName("AuditPolicyGUID")]
+class MSFT_AuditPolicyGUID : OMI_BaseResource
+{
+    [Key, Description("The name of the Subcategory to be configured.")] String Name;
+    [Key, Description("The audit flag to be configured."), ValueMap{"Success","Failure", "Success And Failure", "No Auditing"}, Values{"Success","Failure","Success And Failure", "No Auditing"}] String AuditFlag;
+    [Write, Description("Specifies whether the flag should be enabled or disabled. To enable the flag, set this property to Present. To disable the flag, set this property to Absent."), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+};
