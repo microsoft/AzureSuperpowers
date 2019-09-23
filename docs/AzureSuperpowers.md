@@ -1929,7 +1929,7 @@ Process Flow
     pane with a gear icon on it that says **Project settings**. Click
     this button.
 
-2.  Under the General tab, click 'Security'.
+2.  Under the General tab, click 'Permissions'.
 
 3.  This will expand the security groups for the project. There are many
     groups that do a few different things, but the three basic ones are:
@@ -1943,10 +1943,10 @@ Process Flow
 
 4.  Click the group you wish to add a user to
 
-5.  On the right-hand action pane select the 'Members' column
+5.  Select the 'Members' button
 
-6.  Click the '+ Add...' button and type the member or group you wish to
-    add to this security group, then click the 'Save Changes' button
+6.  Click the 'Add' button and type the member or group you wish to
+    add to this security group, then click the 'Save' button
 
 <div style="page-break-after: always;"></div>
 
