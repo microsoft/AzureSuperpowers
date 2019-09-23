@@ -4691,19 +4691,19 @@ DevOps and Azure deployment logs.
     values for Prod. In this step, update the resource group that the
     Prod stage deploys into.
 
-16. Since we provided the template parameters using the builtin variables feature in Azure DevOps
+16. Since we are providing the template parameters using the builtin variables feature in Azure DevOps,
     we will now need to update the variables section of this pipeline definition.  **Alternatively,
     we could have simply provided the parameter in the format: -parametername parametervalue.
-    However, items such as the adminPassword would then be passed to Azure in an non-secure way.**
+    However, items such as the adminPassword would then be passed to Azure in a non-secure way.**
     Using variables can be helpful in a release definition, as they can enable some level of
     consistency within your stages, and allow for updates to be managed at the variables level
 
 17. Create the variables to be used in your release. Sample information is provided below and includes
     example screenshots:
 
-        Variable Name: vmName           Variable Value: DevVM       Variable Scope: Dev
-        Variable Name: vmName           Variable Value: ProdVM      Variable Scope: Prod
-        Variable Name: adminPassword    Variable Value: *********   Variable Scope: Release
+        Variable Name: vmName           Value: DevVM       Scope: Dev
+        Variable Name: vmName           Value: ProdVM      Scope: Prod
+        Variable Name: adminPassword    Value: *********   Scope: Release
 
     <img src="./media/image70.png" border="1">
 
