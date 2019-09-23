@@ -1929,7 +1929,7 @@ Process Flow
     pane with a gear icon on it that says **Project settings**. Click
     this button.
 
-2.  Under the General tab, click 'Security'.
+2.  Under the General tab, click 'Permissions'.
 
 3.  This will expand the security groups for the project. There are many
     groups that do a few different things, but the three basic ones are:
@@ -1943,10 +1943,10 @@ Process Flow
 
 4.  Click the group you wish to add a user to
 
-5.  On the right-hand action pane select the 'Members' column
+5.  Select the 'Members' button
 
-6.  Click the '+ Add...' button and type the member or group you wish to
-    add to this security group, then click the 'Save Changes' button
+6.  Click the 'Add' button and type the member or group you wish to
+    add to this security group, then click the 'Save' button
 
 <div style="page-break-after: always;"></div>
 
@@ -4588,10 +4588,10 @@ Files\\Helper.txt)
 ## Lab 14 - Azure DevOps Release Continuous Deployment
 --------------------------------------------------------
 
-| Lab Description | In this lab, you will explore Continuous Delivery in Azure DevOps. |
+| Lab Description | In this lab, you will explore Continuous Deployment in Azure DevOps. |
 | :------------ | :-------------- |
-|  | Continuous Delivery (CD) is the process to build, test, configure and deploy from a build to a production environment. Multiple testing or staging environments create a Release Pipeline to automate the creation of infrastructure and deployment of applications. Successive environments support progressively longer-running activities of integration, load, and user acceptance testing. Continuous Integration starts the CD process and the pipeline stages each successive environment to the next upon successful completion of tests. |
-|  | Without Continuous Delivery, software release cycles were previously a bottleneck for application and operation teams. Manual processes led to unreliable releases that produced delays and errors. These teams often relied on handoffs that resulted in issues during release cycles. The automated release pipeline allows a “fail fast” approach to validation, where the tests most likely to fail quickly are run first and longer-running tests happen after the faster ones complete successfully. |
+|  | Continuous Deployment (CD) is the process to build, test, configure and deploy from a build to a production environment. Multiple testing or staging environments create a Release Pipeline to automate the creation of infrastructure and deployment of applications. Successive environments support progressively longer-running activities of integration, load, and user acceptance testing. Continuous Integration starts the CD process and the pipeline stages each successive environment to the next upon successful completion of tests. |
+|  | Without Continuous Deployment, software release cycles were previously a bottleneck for application and operation teams. Manual processes led to unreliable releases that produced delays and errors. These teams often relied on handoffs that resulted in issues during release cycles. The automated release pipeline allows a “fail fast” approach to validation, where the tests most likely to fail quickly are run first and longer-running tests happen after the faster ones complete successfully. |
 | Estimated Time to Complete | 45 minutes |
 | Key Takeaways | 1. Continuous Integration starts the CD process and the pipeline stages each successive environment the next upon successful completion of tests. |
 |  | 2. CD automates deployment from one environment to the next and may optionally depend on an approval step, in which a decision maker signs off on the changes electronically. CD may create an auditable record of the approval in order to satisfy regulatory procedures or other control objectives. |
@@ -4691,19 +4691,19 @@ DevOps and Azure deployment logs.
     values for Prod. In this step, update the resource group that the
     Prod stage deploys into.
 
-16. Since we provided the template parameters using the builtin variables feature in Azure DevOps
+16. Since we are providing the template parameters using the builtin variables feature in Azure DevOps,
     we will now need to update the variables section of this pipeline definition.  **Alternatively,
     we could have simply provided the parameter in the format: -parametername parametervalue.
-    However, items such as the adminPassword would then be passed to Azure in an non-secure way.**
+    However, items such as the adminPassword would then be passed to Azure in a non-secure way.**
     Using variables can be helpful in a release definition, as they can enable some level of
     consistency within your stages, and allow for updates to be managed at the variables level
 
 17. Create the variables to be used in your release. Sample information is provided below and includes
     example screenshots:
 
-        Variable Name: vmName           Variable Value: DevVM       Variable Scope: Dev
-        Variable Name: vmName           Variable Value: ProdVM      Variable Scope: Prod
-        Variable Name: adminPassword    Variable Value: *********   Variable Scope: Release
+        Variable Name: vmName           Value: DevVM       Scope: Dev
+        Variable Name: vmName           Value: ProdVM      Scope: Prod
+        Variable Name: adminPassword    Value: *********   Scope: Release
 
     <img src="./media/image70.png" border="1">
 
@@ -4759,7 +4759,7 @@ DevOps and Azure deployment logs.
 
 30. Save, commit, push
 
-31. Watch as continuous delivery makes changes to the VM size in Dev,
+31. Watch as continuous deployment makes changes to the VM size in Dev,
     and again waits for your approval for release to Prod
 
 32. Review deployment logs, and approve the release to Prod
