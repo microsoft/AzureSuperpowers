@@ -2,13 +2,13 @@
 Login-AzAccount
 Get-AzSubscription
 Select-AzSubscription -Subscription "Desired Subscription Name"
-New-AzResourceGroup -Name 'AzSuperADLAB' -Location 'eastus'
+New-AzResourceGroup -Name 'AzSuperADLAB-<YOURALIAS>' -Location 'eastus'
 
 #Login - MAG
 Login-AzAccount -Environment AzureUSGovernment
 Get-AzSubscription
 Select-AzSubscription -Subscription "Desired Subscription Name"
-New-AzResourceGroup -Name 'AzSuperADLAB' -Location 'usgovvirginia'
+New-AzResourceGroup -Name 'AzSuperADLAB-<YOURALIAS>' -Location 'usgovvirginia'
 
 <#
 This template will take approximately 1 hour to deploy
@@ -29,7 +29,7 @@ This will kick off the deployment, which will take about 1 hour to complete
 #>
 
 $DeploymentParametersBuildVM = @{
-    ResourceGroupName    = 'AzSuperADLAB'
+    ResourceGroupName    = 'AzSuperADLAB-<YOURALIAS>'
     TemplateUri          = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?st=2019-03-27T01%3A54%3A27Z&se=2021-03-28T01%3A54%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=PP2e8y26iuayYdeyjY5x9dq8gOYR3QDIw%2FWWeyeGC3U%3D'
     Timestamp            = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
     CreateWorkerNodes    = 'true'
