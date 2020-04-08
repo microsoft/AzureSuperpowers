@@ -209,7 +209,7 @@ Set-ExecutionPolicy Unrestricted
     load configuration files, such as your PowerShell profile, or run
     scripts and whether scripts must be digitally signed before they are
     run. More information on this topic can be found here:
-    <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6#parameters>
+    <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy>
 
 ### Install Az Module
 
@@ -495,14 +495,14 @@ getting lost in the software.
         b.  Search - Text level search inside your files. This will search
         across all files that are available in your current workspace.
         c.  Source Control - View any connected source code repositories
-        d.  Debug
+        d.  Run/Debug
         e.  Extensions - Add extensions to enable new features within VS
         Code
 
 3.  From the View Menu in the Menu Bar, select Appearance, and then
     click **Move Side Bar Right.** Notice that both the Side Bar and the
     Activity Bar are now on the Right Side of the Interface instead of
-    the Left. From the View Menu, click **Move Side Bar Left** to
+    the Left. From the View Menu, select Appearance, and then click **Move Side Bar Left** to
     restore the sidebar to the original location.
 
 4.  Click on the Gear Icon in the lower left-hand side of the screen and
@@ -530,15 +530,14 @@ getting lost in the software.
     comma separated. To revert changes that you have made and restore
     defaults, you can remove any settings that are listed.
 
-9.  An example of a user setting change the you may wish to make is
-    setting a default file type in\
+9.  One example of a user setting is configuring a default file type in\
     VS Code, which can be accomplished by adding in the following
     configuration:
     ```json
     "files.defaultLanguage": "powershell"
     ```
 
-10. Adding the files.defaultLanguage setting listed above will ensure
+10. Add the files.defaultLanguage setting listed above to ensure
     that any new file that you create is automatically created as a
     PowerShell file, as opposed to the default of plain text.
 
@@ -676,7 +675,7 @@ related resources as a module, you can reference, load, persist, and
 share your code much easier than you would otherwise.
 
 For more information on PowerShell Modules, refer to
-<https://docs.microsoft.com/en-us/powershell/developer/module/understanding-a-windows-powershell-module>
+<https://docs.microsoft.com/en-us/powershell/scripting/developer/module/understanding-a-windows-powershell-module>
 
 ### Az vs AzureRM
 
@@ -692,7 +691,7 @@ migrating from the Azure RM module to the Azure PowerShell Az module
 here:
 <https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.5.0#migrate-existing-scripts-to-az>
 
-With the new Azure PowerShell task version 4.\* in build and release
+With the new Azure PowerShell task version 4.\* in Azure DevOps build and release
 pipelines, we have added support for the new Az module for all
 platforms. Azure PowerShell task version 3.\* will continue to support
 the AzureRM module. However, to keep up with the latest Azure services
@@ -702,7 +701,7 @@ version 4.\* as soon as possible.
 ### Where the commands live
 
 To see a list of the available commands in a PowerShell module, use
-Get-Command. Run the following command to see the available commands in
+Get-Command. Run the following command in a PowerShell terminal to see the available commands in
 the Az module:
 
 Get-Command -Module \'Az.\*\'
@@ -749,7 +748,7 @@ An example of splatting is shown below
 
 Note that the variable "params" is preceded by a dollar sign (\$) when
 it's defined, but by an at sign (@) when it's called as part of a
-PowerShell cmdlet. Use the appropriate location for the Azure
+PowerShell cmdlet. Use an appropriate location for the Azure
 environment throughout this course.
 
 <div style="page-break-after: always;"></div>
@@ -780,15 +779,15 @@ environment throughout this course.
 
 7.  Each subscription is displayed as a drill down list. Expand a
     subscription to reveal all the available storage accounts listed
-    under the root object "Storage Account"
+    under the root object "Storage Accounts"
 
 8.  Drill into a storage account to see the types of storage available.
     For example, a storage account that contains Blob containers will
     have a list of blobs available.
 
-9.  If you select a blob in a storage account, you will see a list of
-    all the files available in the blob. Notice the menu bar that lists
-    available actions that can be taken with this storage account:
+9.  If you select a blob container in a storage account, you will see a list of
+    all the files available in the container. Notice the menu bar that lists
+    available actions that can be taken with this storage container:
 
     -   Upload
 
@@ -806,15 +805,15 @@ environment throughout this course.
 
     -   Paste
 
-    -   Rename
+    -   Clone with New Name
 
     -   Delete
+
+    -   Undelete
 
     -   Create Snapshot
 
     -   Manage Snapshots
-
-    -   Properties
 
     -   Folder Statistics
 
@@ -825,8 +824,8 @@ environment throughout this course.
 10. Microsoft Azure Storage Explorer provides a convenient GUI for
     managing storage accounts. This can be useful for easily downloading
     and uploading files into and out of the storage account and
-    verifying configuration. Note: You will see this menu when a blob is
-    selected. Blobs will be created in future labs.
+    verifying configuration. Note: You will see the menu above when a blob container is
+    selected. Blob containers will be created in future labs.
 
 <div style="page-break-after: always;"></div>
 
