@@ -3968,13 +3968,12 @@ Before proceeding to the next step, make sure that you have:
 
 2.  Under 'Pipelines' click the 'Service connections' button
 
-3.  Click the '+ New Service Connection' button and select 'Azure
-    Resource Manager' from the drop-down menu.
+3.  Click the 'Create service connection' button and select 'Azure
+    Resource Manager' from the side menu, then click Next.
 
-4.  From the 'Add Azure Resource Manager Service Connection' dialogue
+4.  From the 'New Azure service connection' side
     window,\
-    **click the hyperlink 'use the full version of the service
-    connection dialog**.' If you do not click this hyperlink, Azure
+    **Select Service principal (manual)**.' If you choose Service principal (automatic), Azure
     DevOps will attempt to use your currently logged in Azure DevOps
     credentials to create a new Service Principal and give it rights to
     the subscription, instead of associating an existing one.
