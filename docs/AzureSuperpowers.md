@@ -2584,7 +2584,7 @@ numberOfvmWorkerInstances: 3
 ```powershell
 1.	$DeploymentParametersBuildVM = @{
 2.	ResourceGroupName = 'AzSuperADLAB-<YOURALIAS>'
-3.	TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/adLab.json?st=2018-07-21T18%3A49%3A48Z&se=2020-12-31T18%3A49%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=X8HpZw2HeteWtf3F9WSfry3WizXJsejv%2Brv%2BcUrmeTM%3D'
+3.	TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?st=2019-03-27T01%3A54%3A27Z&se=2021-03-28T01%3A54%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=PP2e8y26iuayYdeyjY5x9dq8gOYR3QDIw%2FWWeyeGC3U%3D'
 4.	Timestamp         = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
 5.	CreateWorkerNodes = 'true'
 6.	FullPathToFile = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?st=2019-03-27T01%3A55%3A14Z&se=2021-03-28T01%3A55%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=ku9y0cpYebgB7fmfVMTT4kpOCjKEjzaEqoZOs3xDKpg%3D'
