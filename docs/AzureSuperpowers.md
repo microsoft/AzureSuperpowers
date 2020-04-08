@@ -2616,7 +2616,7 @@ well as any errors or warnings if your deployment is not successful.
 ## Lab 8 - PowerShell DSC
 --------------------
 
-| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an Azure Virtual Machine.  This lab focusses on using DSC in the Push based model. |
+| Lab Description | This lab is to familiarize yourself with PowerShell DSC, writing a basic DSC configuration, creating a localhost.mof, testing it locally on the system, and then using Azure to deploy that configuration to an Azure Virtual Machine.  This lab focuses on using DSC in the Push based model. |
 | :------------ | :-------------- |
 | Glossary of Terms | *DSC configuration* – DSC configurations are PowerShell scripts that define a special type of function. To define a configuration, you use the PowerShell keyword Configuration. Configurations are Declarative PowerShell scripts which define and configure instances of resources. |
 |  | *DSC resource* – The "make it so" part of DSC. They contain the code that put and keep the target of a configuration in the specified state. Resources reside in PowerShell modules. |
