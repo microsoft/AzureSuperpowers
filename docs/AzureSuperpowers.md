@@ -1442,7 +1442,7 @@ Resource Manager templates)
     make them difficult to set. The name must be between 3 and 24
     characters in length, use only numbers and lowercase letters, and be
     unique. The preceding template uses the
-    [uniqueString](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-group-template-functions-string.md#uniquestring)
+    [uniqueString](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-string#uniquestring)
     function to generate a hash value. To give this hash value more
     meaning, it adds the prefix *storage*.
 
@@ -1452,7 +1452,8 @@ Resource Manager templates)
 
 You are now ready to deploy this template. Next, you will deploy a
 storage account to the PowerShellRG that you created as
-part of the Azure AD and Service Principals lab.\
+part of the Azure AD and Service Principals lab.
+
 The storage account deployment should take just about 1 minute to
 complete.
 
@@ -1494,7 +1495,9 @@ Select-AzSubscription –Subscription '<Id>'
 
 The PowerShellRG resource group should already exist from
 the earlier Azure AD and Service Principal's Lab. If it does not, create
-the Resource Group prior to this step. Execute the following PowerShell:
+the Resource Group prior to this step. 
+
+Execute the following PowerShell:
 
 **Run lines 1-6 first. If your template comes back as valid, run line
 8.**
@@ -1720,7 +1723,7 @@ Your template now looks like:
 Redeploy the template **with new values** specified as runtime parameters as shown below.
 
 In a PowerShell command window, ensure your working directory is set to
-the folder containing your template and run the following commands:
+**C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates** and run the following commands:
 
 ```powershell
 1.	$params = @{
