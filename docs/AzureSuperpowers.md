@@ -868,7 +868,7 @@ In this case, simply copy the URL to the clipboard by manually selecting it and 
 | Estimated Time to Complete | 60 minutes |
 | Key Takeaways | 1. Create a Service Principal and assign rights from the Azure Portal |
 |  | 2. Create a Service Principal and assign rights from PowerShell |
-|  | 3. Login to PowerShell as a Service Principal |
+|  | 3. Login to Azure using PowerShell as a Service Principal |
 |  | After this lab you should have a good sense of how to create a Service Principal through the Azure Portal or PowerShell, and you should understand how to give that Service Principal rights to perform actions in an Azure subscription.  You should also be able to use PowerShell to perform actions against Azure as that Service Principal, however that functionality is primarily for troubleshooting.  In later labs, we will enter the Service Principal information into another system, which will then use it to perform actions (instead of a human performing PowerShell actions on their workstation). |
 | Author | Keith Hitchcock |
 |  | Ralph Kyttle  |
@@ -908,7 +908,7 @@ to circumvent that process.
 
 -   Password/Federation/Multi-factor
 
--   Can login to the ARM Portal
+-   Can login to the Azure Portal
 
 -   AAD Tenant is identified by \@UPN Suffix
 
@@ -949,10 +949,10 @@ to circumvent that process.
 
 ### Navigate to Application Registrations
 
-1.  On the left-hand side menu in Azure, select **Azure Active
+1.  On the left-hand side menu in Azure, select **All services** then select **Azure Active
     Directory**
 
-2.  In the Azure Active Directory pane under manage, select **App
+2.  In the Azure Active Directory pane under Manage, select **App
     registrations**
 
 ### Create a new Application Registration
@@ -1031,6 +1031,8 @@ used or a custom role created with least privileges**
 
 ### Create a new PowerShell file in VS Code to store your commands
 
+Open VS Code
+
 Click on **File** then **New File.**
 
 Click on the language indicator - which is located at the bottom of the
@@ -1066,7 +1068,7 @@ Login-AzAccount -Environment AzureUSGovernment
 
 And then login into Azure (as yourself) using the pop-up dialogue box
 
-**NOTE: This will probably have popped-up under the
+**NOTE: The login window will probably have popped-up under the
 current Window(s)**
 
 ### Select the desired subscription
@@ -1276,7 +1278,7 @@ When prompted (line 3), enter the password for the Service Principal you
 created using PowerShell
 
 **Note:** The password needed in this exercise should be listed in your
-terminal as a warning output\
+terminal as output from a previous command\
 \"The password is: \$password (WRITE THIS DOWN)\"
 
 ```powershell
