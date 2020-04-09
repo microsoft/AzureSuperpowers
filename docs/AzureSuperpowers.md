@@ -2056,7 +2056,7 @@ rejected.
     make VS Code aware of new branches, you will need to perform a **git
     fetch** operation.
 
-3.  From within VS Code, View -\> Command Palette
+3.  From the top menu bar of VS Code, select View -\> Command Palette
 
 4.  In the command palette, type **git fetch** and press enter
 
@@ -2122,8 +2122,7 @@ rejected.
     You can configure Azure DevOps to enforce consistent workflows and
     process across your team. Set up branch policies to ensure that code
     merges meet your requirements before completion. Branch policies can
-    be configured to protect your important branches by preventing
-    direct pushes, requiring reviewers, and ensuring clean builds.
+    be configured to protect your important branches by requiring reviewers, ensuring clean builds, and preventing direct pushes.
 
 <div style="page-break-after: always;"></div>
 
@@ -2170,7 +2169,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
     the upper right.
 
 6.  Open the context menu for the **master** branch by selecting the
-    ellipsis (\...) icon. Select **Branch policies** from the context
+    ellipsis (\...) icon on the right side. Select **Branch policies** from the context
     menu.
 
     <img src="./media/image29.png" border="1">
@@ -2185,8 +2184,9 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
     <img src="./media/image30.png" border="1">
 
-9.  Notice how **Requestors can approve their own changes** is selected.
-    If **Requestors can approve their own changes** is not selected, the
+9.  Notice how **Allow requestors to approve their own changes** is selected.
+
+    If **Allow requestors to approve their own changes** is not selected, the
     creator of the pull request can still vote Approve on their pull
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
@@ -2203,7 +2203,7 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
 A commit is the act of recording changes to the repository. A repository
 contains all files of a project and stores each file's revision history.
-When changes are made to one or more files, those can be saved to a
+When changes are made to one or more files, those changes can be saved to a
 branch as a commit. Each commit can contain the changes to one or
 multiple files.
 
@@ -2308,7 +2308,7 @@ the \--global option when you're in that project.
 
     <img src="./media/image33.png" border="1">
 
-8.  In the status bar at the bottom of VS Code, notice the number 1 next
+8.  In the status bar at the bottom left corner of VS Code, notice the number 1 next
     to the up arrow. This indicates that there is one pending commit
     waiting to be pushed to the Git repository stored in Azure DevOps.
 
@@ -2360,7 +2360,7 @@ the \--global option when you're in that project.
 <!-- -->
 
 9.  In the **Message** field, enter a short description of the change
-    being made. For example, Initial Commit.
+    being made. For example, "Changing vmName from a variable to a parameter".
 
 <!-- -->
 
@@ -2369,7 +2369,7 @@ the \--global option when you're in that project.
     Note that the change has not yet been updated to the hosted Git
     repository in Azure DevOps.
 
-11. In the status bar at the bottom of VS Code, notice the number next
+11. In the status bar at the bottom left corner of VS Code, notice the number next
     to the up arrow is updated to 2. This indicates that there are now
     two pending commits waiting to be pushed to the Git repository
     stored in Azure DevOps. Throughout this exercise you committed over
