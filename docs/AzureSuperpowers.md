@@ -1772,13 +1772,13 @@ Remove-AzResourceGroup -Name 'PowerShellRG-<YOURALIAS>'
 | Lab Description | In this lab you will create a new Azure DevOps organization, a new project, and a new code repository.  You will initialize the code repository and clone it to your local computer, and you will add other users to your project so they can collaborate. |
 | :------------ | :-------------- |
 | Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/\<organizationname\> and can have many projects under it |
-|  | *project -* a project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
+|  | *project -* A project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
 |  | *repository -* A git repository is all code files, all branches, all metadata, and commit history of changes |
-|  | *clone* - the ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a ‘remote’ location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
+|  | *clone* - The ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a local location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. The hierarchy of Azure DevOps |
 |  | 2. Familiarity with Azure DevOps projects |
-|  | 3. Able to interact with the git repositories that live inside Azure DevOps projects |
+|  | 3. Ability to interact with the git repositories that live inside Azure DevOps projects |
 | Author | Keith Hitchcock |
 
 Process Flow
@@ -1794,19 +1794,23 @@ Process Flow
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
 2.  In the upper-right hand corner, you might be automatically logged in
-    with your Microsoft Account. If not, please login.
+    with your Microsoft Account.  If you see your name listed click the logged in user in the upper-right hand
+    corner and select 'Visual Studio profile' from the expanded menu.
 
-3.  Once logged in, click the logged in user in the upper-right hand
-    corner and\
-    select 'Visual Studio Profile' from the expanded menu.
+3.  If not, please click **Sign in** in the upper-right hand
+    corner to login.
 
 ### Create a new organization: https://dev.azure.com/\<organizationname\>
 
-1.  From the *Azure DevOps O*r*ganizations* page, you can see all the
-    organizations that you are either a *Member* of, or *Owner* of. In
+1.  From the *Azure DevOps Organizations* page, you can see all the
+    organizations that you are either a *Member* of, or *Owner* of. 
+    
+    In
     the upper right-hand corner of the page, click the 'Create New
     Organization' button and create a new organization with a new
-    https://dev.azure.com/\<organizationname\>. Because the organization
+    https://dev.azure.com/\<organizationname\>
+    
+    Because the organization
     name is a DNS name it must be globally unique. The specific
     organization name that you choose is largely irrelevant.
 
@@ -1842,31 +1846,31 @@ Process Flow
 1.  From the 'Files' section of the Project, in the upper right-hand
     corner there is a 'Clone' button which will allow you to copy the
     URL of the git repository (hosted on Azure DevOps) for this project.
-    Click the copy button to copy the URL to your clipboard.
+    Click the Clone button, then click the copy button on the right side of the URL to copy the URL to your clipboard.
+2.  Open Windows Explorer and create the following folder: **C:\\MyAzureProject**
 
-2.  Launch the Visual Studio Code application your local system
+3.  Launch the Visual Studio Code application your local system
 
-3.  View -\> Command Palette
+4.  From the top menu bar, select View -\> Command Palette
 
-4.  In the command palette, type 'git clone' and press enter
+5.  In the command palette, type 'git clone' and press enter
 
-5.  When prompted for 'Repository URL' paste the value obtained from
+6.  When prompted for 'Repository URL' paste the value obtained from
     Step 1 into the command palette
 
-6.  Select a folder to store the new repository locally **(Ex.
-    C:\\MyAzureProject)**. Note that you are selecting the top level
+7.  When prompted to select a folder to store the new repository locally choose **C:\\MyAzureProject**. Note that you are selecting the top level
     folder. A subfolder will be created with the repository name
     automatically. Because a repository is similar to a database, **do
     not** select a folder that is managed by technologies
     like OneDrive, Dropbox, etc. This can cause issues with both
     technologies fighting to track changes.
 
-7.  You may be prompted to authenticate, please enter credentials that
+8.  You may be prompted to authenticate, please enter credentials that
     are valid for your Azure DevOps organization
 
-8.  When Visual Studio Code prompts you to 'Open Repository', select
+9.  When Visual Studio Code prompts you at the bottom right corner of the screen to 'Open Repository', select
     that option. You should now see the repository and the default
-    README.md file that you created by the step where you initialized
+    README.md file that you created in the step where you initialized
     the repository in Azure DevOps.
 
 <div style="page-break-after: always;"></div>
@@ -1890,7 +1894,7 @@ Process Flow
 2.  Now that you have the local git repository open in file explorer,
     you can move (or delete) files to it the way you would normally
     (e.g. Copied from local drive, USB, Right-click-\>New-\>File). The
-    files that you move into file explorer will be added to the <ins>current
+    files that you move into file explorer will impact the <ins>current
     branch</ins> of the git repository. The current branch can be
     viewed in the bottom left-hand corner of VS Code. It will likely say
     'master' right now, but whichever branch it indicates is where any
@@ -1909,10 +1913,11 @@ Process Flow
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
 2.  In the upper-right hand corner, you might be automatically logged in
-    with your Microsoft Account. If not, please login.
+    with your Microsoft Account.  If you see your name listed click the logged in user in the upper-right hand
+    corner and select 'Visual Studio profile' from the expanded menu.
 
-3.  Once logged in, click the logged in user in the upper-right hand
-    corner and select 'Visual Studio Profile' from the expanded menu.
+3.  If not, please click **Sign in** in the upper-right hand
+    corner to login.
 
 ### Access the Azure DevOps Organization that holds your project
 
@@ -1943,7 +1948,7 @@ Process Flow
 | **Project Administrators** | This role is the administrator role.  Members added to this group can do anything in the project, including modifying security/group membership of other users |
 | | |
 
-4.  Click the group you wish to add a user to
+4.  Click the Readers group
 
 5.  Select the 'Members' button
 
@@ -1957,7 +1962,7 @@ Process Flow
 When adding members to a project, we have seen instances where the user
 did not show up in the lookup window, but they were still able to be
 added successfully to the project by simply typing in the email address
-and clicking on Save changes. Once the user is added, refresh the
+and clicking on Save. Once the user is added, refresh the
 members list.
 
 <div style="page-break-after: always;"></div>
