@@ -2700,10 +2700,10 @@ well as any errors or warnings if your deployment is not successful.
 
 1.  From any web browser, navigate to <https://github.com>
 
-2.  In the search box, type 'sqlserverdsc' and click the button to
+2.  In the search box, type **sqlserverdsc** and click the button to
     search
 
-3.  Click the hyperlink to 'PowerShell/SqlServerDSC' which is the link
+3.  Click the hyperlink to 'dsccommunity/SqlServerDsc' which is the link
     to the SqlServerDsc project in github
 
 4.  Scroll down the page and note the list of 'Resources' and the
@@ -2714,7 +2714,7 @@ well as any errors or warnings if your deployment is not successful.
 
 ## Exercise - Build a new Azure VM and install custom DSC resources
 
-### Create a new Windows Server 2016 VM using the Azure Portal
+### Create a new Windows Server 2019 VM using the Azure Portal
 
 1.  Open a web browser
 
@@ -2724,13 +2724,15 @@ well as any errors or warnings if your deployment is not successful.
 3.  Choose **Create a resource** in the upper left-hand corner of the
     Azure portal.
 
-4.  Under **Popular** Click on Windows Server 2016 Datacenter
+4.  In the search box, type **Windows Server** and hit Enter
 
-5.  Responses to the portal wizard are listed below. Your portal
+5.  Under **Select a software plan**, click the dropdown and select **Windows Server 2019 Datacenter**, then click Create
+
+6.  Responses to the portal wizard are listed below. Your portal
     experience may look different as the portal updates frequently, but
     the information needed to deploy should be listed below.
 
-6.  Basics tab
+7.  Basics tab
 
     a.  Make sure the correct subscription is selected and then choose
         to **Create new** resource group
@@ -2758,7 +2760,7 @@ well as any errors or warnings if your deployment is not successful.
 
 7.  Review + create tab
 
-    a.  **DO NOT IMMEDIATELY CLICK OK.**  Instead, look to the bottom of the page and click on the link **Download a template for automation**
+    a.  **DO NOT IMMEDIATELY CLICK CREATE.**  Instead, look to the bottom of the page and click on the link **Download a template for automation**
 
     b.  This will present you with an ARM template that matches your
         deployment as you defined in the portal. This can be very
@@ -2776,12 +2778,11 @@ To return back to the deployment summary, click on the X to exit out from the Te
 
    <img src="./media/image47.png" border="1">
 
-Click Create to start the deployment of your VM, which will take 5-10
-    minutes to complete.
+Click **Create** to start the deployment of your VM, which will take just a few minutes to complete.
 
 ### Login to the VM
 
-1.  Open an RDP session to the DSC1 VM created in the previous step. Once logged into this VM, open the PowerShell ISE as an Administrator
+1.  Open a RDP session to the DSC1 VM created in the previous step. Once logged into this VM, open the PowerShell ISE as an Administrator
 
 ### Get a custom DSC resource from the PowerShell Gallery
 
@@ -2794,14 +2795,19 @@ Click Create to start the deployment of your VM, which will take 5-10
 ```powershell
 Find-Module -Name '*security*' 
 ```
+    If not already installed, you may be prompted to install the NuGet provider. Select Yes if this is the case.
 
-3.  You will see multiple answers since this is searching against the
-    PowerShell gallery, you want the 'SecurityPolicyDSC' module, which
+3.  You will see multiple results since this is searching against the
+    PowerShell gallery.  Install the 'SecurityPolicyDSC' module, which
     you can download via:
 
 ```powershell
 Install-Module -Name SecurityPolicyDSC 
 ```
+
+4.  You will be prompted to confirm downloading SecurityPolicyDSC with a
+    message, "You are installing the modules from an untrusted
+    repository." Click or select yes when prompted.
 
 <div style="page-break-after: always;"></div>
 
@@ -2871,11 +2877,13 @@ Get-DscResource -Name Firewall | Select -ExpandProperty Properties
 
 ### Create a DSC Configuration
 
-1.  Copy/paste the following DSC configuration into the PowerShell ISE
+1.  Copy/paste the following DSC configuration into the Script Pane of the PowerShell ISE
     of your Azure VM named DSC1
 
     From: C:\\MyAzureProject\\Azure Superpowers\\Lab - PowerShell
-    DSC\\DemoConfig.ps1
+    DSC\\DemoConfig.ps1 (On your local system)
+
+    The Script Pane is a text editor located at the top of the window.  From the top menu bar, select **View**, then click **Show Script Pane**
 
 ```powershell
 configuration DemoConfig {
@@ -3004,7 +3012,7 @@ files stay private. For this exercise, we're sticking to basics and will
 be using a publicly accessible URI to reduce the likelihood that
 something goes wrong.
 
-1.  Open Server Manager and turn off Internet Explorer Enhanced Security
+1.  From within your DSC1 VM, open Server Manager and turn off Internet Explorer Enhanced Security
     Configuration
     <img src="./media/image49.png" border="1">
 
@@ -3015,14 +3023,13 @@ something goes wrong.
     account to deploy.
 
 4.  Access the storage account through the Azure portal and under 'Blob
-    Service / Blobs' click the\
-    '+ Container' button and create a new container (any name) and
+    service' click on Containers.  Click the '+ Container' button on the top row and create a new container (any name) and
     configure the Public access level to **'Container (anonymous read
     access for containers and blobs)'**. Anonymous access is not the
     default and it's unlikely that we will use this for production
-    configurations.
+    configurations.  We are allowing anonymous access just to simplify the requirements for this lab.
 
-5.  Click into your newly created Container. Click the 'Upload' button
+5.  Click into your newly created Container by clicking on its name. Click the 'Upload' button
     and select your files to upload.
 
 6.  Upload the DemoConfigZip.zip
@@ -3114,7 +3121,9 @@ Select-AzSubscription –Subscription '<Id>'
     Superpowers\\Lab - PowerShell DSC\\
 
 3.  In PowerShell, execute the following PowerShell to deploy the DSC
-    resource, substituting the \<VALUES\> for your own environment.
+    resource, substituting the \<VALUES\> for your own environment.  
+    
+    (Commands below can be copied from C:\MyAzureProject\Azure Superpowers\Lab - Helper Files\Helper.txt)
 
 ```powershell
 1.	$params = @{
