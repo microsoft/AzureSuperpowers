@@ -3189,15 +3189,16 @@ Pay attention to filenames
 ## Lab 9 - Storage Accounts and SAS Tokens
 -------------------------------------
 
-| Lab Description | This lab will teach you how to upload files to Azure Storage Accounts and secure them by protecting the files with Secure Access Tokens (SAS) tokens |
+| Lab Description | This lab will teach you how to upload files to Azure Storage Accounts and secure them by protecting the files with Shared Access Signature (SAS) tokens |
 | :------------ | :-------------- |
-| Glossary of Terms | *sas* – Secure Access Token.  This is a string that you append to the URL you are accessing which is an encoded/signed string that describes your rights.  Read, write, Starting When, Expiring When, Can you see Containers, etc. |
+| Glossary of Terms | *SAS* – Shared Access Signature Token.  This is a string that you append to the URL you are accessing which is an encoded/signed string that describes your rights.  Read, write, Starting When, Expiring When, Can you see Containers, etc. A shared access signature provides secure delegated access to resources in your storage account without compromising the security of your data. With a SAS, you have granular control over how a client can access your data. You can control what resources the client may access, what permissions they have on those resources, and how long the SAS is valid, among other parameters. |
 |  | *uri* – Uniform Resource Identifier.  https://portal.azure.com is a URL.  https://portal.azure.com/Default.html is a URI.  URI refers to the full path to the resource, not just the DNS name of the URL. |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. Upload files to Azure Storage |
 |  | 2. Generate SAS Token |
 |  | 3. Access private Azure Storage files with URI + SAS Token |
 | Author | Wes Adams |
+|  | Ralph Kyttle |
 
 <div style="page-break-after: always;"></div>
 
@@ -3247,11 +3248,11 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 ### Create an Azure Storage Account
 
 1.  Storage account names must be universally unique, **lower case** and alphanumeric (3-24 characters). In this example,
-    the storage account name Aliasblobstorage is used. When this
-    is listed, replace Alias with your alias, for example if your
+    the storage account name aliasblobstorage is used. When this
+    is listed, replace alias with your alias, for example if your
     alias was bsmith, your storage account would be bsmithblobstorage.
 
-2.  Create a BlobStorage account using the following command:
+2.  Create a Storage account using the following command:
 
 ```powershell
 1.	$params = @{
@@ -3301,7 +3302,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 5.	Get-AzStorageAccountKey @params
 ```
 
-2.  We will need the account key to create a SAS Token. A SAS Token
+2.  We will need an account key to create a SAS Token. A SAS Token
     (shared access signature) provides delegated access to resources in
     your storage account. You can assign full or reduced permissions to
     a SAS Token. SAS Tokens can also have expirations set and can more
@@ -3319,7 +3320,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 3.  We will need to create an Azure Storage Context. The context
     describes the Azure Storage Account and is needed to create a
     Storage Container in the next step. Uncomment the Environment
-    parameter if you are working with something other than Azure
+    parameter on Line 4 if you are working with something other than Azure
     Commercial, such as Microsoft Azure Government.
 
 ```powershell
@@ -3394,7 +3395,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 ```
 
 2.  The SAS Token, if correct, should be in a similar format: **\
-    ?sv=2018-03-28&si=policyexample&sr=c&sig=6cVRHdm3rGFEBCa6sSNhmvDKAWZxruM4EQX8wpv2NS4%3D**
+    ?sv=2019-02-02&sr=c&si=policyexample&sig=SbUIztkDjCx%2FWkxJr%2F0%218wXI%3D**
 
 <div style="page-break-after: always;"></div>
 
@@ -3402,7 +3403,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 
 ### Create Test Files
 
-1.  Create a directory in the root of C: called "SASExample"
+1.  On your local system, create a directory in the root of C: called "SASExample"
 
 2.  Create a text file called "File1.txt"
 
@@ -3424,7 +3425,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 
 4.  Select the StorageAccount **\<ALIAS\>blobstorage**
 
-5.  Under Services, select **Blobs**
+5.  Under 'Blob service' click on Containers.
 
 6.  Select the Storage Container **sasexample**
 
@@ -3459,7 +3460,7 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 
 3.  Click **Upload Files...**
 
-4.  Under "Files" select **C:\\sasexample\\file2.txt**
+4.  Under "Selected files" select **C:\\sasexample\\file2.txt**
 
 5.  Click **Upload**
 
@@ -3535,13 +3536,13 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 
 3.  Notice **File3**.**txt** is visible from Azure Storage Explorer
 
-4.  Notice that the **File3.txt** has a different ContentType from
-    **File1.txt** and **File2.txt.**\
+4.  Notice that the files may have different ContentTypes
+
     **Note:** ContentType relates to how a web browser
     will interact with the file (Download, Open, Display) and can be
     changed if desired.
 
-5.  If desired, you could ensure that File3.txt be uploaded with a
+5.  If desired, you could ensure that a file is uploaded with a
     certain ContentType by including the following in your splatted
     parameters
 
