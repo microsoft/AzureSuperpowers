@@ -7,3 +7,14 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip
 Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
 
 -vmName $(vmName) -adminPassword $(adminPassword)
+
+$params = @{
+    VMName            = 'DSC1'
+    ResourceGroupName = '<RESOURCEGROUPNAME>'
+    ZipFileURI        = 'https://<ACCT>.blob.core.windows.net/<CONTAINER>/DemoConfigZip.zip'
+    FileName          = 'DemoConfig.ps1'
+    TemplateFile      = 'DSC.json'
+    ConfigName        = 'DemoConfig'
+    Verbose           = $true
+    }
+New-AzResourceGroupDeployment @params
