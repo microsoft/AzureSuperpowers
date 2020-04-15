@@ -19,8 +19,7 @@
 *   [Deploying resources into Azure using ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy)
 *   [Azure Resource Group planning and design](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
 *   [Azure AD and RBAC - Controlling which Azure resources accounts have access to](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal)
-*   [PowerShell DSC - How to author a DSC configuration](https://docs.microsoft.com/en-us/powershell/dsc/configurations/configurations
-)
+*   [PowerShell DSC - How to author a DSC configuration](https://docs.microsoft.com/en-us/powershell/scripting/dsc/configurations/configurations)
 *   [Git source control framework - Basics of source control and collaborating with others](https://docs.microsoft.com/en-us/azure/devops/learn/git/what-is-git)
 
 ## Scope
