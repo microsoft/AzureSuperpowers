@@ -3948,12 +3948,12 @@ Before proceeding to the next step, make sure that you have:
 
 1.  Open a web browser and navigate to <https://www.visualstudio.com>.
 
-2.  In the upper-right hand corner, you should be automatically logged
-    in with your Microsoft Account.  If not, please login.
+2.  In the upper-right hand corner, you might be automatically logged in
+    with your Microsoft Account.  If you see your name listed click the logged in user in the upper-right hand
+    corner and select 'Visual Studio profile' from the expanded menu.
 
-3.  Once logged in, please click the logged in user in the upper-right
-    hand corner and select\
-    'Visual Studio Profile' from the expanded menu.
+3.  If not, please click **Sign in** in the upper-right hand
+    corner to login.
 
 ### Access the Azure DevOps Organization that holds your project
 
@@ -3990,33 +3990,32 @@ Before proceeding to the next step, make sure that you have:
 
 4.  From the 'New Azure service connection' side
     window,\
-    **Select Service principal (manual)**.' If you choose Service principal (automatic), Azure
+    **Select Service principal (manual)** then click Next.' If you choose Service principal (automatic), Azure
     DevOps will attempt to use your currently logged in Azure DevOps
     credentials to create a new Service Principal and give it rights to
     the subscription, instead of associating an existing one.
 
 <div style="page-break-after: always;"></div>
 
-5.  From the expanded 'Add Azure Resource Manager Service Connection'
-    dialog window please enter the requested information. **Please
-    remove any values that have been auto-populated. Review each
+5.  Enter the requested information. **Please
+    remove any values if they have been auto-populated. Review each
     value**:
 
-        a.  Connection Name - This name can be anything. A meaningful name might include info about the purpose of the service principal (i.e. 'DEV Connection' or 'AZGOV LIMITED', or 'AIRS Demo'
+        a.  Environment - select 'Azure Cloud' for commercial Azure, 'Azure US Government' for MAG, or whichever environment the Azure subscription you want Azure DevOps to connect to exists in.
 
-        b.  Environment - select 'AzureCloud' for commercial Azure, 'AzureUSGovernment' for MAG, or whichever environment the Azure subscription you want Azure DevOps to connect to exists in.
+        b.  Subscription ID - This value is the subscription ID of the Azure subscription you wish to connect to. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or from the Azure Portal.
 
-        c.  Subscription ID - This value is the subscription ID of the Azure subscription you wish to connect to. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or from the Azure Portal.
+        c.  Subscription Name - This value is the Name of the Azure subscription you wish to connect to. It matters that the name entered here is the name that is associated with Subscription ID in the last field. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or through the Azure Portal.
 
-        d.  Subscription Name - This value is the Name of the Azure subscription you wish to connect to. It matters that the name entered here is the name that is associated with Subscription ID in the last field. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or through the Azure Portal.
+        d.  Service Principal ID – This is also known as the ‘AppID’ or ‘Application ID’.  This information can be obtained from the Get-AzADServicePrincipal -DisplayName <SPNAME> cmdlet in PowerShell or through the Azure Portal in Azure Active Directory under ‘App Registrations’.
 
-        e.  Service Principal Client ID – This is also known as the ‘AppID’ or ‘Application ID’.  This information can be obtained from the Get-AzADServicePrincipal -DisplayName <SPNAME> cmdlet in PowerShell or through the Azure Portal in Azure Active Directory under ‘App Registrations’.
+        e.  Service principal key - This is the Service Principal's password.
 
-        f.  Service Principal Key - This is the Service Principal's password.
+        f.  Tenant ID - The ID of the Azure Active Directory tenant that the Service Principal was created in
 
-        g.  Tenant ID - The ID of the Azure Active Directory tenant that the Service Principal was created in
+        g.  Service Connection Name - This name can be anything. A meaningful name might include info about the purpose of the service principal (i.e. 'DEV Connection' or 'AZGOV LIMITED', or 'AIRS Demo'
 
-### Click the Verify Connection hyperlink
+### Click the Verify button
 
 The information must successfully verify before proceeding to the next
 exercise. If it does not, doublecheck the information listed above,
@@ -4033,10 +4032,10 @@ subscription in order to be successfully verified.
 
 ### Create a new Azure DevOps Build
 
-1.  From the Azure DevOps web site, select the 'Pipelines -\> Builds'
+1.  From the Azure DevOps web site, select the 'Pipelines -\> Pipelines'
     button from the left of the page
 
-2.  Click the 'New Pipeline' button to create a new Build
+2.  Click the 'Create Pipeline' button to create a new Build
 
 3.  **You will need to click the link, "Use the classic editor" for the
     next steps to work**
@@ -4059,7 +4058,7 @@ subscription in order to be successfully verified.
 
 10. On the right side, change the Display Name to 'Run Azure PowerShell'
 
-11. Change the Task Version to the following: **4.\* (preview)**
+11. Ensure the Task version is set to the following: **4.\***
 
 12. Change 'Azure Subscription' to the Azure Service Connection created
     in the previous exercise which will be listed under "Available Azure
@@ -4076,24 +4075,21 @@ Get-AzResourceGroup
 
 15. Under 'Preferred Azure PowerShell Version' set the value to 1.0.0
 
-16. Click 'Save & Queue' at the top of the screen, and click 'Save & Queue'
+16. Click 'Save & queue' at the top of the screen, and click 'Save & queue'
 
 17. In the 'Run pipeline' dialog window you can leave
     all options default and click the 'Save and run' button.
 
-18. The build progress summary will begin automatically.
-
-19. Wait for the build to find an available agent and connect to Azure,
-    you can watch the output window scroll by.
+18. The build job will be queued, and then will change to a status of running.  Click on 'Agent job 1' to view the output of your build.
 
 <div style="page-break-after: always;"></div>
 
-20. Once the build completes and you receive your green check marks (may
+19. Once the build completes and you receive your green check marks (may
     take a few minutes because of this free service tier) you can select
     the 'Run Azure PowerShell' section of the log that is currently
     displayed and it will display the output of the PowerShell cmdlet.
 
-21. The output should include only the resource groups that your service
+20. The output should include only the resource groups that your service
     principal has access to. You may have other resource groups in your
     subscription, but in this exercise we see that a service principal
     can only interact with resources that it has been granted permission
