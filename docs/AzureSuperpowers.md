@@ -4489,18 +4489,16 @@ Files\\Helper.txt)
 
 1.  From within your Azure DevOps project, select the Pipelines tab
 
-2.  Under Pipelines, click Builds
+2.  Under Pipelines, click Pipelines
 
-3.  From the Builds screen, click New pipeline
+3.  From the Create your first Pipeline screen, click Create Pipeline
 
-4.  At the **Where is your code?** screen click the link, **"Use the
-    classic editor"**
+4.  At the **Where is your code?** screen click the link at the bottom, **"Use the classic editor"**
 
 5.  Your Azure DevOps Git Repo should be selected by default. Click
     Continue
 
-6.  When prompted for a template, select the option to start with an
-    Empty job
+6.  When prompted for a template, select the option at the top to start with an Empty job
 
 7.  Name your build 'DSC Files - CI'
 
@@ -4526,7 +4524,7 @@ Files\\Helper.txt)
 
 12. You will need to edit each task to specify required settings
 
-13. PowerShell Task 1
+13. PowerShell Task 1 **(Inline)**
     <img src="./media/image61.png" border="1">
 
 **Script:** Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
@@ -4548,12 +4546,9 @@ Files\\Helper.txt)
 
 17. Once you have made all edits to the tasks, save your build.
 
-18. Queue the build to execute it and have it run the tasks that you
-    defined.
+18. Queue the build to execute it and have it run the tasks that you defined.
 
-19. Upon successful build completion, you should be able to confirm that
-    the file upload was successful by reviewing the storage account
-    using Azure Storage Explorer
+19. Upon successful build completion, you should be able to confirm that the file upload was successful by reviewing the storage account using Azure Storage Explorer.  You can also click into the build job, listed as 'Agent job 1' to see more information from Azure DevOps.
 
 20. Once you have seen a successful build, return to the Build
     Definition and edit your build **Triggers**
@@ -4570,7 +4565,7 @@ Files\\Helper.txt)
     This file can be found at:
     *DSCBuild\\DSCSourceFilesForBuild\\SetWinSecuritySettings*
 
-24. Save, commit, sync
+24. Save, commit, push
 
 25. Perform a pull request to merge your code from your dev branch into
     your master branch
