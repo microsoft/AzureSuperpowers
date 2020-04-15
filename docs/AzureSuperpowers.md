@@ -4189,7 +4189,7 @@ The virtual machine is discarded after one use.
 5.  When prompted for 'Repository URL' paste the value obtained from
     Step 1 into the command palette
 
-6.  Select a folder to store the new repository locally. Note that you
+6.  Select a new, empty folder to store the new repository locally. Note that you
     are selecting the top level folder. A subfolder will be created with
     the repository name automatically. Because a repository is similar
     to a database, **do not** select a folder that is
@@ -4248,8 +4248,9 @@ url: <https://docs.microsoft.com/en-us/vsts/repos/git/branch-policies>
 
     <img src="./media/image30.png" border="1">
 
-5.  Notice how **Requestors can approve their own changes** is selected.
-    If **Requestors can approve their own changes** is not selected, the
+5.  Notice how **Allow requestors to approve their own changes** is selected.
+
+    If **Allow requestors to approve their own changes** is not selected, the
     creator of the pull request can still vote Approve on their pull
     request, but their vote won\'t count toward the Require a minimum
     number of reviewers policy.
