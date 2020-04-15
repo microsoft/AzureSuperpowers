@@ -525,10 +525,9 @@ getting lost in the software.
     Settings (JSON)**\
     <img src="./media/image4.png" border="1">
 
-8.  This will open a settings.json file, which will list configured user
-    settings that override default settings. Note that each line is
-    comma separated. To revert changes that you have made and restore
-    defaults, you can remove any settings that are listed.
+8.  This will open a settings.json file, which lists configured user
+    settings that override the defaults. Each line is
+    comma separated. To revert changes and restore defaults, you can remove any settings that are listed.
 
 9.  One example of a user setting is configuring a default file type in\
     VS Code, which can be accomplished by adding in the following
@@ -1854,6 +1853,8 @@ Process Flow
 
 6.  When prompted for 'Repository URL' paste the value obtained from
     Step 1 into the command palette
+
+<div style="page-break-after: always;"></div>
 
 7.  When prompted to select a folder to store the new repository locally choose **C:\\MyAzureProject**. Note that you are selecting the top level
     folder. A subfolder will be created with the repository name
