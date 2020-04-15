@@ -1457,8 +1457,7 @@ part of the Azure AD and Service Principals lab.
 The storage account deployment should take just about 1 minute to
 complete.
 
-In the PowerShell terminal of VS Code, Set your working directory to
-**C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates**
+In the PowerShell terminal of VS Code, Set your working directory to **C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates**
 
 Ensure that you have selected the PowerShell Integrated Console
 
@@ -1622,8 +1621,7 @@ below, using the edit1.json for the input
 In the variables section, add a variable named storageName. It combines
 the prefix value from the parameters and a hash value from the
 [uniqueString](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-group-template-functions-string.md#uniquestring)
-function. It uses the
-[toLower](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-group-template-functions-string.md#tolower)
+function. It uses the [toLower](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-group-template-functions-string.md#tolower)
 function to convert all characters to lowercase. Storage account names
 must be between 3 and 24 characters in length, use only numbers and
 lowercase letters, and be unique. This data can be found in edit2.json
@@ -1722,8 +1720,7 @@ Your template now looks like:
 
 Redeploy the template **with new values** specified as runtime parameters as shown below.
 
-In a PowerShell command window, ensure your working directory is set to
-**C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates** and run the following commands:
+In a PowerShell command window, ensure your working directory is set to **C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates** and run the following commands:
 
 ```powershell
 1.	$params = @{
@@ -2439,8 +2436,7 @@ pushing new changes up**
     combine the review and merging of your code into a single
     collaborative process.
 
-2.  Given this policy, we will create a pull request to merge changes
-    from the **dev** branch to the **master** branch.
+2.  Given this policy, we will create a pull request to merge changes from the **dev** branch to the **master** branch.
 
 3.  Open a web browser and navigate to
     <https://dev.azure.com/YourOrganizationName>
@@ -2734,8 +2730,7 @@ well as any errors or warnings if your deployment is not successful.
 
 7.  Basics tab
 
-    a.  Make sure the correct subscription is selected and then choose
-        to **Create new** resource group
+    a.  Make sure the correct subscription is selected and then choose to **Create new** resource group
 
     b.  Enter a name for the resourcegroup: portaldscrg-\<YOURALIAS\>
 
