@@ -47,7 +47,7 @@
         }
     },
     "variables": {
-        "SasToken": "?st=2019-03-27T02%3A57%3A41Z&se=2022-03-28T02%3A57%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=wTyTGJlw3oj7Z5f3sZs8v5zt536OOuY8%2FJvKQbojewY%3D",
+        "SasToken": "?sv=2020-04-08&st=2021-08-30T18%3A01%3A07Z&se=2031-08-31T18%3A01%3A00Z&sr=c&sp=rl&sig=lC%2BhFWF1NyT3LuqZKs%2BNKo%2F3XV8Ml9lc9M%2F71zqsfxw%3D",
         "virtualNetworkName": "adLabVnet",
         "subnetName": "Subnet1",
         "domainfqdn": "domain.local"
@@ -136,10 +136,10 @@
                         "value": "Standard_DS2_v2"
                     },
                     "TemplateSasToken": {
-                        "value": "?st=2018-07-20T03%3A08%3A31Z&se=2021-01-01T03%3A08%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=7EtwntigOT%2BKwmem6rOkOZYNB7aLu3gcFEDfLPpERRA%3D"
+                        "value": "?sv=2020-04-08&st=2021-08-30T18%3A01%3A07Z&se=2031-08-31T18%3A01%3A00Z&sr=c&sp=rl&sig=lC%2BhFWF1NyT3LuqZKs%2BNKo%2F3XV8Ml9lc9M%2F71zqsfxw%3D"
                     },
                     "BinSasToken": {
-                        "value": "?st=2018-07-20T03%3A09%3A35Z&se=2021-01-01T03%3A09%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=66XHhP1cGBwrG9AnmSWpBdEIWyx994F9vQ8bZHYum2Q%3D"
+                        "value": "?sv=2020-04-08&st=2021-08-30T18%3A03%3A38Z&se=2031-08-31T18%3A03%3A00Z&sr=c&sp=rl&sig=szn7ccGX6uXCdvlZ8aMgaPFyxdmcM%2FPe%2Fsea9EDdgH0%3D"
                     }
                 }
             },
@@ -231,10 +231,10 @@
                         "value": "Standard_DS2_v2"
                     },
                     "TemplateSasToken": {
-                        "value": "?st=2018-07-20T03%3A08%3A31Z&se=2021-01-01T03%3A08%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=7EtwntigOT%2BKwmem6rOkOZYNB7aLu3gcFEDfLPpERRA%3D"
+                        "value": "?sv=2020-04-08&st=2021-08-30T18%3A01%3A07Z&se=2031-08-31T18%3A01%3A00Z&sr=c&sp=rl&sig=lC%2BhFWF1NyT3LuqZKs%2BNKo%2F3XV8Ml9lc9M%2F71zqsfxw%3D"
                     },
                     "BinSasToken": {
-                        "value": "?st=2018-07-20T03%3A09%3A35Z&se=2021-01-01T03%3A09%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=66XHhP1cGBwrG9AnmSWpBdEIWyx994F9vQ8bZHYum2Q%3D"
+                        "value": "?sv=2020-04-08&st=2021-08-30T18%3A03%3A38Z&se=2031-08-31T18%3A03%3A00Z&sr=c&sp=rl&sig=szn7ccGX6uXCdvlZ8aMgaPFyxdmcM%2FPe%2Fsea9EDdgH0%3D"
                     }
                 }
             },

@@ -2588,10 +2588,10 @@ numberOfvmWorkerInstances: 3
 ```powershell
 1.	$DeploymentParametersBuildVM = @{
 2.	ResourceGroupName = 'AzSuperADLAB-<YOURALIAS>'
-3.	TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?st=2019-03-27T01%3A54%3A27Z&se=2021-03-28T01%3A54%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=PP2e8y26iuayYdeyjY5x9dq8gOYR3QDIw%2FWWeyeGC3U%3D'
+3.	TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?sv=2020-04-08&st=2021-08-30T17%3A47%3A37Z&se=2031-08-31T17%3A47%3A00Z&sr=b&sp=r&sig=%2F%2Fz01HUeNMZOadyA26eaA28irL2yahmN6foHFXJq3jk%3D'
 4.	Timestamp         = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
 5.	CreateWorkerNodes = 'true'
-6.	FullPathToFile = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?st=2019-03-27T01%3A55%3A14Z&se=2021-03-28T01%3A55%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=ku9y0cpYebgB7fmfVMTT4kpOCjKEjzaEqoZOs3xDKpg%3D'
+6.	FullPathToFile = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?sv=2020-04-08&st=2021-08-30T17%3A50%3A26Z&se=2031-08-31T17%3A50%3A00Z&sr=b&sp=r&sig=Jlezh%2FM3cGOPWjxAbWBpeqpvlb%2BNWXaJhQi1m6ATKpA%3D'
 7.	FileNameAndExtension = '.\Exercise1\CustomScriptExtensionFiles\CheckForAD\CheckForAD.ps1'
 8.	Verbose           = $true
 9.	}
@@ -3829,7 +3829,7 @@ Used in the following deployments:
 
 Stored in the location shown below
 
-<https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/vm.json?st=2018-07-31T20%3A19%3A15Z&se=2020-12-31T20%3A19%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=OzFQnQCyI5t8gMAJ8DEVeZm8DjAmi3wyXetCakNKg8k%3D>
+<https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/vm.json?sv=2020-04-08&st=2021-08-30T17%3A51%3A25Z&se=2031-08-31T17%3A51%3A00Z&sr=b&sp=r&sig=bkdLO5bKtv5V9J7oUMaj94VFQ%2BKC7UDmjhpxeICU2Yo%3D>
 
 **Template name: AddRSATTools.json**
 
@@ -3842,7 +3842,7 @@ Used in the following deployments:
 
 Stored in the location shown below
 
-<https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/resourceTemplates/AddRSATTools/AddRSATTools.json?st=2018-11-05T02%3A04%3A47Z&se=2021-01-01T02%3A04%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=NAVnJS%2BtjU3iawlruLdR3dp%2BFGihAL%2BEgfCvcw0Xb%2Bk%3D>\
+<https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/resourceTemplates/AddRSATTools/AddRSATTools.json?sv=2020-04-08&st=2021-08-30T17%3A52%3A48Z&se=2031-08-31T17%3A52%3A00Z&sr=b&sp=r&sig=tGepgNoczLVDdrX6DR07uTDsFXU%2B8FkYyzPlNCe4ybs%3D>
 **Template name: multiplevms.json**
 
 C:\\MyAzureProject\\Azure Superpowers\\Lab - ARM Templates
@@ -3854,7 +3854,7 @@ Used in the following deployments:
 
 Stored in the location shown below
 
-<https://azuresuperpowers.blob.core.windows.net/arm/Exercise%201/multiplevms.json?st=2018-07-31T20%3A52%3A18Z&se=2020-12-31T20%3A52%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=OdLDqGLuFLzDoyY8PwS4Ci4LUPeFxfAfwdbkoFXCo2k%3D>
+<https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/multiplevms.json?sv=2020-04-08&st=2021-08-30T17%3A54%3A13Z&se=2031-08-31T17%3A54%3A00Z&sr=b&sp=r&sig=%2FRsUWbe8LOPXKBcm%2FpzM1tpnWu0rpoYsdPMyt0WBwq8%3D>
 
 <div style="page-break-after: always;"></div>
 
@@ -4263,9 +4263,9 @@ Download and save the following two zip files (Links to these files can
 be copied from C:\\MyAzureProject\\Azure Superpowers\\Lab - Helper
 Files\\Helper.txt)
 
-<https://azuresuperpowers.blob.core.windows.net/azuredevops/DSCBuild.zip?st=2018-10-04T02%3A30%3A28Z&se=2020-10-05T02%3A30%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=m2twlkmm0Pg17NId4TjnAjFFs7sLFucANFrDo4Y72Xw%3D>
+<https://azuresuperpowers.blob.core.windows.net/azuredevops/DSCBuild.zip?sv=2020-04-08&st=2021-08-30T17%3A54%3A47Z&se=2031-08-31T17%3A54%3A00Z&sr=b&sp=r&sig=nN3BxYcPk%2FLeYXDsWx%2Btzk6qXUFTgo9AzUq7sQP6cZk%3D>
 
-<https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?st=2018-10-04T02%3A31%3A06Z&se=2020-10-05T02%3A31%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=SaxwRzWULbGTLN1r7C06DUgF%2FM55eRH6ZxVAusjX6b0%3D>
+https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?sv=2020-04-08&st=2021-08-30T17%3A55%3A41Z&se=2031-08-31T17%3A55%3A00Z&sr=b&sp=r&sig=P2JFBAwhiesE4E6UBGI4sJJDIuUzyh7w8%2BFCRV%2Bn5J8%3D
 
 <div style="page-break-after: always;"></div>
 

@@ -1,8 +1,8 @@
 "files.defaultLanguage": "powershell"
 
-https://azuresuperpowers.blob.core.windows.net/azuredevops/DSCBuild.zip?st=2018-10-04T02%3A30%3A28Z&se=2020-10-05T02%3A30%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=m2twlkmm0Pg17NId4TjnAjFFs7sLFucANFrDo4Y72Xw%3D
+https://azuresuperpowers.blob.core.windows.net/azuredevops/DSCBuild.zip?sv=2020-04-08&st=2021-08-30T17%3A54%3A47Z&se=2031-08-31T17%3A54%3A00Z&sr=b&sp=r&sig=nN3BxYcPk%2FLeYXDsWx%2Btzk6qXUFTgo9AzUq7sQP6cZk%3D
 
-https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?st=2018-10-04T02%3A31%3A06Z&se=2020-10-05T02%3A31%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=SaxwRzWULbGTLN1r7C06DUgF%2FM55eRH6ZxVAusjX6b0%3D
+https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip?sv=2020-04-08&st=2021-08-30T17%3A55%3A41Z&se=2031-08-31T17%3A55%3A00Z&sr=b&sp=r&sig=P2JFBAwhiesE4E6UBGI4sJJDIuUzyh7w8%2BFCRV%2Bn5J8%3D
 
 Write-Output "##vso[task.setvariable variable=psmodulepath;]c:\modules\azurerm_6.7.0;$env:psmodulepath"
 
