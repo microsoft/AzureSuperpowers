@@ -15,7 +15,7 @@ Select-AzSubscription -Subscription "Desired Subscription Name"
 
 $ARMParams = @{
     Mode        = 'Complete'
-    TemplateUri = 'https://azuresuperpowers.blob.core.windows.net/arm/emptyTemplate.json?st=2018-08-01T15%3A56%3A17Z&se=2020-12-31T15%3A56%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=nKVmkfBMWPBB4rRkeDUBS%2FTvEOiMvpqBAfbaMVAawyY%3D'
+    TemplateUri = 'https://azuresuperpowers.blob.core.windows.net/arm/emptyTemplate.json?sv=2020-04-08&st=2021-08-30T17%3A56%3A36Z&se=2031-08-31T17%3A56%3A00Z&sr=b&sp=r&sig=WBwmXkZyKZkiH42cb3grg45h0XI5gJcWXNc91mN3Vlw%3D'
     Verbose     = $true
 }
 New-AzResourceGroupDeployment @ARMParams

@@ -30,10 +30,10 @@ This will kick off the deployment, which will take about 1 hour to complete
 
 $DeploymentParametersBuildVM = @{
     ResourceGroupName    = 'AzSuperADLAB-<YOURALIAS>'
-    TemplateUri          = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?st=2019-03-27T01%3A54%3A27Z&se=2021-03-28T01%3A54%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=PP2e8y26iuayYdeyjY5x9dq8gOYR3QDIw%2FWWeyeGC3U%3D'
+    TemplateUri          = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?sv=2020-04-08&st=2021-08-30T17%3A47%3A37Z&se=2031-08-31T17%3A47%3A00Z&sr=b&sp=r&sig=%2F%2Fz01HUeNMZOadyA26eaA28irL2yahmN6foHFXJq3jk%3D'
     Timestamp            = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
     CreateWorkerNodes    = 'true'
-    FullPathToFile       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?st=2019-03-27T01%3A55%3A14Z&se=2021-03-28T01%3A55%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=ku9y0cpYebgB7fmfVMTT4kpOCjKEjzaEqoZOs3xDKpg%3D'
+    FullPathToFile       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?sv=2020-04-08&st=2021-08-30T17%3A50%3A26Z&se=2031-08-31T17%3A50%3A00Z&sr=b&sp=r&sig=Jlezh%2FM3cGOPWjxAbWBpeqpvlb%2BNWXaJhQi1m6ATKpA%3D'
     FileNameAndExtension = '.\Exercise1\CustomScriptExtensionFiles\CheckForAD\CheckForAD.ps1'
     Verbose              = $true
 }
