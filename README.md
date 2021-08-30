@@ -20,7 +20,7 @@
 *   [Azure Resource Group planning and design](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
 *   [Azure AD and RBAC - Controlling which Azure resources accounts have access to](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal)
 *   [PowerShell DSC - How to author a DSC configuration](https://docs.microsoft.com/en-us/powershell/scripting/dsc/configurations/configurations)
-*   [Git source control framework - Basics of source control and collaborating with others](https://docs.microsoft.com/en-us/azure/devops/learn/git/what-is-git)
+*   [Git source control framework - Basics of source control and collaborating with others](https://docs.microsoft.com/en-us/devops/develop/git/what-is-git)
 
 ## Scope
 This class/lab manual is the distilled and simplified experience of multiple engineers working on transforming enterprise customers to the cloud.
