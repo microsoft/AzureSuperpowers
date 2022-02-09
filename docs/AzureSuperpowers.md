@@ -738,11 +738,11 @@ collection of values, instead of a single value.
 An example of splatting is shown below
 
 ```powershell
-1.	$params = @{
-2.	    Name     = 'PowerShellRG'
-3.	    Location = 'eastUS' #or 'usgovvirginia'    
-4.	}
-5.	New-AzResourceGroup @params
+$params = @{
+    Name     = 'PowerShellRG'
+    Location = 'eastUS' #or 'usgovvirginia'    
+}
+New-AzResourceGroup @params
 ```
 
 Note that the variable "params" is preceded by a dollar sign (\$) when
@@ -837,8 +837,8 @@ To open multiple files, double click on the file to pin it in VS Code.
 You will not see any storage accounts in Azure Storage Explorer if you
 have not already created a storage account in your Azure subscription
 
-Ensure that you select options to login to Azure Government if your
-subscription is in the Microsoft Azure Government environment. We have
+Ensure that you select options to login to Azure U.S. Government if your
+subscription is in the Microsoft Azure U.S. Government environment. We have
 seen issues during the Azure Storage Explorer section of this lab when
 the wrong environment was selected.
 
@@ -847,7 +847,7 @@ following commands
 
 Azure Commercial: Get-AzEnvironment -Name AzureCloud -Verbose \| fl \*
 -Force\
-Azure Government: Get-AzEnvironment -Name AzureUSGovernment -Verbose \|
+Azure U.S. Government: Get-AzEnvironment -Name AzureUSGovernment -Verbose \|
 fl \* -Force
 
 For function keys to operate, you may need to press the **Fn** key on
@@ -1059,7 +1059,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -1108,11 +1108,11 @@ Update the name listed below, and run the following PowerShell to create
 a new resource group:
 
 ```powershell
-1.	$params = @{
-2.	    Name     = 'PowerShellRG-<YOURALIAS>'
-3.	    Location = 'eastUS' #or 'usgovvirginia'    
-4.	}
-5.	New-AzResourceGroup @params
+$params = @{
+    Name     = 'PowerShellRG-<YOURALIAS>'
+    Location = 'eastUS' #or 'usgovvirginia'    
+}
+New-AzResourceGroup @params
 ```
 
 <div style="page-break-after: always;"></div>
@@ -1132,7 +1132,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -1149,21 +1149,21 @@ PowerShell.\
 (e.g. \'PowerShell-josmith\')
 
 ```powershell
-1.	$spDisplayName  = 'PowerShell-<YOURALIAS>'
-2.	
-3.	$startDate = Get-Date
-4.	$KeyId = (New-Guid).Guid
-5.	$KeyPassword = (New-Guid).Guid
-6.	
-7.	$psadCredential = New-Object Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential
-8.	$psadCredential.StartDate = $startDate
-9.	$psadCredential.EndDate = $startDate.AddYears(1)
-10.	$psadCredential.KeyId = $KeyId
-11.	$psadCredential.Password = $KeyPassword
-12.	
-13.	New-AzADServicePrincipal -DisplayName $spDisplayName -PasswordCredential $psadCredential
-14.	
-15.	Write-Output "The password you've set is $KeyPassword (WRITE THIS DOWN)"
+$spDisplayName  = 'PowerShell-<YOURALIAS>'
+
+$startDate = Get-Date
+$KeyId = (New-Guid).Guid
+$KeyPassword = (New-Guid).Guid
+
+$psadCredential = New-Object Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential
+$psadCredential.StartDate = $startDate
+$psadCredential.EndDate = $startDate.AddYears(1)
+$psadCredential.KeyId = $KeyId
+$psadCredential.Password = $KeyPassword
+
+New-AzADServicePrincipal -DisplayName $spDisplayName -PasswordCredential $psadCredential
+
+Write-Output "The password you've set is $KeyPassword (WRITE THIS DOWN)"
 ```
 
 **IMPORTANT: Save the service principal's password**, you will need it
@@ -1186,7 +1186,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -1205,9 +1205,9 @@ From a PowerShell window logged into Azure, run the following
 PowerShell.
 
 ```powershell
-1.	$spDisplayName = 'PowerShell-<YOURALIAS>'
-2.	$appID         = (Get-AzADServicePrincipal -DisplayName $spDisplayName).ApplicationID
-3.	New-AzRoleAssignment -ApplicationID $appID -ResourceGroupName 'PowerShellRG-<YOURALIAS>' -RoleDefinitionName 'Owner'
+$spDisplayName = 'PowerShell-<YOURALIAS>'
+$appID         = (Get-AzADServicePrincipal -DisplayName $spDisplayName).ApplicationID
+New-AzRoleAssignment -ApplicationID $appID -ResourceGroupName 'PowerShellRG-<YOURALIAS>' -RoleDefinitionName 'Owner'
 ```
 
 <div style="page-break-after: always;"></div>
@@ -1227,7 +1227,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -1245,9 +1245,9 @@ ApplicationID of the ServicePrincipal for the next step.
 # Execute the following lines of code one line at a time
 
 ```powershell
-1.	$spDisplayName = 'PowerShell-<YOURALIAS>'
-2.	Get-AzSubscription | Select-Object TenantID
-3.	Get-AzADServicePrincipal -DisplayName $spDisplayName | Select-Object ApplicationID
+$spDisplayName = 'PowerShell-<YOURALIAS>'
+Get-AzSubscription | Select-Object TenantID
+Get-AzADServicePrincipal -DisplayName $spDisplayName | Select-Object ApplicationID
 ```
 
 **IMPORTANT: Record the TenantID and the ApplicationID as these will be
@@ -1281,9 +1281,9 @@ terminal as output from a previous command\
 \"The password is: \$password (WRITE THIS DOWN)\"
 
 ```powershell
-1.	$tenantID      = '<AAD TENANT ID>'
-2.	$applicationID = '<SERVICE PRINCIPAL APPID>'
-3.	$psCredObj     = Get-Credential -UserName $applicationID -Message 'SP Password'
+$tenantID      = '<AAD TENANT ID>'
+$applicationID = '<SERVICE PRINCIPAL APPID>'
+$psCredObj     = Get-Credential -UserName $applicationID -Message 'SP Password'
 ```
 
 ### Login to Azure as Service Principal
@@ -1298,7 +1298,7 @@ Azure Commercial:
 Login-AzAccount -ServicePrincipal -TenantId $tenantID -Credential $psCredObj
 ```
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -ServicePrincipal -TenantId $tenantID -Credential $psCredObj -Environment AzureUSGovernment
@@ -1317,7 +1317,7 @@ Get-AzResourceGroup
 
 You should only see the Resource Groups that you assigned a role to in
 the previous exercise. If you cannot see anything, start this exercise
-again and make sure you logged into the correct environment (MAG or
+again and make sure you logged into the correct environment (Azure U.S. Government or
 Commercial)
 
 ### Log out of Azure PowerShell
@@ -1477,7 +1477,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -1501,14 +1501,14 @@ Execute the following PowerShell:
 8.**
 
 ```powershell
-1.	$params = @{
-2.	    ResourceGroupName = 'PowerShellRG-<YOURALIAS>'
-3.	    TemplateFile      = 'StorageAccount.json'
-4.	    Verbose           = $true
-5.	}
-6.	Test-AzResourceGroupDeployment @params
-7.	
-8.	New-AzResourceGroupDeployment @params
+$params = @{
+    ResourceGroupName = 'PowerShellRG-<YOURALIAS>'
+    TemplateFile      = 'StorageAccount.json'
+    Verbose           = $true
+}
+Test-AzResourceGroupDeployment @params
+
+New-AzResourceGroupDeployment @params
 ```
 
 <div style="page-break-after: always;"></div>
@@ -1722,16 +1722,16 @@ Redeploy the template **with new values** specified as runtime parameters as sho
 In a PowerShell command window, ensure your working directory is set to **C:\\AzSuperClass\\AzureSuperpowers\\src\\Lab - ARM Templates** and run the following commands:
 
 ```powershell
-1.	$params = @{
-2.	    ResourceGroupName = 'PowerShellRG-<YOURALIAS>'
-3.	    TemplateFile      = 'storageaccount.json'
-4.	    storageNamePrefix = 'newstore'
-5.	    storageSKU        = 'Standard_GRS'
-6.	    Verbose           = $true
-7.	}
-8.	Test-AzResourceGroupDeployment @params
-9.	
-10.	New-AzResourceGroupDeployment @params
+$params = @{
+    ResourceGroupName = 'PowerShellRG-<YOURALIAS>'
+    TemplateFile      = 'storageaccount.json'
+    storageNamePrefix = 'newstore'
+    storageSKU        = 'Standard_GRS'
+    Verbose           = $true
+}
+Test-AzResourceGroupDeployment @params
+
+New-AzResourceGroupDeployment @params
 ```
 
 Through this task, you have now deployed a new storage account using
@@ -1770,7 +1770,7 @@ Remove-AzResourceGroup -Name 'PowerShellRG-<YOURALIAS>'
 | Glossary of Terms | *organization* - The highest object in the Azure DevOps hierarchy, which has a DNS name https://dev.azure.com/\<organizationname\> and can have many projects under it |
 |  | *project -* A project is for managing collaboration.  Users can be invited to the project, which may contain multiple code repositories |
 |  | *repository -* A git repository is all code files, all branches, all metadata, and commit history of changes |
-|  | *clone* - The ‘git clone’ is a copy of an entire code repository from an ‘origin’ (such as Azure DevOps) to a local location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also ‘sync’ with the origin code repository. |
+|  | *clone* - The 'git clone' is a copy of an entire code repository from an 'origin' (such as Azure DevOps) to a local location (such as your local workstation).  Additionally, a clone knows where the origin is, so it can also 'sync' with the origin code repository. |
 | Estimated Time to Complete | 30 minutes |
 | Key Takeaways | 1. The hierarchy of Azure DevOps |
 |  | 2. Familiarity with Azure DevOps projects |
@@ -2546,7 +2546,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -2561,11 +2561,13 @@ Select-AzSubscription –Subscription '<Id>'
 
 Next, create a new Resource Group called AzSuperADLAB-\<YOURALIAS\> 
 
-(Examples for Azure Commercial and Microsoft Azure Government shown below)
+(Examples for Azure Commercial and Microsoft Azure U.S. Government shown below)
 
 ```powershell
 New-AzResourceGroup -Name 'AzSuperADLAB-<YOURALIAS>' -Location 'eastus'
-#OR
+```
+**OR**
+```powershell
 New-AzResourceGroup -Name 'AzSuperADLAB-<YOURALIAS>' -Location 'usgovvirginia'
 ```
 
@@ -2586,16 +2588,16 @@ numberOfvmWorkerInstances: 3
 ### Execute the following PowerShell
 
 ```powershell
-1.	$DeploymentParametersBuildVM = @{
-2.	ResourceGroupName = 'AzSuperADLAB-<YOURALIAS>'
-3.	TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?sv=2020-04-08&st=2021-08-30T17%3A47%3A37Z&se=2031-08-31T17%3A47%3A00Z&sr=b&sp=r&sig=%2F%2Fz01HUeNMZOadyA26eaA28irL2yahmN6foHFXJq3jk%3D'
-4.	Timestamp         = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
-5.	CreateWorkerNodes = 'true'
-6.	FullPathToFile = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?sv=2020-04-08&st=2021-08-30T17%3A50%3A26Z&se=2031-08-31T17%3A50%3A00Z&sr=b&sp=r&sig=Jlezh%2FM3cGOPWjxAbWBpeqpvlb%2BNWXaJhQi1m6ATKpA%3D'
-7.	FileNameAndExtension = '.\Exercise1\CustomScriptExtensionFiles\CheckForAD\CheckForAD.ps1'
-8.	Verbose           = $true
-9.	}
-10.	Test-AzResourceGroupDeployment @DeploymentParametersBuildVM
+$DeploymentParametersBuildVM = @{
+    ResourceGroupName = 'AzSuperADLAB-<YOURALIAS>'
+    TemplateUri       = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/adLab.json?sv=2020-04-08&st=2021-08-30T17%3A47%3A37Z&se=2031-08-31T17%3A47%3A00Z&sr=b&sp=r&sig=%2F%2Fz01HUeNMZOadyA26eaA28irL2yahmN6foHFXJq3jk%3D'
+    Timestamp         = [system.DateTime]::Now.ToString("MM/dd/yyyy H:mm:ss tt")
+    CreateWorkerNodes = 'true'
+    FullPathToFile = 'https://azuresuperpowers.blob.core.windows.net/arm/Exercise1/CustomScriptExtensionFiles/CheckForAD/CheckForAD.ps1?sv=2020-04-08&st=2021-08-30T17%3A50%3A26Z&se=2031-08-31T17%3A50%3A00Z&sr=b&sp=r&sig=Jlezh%2FM3cGOPWjxAbWBpeqpvlb%2BNWXaJhQi1m6ATKpA%3D'
+    FileNameAndExtension = '.\Exercise1\CustomScriptExtensionFiles\CheckForAD\CheckForAD.ps1'
+    Verbose           = $true
+}
+Test-AzResourceGroupDeployment @DeploymentParametersBuildVM
 ```
 
 If the test completes successfully, move forward with the deployment by
@@ -2627,9 +2629,9 @@ well as any errors or warnings if your deployment is not successful.
 |  | *Local configuration manager (LCM)* – The engine by which DSC facilitates the interaction between resources and configurations.  Installed by default on all Windows systems with Windows PowerShell version 4.0 and above. |
 | Estimated Time to Complete | 60 minutes |
 | Key Takeaways | 1. How to author a DSC configuration |
-|  | 2. How to create a ZIP file that works with Azure (Containing a .ps1 file that has the ‘configuration’ keyword in it) |
+|  | 2. How to create a ZIP file that works with Azure (Containing a .ps1 file that has the 'configuration' keyword in it) |
 |  | 3. Where to put the ZIP file so that Azure can tell an IaaS VM to reach out and download/extract/apply it |
-|  | 4. Why DSC (which can be applied many times and only ever produces the same result) is a good example of ‘end state programming’ and why end state is best for cloud technologies |
+|  | 4. Why DSC (which can be applied many times and only ever produces the same result) is a good example of 'end state programming' and why end state is best for cloud technologies |
 |  | 5. DSC is integral for us to involve IaaS solutions in code based deployments and release pipelines |
 | Author | Keith Hitchcock |
 |  | Ralph Kyttle |
@@ -2716,7 +2718,7 @@ well as any errors or warnings if your deployment is not successful.
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
-    <https://portal.azure.us> for MAG
+    <https://portal.azure.us> for Azure U.S. Government
 
 3.  Choose **Create a resource** in the upper left-hand corner of the
     Azure portal.
@@ -2892,7 +2894,7 @@ configuration DemoConfig {
         Firewall 'FirewallSettingOne' {
             Name      = 'Demo Block Rule'
             Action    = 'Block'
-            LocalPort = ‘5000’
+            LocalPort = '5000'
             Enabled   = 'True'
             Direction = 'Inbound'
             Profile   = 'Any'
@@ -2953,11 +2955,11 @@ Test-DscConfiguration -Path .\DemoConfig
     see the full answers:
 
 ```powershell
-1.	Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesInDesiredState
+Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesInDesiredState
 ```
 
 ```powershell
-1.	Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesNotInDesiredState
+Test-DscConfiguration -path .\DemoConfig | Select -ExpandProperty ResourcesNotInDesiredState
 ```
 
 3.  Expected output from the commands listed above is shown below:
@@ -3055,7 +3057,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -3074,43 +3076,43 @@ Select-AzSubscription –Subscription '<Id>'
     DSC\\DSC.json**
 
 ```json
-1.	{
-2.	    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-3.	    "contentVersion": "1.0.0.0",
-4.	    "parameters": {
-5.	        "zipFileURI": {
-6.	            "type": "string"
-7.	        },
-8.	        "FileName": {
-9.	            "type": "string"
-10.	        },
-11.	        "ConfigName": {
-12.	            "type": "string"
-13.	        },
-14.	        "VMname": {
-15.	            "type": "string"
-16.	        }
-17.	    },
-18.	    "variables": {},
-19.	    "resources": [
-20.	        {
-21.	            "type": "Microsoft.Compute/virtualMachines/extensions",
-22.	            "name": "[concat(parameters('VMname'), '/DSC')]",
-23.	            "apiVersion": "2015-06-15",
-24.	            "location": "[resourceGroup().location]",
-25.	            "properties": {
-26.	                "publisher": "Microsoft.Powershell",
-27.	                "type": "DSC",
-28.	                "typeHandlerVersion": "2.19",
-29.	                "autoUpgradeMinorVersion": true,
-30.	                "settings": {
-31.	                    "ModulesUrl": "[parameters('zipFileURI')]",
-32.	                    "ConfigurationFunction": "[concat(parameters('FileName'), '\\', parameters('ConfigName'))]"
-33.	                }
-34.	            }
-35.	        }
-36.	    ]
-37.	}
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "zipFileURI": {
+            "type": "string"
+        },
+        "FileName": {
+            "type": "string"
+        },
+        "ConfigName": {
+            "type": "string"
+        },
+        "VMname": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('VMname'), '/DSC')]",
+            "apiVersion": "2015-06-15",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "publisher": "Microsoft.Powershell",
+                "type": "DSC",
+                "typeHandlerVersion": "2.19",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "ModulesUrl": "[parameters('zipFileURI')]",
+                    "ConfigurationFunction": "[concat(parameters('FileName'), '\\', parameters('ConfigName'))]"
+                }
+            }
+        }
+    ]
+}
 ```
 
 2.  Change directory over to C:\\MyAzureProject\\Azure
@@ -3122,16 +3124,16 @@ Select-AzSubscription –Subscription '<Id>'
     (Commands below can be copied from C:\MyAzureProject\Azure Superpowers\Lab - Helper Files\Helper.txt)
 
 ```powershell
-1.	$params = @{
-2.	    VMName            = 'DSC1'
-3.	    ResourceGroupName = '<RESOURCEGROUPNAME>'
-4.	    ZipFileURI        = 'https://<ACCT>.blob.core.windows.net/<CONTAINER>/DemoConfigZip.zip'
-5.	    FileName          = 'DemoConfig.ps1'
-6.	    TemplateFile      = 'DSC.json'
-7.	    ConfigName        = 'DemoConfig'
-8.	    Verbose           = $true
-9.	    }
-10.	New-AzResourceGroupDeployment @params
+$params = @{
+    VMName            = 'DSC1'
+    ResourceGroupName = '<RESOURCEGROUPNAME>'
+    ZipFileURI        = 'https://<ACCT>.blob.core.windows.net/<CONTAINER>/DemoConfigZip.zip'
+    FileName          = 'DemoConfig.ps1'
+    TemplateFile      = 'DSC.json'
+    ConfigName        = 'DemoConfig'
+    Verbose           = $true
+}
+New-AzResourceGroupDeployment @params
 ```
 
 <div style="page-break-after: always;"></div>
@@ -3216,7 +3218,7 @@ Login-AzAccount
 
 **-or-**
 
-Azure Government:
+Azure U.S. Government:
 
 ```powershell
 Login-AzAccount -Environment AzureUSGovernment
@@ -3233,9 +3235,9 @@ Select-AzSubscription –Subscription '<Id>'
 
 ```powershell
 New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location EastUS
-
-#OR
-
+```
+**OR**
+```powershell
 New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 ```
 
@@ -3251,13 +3253,13 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 2.  Create a Storage account using the following command:
 
 ```powershell
-1.	$params = @{
-2.	    ResourceGroupName = 'StorageExample-<YOURALIAS>'
-3.	    AccountName       = '<ALIAS>blobstorage'
-4.	    Location          = 'eastus' #OR 'usgovvirginia'
-5.	    SkuName           = 'Standard_LRS'
-6.	}
-7.	New-AzStorageAccount @params
+$params = @{
+    ResourceGroupName = 'StorageExample-<YOURALIAS>'
+    AccountName       = '<ALIAS>blobstorage'
+    Location          = 'eastus' #OR 'usgovvirginia'
+    SkuName           = 'Standard_LRS'
+}
+New-AzStorageAccount @params
 ```
 
 3.  Open Microsoft Azure Storage Explorer and connect using your Azure
@@ -3291,11 +3293,11 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     storage account we just created:
 
 ```powershell
-1.	$params = @{
-2.	    ResourceGroupName = 'StorageExample-<YOURALIAS>'
-3.	    Name              = '<ALIAS>blobstorage'
-4.	}
-5.	Get-AzStorageAccountKey @params
+$params = @{
+    ResourceGroupName = 'StorageExample-<YOURALIAS>'
+    Name              = '<ALIAS>blobstorage'
+}
+Get-AzStorageAccountKey @params
 ```
 
 2.  We will need an account key to create a SAS Token. A SAS Token
@@ -3306,26 +3308,26 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     PowerShell to capture an account key into a PowerShell variable:
 
 ```powershell
-1.	$params = @{
-2.	    ResourceGroupName = 'StorageExample-<YOURALIAS>'
-3.	    Name              = '<ALIAS>blobstorage'
-4.	}
-5.	$storageAccountKey = (Get-AzStorageAccountKey @params).Value[0]
+$params = @{
+    ResourceGroupName = 'StorageExample-<YOURALIAS>'
+    Name              = '<ALIAS>blobstorage'
+}
+$storageAccountKey = (Get-AzStorageAccountKey @params).Value[0]
 ```
 
 3.  We will need to create an Azure Storage Context. The context
     describes the Azure Storage Account and is needed to create a
     Storage Container in the next step. Uncomment the Environment
     parameter on Line 4 if you are working with something other than Azure
-    Commercial, such as Microsoft Azure Government.
+    Commercial, such as Microsoft Azure U.S. Government.
 
 ```powershell
-1.	$params = @{
-2.	    StorageAccountName = '<ALIAS>blobstorage'
-3.	    StorageAccountKey  = $storageAccountKey
-4.	    #Environment = 'AzureUSGovernment'
-5.	}
-6.	$storageAccountContext = New-AzStorageContext @params
+$params = @{
+    StorageAccountName = '<ALIAS>blobstorage'
+    StorageAccountKey  = $storageAccountKey
+    #Environment = 'AzureUSGovernment'
+}
+$storageAccountContext = New-AzStorageContext @params
 ```
 
 <div style="page-break-after: always;"></div>
@@ -3335,11 +3337,11 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 1.  Use the following PowerShell to create a Container in the Storage Account that you created previously in **Exercise- Create a storage account**.
 
 ```powershell
-1.	$params = @{
-2.	    Name    = 'sasexample'
-3.	    Context = $storageAccountContext
-4.	}
-5.	New-AzStorageContainer @params
+$params = @{
+    Name    = 'sasexample'
+    Context = $storageAccountContext
+}
+New-AzStorageContainer @params
 ```
 
 2.  If you refresh the storage account in Azure Storage Explorer, you
@@ -3353,14 +3355,14 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     task with Permission defined for Read, Write, Delete, List
 
 ```powershell
-1.	$params = @{
-2.	    Container  = 'sasexample'
-3.	    Policy     = 'policyexample'
-4.	    Permission = 'rwdl'
-5.	    ExpiryTime = (Get-Date).AddDays(2)
-6.	    Context    = $storageAccountContext
-7.	}
-8.	New-AzStorageContainerStoredAccessPolicy @params
+$params = @{
+    Container  = 'sasexample'
+    Policy     = 'policyexample'
+    Permission = 'rwdl'
+    ExpiryTime = (Get-Date).AddDays(2)
+    Context    = $storageAccountContext
+}
+New-AzStorageContainerStoredAccessPolicy @params
 ```
 
 2.  If you refresh the Blob Container sasexample in Azure Storage
@@ -3381,13 +3383,13 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     PowerShell:
 
 ```powershell
-1.	$params = @{
-2.	    Name    = 'sasexample'
-3.	    Policy  = 'policyexample'
-4.	    Context = $storageAccountContext
-5.	}
-6.	$sasToken = New-AzStorageContainerSASToken @params
-7.	Write-Host "SAS Token: $sasToken"
+$params = @{
+    Name    = 'sasexample'
+    Policy  = 'policyexample'
+    Context = $storageAccountContext
+}
+$sasToken = New-AzStorageContainerSASToken @params
+Write-Host "SAS Token: $sasToken"
 ```
 
 2.  The SAS Token, if correct, should be in a similar format: **\
@@ -3482,12 +3484,12 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
 2.  Use the following PowerShell to create the client context:
 
 ```powershell
-1.	$params = @{
-2.	    sasToken           = $sasToken
-3.	    storageAccountName = '<ALIAS>blobstorage'
-4.	    #Environment = 'AzureUSGovernment'
-5.	}
-6.	$clientContext = New-AzStorageContext @params
+$params = @{
+    sasToken           = $sasToken
+    storageAccountName = '<ALIAS>blobstorage'
+    #Environment = 'AzureUSGovernment'
+}
+$clientContext = New-AzStorageContext @params
 ```
 
 ### Test the Context by listing all files in the storage container
@@ -3496,11 +3498,11 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     Container:
 
 ```powershell
-1.	$params = @{
-2.	    Container = 'sasexample'
-3.	    Context   = $clientContext
-4.	}
-5.	Get-AzStorageBlob @params
+$params = @{
+    Container = 'sasexample'
+    Context   = $clientContext
+}
+Get-AzStorageBlob @params
 ```
 
 2.  The files we have uploaded in previous steps should be outputted.
@@ -3511,12 +3513,12 @@ New-AzResourceGroup -Name 'StorageExample-<YOURALIAS>' -Location USGovVirginia
     Container:
 
 ```powershell
-1.	$params = @{
-2.	    Container = 'sasexample'
-3.	    File      = 'c:\sasexample\File3.txt'
-4.	    Context   = $clientContext
-5.	}
-6.	Set-AzStorageBlobContent @params
+$params = @{
+    Container = 'sasexample'
+    File      = 'c:\sasexample\File3.txt'
+    Context   = $clientContext
+}
+Set-AzStorageBlobContent @params
 ```
 
 2.  File3.txt is now uploaded to the storage container
@@ -3997,13 +3999,13 @@ Before proceeding to the next step, make sure that you have:
     remove any values if they have been auto-populated. Review each
     value**:
 
-        a.  Environment - select 'Azure Cloud' for commercial Azure, 'Azure US Government' for MAG, or whichever environment the Azure subscription you want Azure DevOps to connect to exists in.
+        a.  Environment - select 'Azure Cloud' for commercial Azure, 'Azure US Government' for Azure U.S. Government, or whichever environment the Azure subscription you want Azure DevOps to connect to exists in.
 
         b.  Subscription ID - This value is the subscription ID of the Azure subscription you wish to connect to. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or from the Azure Portal.
 
         c.  Subscription Name - This value is the Name of the Azure subscription you wish to connect to. It matters that the name entered here is the name that is associated with Subscription ID in the last field. This information can be obtained from the Get-AzSubscription cmdlet in PowerShell or through the Azure Portal.
 
-        d.  Service Principal ID – This is also known as the ‘AppID’ or ‘Application ID’.  This information can be obtained from the Get-AzADServicePrincipal -DisplayName <SPNAME> cmdlet in PowerShell or through the Azure Portal in Azure Active Directory under ‘App Registrations’.
+        d.  Service Principal ID – This is also known as the 'AppID' or 'Application ID'.  This information can be obtained from the Get-AzADServicePrincipal -DisplayName <SPNAME> cmdlet in PowerShell or through the Azure Portal in Azure Active Directory under 'App Registrations'.
 
         e.  Service principal key - This is the Service Principal's password.
 
@@ -4342,7 +4344,7 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
-    <https://portal.azure.us> for MAG
+    <https://portal.azure.us> for Azure U.S. Government
 
 ### Create a Resource Group
 
@@ -4363,7 +4365,7 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
-    <https://portal.azure.us> for MAG
+    <https://portal.azure.us> for Azure U.S. Government
 
 ### Create a Storage Account
 
@@ -4404,7 +4406,7 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
-    <https://portal.azure.us> for MAG
+    <https://portal.azure.us> for Azure U.S. Government
 
 ### Create a Resource Group
 
@@ -4431,7 +4433,7 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip
 1.  Open a web browser
 
 2.  Navigate to either <https://portal.azure.com> for commercial, or
-    <https://portal.azure.us> for MAG
+    <https://portal.azure.us> for Azure U.S. Government
 
 ### Edit Resource Group Permissions
 
@@ -4468,7 +4470,7 @@ https://azuresuperpowers.blob.core.windows.net/azuredevops/simple-windows-vm.zip
 | Lab Description | In this lab, you will explore Continuous Integration in Azure DevOps. |
 | :------------ | :-------------- |
 |  | Continuous Integration (CI) is the process of automating the build and testing of code every time a team member commits changes to version control.  CI encourages developers to share their code and unit tests by merging their changes into a shared version control repository after every small task completion.  Committing code triggers an automated build system to grab the latest code from the shared repository and to build, test, and validate the full master branch (also known as the trunk or main). |
-|  | CI emerged as a best practice because software developers often work in isolation, and then they need to integrate their changes with the rest of the team’s code base.  Waiting days or weeks to integrate code creates many merge conflicts, hard to fix bugs, diverging code strategies, and duplicated efforts.  CI requires the development team’s code be merged to a shared version control branch continuously to avoid these problems. |
+|  | CI emerged as a best practice because software developers often work in isolation, and then they need to integrate their changes with the rest of the team's code base.  Waiting days or weeks to integrate code creates many merge conflicts, hard to fix bugs, diverging code strategies, and duplicated efforts.  CI requires the development team's code be merged to a shared version control branch continuously to avoid these problems. |
 |  | CI keeps the master branch clean. Teams can leverage modern version control systems such as Git to create short-lived feature branches to isolate their work.  A developer submits a “pull request” when the feature is complete and, on approval of the pull request, the changes get merged into the master branch.  Then the developer can delete the previous feature branch.  Development teams repeat the process for additional work.  The team can establish branch policies to ensure the master branch meets desired quality criteria. |
 |  | Teams use build definitions to ensure that every commit to the master branch triggers the automated build and testing processes. Implementing CI this way ensures bugs are caught earlier in the development cycle, which makes them less expensive to fix.  Automated tests can run for every build to ensure builds maintain a consistent quality. |
 | Estimated Time to Complete | 60 minutes |
